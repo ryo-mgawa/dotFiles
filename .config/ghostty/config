@@ -1,0 +1,20 @@
+shell-integration = fish
+
+theme = "idleToes"
+
+font-family = "iosevka"
+font-size = 14
+font-thicken = true
+bold-is-bright = true
+
+background-opacity = 0.60
+
+cursor-style-blink = false
+cursor-style = bar
+mouse-hide-while-typing = true
+
+window-decoration = true
+
+confirm-close-surface = false
+
+keybind = cmd+w=esc:.
