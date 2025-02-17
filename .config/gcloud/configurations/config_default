@@ -1,8 +1,0 @@
-[core]
-account = ryota-miyagawa_finn.co.jp@external.optimind.tech
-project = ex-web-develop
-
-[compute]
-zone = asia-northeast2-a
-region = asia-northeast2
-
