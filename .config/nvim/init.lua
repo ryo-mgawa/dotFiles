@@ -25,6 +25,7 @@ require('lazy').setup {
     { import = 'plugins.bufferline' },
     { import = 'plugins.colorful-winsep' },
     { import = 'plugins.comment' },
+    { import = 'plugins.copilot' },
     -- { import = 'plugins.dressing' },
     { import = 'plugins.dropbar' },
     -- { import = 'plugins.gitlinker' },
