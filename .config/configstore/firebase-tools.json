@@ -1,0 +1,37 @@
+{
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1744939692591
+	},
+	"usage": true,
+	"analytics-uuid": "f977709a-17ac-458e-bd78-ca2132abf164",
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "111035379199856913725",
+		"email": "i31640.ryota@gmail.com",
+		"email_verified": true,
+		"at_hash": "yLeVOsvZ0nrMrobYlbprbg",
+		"iat": 1744939726,
+		"exp": 1744943326
+	},
+	"tokens": {
+		"expires_at": 1744943325830,
+		"access_token": "ya29.a0AZYkNZhcmvAhN1CXfWH3ciAiAL6TeDp3de_3jJWyoIjiUmfHUvo8p1elklkTJwfeAeBZwcz1pI16wN7NdNhwpb1Jq1KOMdsXpu_WKYxMqjOGJKgdbBxQtXmAkG61WYpiDZ1M6ZuO2N6lAUW3QOZ6clWC5pYu7ynXAAM2eDJNZlJo-QaCgYKAdUSARcSFQHGX2MiyPzrMxRJCgd1PfAQcAZTnw0181",
+		"expires_in": 3599,
+		"refresh_token": "1//0eTjvjuXHZwEDCgYIARAAGA4SNwF-L9IrCYJ8dFP7MN0XGrYF5C0pvatu2bxZvlvzDR9TbLbtH7gSyoW7QduL92g_FSpooYhCZSc",
+		"scope": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly openid https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/userinfo.email",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImMzN2RhNzVjOWZiZTE4YzJjZTkxMjViOWFhMWYzMDBkY2IzMWU4ZDkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTExMDM1Mzc5MTk5ODU2OTEzNzI1IiwiZW1haWwiOiJpMzE2NDAucnlvdGFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJ5TGVWT3N2WjBuck1yb2JZbGJwcmJnIiwiaWF0IjoxNzQ0OTM5NzI2LCJleHAiOjE3NDQ5NDMzMjZ9.DsskzDumkYrpElPIg6H9n8xNdbqGYTN2ZjAr1DlWTdEEbQMLbotFn6ZDTii6f9xpYtSQi_BLJ4hSnpxsqG-IDU7ngBCllkRvyqs2HFd9wJ8kDZQc7wMruYJOdpZKaYI5pQ41eHGJCErgrUnDZC0yxJh2GC9RVF9f5u-QCVvaqTqH2VOtQxz2H6VYtf_iNnb8jPVPUHq4ydhUIMeTQDdw6DTVyF8NFH7LAeaoVvXdW2VzCWJGsSamqDGMsSKhX1qTM5a8TyrqXMWUtm9jHayMFh0KLPdQf5bEyfsAoJsfNQZzRrdy9r2hYR7-8FHOLq5EpOoarB5elMdlYE3mK4-MJg"
+	},
+	"activeProjects": {
+		"/Users/miyagawaryouta": "refereestudy-5d9b4"
+	}
+}
