@@ -7,10 +7,30 @@
 		"node8DeploysDisabledAfter": 1613390400000,
 		"node8RuntimeDisabledAfter": 1615809600000,
 		"node8WarnAfter": 1600128000000,
-		"fetched": 1744939692591
+		"fetched": 1751868552994
 	},
+	"activeProjects": {
+		"/Users/miyagawaryouta": "trackandfieldrecordportal",
+		"/Users/miyagawaryouta/Documents/GitHub/webStudy/TrackAndFieldRecordPortal": "trackandfieldrecordportal",
+		"/Users/miyagawaryouta/Documents/GitHub/webStudy/track-and-field-competitions": "track-and-field-live-results"
+	},
+	"emulator-analytics-clientId": "14526d5f-22dd-4f46-ba74-74d47a0fef78",
+	"webconfig": {
+		"trackandfieldrecordportal": {
+			"projectId": "trackandfieldrecordportal",
+			"appId": "1:151324412123:web:d297d5633f0027be96e4fe",
+			"databaseURL": "https://trackandfieldrecordportal-default-rtdb.firebaseio.com",
+			"storageBucket": "trackandfieldrecordportal.firebasestorage.app",
+			"apiKey": "AIzaSyAv4jFfZ-tEXW7aauVtWaDWEaNQ73Je0HI",
+			"authDomain": "trackandfieldrecordportal.firebaseapp.com",
+			"messagingSenderId": "151324412123",
+			"measurementId": "G-MCD21K9K9Q"
+		}
+	},
+	"additionalAccounts": [],
+	"activeAccounts": {},
 	"usage": true,
-	"analytics-uuid": "f977709a-17ac-458e-bd78-ca2132abf164",
+	"analytics-uuid": "e204307e-1a0b-4594-90e0-86c087d4c96f",
 	"user": {
 		"iss": "accounts.google.com",
 		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
@@ -18,20 +38,18 @@
 		"sub": "111035379199856913725",
 		"email": "i31640.ryota@gmail.com",
 		"email_verified": true,
-		"at_hash": "yLeVOsvZ0nrMrobYlbprbg",
-		"iat": 1744939726,
-		"exp": 1744943326
+		"at_hash": "1p051abK4j6ipZy2VO4IPQ",
+		"iat": 1751868562,
+		"exp": 1751872162
 	},
 	"tokens": {
-		"expires_at": 1744943325830,
-		"access_token": "ya29.a0AZYkNZhcmvAhN1CXfWH3ciAiAL6TeDp3de_3jJWyoIjiUmfHUvo8p1elklkTJwfeAeBZwcz1pI16wN7NdNhwpb1Jq1KOMdsXpu_WKYxMqjOGJKgdbBxQtXmAkG61WYpiDZ1M6ZuO2N6lAUW3QOZ6clWC5pYu7ynXAAM2eDJNZlJo-QaCgYKAdUSARcSFQHGX2MiyPzrMxRJCgd1PfAQcAZTnw0181",
+		"expires_at": 1751890136533,
+		"refresh_token": "1//0e2YRLGsluKJzCgYIARAAGA4SNwF-L9IrQ4_dqQZmJQ15aGqpBqZseg-3Td9cwajaLIvfS8F4zw5ksmURpJAVqaU9Q7ciRSM_ggw",
+		"scopes": [],
+		"access_token": "ya29.a0AS3H6NyHMcVuLUVOm1pjmNp5V_mjCLzpCjALcownDn0RgMwF28Z6PqbqFyhiKqZNjwJIXcKn8I6lk8RBzR56r-F3BLvldDHa6zYMPV-vEhg2eLZVDc7Ego3dq7yNmemoii_0p5vglqibRLwKJyudhLEUgm3bbeGkIFsklzDukN31fT8aCgYKAXISARcSFQHGX2MiIAHQZtTfAuXuUhxKdhu-TA0182",
 		"expires_in": 3599,
-		"refresh_token": "1//0eTjvjuXHZwEDCgYIARAAGA4SNwF-L9IrCYJ8dFP7MN0XGrYF5C0pvatu2bxZvlvzDR9TbLbtH7gSyoW7QduL92g_FSpooYhCZSc",
-		"scope": "https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly openid https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/userinfo.email",
+		"scope": "openid https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/userinfo.email",
 		"token_type": "Bearer",
-		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6ImMzN2RhNzVjOWZiZTE4YzJjZTkxMjViOWFhMWYzMDBkY2IzMWU4ZDkiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTExMDM1Mzc5MTk5ODU2OTEzNzI1IiwiZW1haWwiOiJpMzE2NDAucnlvdGFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJ5TGVWT3N2WjBuck1yb2JZbGJwcmJnIiwiaWF0IjoxNzQ0OTM5NzI2LCJleHAiOjE3NDQ5NDMzMjZ9.DsskzDumkYrpElPIg6H9n8xNdbqGYTN2ZjAr1DlWTdEEbQMLbotFn6ZDTii6f9xpYtSQi_BLJ4hSnpxsqG-IDU7ngBCllkRvyqs2HFd9wJ8kDZQc7wMruYJOdpZKaYI5pQ41eHGJCErgrUnDZC0yxJh2GC9RVF9f5u-QCVvaqTqH2VOtQxz2H6VYtf_iNnb8jPVPUHq4ydhUIMeTQDdw6DTVyF8NFH7LAeaoVvXdW2VzCWJGsSamqDGMsSKhX1qTM5a8TyrqXMWUtm9jHayMFh0KLPdQf5bEyfsAoJsfNQZzRrdy9r2hYR7-8FHOLq5EpOoarB5elMdlYE3mK4-MJg"
-	},
-	"activeProjects": {
-		"/Users/miyagawaryouta": "refereestudy-5d9b4"
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjhlOGZjOGU1NTZmN2E3NmQwOGQzNTgyOWQ2ZjkwYWUyZTEyY2ZkMGQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTExMDM1Mzc5MTk5ODU2OTEzNzI1IiwiZW1haWwiOiJpMzE2NDAucnlvdGFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJlOXdUOGRVUEFCWVl0SUVrZjF4UXR3IiwiaWF0IjoxNzUxODg2NTM3LCJleHAiOjE3NTE4OTAxMzd9.czmn2oZv8ysTvtx50Zo9SkchNgmA2QygQAuQBhWjvy8Y-yj_I124v7TMbSuhOLXasM0NngDBOPLRHb8JQU3xil8w_ifOs538Zll6trq6FLf3v7c-LYEdH6gYT25bEdvmrUlIcQqI018hap4Iks9M-yUe0aqWRGIZ3HK7aj89tgtmoAy4_sfJ7U9jLo9h0T6v7RcKs66ipe5vkSlgRhCjqv5kTAOV_ooV998HXMqHxwdNgKpjGq_iwnpg1hW0F8gaYVuVpfTlVd-jzJKel5Z2JLrq4GMYhSZj47zOUioAEGNX5amXNYKP6FNmN5a0vU8tqmdxYYe6LXPHQnVaVJoMEA"
 	}
 }

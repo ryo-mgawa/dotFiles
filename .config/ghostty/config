@@ -18,3 +18,4 @@ window-decoration = true
 confirm-close-surface = false
 
 keybind = cmd+w=esc:.
+keybind = shift+enter=text:\n
