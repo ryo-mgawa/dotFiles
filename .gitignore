@@ -2,3 +2,8 @@ claude/projects/
 claude/statsig/
 claude/todos/
 
+.config/raycast/extensions/node_modules/
+.config/raycast/extensions/*/*.js
+.config/raycast/extensions/*/*.js.map
+.config/raycast/extensions/*/tools/*.js
+.config/raycast/extensions/*/tools/*.js.map
