@@ -27,6 +27,17 @@
     "deny": [
       "Bash(curl:*)",
       "Bash(rm*)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean -fd*)",
+      "Bash(git push --force*)",
+      "Bash(git push -f*)",
+      "Bash(git branch -D*)",
+      "Bash(git rebase -i*)",
+      "Bash(git filter-branch*)",
+      "Bash(git reflog expire*)",
+      "Bash(git gc --prune=now*)",
+      "Bash(git remote rm*)",
+      "Bash(git remote remove*)"
     ]
   },
   "env": {
