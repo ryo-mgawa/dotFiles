@@ -7,3 +7,5 @@ claude/todos/
 .config/raycast/extensions/*/*.js.map
 .config/raycast/extensions/*/tools/*.js
 .config/raycast/extensions/*/tools/*.js.map
+
+.config/pgcli/log
