@@ -22,7 +22,8 @@
       "Bash(find*)",
       "Bash(grep*)",
       "Bash(ps*)",
-      "Bash(df*)"
+      "Bash(df*)",
+      "Bash(sequential-thinking*)"
     ],
     "deny": [
       "Bash(curl:*)",
