@@ -3,7 +3,14 @@
     "allow": [
       "WebFetch(domain:www.anthropic.com)",
       "WebFetch(domain:docs.anthropic.com)",
-      "Bash(git clone:*)"
+      "Bash(git clone:*)",
+      "mcp__sequential-thinking__sequentialthinking_tools",
+      "mcp__sequential-thinking__WebSearch",
+      "Bash(node:*)",
+      "Bash(npm uninstall:*)",
+      "Bash(npx @modelcontextprotocol/create-server:*)",
+      "Bash(gh issue view:*)",
+      "Bash(find:*)"
     ],
     "deny": []
   }
