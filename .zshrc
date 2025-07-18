@@ -21,6 +21,15 @@ if [ -f '/Users/miyagawaryouta/Downloads/google-cloud-sdk/completion.zsh.inc' ];
 alias l='eza -a'
 alias lg='lazygit'
 alias aider='aider --no-auto-commits'
+# alias ccu='tmux new -s claude-co \
+#   \; split-window -h \
+#   \; split-window -v \
+#   \; select-pane -t 0 \
+#   \; split-window -v \; select-pane -t 0'
+# alias tcu='tmux send-keys -t 1 C-c && sleep 0.5 && tmux send-keys -t 1 "claude" C-m && tmux send-keys -t 2 C-c && sleep 0.5 && tmux send-keys -t 2 "claude" C-m && tmux send-keys -t 3 C-c && sleep 0.5 && tmux send-keys -t 3 "claude" C-m && claude'
+# alias tcd='tmux send-keys -t 3 C-c && sleep 0.3 && tmux send-keys -t 3 C-c && sleep 0.5 && tmux send-keys -t 3 "exit" C-m && tmux send-keys -t 2 C-c && sleep 0.3 && tmux send-keys -t 2 C-c && sleep 0.5 && tmux send-keys -t 2 "exit" C-m && tmux send-keys -t 1 C-c && sleep 0.3 && tmux send-keys -t 1 C-c && sleep 0.5 && tmux send-keys -t 1 "exit" C-m'
+alias ccusage='npx ccusage@latest'
+alias c='claude --mcp-config ~/.claude/mcp_settings.json'
 
 eval "$(nodenv init -)"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:$PATH"
