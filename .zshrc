@@ -30,6 +30,7 @@ alias aider='aider --no-auto-commits'
 # alias tcd='tmux send-keys -t 3 C-c && sleep 0.3 && tmux send-keys -t 3 C-c && sleep 0.5 && tmux send-keys -t 3 "exit" C-m && tmux send-keys -t 2 C-c && sleep 0.3 && tmux send-keys -t 2 C-c && sleep 0.5 && tmux send-keys -t 2 "exit" C-m && tmux send-keys -t 1 C-c && sleep 0.3 && tmux send-keys -t 1 C-c && sleep 0.5 && tmux send-keys -t 1 "exit" C-m'
 alias ccusage='npx ccusage@latest'
 alias c='claude --mcp-config ~/.claude/mcp_settings.json'
+alias cdang='claude --dangerously-skip-permissions --mcp-config ~/.claude/mcp_settings.json'
 
 eval "$(nodenv init -)"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:$PATH"
