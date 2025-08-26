@@ -6,7 +6,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -29,8 +28,20 @@ alias aider='aider --no-auto-commits'
 # alias tcu='tmux send-keys -t 1 C-c && sleep 0.5 && tmux send-keys -t 1 "claude" C-m && tmux send-keys -t 2 C-c && sleep 0.5 && tmux send-keys -t 2 "claude" C-m && tmux send-keys -t 3 C-c && sleep 0.5 && tmux send-keys -t 3 "claude" C-m && claude'
 # alias tcd='tmux send-keys -t 3 C-c && sleep 0.3 && tmux send-keys -t 3 C-c && sleep 0.5 && tmux send-keys -t 3 "exit" C-m && tmux send-keys -t 2 C-c && sleep 0.3 && tmux send-keys -t 2 C-c && sleep 0.5 && tmux send-keys -t 2 "exit" C-m && tmux send-keys -t 1 C-c && sleep 0.3 && tmux send-keys -t 1 C-c && sleep 0.5 && tmux send-keys -t 1 "exit" C-m'
 alias ccusage='npx ccusage@latest'
+totalUsage() {
+    local cost=$(npx ccusage@latest --json | jq -r '(.totals.totalCost * 100 | round) / 100 | tostring')
+    npx oh-my-logo "\$${cost}" fire --filled
+}
 alias c='claude --mcp-config ~/.claude/mcp_settings.json'
 alias cdang='claude --dangerously-skip-permissions --mcp-config ~/.claude/mcp_settings.json'
+# alias 'tmux loogia'='tmux a -t loogia-web'
+tmux() {
+    if [[ $# -eq 1 && $1 == "loogia" ]]; then
+        command tmux a -t loogia
+    else
+        command tmux "$@"
+    fi
+}
 
 eval "$(nodenv init -)"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:$PATH"
@@ -41,5 +52,21 @@ alias aider='aider --no-auto-commits'
 # ~/.zshrc あるいは ~/.bash_profile に追記
 export PATH="$(npm bin -g):$PATH"
 
-# 反映
-source ~/.zshrc        # または source ~/.bash_profile
+# Anaconda3 PATH設定
+# export PATH="/opt/homebrew/anaconda3/bin:$PATH"  # commented out by conda initialize
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
