@@ -20,8 +20,9 @@ require('lazy').setup {
     { import = 'plugins.themes.catppuccin' },
     { import = 'plugins.themes.transparent' },
     { import = 'plugins.lsp' },
+    { import = 'plugins.lsp.lua' },
     { import = 'plugins.autopairs' },
-    { import = 'plugins.avante' },
+    -- { import = 'plugins.avante' },
     { import = 'plugins.bufferline' },
     { import = 'plugins.colorful-winsep' },
     { import = 'plugins.comment' },
@@ -50,6 +51,7 @@ require('lazy').setup {
     { import = 'plugins.vim-tmux-navigator' },
     { import = 'plugins.multicursors' },
     { import = 'plugins.which-key' },
+    { import = 'plugins.claudecode' },
   },
   install = { colorscheme = { 'habamax' } },
   checker = { enabled = true },
@@ -74,6 +76,9 @@ keymap.set('n', 'sH', '<C-w>H')
 keymap.set('n', 'sK', '<C-w>K')
 keymap.set('n', 'sJ', '<C-w>J')
 keymap.set('n', 'sL', '<C-w>L')
+
+-- Copy relative path to clipboard
+keymap.set('n', 'cp', ":let @+ = expand('%:.')<CR>")
 
 vim.api.nvim_exec('set mouse=', true)
 vim.api.nvim_exec('syntax on', true)
