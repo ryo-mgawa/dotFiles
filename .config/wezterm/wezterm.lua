@@ -7,7 +7,7 @@ if wezterm.config_builder then
 end
 
 -- 外観・テーマ設定
-config.color_scheme = "Batman"
+config.color_scheme = "Flat (base16)"
 config.font = wezterm.font("MesloLGS NF", { weight = "Regular" })
 config.font_size = 12
 config.line_height = 0.9
@@ -22,6 +22,9 @@ config.inactive_pane_hsb = {
 	saturation = 0.9, -- 彩度を下げる
 	brightness = 0.4, -- 明度を下げる（暗くする）
 }
+
+-- リーダーキー設定 (ctrl + f)
+config.leader = { key = "f", mods = "CTRL", timeout_milliseconds = 1500 }
 
 -- キーバインド設定
 config.keys = {
@@ -63,25 +66,25 @@ config.keys = {
 		mods = "CMD",
 		action = wezterm.action.CloseCurrentPane({ confirm = true }),
 	},
-	-- cmd + 矢印 で分割した画面の移動
+	-- リーダーキー + h,j,k,l で分割した画面の移動 (Vimスタイル)
 	{
-		key = "LeftArrow",
-		mods = "CMD",
+		key = "h",
+		mods = "LEADER",
 		action = wezterm.action.ActivatePaneDirection("Left"),
 	},
 	{
-		key = "RightArrow",
-		mods = "CMD",
+		key = "l",
+		mods = "LEADER",
 		action = wezterm.action.ActivatePaneDirection("Right"),
 	},
 	{
-		key = "UpArrow",
-		mods = "CMD",
+		key = "k",
+		mods = "LEADER",
 		action = wezterm.action.ActivatePaneDirection("Up"),
 	},
 	{
-		key = "DownArrow",
-		mods = "CMD",
+		key = "j",
+		mods = "LEADER",
 		action = wezterm.action.ActivatePaneDirection("Down"),
 	},
 	-- cmd + 数字で特定のタブに移動
