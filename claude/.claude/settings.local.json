@@ -4,8 +4,10 @@
       "WebFetch(domain:docs.anthropic.com)",
       "mcp__sequential-thinking__mcp__basic-memory__search_notes",
       "mcp__sequential-thinking__sequentialthinking_tools",
-      "mcp__youtube-transcript__get_transcript"
+      "mcp__youtube-transcript__get_transcript",
+      "mcp__serena__activate_project"
     ],
     "deny": []
-  }
+  },
+  "outputStyle": "Tenryubito"
 }
