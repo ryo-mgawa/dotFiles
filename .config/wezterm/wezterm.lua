@@ -10,12 +10,53 @@ end
 local purple = "#bd93f9"
 local light_blue = "#6EADD8"
 local blue = "#004CE1"
-local light_green = "#7dcd5d"
 local orange = "#e19500"
 local red = "#E50000"
 local yellow = "#D7650C"
 local green = "#00FF00"
 local magenta = "#FF00FF"
+local black = "#000000"
+local white = "#FFFFFF"
+local grey = "#808080"
+local silver = "#C0C0C0"
+local teal = "#008080"
+local lime = "#00FF00"
+local aqua = "#00FFFF"
+local fuchsia = "#FF00FF"
+local dark_red = "#8B0000"
+local light_red = "#FF6B6B"
+local dark_green = "#006400"
+local light_green = "#90EE90"
+local dark_blue = "#00008B"
+local navy = "#000080"
+local royal_blue = "#4169E1"
+local sky_blue = "#87CEEB"
+local cyan = "#00FFFF"
+local dark_cyan = "#008B8B"
+local pink = "#FFC0CB"
+local hot_pink = "#FF69B4"
+local violet = "#8A2BE2"
+local indigo = "#4B0082"
+local maroon = "#800000"
+local brown = "#A52A2A"
+local tan = "#D2B48C"
+local beige = "#F5F5DC"
+local olive = "#808000"
+local gold = "#FFD700"
+local dark_orange = "#FF8C00"
+local coral = "#FF7F50"
+local salmon = "#FA8072"
+local crimson = "#DC143C"
+local forest_green = "#228B22"
+local sea_green = "#2E8B57"
+local mint_green = "#98FB98"
+local chartreuse = "#7FFF00"
+local slate_grey = "#708090"
+local dim_grey = "#696969"
+local light_grey = "#D3D3D3"
+local gainsboro = "#DCDCDC"
+local snow = "#FFFAFA"
+local ivory = "#FFFFF0"
 
 -- 外観・テーマ設定
 config.color_scheme = "Dracula"
@@ -33,24 +74,24 @@ config.colors = {
 	cursor_fg = blue,
 	cursor_border = purple,
 	ansi = {
-		"black",
+		black,
 		red,
 		green,
 		yellow,
 		light_blue,
 		magenta,
-		"teal",
-		"silver",
+		teal,
+		silver,
 	},
 	brights = {
-		"grey",
-		"red",
-		"lime",
-		"yellow",
+		grey,
+		red,
+		lime,
+		yellow,
 		blue,
-		"fuchsia",
-		"aqua",
-		"white",
+		fuchsia,
+		aqua,
+		white,
 	},
 }
 
