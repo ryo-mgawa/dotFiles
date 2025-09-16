@@ -68,6 +68,9 @@ else
     fi
 fi
 unset __conda_setup
-eval "$(starship init zsh)"
 # <<< conda initialize <<<
+
+# lazygit用の言語設定
+export LANG=ja_JP.UTF-8
+export LC_ALL=ja_JP.UTF-8
 
