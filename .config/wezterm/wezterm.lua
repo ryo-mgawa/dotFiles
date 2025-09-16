@@ -6,9 +6,19 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+-- 色定義
+local purple = "#bd93f9"
+local light_blue = "#6EADD8"
+local blue = "#004CE1"
+local light_green = "#7dcd5d"
+local orange = "#e19500"
+local red = "#E50000"
+local yellow = "#D7650C"
+local green = "#00FF00"
+
 -- 外観・テーマ設定
-config.color_scheme = "Flat (base16)"
-config.font = wezterm.font("MesloLGS NF", { weight = "Regular" })
+config.color_scheme = "Dracula"
+config.font = wezterm.font("Fira Code", { weight = "Regular" })
 config.font_size = 12
 config.line_height = 0.9
 config.window_background_opacity = 0.95
@@ -17,10 +27,47 @@ config.window_decorations = "RESIZE" -- TITLE | RESIZE | NONE から選択
 -- 設定ファイルの自動リロード
 config.automatically_reload_config = true
 
+-- 環境変数の設定（lazygit等を日本語化）
+config.set_environment_variables = {
+	LANG = "ja_JP.UTF-8",
+	LC_ALL = "ja_JP.UTF-8",
+	LC_CTYPE = "ja_JP.UTF-8",
+	LC_MESSAGES = "ja_JP.UTF-8",
+}
+
 -- アクティブ/非アクティブペインの視覚的区別
 config.inactive_pane_hsb = {
 	saturation = 0.9, -- 彩度を下げる
 	brightness = 0.4, -- 明度を下げる（暗くする）
+}
+
+-- カラー設定
+config.colors = {
+	split = purple,
+	selection_fg = red,
+	cursor_bg = orange,
+	cursor_fg = blue,
+	cursor_border = purple,
+	ansi = {
+		"black",
+		red,
+		green,
+		light_green,
+		light_blue,
+		yellow,
+		"teal",
+		"silver",
+	},
+	brights = {
+		"grey",
+		"red",
+		"lime",
+		"yellow",
+		blue,
+		"fuchsia",
+		"aqua",
+		"white",
+	},
 }
 
 -- リーダーキー設定 (ctrl + f)
