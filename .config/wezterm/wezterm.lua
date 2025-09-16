@@ -15,14 +15,44 @@ local orange = "#e19500"
 local red = "#E50000"
 local yellow = "#D7650C"
 local green = "#00FF00"
+local magenta = "#FF00FF"
 
 -- 外観・テーマ設定
 config.color_scheme = "Dracula"
 config.font = wezterm.font("Fira Code", { weight = "Regular" })
 config.font_size = 12
 config.line_height = 0.9
-config.window_background_opacity = 0.95
+config.window_background_opacity = 0.80
 config.window_decorations = "RESIZE" -- TITLE | RESIZE | NONE から選択
+
+-- カラー設定
+config.colors = {
+	split = purple,
+	selection_fg = red,
+	cursor_bg = orange,
+	cursor_fg = blue,
+	cursor_border = purple,
+	ansi = {
+		"black",
+		red,
+		green,
+		yellow,
+		light_blue,
+		magenta,
+		"teal",
+		"silver",
+	},
+	brights = {
+		"grey",
+		"red",
+		"lime",
+		"yellow",
+		blue,
+		"fuchsia",
+		"aqua",
+		"white",
+	},
+}
 
 -- 設定ファイルの自動リロード
 config.automatically_reload_config = true
@@ -39,35 +69,6 @@ config.set_environment_variables = {
 config.inactive_pane_hsb = {
 	saturation = 0.9, -- 彩度を下げる
 	brightness = 0.4, -- 明度を下げる（暗くする）
-}
-
--- カラー設定
-config.colors = {
-	split = purple,
-	selection_fg = red,
-	cursor_bg = orange,
-	cursor_fg = blue,
-	cursor_border = purple,
-	ansi = {
-		"black",
-		red,
-		green,
-		light_green,
-		light_blue,
-		yellow,
-		"teal",
-		"silver",
-	},
-	brights = {
-		"grey",
-		"red",
-		"lime",
-		"yellow",
-		blue,
-		"fuchsia",
-		"aqua",
-		"white",
-	},
 }
 
 -- リーダーキー設定 (ctrl + f)
