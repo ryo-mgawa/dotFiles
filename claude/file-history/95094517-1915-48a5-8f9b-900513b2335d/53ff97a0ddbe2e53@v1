@@ -1,0 +1,8 @@
+export const SHIPMENT_EVENT_TYPE = {
+  STORE: 'Store',
+  TRANSFER: 'Transfer',
+  DELIVER: 'Deliver',
+  CANCEL: 'Cancel',
+} as const;
+
+export type Type = typeof SHIPMENT_EVENT_TYPE[keyof typeof SHIPMENT_EVENT_TYPE];

@@ -1,0 +1,17 @@
+import { Router } from 'express';
+import { CompetitionsController } from '../controllers/CompetitionsController';
+import { GetCompetitionsByYearUseCase } from '../../application/usecases/competitions/GetCompetitionsByYearUseCase';
+import { competitionRepository } from '../../config/dependencies';
+
+const router = Router();
+
+const getCompetitionsByYearUseCase = new GetCompetitionsByYearUseCase(competitionRepository);
+const competitionsController = new CompetitionsController(getCompetitionsByYearUseCase);
+
+/**
+ * GET /api/competitions?year=2024
+ * 大会一覧を取得（年度フィルタオプション）
+ */
+router.get('/', (req, res, next) => competitionsController.getCompetitions(req, res, next));
+
+export default router;

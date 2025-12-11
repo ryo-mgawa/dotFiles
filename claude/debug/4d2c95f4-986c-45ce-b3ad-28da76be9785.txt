@@ -1,0 +1,178 @@
+[DEBUG] Executing hooks for SessionStart:clear
+[DEBUG] Getting matching hook commands for SessionStart with query: clear
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] FileHistory: Added snapshot for cd90bab7-9a68-4d65-9b48-2d0691bf62c1, tracking 0 files
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760506917835
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775558 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760506917835 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760506917877
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775557 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760506917877 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Executing hooks for UserPromptSubmit
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] FileHistory: Making snapshot for message 863b2db7-02f0-48a6-9197-036e1d4ad3f5
+[DEBUG] FileHistory: Added snapshot for 863b2db7-02f0-48a6-9197-036e1d4ad3f5, tracking 0 files
+[DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Executing hooks for PreToolUse:Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Bash tool invoked with command: gh pr view 2852 --json title,body,author,createdAt,headRefName,baseRefName
+[DEBUG] Bash tool description: PR#2852の基本情報を取得
+[DEBUG] Executing hooks for PostToolUse:Bash
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Executing hooks for PreToolUse:Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Bash tool invoked with command: gh pr diff 2852
+[DEBUG] Bash tool description: PR#2852の差分を取得
+[DEBUG] Executing hooks for PostToolUse:Bash
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[ERROR] MaxFileReadTokenExceededError: MaxFileReadTokenExceededError: File content (46033 tokens) exceeds maximum allowed tokens (25000). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.
+    at b7B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1674:1716)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.call (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1683:950)
+    at async NL (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1683:2330)
+    at async file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:3266:1322
+[ERROR] MaxFileReadTokenExceededError: MaxFileReadTokenExceededError: File content (68172 tokens) exceeds maximum allowed tokens (25000). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.
+    at b7B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1674:1716)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.call (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1683:950)
+    at async NL (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1683:2330)
+    at async file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:3266:1322
+[ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at hK (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2116:729)
+    at file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2116:457
+    at Array.map (<anonymous>)
+    at tF (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2116:448)
+    at UlB (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2116:12745)
+    at G$ (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:73:19415)
+    at Sa (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:42814)
+    at S9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:38355)
+    at Ym (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:38283)
+    at z$ (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:38137)
+[ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at hK (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2116:729)
+    at file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2116:457
+    at Array.map (<anonymous>)
+    at tF (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2116:448)
+    at UlB (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2116:12745)
+    at G$ (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:73:19415)
+    at Sa (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:42814)
+    at S9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:38355)
+    at Ym (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:38283)
+    at z$ (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:38137)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760506996124
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775557 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760506996124 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Executing hooks for Stop
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760506996150
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775557 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760506996150 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760506996175
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775660 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760506996175 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Notification with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760508099628
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775660 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760508099628 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760509899978
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775660 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760509899978 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760511699929
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775660 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760511699929 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760513499943
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775660 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760513499943 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760515299871
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775660 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760515299871 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.7286.1760517100012
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 775660 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.7286.1760517100012 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global, using native: false
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global, using native: false
+[DEBUG] Getting matching hook commands for SessionEnd with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)

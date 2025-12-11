@@ -1,0 +1,61 @@
+import {useAdminSingleUserFlagsQuery} from '@/hooks/useBaseQueries/flag/useAdminSingleUserFlagsQuery';
+import {useSaveAdminFlagsMutation} from '@/hooks/useBaseQueries/flag/useSaveAdminFlagsMutation';
+import {useSettingsToast} from '@/widgets/setting/hooks/useSettingsToast';
+import {useFlagSave} from '../useFlagSave';
+import {convertToAdminDriverSaveRequest} from './converters';
+import {flagsFormSchema} from './schema';
+import {useSettingForm} from '@/widgets/setting/hooks/useSettingForm';
+
+type UseAdminDriverFlagFormParams = {
+  userId: string;
+  organizationId: string;
+};
+
+/**
+ * Admin用ドライバーフラグフォームのカスタムフック
+ */
+export const useAdminDriverFlagForm = ({userId, organizationId}: UseAdminDriverFlagFormParams) => {
+  const {data: flagsData, isLoading: isFetching} = useAdminSingleUserFlagsQuery({
+    request: {userId, organizationId},
+    queryOptions: {refetchOnWindowFocus: false},
+  });
+
+  const {mutateAsync, isLoading: isMutationFetching, isSuccess, isError} = useSaveAdminFlagsMutation();
+
+  useSettingsToast(isMutationFetching, isSuccess, isError);
+
+  const {handleSave, seatLimitErrors, resetErrors} = useFlagSave({
+    schema: flagsFormSchema,
+    convertToRequest: valueMap => convertToAdminDriverSaveRequest(valueMap, userId),
+    mutateAsync,
+  });
+
+  const {
+    settingSections,
+    hasChanges,
+    hasErrors,
+    isLoading,
+    handleSave: handleFormSave,
+  } = useSettingForm({
+    flagDefines: flagsData?.flags.flagDefines ?? [],
+    flagStatuses: flagsData?.flags.flagStatuses ?? [],
+    flagPolicies: flagsData?.flags.flagPolicies ?? [],
+    onSave: handleSave,
+    isSaving: isMutationFetching,
+    settingType: 'driver',
+    userRole: 'admin',
+  });
+
+  return {
+    driverId: flagsData?.flags.driverId ?? '',
+    settingSections,
+    hasChanges,
+    hasErrors,
+    isLoading,
+    isFetching,
+    handleSave: handleFormSave,
+    seatLimitErrors,
+    flagDefines: flagsData?.flags.flagDefines ?? [],
+    resetErrors,
+  };
+};

@@ -1,0 +1,29 @@
+import { IActivityRepository } from '../../../domain/repositories/IActivityRepository';
+import { ActivityDto } from '../../dto/ActivityDto';
+import { Activity } from '../../../shared/types';
+
+const DAY_OF_WEEK_NAMES = ['日曜', '月曜', '火曜', '水曜', '木曜', '金曜', '土曜'];
+
+/**
+ * 活動情報一覧取得ユースケース
+ * requirements.md 2.1.4節を参照
+ */
+export class GetActivityListUseCase {
+  constructor(private readonly activityRepository: IActivityRepository) {}
+
+  async execute(): Promise<ActivityDto[]> {
+    const activities = await this.activityRepository.findAll();
+
+    return activities.map((activity) => this.toDto(activity));
+  }
+
+  private toDto(activity: Activity): ActivityDto {
+    return {
+      id: activity.id,
+      dayOfWeek: activity.dayOfWeek,
+      dayOfWeekName: DAY_OF_WEEK_NAMES[activity.dayOfWeek],
+      startTime: activity.startTime,
+      endTime: activity.endTime,
+    };
+  }
+}

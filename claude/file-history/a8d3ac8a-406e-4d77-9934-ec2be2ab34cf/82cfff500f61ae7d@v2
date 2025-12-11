@@ -1,0 +1,95 @@
+/**
+ * Slack共通ユーティリティ
+ * 複数のSlackアプリで共有される機能
+ */
+
+// 共通のSlack認証情報を取得
+export function getCommonSlackCredentials() {
+  const SLACK_BOT_TOKEN = Deno.env.get("SLACK_BOT_TOKEN");
+  const SLACK_SIGNING_SECRET = Deno.env.get("SLACK_SIGNING_SECRET");
+
+  if (!SLACK_BOT_TOKEN || !SLACK_SIGNING_SECRET) {
+    throw new Error("共通のSlack認証情報が設定されていません (SLACK_BOT_TOKEN, SLACK_SIGNING_SECRET)");
+  }
+
+  return {
+    SLACK_BOT_TOKEN,
+    SLACK_SIGNING_SECRET,
+  };
+}
+
+/**
+ * Slackからのリクエストの署名を検証
+ */
+export async function verifySlackSignature(
+  body: string,
+  timestamp: string,
+  signature: string,
+  signingSecret: string
+): Promise<boolean> {
+  // タイムスタンプチェック（リプレイアタック防止）
+  const currentTime = Math.floor(Date.now() / 1000);
+  if (Math.abs(currentTime - parseInt(timestamp)) > 60 * 5) {
+    return false;
+  }
+
+  // 署名の検証
+  const sigBasestring = `v0:${timestamp}:${body}`;
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(signingSecret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+
+  const signatureBuffer = await crypto.subtle.sign(
+    "HMAC",
+    key,
+    encoder.encode(sigBasestring)
+  );
+
+  const signatureArray = Array.from(new Uint8Array(signatureBuffer));
+  const signatureHex = signatureArray
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+  const mySignature = `v0=${signatureHex}`;
+
+  return mySignature === signature;
+}
+
+/**
+ * チャンネル制限のチェック
+ * 許可されたチャンネルでのみコマンドを実行可能にする
+ * @param channelId チェック対象のチャンネルID
+ * @param commandName コマンド名（エラーメッセージ用）
+ * @returns 許可されていない場合はエラーレスポンス、許可されている場合はnull
+ */
+export function checkChannelAndRespond(channelId: string, commandName: string): Response | null {
+  const allowedChannelIds = Deno.env.get("SLACK_ALLOWED_CHANNEL_IDS");
+
+  // 環境変数が設定されていない場合は制限なし
+  if (!allowedChannelIds) {
+    return null;
+  }
+
+  // カンマ区切りで分割して許可チャンネルリストを作成
+  const allowedChannels = allowedChannelIds.split(',').map(id => id.trim());
+
+  // チャンネルIDが許可リストに含まれているかチェック
+  if (!allowedChannels.includes(channelId)) {
+    return new Response(
+      JSON.stringify({
+        response_type: "ephemeral",
+        text: `❌ このチャンネルでは${commandName}コマンドを使用できません。`,
+      }),
+      {
+        headers: { "Content-Type": "application/json" },
+        status: 200,
+      }
+    );
+  }
+
+  return null;
+}

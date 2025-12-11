@@ -1,0 +1,33 @@
+import { Module } from '@nestjs/common';
+import { AddShipmentsUseCase } from '../../application/useCase/addShipmentsUseCase';
+import { GetShipmentsUseCase } from '../../application/useCase/getShipmentsUseCase';
+import { BaseShipmentModule } from '../baseModule';
+import { AddShipmentsController } from './controller/addShipmentsController';
+import { GetShipmentsController } from './controller/getShipmentsController';
+import { AddShipmentsPresenter } from './presenter/addShipmentsPresenter';
+import { GetShipmentsPresenter } from './presenter/getShipmentsPresenter';
+
+@Module({
+  imports: [BaseShipmentModule],
+  controllers: [
+    AddShipmentsController,
+    GetShipmentsController,
+  ],
+  providers: [
+    {
+      provide: 'AddShipmentsPresenter',
+      useClass: AddShipmentsPresenter,
+    },
+    {
+      provide: 'GetShipmentsPresenter',
+      useClass: GetShipmentsPresenter,
+    },
+    AddShipmentsUseCase,
+    GetShipmentsUseCase,
+  ],
+  exports: [
+    'AddShipmentsPresenter',
+    'GetShipmentsPresenter',
+  ],
+})
+export class PublicShipmentModule {}

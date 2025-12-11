@@ -1,0 +1,68 @@
+import { Logger } from '@app/logger';
+import { SHIPMENT_EVENT_TYPE } from '@app/rdb/db/models/shipmentEvent/type';
+import { SHIPMENT_STATUS, Status } from '@app/rdb/db/models/shipmentStatus/status';
+import { Inject, Injectable } from '@nestjs/common';
+import { ShipmentRepository } from '../../../data/repository/shipmentRepository';
+import { AddShipmentEventsPresenterInterface } from '../../../interface/presenter/addShipmentEventsPresenterInterface';
+import { ShipmentEventCreator } from '../../service/creator/shipmentEventCreator';
+import { Input } from './types';
+
+@Injectable()
+export class AddShipmentEventsUseCase {
+  constructor(
+    @Inject('AddShipmentEventsPresenter')
+    private readonly presenter: AddShipmentEventsPresenterInterface,
+    private readonly shipmentEventCreator: ShipmentEventCreator,
+    private readonly shipmentRepository: ShipmentRepository,
+  ) { }
+
+  public async execute(input: Input, userId: string): Promise<void> {
+    // デバッグ: ユースケース入力をログ出力
+    Logger.info('[DEBUG] AddShipmentEventsUseCase - execute開始', {
+      userId,
+      inputEventsCount: input.events.length,
+      inputEvents: JSON.stringify(input.events),
+    });
+
+    const eventsWithId = this.shipmentEventCreator.execute(input.events, userId);
+
+    // デバッグ: 生成されたイベントをログ出力
+    Logger.info('[DEBUG] AddShipmentEventsUseCase - イベント生成完了', {
+      eventsWithId: JSON.stringify(eventsWithId),
+    });
+
+    const statuses = input.events.map((event) => ({
+      shipmentId: event.shipmentId,
+      status: this.mapEventTypeToStatus(event.type),
+      executedAt: event.executedAt,
+    }));
+
+    // デバッグ: ステータスマッピングをログ出力
+    Logger.info('[DEBUG] AddShipmentEventsUseCase - ステータスマッピング完了', {
+      statuses: JSON.stringify(statuses),
+    });
+
+    await this.shipmentRepository.saveEvents(eventsWithId, statuses);
+
+    Logger.info('[DEBUG] AddShipmentEventsUseCase - saveEvents完了');
+
+    this.presenter.output();
+  }
+
+  private mapEventTypeToStatus(type: string): Status {
+    switch (type) {
+      case SHIPMENT_EVENT_TYPE.TO_READY:
+        return SHIPMENT_STATUS.READY;
+      case SHIPMENT_EVENT_TYPE.STORE:
+        return SHIPMENT_STATUS.IN_STORAGE;
+      case SHIPMENT_EVENT_TYPE.IN_TRANSIT:
+        return SHIPMENT_STATUS.IN_TRANSIT;
+      case SHIPMENT_EVENT_TYPE.COMPLETE:
+        return SHIPMENT_STATUS.COMPLETED;
+      case SHIPMENT_EVENT_TYPE.CANCEL:
+        return SHIPMENT_STATUS.CANCELED;
+      default:
+        throw new Error(`Unknown event type: ${type}`);
+    }
+  }
+}

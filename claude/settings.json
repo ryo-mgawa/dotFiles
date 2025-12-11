@@ -1,5 +1,14 @@
 {
   "env": {},
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
+  },
   "permissions": {
     "allow": [
       "Bash(npm run lint)",
@@ -65,5 +74,11 @@
   "feedbackSurveyState": {
     "lastShownTime": 1754018660214
   },
-  "$schema": "https://json.schemastore.org/claude-code-settings.json"
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/miyagawaryouta/dotFiles/claude/config/statusline.sh"
+  },
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "opus",
+  "alwaysThinkingEnabled": false
 }

@@ -1,0 +1,33 @@
+import { Injectable } from '@nestjs/common';
+import { v7 as uuidv7 } from 'uuid';
+import { ShipmentDAO } from '../dao/shipmentDAO';
+import { Shipment } from '../model/shipment';
+import { ShipmentRepositoryInput } from './types/shipmentRepositoryTypes';
+
+@Injectable()
+export class ShipmentRepository {
+  constructor(private readonly shipmentDAO: ShipmentDAO) { }
+
+  public async save(
+    organizationId: string,
+    shipments: ShipmentRepositoryInput[]
+  ): Promise<string[]> {
+    const shipmentsWithId = shipments.map((shipment) => ({
+      id: uuidv7(),
+      organizationId,
+      ...shipment,
+    }));
+
+    await this.shipmentDAO.save(shipmentsWithId);
+
+    return shipmentsWithId.map((shipment) => shipment.id);
+  }
+
+  public async getShipments(
+    organizationId: string,
+    limit: number,
+    offset: number
+  ): Promise<Shipment[]> {
+    return this.shipmentDAO.getShipments(organizationId, limit, offset);
+  }
+}

@@ -1,0 +1,75 @@
+import { Response, NextFunction } from 'express';
+import { JoinSessionUseCase } from '../usecases/JoinSessionUseCase.js';
+import { LeaveSessionUseCase } from '../usecases/LeaveSessionUseCase.js';
+import {
+  SessionRepository,
+  SiteRepository,
+} from '@/infrastructure/database/repositories/index.js';
+import type { AuthenticatedRequest } from '@/shared/types/index.js';
+import type { JoinSessionRequestDto, LeaveSessionRequestDto } from '../dto/SessionDto.js';
+
+const sessionRepository = new SessionRepository();
+const siteRepository = new SiteRepository();
+
+export class SessionController {
+  /**
+   * セッションに参加
+   * POST /api/sessions/join
+   */
+  async join(req: AuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
+    try {
+      if (!req.user) {
+        res.status(401).json({
+          success: false,
+          error: { code: 'UNAUTHORIZED', message: '認証が必要です' },
+        });
+        return;
+      }
+
+      const joinSessionUseCase = new JoinSessionUseCase(sessionRepository, siteRepository);
+      const input: JoinSessionRequestDto = req.body;
+      const result = await joinSessionUseCase.execute({
+        ...input,
+        companyId: req.user.companyId,
+        userId: req.user.id,
+      });
+
+      res.json({
+        success: true,
+        data: result,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  /**
+   * セッションから離脱
+   * POST /api/sessions/leave
+   */
+  async leave(req: AuthenticatedRequest, res: Response, next: NextFunction): Promise<void> {
+    try {
+      if (!req.user) {
+        res.status(401).json({
+          success: false,
+          error: { code: 'UNAUTHORIZED', message: '認証が必要です' },
+        });
+        return;
+      }
+
+      const leaveSessionUseCase = new LeaveSessionUseCase(sessionRepository);
+      const input: LeaveSessionRequestDto = req.body;
+      const result = await leaveSessionUseCase.execute({
+        ...input,
+        companyId: req.user.companyId,
+      });
+
+      res.json({
+        success: true,
+        data: result,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+}

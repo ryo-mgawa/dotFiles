@@ -1,0 +1,1146 @@
+2025-11-17T02:24:35.549Z [DEBUG] Watching for changes in setting files /Users/miyagawaryouta/.claude/settings.json...
+2025-11-17T02:24:35.608Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-11-17T02:24:35.609Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-11-17T02:24:35.609Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-11-17T02:24:35.609Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-11-17T02:24:35.609Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-11-17T02:24:35.631Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2025-11-17T02:24:35.633Z [DEBUG] Total LSP servers loaded: 0
+2025-11-17T02:24:35.639Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-11-17T02:24:35.639Z [DEBUG] LSP manager initialized with 0 servers
+2025-11-17T02:24:35.640Z [DEBUG] LSP server manager initialized successfully
+2025-11-17T02:24:35.640Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-11-17T02:24:35.646Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/miyagawaryouta/.claude/skills, project=/Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/.claude/skills
+2025-11-17T02:24:35.647Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-11-17T02:24:35.758Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+2025-11-17T02:24:35.758Z [DEBUG] Looking for shell config file: /Users/miyagawaryouta/.zshrc
+2025-11-17T02:24:35.758Z [DEBUG] Snapshots directory: /Users/miyagawaryouta/.claude/shell-snapshots
+2025-11-17T02:24:35.758Z [DEBUG] Creating snapshot at: /Users/miyagawaryouta/.claude/shell-snapshots/snapshot-zsh-1763346275758-yhgtq2.sh
+2025-11-17T02:24:35.758Z [DEBUG] Shell binary exists: true
+2025-11-17T02:24:35.758Z [DEBUG] Execution timeout: 10000ms
+2025-11-17T02:24:35.759Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763346275759
+2025-11-17T02:24:35.767Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-17T02:24:35.767Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763346275759 to /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json
+2025-11-17T02:24:35.767Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json written atomically
+2025-11-17T02:24:35.794Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2025-11-17T02:24:35.794Z [DEBUG] Total plugin skills loaded: 0
+2025-11-17T02:24:35.794Z [DEBUG] Total plugin commands loaded: 0
+2025-11-17T02:24:35.794Z [DEBUG] Registered 0 hooks from 0 plugins
+2025-11-17T02:24:35.795Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+2025-11-17T02:24:35.795Z [DEBUG] getSkillsIfEnabled returning: 0 skill dir commands, 0 plugin skills
+2025-11-17T02:24:35.946Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.29694.1763346275946
+2025-11-17T02:24:35.946Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:24:35.956Z [DEBUG] Temp file written successfully, size: 66377 bytes
+2025-11-17T02:24:35.956Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:24:35.956Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.29694.1763346275946 to /Users/miyagawaryouta/.claude.json
+2025-11-17T02:24:35.957Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-17T02:24:35.964Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2025-11-17T02:24:35.972Z [DEBUG] Total plugin agents loaded: 0
+2025-11-17T02:24:35.988Z [DEBUG] MCP server "sequential-thinking": Starting connection with timeout of 30000ms
+2025-11-17T02:24:35.992Z [DEBUG] MCP server "serena": Starting connection with timeout of 30000ms
+2025-11-17T02:24:35.994Z [DEBUG] MCP server "context7": Starting connection with timeout of 30000ms
+2025-11-17T02:24:35.998Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.29694.1763346275998
+2025-11-17T02:24:35.999Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:24:36.004Z [DEBUG] Temp file written successfully, size: 66377 bytes
+2025-11-17T02:24:36.004Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:24:36.004Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.29694.1763346275998 to /Users/miyagawaryouta/.claude.json
+2025-11-17T02:24:36.007Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-17T02:24:36.013Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2025-11-17T02:24:36.013Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:24:36.013Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2025-11-17T02:24:36.082Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276082
+2025-11-17T02:24:36.083Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:24:36.089Z [DEBUG] Temp file written successfully, size: 66272 bytes
+2025-11-17T02:24:36.089Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:24:36.089Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276082 to /Users/miyagawaryouta/.claude.json
+2025-11-17T02:24:36.091Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-17T02:24:36.105Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276105
+2025-11-17T02:24:36.105Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:24:36.126Z [DEBUG] Temp file written successfully, size: 66272 bytes
+2025-11-17T02:24:36.126Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:24:36.126Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276105 to /Users/miyagawaryouta/.claude.json
+2025-11-17T02:24:36.127Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-17T02:24:36.131Z [DEBUG] performStartupChecks called
+2025-11-17T02:24:36.131Z [DEBUG] Starting background plugin installations
+2025-11-17T02:24:36.131Z [DEBUG] performBackgroundPluginInstallations called
+2025-11-17T02:24:36.145Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2025-11-17T02:24:36.147Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2025-11-17T02:24:36.150Z [DEBUG] MCP server "sequential-thinking": Successfully connected to stdio server in 172ms
+2025-11-17T02:24:36.150Z [DEBUG] MCP server "sequential-thinking": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"serverVersion":{"name":"mcp-sequentialthinking-tools","version":"0.0.5"}}
+2025-11-17T02:24:36.174Z [DEBUG] Summarizing all 525 messages (~121819 tokens)
+2025-11-17T02:24:36.207Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at RT (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:62:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:67:9854)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at rZA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:69:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async de2 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:3857:34116)
+2025-11-17T02:24:36.212Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276212
+2025-11-17T02:24:36.212Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:24:36.216Z [DEBUG] Temp file written successfully, size: 66272 bytes
+2025-11-17T02:24:36.216Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:24:36.217Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276212 to /Users/miyagawaryouta/.claude.json
+2025-11-17T02:24:36.217Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-17T02:24:36.221Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276221
+2025-11-17T02:24:36.222Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:24:36.226Z [DEBUG] Temp file written successfully, size: 66272 bytes
+2025-11-17T02:24:36.226Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:24:36.227Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276221 to /Users/miyagawaryouta/.claude.json
+2025-11-17T02:24:36.227Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-17T02:24:36.240Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276240
+2025-11-17T02:24:36.241Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:24:36.251Z [DEBUG] Temp file written successfully, size: 66377 bytes
+2025-11-17T02:24:36.252Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:24:36.252Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276240 to /Users/miyagawaryouta/.claude.json
+2025-11-17T02:24:36.253Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-17T02:24:36.290Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276290
+2025-11-17T02:24:36.290Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:24:36.294Z [DEBUG] Temp file written successfully, size: 66377 bytes
+2025-11-17T02:24:36.294Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:24:36.294Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.29694.1763346276290 to /Users/miyagawaryouta/.claude.json
+2025-11-17T02:24:36.295Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-17T02:24:36.295Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-17T02:24:36.720Z [DEBUG] Shell snapshot created successfully (96429 bytes)
+2025-11-17T02:24:37.536Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.29694.1763346277536
+2025-11-17T02:24:37.536Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:24:37.541Z [DEBUG] Temp file written successfully, size: 66377 bytes
+2025-11-17T02:24:37.541Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:24:37.541Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.29694.1763346277536 to /Users/miyagawaryouta/.claude.json
+2025-11-17T02:24:37.542Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-17T02:24:37.785Z [ERROR] MCP server "context7" Server stderr: npm warn exec The following package was not found and will be installed: @upstash/context7-mcp@1.0.27
+2025-11-17T02:24:37.979Z [ERROR] MCP server "serena" Server stderr: Updating https://github.com/oraios/serena (HEAD)
+2025-11-17T02:24:38.100Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:24:38.446Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:24:38.880Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:24:38.947Z [ERROR] MCP server "context7" Server stderr: Context7 Documentation MCP Server running on stdio
+2025-11-17T02:24:38.949Z [DEBUG] MCP server "context7": Successfully connected to stdio server in 2955ms
+2025-11-17T02:24:38.949Z [DEBUG] MCP server "context7": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"serverVersion":{"name":"Context7","version":"1.0.27"}}
+2025-11-17T02:24:39.250Z [DEBUG] Summarizing all 229 messages (~67784 tokens)
+2025-11-17T02:24:39.733Z [ERROR] MCP server "serena" Server stderr: Updated https://github.com/oraios/serena (568ee77e42655f049fedca123591459b84fcc9df)
+2025-11-17T02:24:39.733Z [ERROR] MCP server "serena" Server stderr: Building serena-agent @ git+https://github.com/oraios/serena@568ee77e42655f049fedca123591459b84fcc9df
+2025-11-17T02:24:40.137Z [ERROR] MCP server "serena" Server stderr: Built serena-agent @ git+https://github.com/oraios/serena@568ee77e42655f049fedca123591459b84fcc9df
+2025-11-17T02:24:40.222Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:24:40.328Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-17T02:24:40.336Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:24:40.336Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T02:24:40.437Z [ERROR] MCP server "serena" Server stderr: Installed 58 packages in 283ms
+2025-11-17T02:24:40.534Z [DEBUG] Summarizing all 320 messages (~136167 tokens)
+2025-11-17T02:24:41.478Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:24:41.628Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-17T02:24:41.628Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:24:41.628Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T02:24:41.716Z [DEBUG] Summarizing all 100 messages (~22716 tokens)
+2025-11-17T02:24:42.802Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:42,802 [MainThread] serena.cli:start_mcp_server:172 - Initializing Serena MCP server
+2025-11-17T02:24:42.803Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:42,802 [MainThread] serena.cli:start_mcp_server:173 - Storing logs in /Users/miyagawaryouta/.serena/logs/2025-11-17/mcp_20251117-112442.txt
+2025-11-17T02:24:42.803Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:42,803 [MainThread] serena.config.serena_config:from_config_file:458 - Loading Serena configuration from /Users/miyagawaryouta/.serena/serena_config.yml
+2025-11-17T02:24:42.806Z [ERROR] MCP server "serena" Server stderr: WARNING 2025-11-17 11:24:42,806 [MainThread] serena.config.serena_config:from_config_file:477 - Project path /Users/miyagawaryouta/Documents/GitHub/finn-portal does not exist or does not contain a project configuration file, skipping.
+2025-11-17T02:24:42.813Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:42,813 [MainThread] serena.agent:__init__:130 - Will record tool usage statistics with token count estimator: TIKTOKEN_GPT4O.
+2025-11-17T02:24:42.958Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:42,958 [MainThread] serena.analytics:__init__:39 - Loading tiktoken encoding for model gpt-4o, this may take a while on the first run.
+2025-11-17T02:24:45.000Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:24:45.416Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,415 [MainThread] serena.agent:__init__:134 - Starting Serena server (version=0.1.4-6e33992f, process id=30100, parent process id=29885)
+2025-11-17T02:24:45.416Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,416 [MainThread] serena.agent:__init__:135 - Configuration file: /Users/miyagawaryouta/.serena/serena_config.yml
+INFO  2025-11-17 11:24:45,416 [MainThread] serena.agent:__init__:136 - Available projects: claude, loogia-operation-web, timeTracker
+INFO  2025-11-17 11:24:45,416 [MainThread] serena.agent:__init__:137 - Loaded tools (38): read_file, create_text_file, list_dir, find_file, replace_regex, delete_lines, replace_lines, insert_at_line, search_for_pattern, restart_language_server, get_symbols_overview, find_symbol, find_referencing_symbols, replace_symbol_body, insert_after_symbol, insert_before_symbol, rename_symbol, write_memory, read_memory, list_memories, delete_memory, edit_memory, execute_shell_command, activate_project, remove_project, switch_modes, get_current_config, check_onboarding_performed, onboarding, think_about_collected_information, think_about_task_adherence, think_about_whether_you_are_done, summarize_changes, prepare_for_new_conversation, initial_instructions, jet_brains_find_symbol, jet_brains_find_referencing_symbols, jet_brains_get_symbols_overview
+2025-11-17T02:24:45.416Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,416 [MainThread] serena.config.serena_config:start:360 - Loading project instance for RegisteredProject[project_root=/Users/miyagawaryouta/Documents/GitHub/loogia-operation-web, project_config=ProjectConfig[project_name=loogia-operation-web]] starting ...
+2025-11-17T02:24:45.417Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,416 [MainThread] serena.util.file_system:start:360 - Loading of .gitignore files starting ...
+INFO  2025-11-17 11:24:45,416 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/.gitignore
+2025-11-17T02:24:45.417Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,417 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/.serena/.gitignore
+2025-11-17T02:24:45.418Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,418 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/.gitignore
+2025-11-17T02:24:45.419Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,419 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/bruno/.gitignore
+2025-11-17T02:24:45.419Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,419 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/.github/.gitignore
+2025-11-17T02:24:45.419Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,419 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/e2e/.gitignore
+2025-11-17T02:24:45.420Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,419 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/front/.gitignore
+2025-11-17T02:24:45.420Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,420 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/.gitignore
+2025-11-17T02:24:45.422Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,422 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/.gitignore
+2025-11-17T02:24:45.423Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,423 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/containers/firebase/.gitignore
+2025-11-17T02:24:45.427Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,427 [MainThread] serena.util.file_system:_load_gitignore_files:148 - Processing .gitignore file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/.gitignore
+2025-11-17T02:24:45.503Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,503 [MainThread] serena.util.file_system:stop:367 - Loading of .gitignore files completed in 0.087 seconds
+2025-11-17T02:24:45.504Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,504 [MainThread] serena.config.serena_config:stop:367 - Loading project instance for RegisteredProject[project_root=/Users/miyagawaryouta/Documents/GitHub/loogia-operation-web, project_config=ProjectConfig[project_name=loogia-operation-web]] completed in 0.087 seconds
+2025-11-17T02:24:45.504Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,504 [MainThread] serena.agent:load_project_from_path_or_name:446 - Found registered project 'loogia-operation-web' at path /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web
+INFO  2025-11-17 11:24:45,504 [MainThread] serena.config.serena_config:apply:112 - SerenaAgentContext[name='ide-assistant'] excluded 5 tools: create_text_file, read_file, execute_shell_command, prepare_for_new_conversation, replace_regex
+INFO  2025-11-17 11:24:45,504 [MainThread] serena.config.serena_config:apply:112 - ToolInclusionDefinition(excluded_tools=['activate_project', 'get_current_config'], included_optional_tools=()) excluded 2 tools: activate_project, get_current_config
+2025-11-17T02:24:45.504Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,504 [MainThread] serena.agent:__init__:151 - Number of exposed tools: 21
+2025-11-17T02:24:45.511Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,511 [MainThread] serena.agent:_update_active_tools:382 - Active tools (21): check_onboarding_performed, delete_memory, edit_memory, find_file, find_referencing_symbols, find_symbol, get_symbols_overview, initial_instructions, insert_after_symbol, insert_before_symbol, list_dir, list_memories, onboarding, read_memory, rename_symbol, replace_symbol_body, search_for_pattern, think_about_collected_information, think_about_task_adherence, think_about_whether_you_are_done, write_memory
+2025-11-17T02:24:45.511Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,511 [MainThread] serena.agent:load_project_from_path_or_name:446 - Found registered project 'loogia-operation-web' at path /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web
+INFO  2025-11-17 11:24:45,511 [MainThread] serena.agent:_activate_project:419 - Activating loogia-operation-web at /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web
+2025-11-17T02:24:45.511Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,511 [MainThread] serena.agent:_update_active_tools:382 - Active tools (21): check_onboarding_performed, delete_memory, edit_memory, find_file, find_referencing_symbols, find_symbol, get_symbols_overview, initial_instructions, insert_after_symbol, insert_before_symbol, list_dir, list_memories, onboarding, read_memory, rename_symbol, replace_symbol_body, search_for_pattern, think_about_collected_information, think_about_task_adherence, think_about_whether_you_are_done, write_memory
+INFO  2025-11-17 11:24:45,511 [MainThread] serena.task_executor:issue_task:192 - Scheduling Task-1:init_language_server_manager
+2025-11-17T02:24:45.514Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,514 [MainThread] serena.agent:__init__:184 - Serena web dashboard started at http://127.0.0.1:24283/dashboard/index.html
+2025-11-17T02:24:45.607Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,607 [SerenaAgentTaskExecutor] serena.task_executor:_process_task_queue:123 - Starting execution of Task-1:init_language_server_manager
+2025-11-17T02:24:45.607Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,607 [Task-1:init_language_server_manager] serena.task_executor:start:360 - Task-1:init_language_server_manager starting ...
+INFO  2025-11-17 11:24:45,607 [Task-1:init_language_server_manager] serena.agent:start:360 - Language server initialization starting ...
+INFO  2025-11-17 11:24:45,607 [Task-1:init_language_server_manager] serena.project:create_language_server_manager:384 - Creating language server manager for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web
+2025-11-17T02:24:45.608Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,607 [StartLS:typescript] sensai.util.logging:start:360 - Language server startup (language=typescript) starting ...
+INFO  2025-11-17 11:24:45,608 [StartLS:typescript] serena.ls_manager:create_language_server:44 - Creating language server instance for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web, language=typescript.
+2025-11-17T02:24:45.685Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:45,685 [StartLS:typescript] solidlsp:load_cache:1597 - Loading document symbols cache from /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/.serena/cache/typescript/document_symbols_cache_v23-06-25.pkl
+2025-11-17T02:24:46.153Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:46,153 [StartLS:typescript] solidlsp:load_cache:1601 - Loaded 2759 document symbols from cache.
+2025-11-17T02:24:46.154Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:46,154 [StartLS:typescript] solidlsp:start:1689 - Starting language server with language typescript for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web
+2025-11-17T02:24:46.154Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:46,154 [StartLS:typescript] solidlsp:_start_server:224 - Starting TypeScript server process
+INFO  2025-11-17 11:24:46,154 [StartLS:typescript] solidlsp.ls_handler:start:193 - Starting language server process via command: ['/Users/miyagawaryouta/.serena/language_servers/static/TypeScriptLanguageServer/ts-lsp/node_modules/.bin/typescript-language-server', '--stdio']
+2025-11-17T02:24:46.181Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:46,175 [StartLS:typescript] solidlsp:_start_server:228 - Sending initialize request from LSP client to LSP server and awaiting response
+2025-11-17T02:24:46.284Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:46,284 [LSP-stdout-reader:typescript] solidlsp:window_log_message:207 - LSP: window/logMessage: {"type": 3, "message": "Using Typescript version (bundled) 5.5.4 from path "/Users/miyagawaryouta/.serena/language_servers/static/TypeScriptLanguageServer/ts-lsp/node_modules/typescript/lib/tsserver.js""}
+2025-11-17T02:24:46.303Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:46,303 [MainThread] serena.agent:create_system_prompt:349 - Generating system prompt with available_tools=(see exposed tools), available_markers={'ToolMarkerDoesNotRequireActiveProject', 'FindReferencingSymbolsTool', 'ReplaceSymbolBodyTool', 'ToolMarkerCanEdit', 'InitialInstructionsTool', 'ToolMarkerSymbolicRead', 'ToolMarkerSymbolicEdit', 'GetSymbolsOverviewTool', 'InsertBeforeSymbolTool', 'InsertAfterSymbolTool', 'RenameSymbolTool', 'FindSymbolTool'}
+2025-11-17T02:24:46.306Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:46,306 [MainThread] serena.agent:create_system_prompt:361 - System prompt:
+You are a professional coding agent concerned with one particular codebase. You have 
+access to semantic coding tools on which you rely heavily for all your work, as well as collection of memory 
+files containing general information about the codebase. You operate in a resource-efficient and intelligent manner, always
+keeping in mind to not read or generate content that is not needed for the task at hand.
+
+When reading code in order to answer a user question or task, you should try reading only the necessary code. 
+Some tasks may require you to understand the architecture of large parts of the codebase, while for others,
+it may be enough to read a small set of symbols or a single file.
+Generally, you should avoid reading entire files unless it is absolutely necessary, instead relying on
+intelligent step-by-step acquisition of information. However, if you already read a file, it does not make
+sense to further analyse it with the symbolic tools (except for the `find_referencing_symbols` tool), 
+as you already have the information.
+
+I WILL BE SERIOUSLY UPSET IF YOU READ ENTIRE FILES WITHOUT NEED!
+
+CONSIDER INSTEAD USING THE OVERVIEW TOOL AND SYMBOLIC TOOLS TO READ ONLY THE NECESSARY CODE FIRST!
+I WILL BE EVEN MORE UPSET IF AFTER HAVING READ AN ENTIRE FILE YOU KEEP READING THE SAME CONTENT WITH THE SYMBOLIC TOOLS!
+THE PURPOSE OF THE SYMBOLIC TOOLS IS TO HAVE TO READ LESS CODE, NOT READ THE SAME CONTENT MULTIPLE TIMES!
+
+
+You can achieve the intelligent reading of code by using the symbolic tools for getting an overview of symbols and
+the relations between them, and then only reading the bodies of symbols that are necessary to answer the question 
+or complete the task. 
+You can use the standard tools like list_dir, find_file and search_for_pattern if you need to.
+When tools allow it, you pass the `relative_path` parameter to restrict the search to a specific file or directory.
+For some tools, `relative_path` can only be a file path, so make sure to properly read the tool descriptions.
+
+If you are unsure about a symbol's name or location (to the extent that substring_matching for the symbol name is not enough), you can use the `search_for_pattern` tool, which allows fast
+and flexible search for patterns in the codebase.This way you can first find candidates for symbols or files,
+and then proceed with the symbolic tools.
+
+
+
+Symbols are identified by their `name_path and `relative_path`, see the description of the `find_symbol` tool for more details
+on how the `name_path` matches symbols.
+You can get information about available symbols by using the `get_symbols_overview` tool for finding top-level symbols in a file,
+or by using `find_symbol` if you already know the symbol's name path. You generally try to read as little code as possible
+while still solving your task, meaning you only read the bodies when you need to, and after you have found the symbol you want to edit.
+For example, if you are working with python code and already know that you need to read the body of the constructor of the class Foo, you can directly
+use `find_symbol` with the name path `Foo/__init__` and `include_body=True`. If you don't know yet which methods in `Foo` you need to read or edit,
+you can use `find_symbol` with the name path `Foo`, `include_body=False` and `depth=1` to get all (top-level) methods of `Foo` before proceeding
+to read the desired methods with `include_body=True`
+You can understand relationships between symbols by using the `find_referencing_symbols` tool.
+
+
+
+You generally have access to memories and it may be useful for you to read them, but also only if they help you
+to answer the question or complete the task. You can infer which memories are relevant to the current task by reading
+the memory names and descriptions.
+
+
+The context and modes of operation are described below. From them you can infer how to interact with your user
+and which tasks and kinds of interactions are expected of you.
+
+Context description:
+You are running in IDE assistant context where file operations, basic (line-based) edits and reads, 
+and shell commands are handled by your own, internal tools.
+The initial instructions and the current config inform you on which tools are available to you,
+and how to use them.
+Don't attempt to use any excluded tools, instead rely on your own internal tools
+for achieving the basic file or shell operations.
+
+If serena's tools can be used for achieving your task, 
+you should prioritize them. In particular, it is important that you avoid reading entire source code files,
+unless it is strictly necessary! Instead, for exploring and reading code in a token-efficient manner, 
+you should use serena's overview and symbolic search tools. 
+Before reading a full file, it is usually best to first explore the file using the symbol_overview tool, 
+and then make targeted reads using find_symbol and other symbolic tools.
+For non-code files or for reads where you don't know the symbol's name path, you can use the pattern searching tool,
+and read full files only as a last resort.
+
+Modes descriptions:
+
+- You are operating in interactive mode. You should engage with the user throughout the task, asking for clarification
+whenever anything is unclear, insufficiently specified, or ambiguous.
+
+Break down complex tasks into smaller steps and explain your thinking at each stage. When you're uncertain about
+a decision, present options to the user and ask for guidance rather than making assumptions.
+
+Focus on providing informative results for intermediate steps so the user can follow along with your progress and
+provide feedback as needed.
+
+- You are operating in editing mode. You can edit files with the provided tools
+to implement the requested changes to the code base while adhering to the project's code style and patterns.
+Use symbolic editing tools whenever possible for precise code modifications.
+If no editing task has yet been provided, wait for the user to provide one.
+
+When writing new code, think about where it belongs best. Don't generate new files if you don't plan on actually
+integrating them into the codebase, instead use the editing tools to insert the code directly into the existing files in that case.
+
+You have two main approaches for editing code - editing by regex and editing by symbol.
+The symbol-based approach is appropriate if you need to adjust an entire symbol, e.g. a method, a class, a function, etc.
+But it is not appropriate if you need to adjust just a few lines of code within a symbol, for that you should
+use the regex-based approach that is described below.
+
+Let us first discuss the symbol-based approach.
+Symbols are identified by their name path and relative file path, see the description of the `find_symbol` tool for more details
+on how the `name_path` matches symbols.
+You can get information about available symbols by using the `get_symbols_overview` tool for finding top-level symbols in a file,
+or by using `find_symbol` if you already know the symbol's name path. You generally try to read as little code as possible
+while still solving your task, meaning you only read the bodies when you need to, and after you have found the symbol you want to edit.
+Before calling symbolic reading tools, you should have a basic understanding of the repository structure that you can get from memories
+or by using the `list_dir` and `find_file` tools (or similar).
+For example, if you are working with python code and already know that you need to read the body of the constructor of the class Foo, you can directly
+use `find_symbol` with the name path `Foo/__init__` and `include_body=True`. If you don't know yet which methods in `Foo` you need to read or edit,
+you can use `find_symbol` with the name path `Foo`, `include_body=False` and `depth=1` to get all (top-level) methods of `Foo` before proceeding
+to read the desired methods with `include_body=True`.
+In particular, keep in mind the description of the `replace_symbol_body` tool. If you want to add some new code at the end of the file, you should
+use the `insert_after_symbol` tool with the last top-level symbol in
+2025-11-17T02:24:46.306Z [ERROR] MCP server "serena" Server stderr: the file. If you want to add an import, often a good strategy is to use
+`insert_before_symbol` with the first top-level symbol in the file.
+You can understand relationships between symbols by using the `find_referencing_symbols` tool. If not explicitly requested otherwise by a user,
+you make sure that when you edit a symbol, it is either done in a backward-compatible way, or you find and adjust the references as needed.
+The `find_referencing_symbols` tool will give you code snippets around the references, as well as symbolic information.
+You will generally be able to use the info from the snippets and the regex-based approach to adjust the references as well.
+You can assume that all symbol editing tools are reliable, so you don't need to verify the results if the tool returns without error.
+
+
+
+
+You have hereby read the 'Serena Instructions Manual' and do not need to read it again.
+
+The project with name 'loogia-operation-web' at /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web is activated.
+Programming languages: typescript; file encoding: utf-8
+2025-11-17T02:24:46.308Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:46,308 [MainThread] serena.cli:start_mcp_server:191 - Starting MCP server …
+2025-11-17T02:24:47.448Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:47,415 [StartLS:typescript] solidlsp:_start_server:246 - Timeout waiting for TypeScript server to become ready, proceeding anyway
+INFO  2025-11-17 11:24:47,422 [StartLS:typescript] sensai.util.logging:stop:367 - Language server startup (language=typescript) completed in 1.813 seconds
+2025-11-17T02:24:47.453Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:47,433 [MainThread] serena.mcp:_set_mcp_tools:240 - Starting MCP server with 21 tools: ['list_dir', 'find_file', 'search_for_pattern', 'get_symbols_overview', 'find_symbol', 'find_referencing_symbols', 'replace_symbol_body', 'insert_after_symbol', 'insert_before_symbol', 'rename_symbol', 'write_memory', 'read_memory', 'list_memories', 'delete_memory', 'edit_memory', 'check_onboarding_performed', 'onboarding', 'think_about_collected_information', 'think_about_task_adherence', 'think_about_whether_you_are_done', 'initial_instructions']
+INFO  2025-11-17 11:24:47,434 [Task-1:init_language_server_manager] serena.agent:stop:367 - Language server initialization completed in 1.827 seconds
+INFO  2025-11-17 11:24:47,434 [MainThread] serena.mcp:server_lifespan:347 - MCP server lifetime setup complete
+INFO  2025-11-17 11:24:47,435 [Task-1:init_language_server_manager] serena.task_executor:stop:367 - Task-1:init_language_server_manager completed in 1.828 seconds
+2025-11-17T02:24:47.465Z [DEBUG] MCP server "serena": Successfully connected to stdio server in 11476ms
+2025-11-17T02:24:47.467Z [DEBUG] MCP server "serena": Connection established with capabilities: {"hasTools":true,"hasPrompts":true,"hasResources":true,"serverVersion":{"name":"FastMCP","version":"1.12.3"}}
+2025-11-17T02:24:47.486Z [ERROR] MCP server "serena" Server stderr: INFO  2025-11-17 11:24:47,470 [MainThread] mcp.server.lowlevel.server:_handle_request:625 - Processing request of type ListToolsRequest
+INFO  2025-11-17 11:24:47,475 [MainThread] mcp.server.lowlevel.server:_handle_request:625 - Processing request of type ListPromptsRequest
+INFO  2025-11-17 11:24:47,478 [MainThread] mcp.server.lowlevel.server:_handle_request:625 - Processing request of type ListResourcesRequest
+2025-11-17T02:24:48.370Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:24:48.370Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:25:04.933Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:25:04.933Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:25:04.940Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:25:04.940Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:25:04.940Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:25:04.941Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:25:05.007Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-17T02:25:05.007Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:05.007Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T02:25:05.009Z [DEBUG] FileHistory: Added snapshot for 1aa03737-7d0a-4348-ba56-c40144c89a65, tracking 0 files
+2025-11-17T02:25:05.047Z [DEBUG] Total plugin output styles loaded: 0
+2025-11-17T02:25:05.051Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:25:05.051Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:25:05.836Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:25:07.525Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:25:15.960Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:25:15.961Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:25:15.963Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:25:15.963Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:25:15.963Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:25:15.963Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:25:15.970Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:25:15.970Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:25:18.365Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:25:20.399Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-17T02:25:20.403Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-17T02:25:20.406Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-17T02:25:20.406Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:20.406Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-17T02:25:20.406Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-17T02:25:20.406Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:20.406Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-17T02:25:20.428Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.29694.1763346320428
+2025-11-17T02:25:20.428Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:25:20.434Z [DEBUG] Temp file written successfully, size: 66410 bytes
+2025-11-17T02:25:20.434Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:25:20.434Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.29694.1763346320428 to /Users/miyagawaryouta/.claude.json
+2025-11-17T02:25:20.434Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-17T02:25:21.728Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-17T02:25:21.729Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:21.729Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-17T02:25:21.739Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-17T02:25:21.739Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:21.740Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-17T02:25:21.755Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:25:21.755Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:25:21.756Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:25:21.756Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:25:21.756Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:25:21.756Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:25:21.763Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:25:21.763Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:25:25.411Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:25:28.273Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:25:28.277Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:25:28.279Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:25:28.282Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:25:28.282Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:28.282Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:25:28.282Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:25:28.282Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:28.282Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:25:28.282Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:25:28.282Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:28.282Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:25:28.317Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:25:28.317Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:28.317Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:25:28.318Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:25:28.318Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:28.318Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:25:28.318Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:25:28.318Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:28.318Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:25:28.346Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:25:28.346Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:25:28.348Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:25:28.348Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:25:28.348Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:25:28.348Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:25:28.364Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:25:28.364Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:25:31.200Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:25:40.340Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-17T02:25:40.344Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-17T02:25:40.344Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:40.344Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-17T02:25:40.418Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-17T02:25:40.418Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:40.418Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-17T02:25:40.432Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:25:40.432Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:25:40.435Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:25:40.435Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:25:40.435Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:25:40.435Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:25:40.445Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:25:40.446Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:25:42.928Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:25:44.219Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-17T02:25:44.221Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-17T02:25:44.221Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:44.221Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-17T02:25:44.633Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-17T02:25:44.633Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:44.634Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-17T02:25:44.646Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:25:44.646Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:25:44.648Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:25:44.648Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:25:44.648Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:25:44.648Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:25:44.658Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:25:44.658Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:25:46.467Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:25:47.718Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:25:47.720Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:25:47.720Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:47.720Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:25:47.735Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:25:47.735Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:25:47.735Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:25:47.749Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:25:47.749Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:25:47.750Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:25:47.750Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:25:47.750Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:25:47.750Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:25:47.761Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:25:47.761Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:25:49.717Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:26:01.431Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:26:01.435Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:26:01.435Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:01.435Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:01.452Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/shipmentConverter.ts
+2025-11-17T02:26:01.455Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/shipmentConverter.ts.tmp.29694.1763346361455
+2025-11-17T02:26:01.455Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:26:01.459Z [DEBUG] Temp file written successfully, size: 759 bytes
+2025-11-17T02:26:01.460Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:26:01.460Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/shipmentConverter.ts.tmp.29694.1763346361455 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/shipmentConverter.ts
+2025-11-17T02:26:01.460Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/shipmentConverter.ts written atomically
+2025-11-17T02:26:01.465Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:26:01.465Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:01.465Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:01.486Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:26:01.486Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:26:01.487Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:26:01.487Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:26:01.488Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:26:01.488Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:26:01.494Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:26:01.494Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:26:05.513Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:26:34.277Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:26:34.281Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:26:34.282Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:34.282Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:34.298Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts
+2025-11-17T02:26:34.300Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts.tmp.29694.1763346394300
+2025-11-17T02:26:34.301Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:26:34.305Z [DEBUG] Temp file written successfully, size: 5616 bytes
+2025-11-17T02:26:34.305Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:26:34.305Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts.tmp.29694.1763346394300 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts
+2025-11-17T02:26:34.306Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts written atomically
+2025-11-17T02:26:34.312Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:26:34.312Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:34.312Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:34.353Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:26:34.360Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:26:34.360Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:34.360Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:34.385Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts.tmp.29694.1763346394385
+2025-11-17T02:26:34.385Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:26:34.390Z [DEBUG] Temp file written successfully, size: 5630 bytes
+2025-11-17T02:26:34.390Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:26:34.390Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts.tmp.29694.1763346394385 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts
+2025-11-17T02:26:34.390Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts written atomically
+2025-11-17T02:26:34.402Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:26:34.402Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:34.402Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:34.440Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:26:34.446Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:26:34.446Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:34.446Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:34.481Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts.tmp.29694.1763346394481
+2025-11-17T02:26:34.481Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:26:34.484Z [DEBUG] Temp file written successfully, size: 5702 bytes
+2025-11-17T02:26:34.484Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:26:34.484Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts.tmp.29694.1763346394481 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts
+2025-11-17T02:26:34.485Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/repository/__tests__/shipmentRepository.test.ts written atomically
+2025-11-17T02:26:34.521Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:26:34.521Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:34.521Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:34.580Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:26:34.580Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:26:34.581Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:26:34.581Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:26:34.581Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:26:34.581Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:26:34.594Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:26:34.594Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:26:37.364Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:26:57.770Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:26:57.776Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:26:57.776Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:57.776Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:57.789Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts
+2025-11-17T02:26:57.790Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts.tmp.29694.1763346417790
+2025-11-17T02:26:57.791Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:26:57.795Z [DEBUG] Temp file written successfully, size: 3010 bytes
+2025-11-17T02:26:57.795Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:26:57.795Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts.tmp.29694.1763346417790 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts
+2025-11-17T02:26:57.795Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts written atomically
+2025-11-17T02:26:57.803Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:26:57.803Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:57.803Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:57.830Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:26:57.834Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:26:57.834Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:57.834Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:57.850Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts.tmp.29694.1763346417850
+2025-11-17T02:26:57.850Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:26:57.855Z [DEBUG] Temp file written successfully, size: 3034 bytes
+2025-11-17T02:26:57.855Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:26:57.855Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts.tmp.29694.1763346417850 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts
+2025-11-17T02:26:57.855Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts written atomically
+2025-11-17T02:26:57.863Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:26:57.863Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:57.863Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:57.894Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:26:57.898Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:26:57.899Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:57.899Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:57.922Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts.tmp.29694.1763346417922
+2025-11-17T02:26:57.922Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:26:57.927Z [DEBUG] Temp file written successfully, size: 3130 bytes
+2025-11-17T02:26:57.927Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:26:57.927Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts.tmp.29694.1763346417922 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts
+2025-11-17T02:26:57.927Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/data/converter/__tests__/shipmentConverter.test.ts written atomically
+2025-11-17T02:26:57.938Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:26:57.939Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:26:57.939Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:26:57.971Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:26:57.971Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:26:57.972Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:26:57.972Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:26:57.972Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:26:57.972Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:26:57.985Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:26:57.985Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:27:00.076Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:27:11.273Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-17T02:27:11.273Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:27:11.274Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T02:28:11.304Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-17T02:28:11.305Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:28:11.305Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-17T02:49:06.190Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:49:06.190Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:49:06.193Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:49:06.194Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:49:06.194Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:49:06.194Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:49:06.223Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-17T02:49:06.223Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:06.223Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T02:49:06.225Z [DEBUG] FileHistory: Making snapshot for message 5a230555-e59c-4937-9614-734ac3d4b11b
+2025-11-17T02:49:06.239Z [DEBUG] FileHistory: Added snapshot for 5a230555-e59c-4937-9614-734ac3d4b11b, tracking 3 files
+2025-11-17T02:49:06.293Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:49:06.293Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:49:07.376Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:49:09.515Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:49:15.921Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:49:15.923Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:49:15.925Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:49:15.926Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:49:15.929Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:49:15.929Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:15.929Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:49:15.929Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:49:15.929Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:15.929Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:49:15.929Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:49:15.929Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:15.929Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:49:15.929Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:49:15.929Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:15.929Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:49:15.968Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:49:15.968Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:15.968Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:49:15.968Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:49:15.968Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:15.968Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:49:15.968Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:49:15.968Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:15.968Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:49:15.968Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:49:15.968Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:15.968Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:49:16.003Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:49:16.003Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:49:16.004Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:49:16.004Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:49:16.004Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:49:16.004Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:49:16.018Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:49:16.018Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:49:18.036Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:49:45.878Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-17T02:49:45.881Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-17T02:49:45.881Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:45.881Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:49:45.891Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347785891
+2025-11-17T02:49:45.891Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:49:45.894Z [DEBUG] Temp file written successfully, size: 449 bytes
+2025-11-17T02:49:45.894Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:49:45.894Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347785891 to /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json
+2025-11-17T02:49:45.895Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json written atomically
+2025-11-17T02:49:45.902Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-17T02:49:45.902Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:45.903Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:49:45.917Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:49:45.917Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:49:45.919Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:49:45.919Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:49:45.919Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:49:45.919Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:49:45.927Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:49:45.927Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:49:48.726Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:49:54.147Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-17T02:49:54.150Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-17T02:49:54.150Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:54.150Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:49:54.160Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347794160
+2025-11-17T02:49:54.160Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:49:54.168Z [DEBUG] Temp file written successfully, size: 453 bytes
+2025-11-17T02:49:54.168Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:49:54.168Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347794160 to /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json
+2025-11-17T02:49:54.169Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json written atomically
+2025-11-17T02:49:54.177Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-17T02:49:54.177Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:49:54.178Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:49:54.192Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:49:54.192Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:49:54.193Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:49:54.193Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:49:54.194Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:49:54.194Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:49:54.202Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:49:54.202Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:49:56.538Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:50:18.656Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-17T02:50:18.660Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-17T02:50:18.660Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:50:18.660Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-17T02:50:18.670Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/__tests__/shipmentDAO.test.ts
+2025-11-17T02:50:18.950Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/__tests__/shipmentDAO.test.ts.tmp.29694.1763347818950
+2025-11-17T02:50:18.955Z [DEBUG] Temp file written successfully, size: 4883 bytes
+2025-11-17T02:50:18.955Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/__tests__/shipmentDAO.test.ts.tmp.29694.1763347818950 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/__tests__/shipmentDAO.test.ts
+2025-11-17T02:50:18.955Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/__tests__/shipmentDAO.test.ts written atomically
+2025-11-17T02:50:18.960Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-17T02:50:18.960Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:50:18.960Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-17T02:50:18.982Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:50:18.982Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:50:18.984Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:50:18.984Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:50:18.984Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:50:18.984Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:50:18.992Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:50:18.993Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:50:21.932Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:50:30.344Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-17T02:50:30.348Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-17T02:50:30.348Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:50:30.348Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:50:30.357Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347830357
+2025-11-17T02:50:30.357Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:50:30.361Z [DEBUG] Temp file written successfully, size: 455 bytes
+2025-11-17T02:50:30.361Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:50:30.361Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347830357 to /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json
+2025-11-17T02:50:30.361Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json written atomically
+2025-11-17T02:50:30.369Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-17T02:50:30.369Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:50:30.369Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:50:30.387Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:50:30.387Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:50:30.390Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:50:30.390Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:50:30.390Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:50:30.390Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:50:30.403Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:50:30.404Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:50:33.094Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:50:39.896Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-17T02:50:39.900Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-17T02:50:39.900Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:50:39.900Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-17T02:50:39.909Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/__tests__/module.test.ts
+2025-11-17T02:50:39.910Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/__tests__/module.test.ts.tmp.29694.1763347839910
+2025-11-17T02:50:39.915Z [DEBUG] Temp file written successfully, size: 1363 bytes
+2025-11-17T02:50:39.915Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/__tests__/module.test.ts.tmp.29694.1763347839910 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/__tests__/module.test.ts
+2025-11-17T02:50:39.915Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/__tests__/module.test.ts written atomically
+2025-11-17T02:50:39.921Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-17T02:50:39.921Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:50:39.921Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-17T02:50:39.946Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:50:39.946Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:50:39.948Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:50:39.948Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:50:39.948Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:50:39.948Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:50:39.959Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:50:39.959Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:50:42.105Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:50:52.739Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-17T02:50:52.746Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-17T02:50:52.746Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:50:52.746Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:50:52.757Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347852757
+2025-11-17T02:50:52.757Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:50:52.762Z [DEBUG] Temp file written successfully, size: 457 bytes
+2025-11-17T02:50:52.762Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:50:52.762Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347852757 to /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json
+2025-11-17T02:50:52.763Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json written atomically
+2025-11-17T02:50:52.772Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-17T02:50:52.772Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:50:52.773Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:50:52.789Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:50:52.789Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:50:52.792Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:50:52.792Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:50:52.792Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:50:52.792Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:50:52.800Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:50:52.800Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:50:54.590Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:51:14.772Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-17T02:51:14.776Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-17T02:51:14.776Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:14.776Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-17T02:51:14.786Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts
+2025-11-17T02:51:14.787Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347874787
+2025-11-17T02:51:14.794Z [DEBUG] Temp file written successfully, size: 5169 bytes
+2025-11-17T02:51:14.794Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347874787 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts
+2025-11-17T02:51:14.794Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts written atomically
+2025-11-17T02:51:14.801Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-17T02:51:14.801Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:14.801Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-17T02:51:14.821Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:51:14.821Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:51:14.822Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:51:14.822Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:51:14.822Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:51:14.822Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:51:14.832Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:51:14.833Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:51:17.069Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:51:20.039Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-17T02:51:20.043Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-17T02:51:20.043Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:20.043Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-17T02:51:21.023Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-17T02:51:21.023Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:21.023Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-17T02:51:21.037Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:51:21.037Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:51:21.039Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:51:21.039Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:51:21.039Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:51:21.039Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:51:21.049Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:51:21.049Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:51:23.269Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:51:32.531Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-17T02:51:32.535Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-17T02:51:32.535Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:32.535Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:51:32.545Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347892545
+2025-11-17T02:51:32.545Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:51:32.550Z [DEBUG] Temp file written successfully, size: 459 bytes
+2025-11-17T02:51:32.551Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:51:32.551Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347892545 to /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json
+2025-11-17T02:51:32.552Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json written atomically
+2025-11-17T02:51:32.558Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-17T02:51:32.558Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:32.558Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:51:32.574Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:51:32.574Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:51:32.576Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:51:32.576Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:51:32.576Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:51:32.576Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:51:32.585Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:51:32.586Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:51:34.842Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:51:37.554Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-17T02:51:37.557Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-17T02:51:37.557Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:37.557Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-17T02:51:38.012Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-17T02:51:38.012Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:38.012Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-17T02:51:38.026Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:51:38.026Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:51:38.030Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:51:38.030Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:51:38.030Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:51:38.030Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:51:38.037Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:51:38.037Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:51:40.015Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:51:43.874Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T02:51:43.877Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T02:51:43.877Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:43.877Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T02:51:43.903Z [DEBUG] No hook environment files found
+2025-11-17T02:51:43.982Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-17T02:51:43.982Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:43.982Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T02:51:44.005Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:51:44.005Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:51:44.007Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:51:44.007Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:51:44.007Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:51:44.007Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:51:44.024Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:51:44.024Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:51:44.802Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:51:47.238Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:51:50.221Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:51:50.224Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:51:50.229Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:51:50.229Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:50.229Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:51:50.229Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:51:50.229Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:50.229Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:51:50.255Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:51:50.255Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:50.255Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:51:50.255Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:51:50.255Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:50.255Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:51:50.279Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:51:50.279Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:51:50.281Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:51:50.281Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:51:50.281Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:51:50.281Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:51:50.292Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:51:50.292Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:51:52.525Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:51:59.243Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:51:59.246Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:51:59.247Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:59.247Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:51:59.259Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347919259
+2025-11-17T02:51:59.260Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:51:59.266Z [DEBUG] Temp file written successfully, size: 5105 bytes
+2025-11-17T02:51:59.266Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:51:59.266Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347919259 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts
+2025-11-17T02:51:59.266Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts written atomically
+2025-11-17T02:51:59.273Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:51:59.273Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:51:59.273Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:51:59.294Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:51:59.294Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:51:59.296Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:51:59.296Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:51:59.296Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:51:59.296Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:51:59.304Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:51:59.304Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:52:02.091Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:52:04.581Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:52:04.584Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:52:04.588Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:52:04.588Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:04.588Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:52:04.588Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:52:04.588Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:04.588Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:52:04.615Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:52:04.615Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:04.615Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:52:04.615Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:52:04.615Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:04.615Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:52:04.642Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:52:04.642Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:52:04.645Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:52:04.645Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:52:04.645Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:52:04.645Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:52:04.659Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:52:04.660Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:52:07.433Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:52:19.155Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:52:19.160Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:52:19.160Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:19.160Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:52:19.171Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347939171
+2025-11-17T02:52:19.171Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:52:19.176Z [DEBUG] Temp file written successfully, size: 5139 bytes
+2025-11-17T02:52:19.176Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:52:19.176Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347939171 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts
+2025-11-17T02:52:19.176Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts written atomically
+2025-11-17T02:52:19.182Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:52:19.182Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:19.182Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:52:19.203Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:52:19.206Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:52:19.206Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:19.206Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:52:19.218Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347939218
+2025-11-17T02:52:19.218Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:52:19.221Z [DEBUG] Temp file written successfully, size: 5143 bytes
+2025-11-17T02:52:19.221Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:52:19.221Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347939218 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts
+2025-11-17T02:52:19.221Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts written atomically
+2025-11-17T02:52:19.227Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:52:19.227Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:19.227Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:52:19.252Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:52:19.257Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:52:19.257Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:19.257Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:52:19.271Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347939271
+2025-11-17T02:52:19.271Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:52:19.276Z [DEBUG] Temp file written successfully, size: 5180 bytes
+2025-11-17T02:52:19.276Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:52:19.276Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347939271 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts
+2025-11-17T02:52:19.276Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts written atomically
+2025-11-17T02:52:19.285Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:52:19.285Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:19.285Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:52:19.309Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:52:19.309Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:52:19.310Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:52:19.311Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:52:19.311Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:52:19.311Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:52:19.324Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:52:19.325Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:52:22.252Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:52:25.315Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:52:25.320Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:52:25.323Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:52:25.323Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:25.323Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:52:25.323Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:52:25.323Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:25.323Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:52:25.348Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:52:25.348Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:25.348Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:52:25.348Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:52:25.348Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:25.348Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:52:25.371Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:52:25.371Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:52:25.374Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:52:25.374Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:52:25.374Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:52:25.374Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:52:25.383Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:52:25.383Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:52:27.587Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:52:36.454Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:52:36.461Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:52:36.461Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:36.461Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:52:36.469Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347956469
+2025-11-17T02:52:36.469Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:52:36.474Z [DEBUG] Temp file written successfully, size: 5183 bytes
+2025-11-17T02:52:36.474Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:52:36.474Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347956469 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts
+2025-11-17T02:52:36.475Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts written atomically
+2025-11-17T02:52:36.482Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:52:36.482Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:36.482Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:52:36.514Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:52:36.518Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:52:36.519Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:36.519Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:52:36.535Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347956535
+2025-11-17T02:52:36.535Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:52:36.540Z [DEBUG] Temp file written successfully, size: 5258 bytes
+2025-11-17T02:52:36.540Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:52:36.540Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts.tmp.29694.1763347956535 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts
+2025-11-17T02:52:36.541Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/__tests__/model.test.ts written atomically
+2025-11-17T02:52:36.549Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:52:36.549Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:36.549Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:52:36.583Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:52:36.583Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:52:36.585Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:52:36.585Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:52:36.585Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:52:36.585Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:52:36.602Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:52:36.602Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:52:39.560Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:52:48.875Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-17T02:52:48.880Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-17T02:52:48.880Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:48.880Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:52:48.894Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347968894
+2025-11-17T02:52:48.894Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T02:52:48.899Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-17T02:52:48.899Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:52:48.899Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json.tmp.29694.1763347968894 to /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json
+2025-11-17T02:52:48.900Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9f2d501a-4ca6-4153-8b65-2739934c9265-agent-9f2d501a-4ca6-4153-8b65-2739934c9265.json written atomically
+2025-11-17T02:52:48.906Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-17T02:52:48.906Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:52:48.906Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-17T02:52:48.919Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:52:48.919Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:52:48.921Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:52:48.921Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:52:48.921Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:52:48.921Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:52:48.930Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:52:48.930Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:52:51.893Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:53:05.501Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-17T02:53:05.502Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:53:05.502Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T02:54:05.511Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-17T02:54:05.512Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:54:05.512Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-17T02:54:13.999Z [DEBUG] [FileIndex] Not in bundled mode, using Fuse.js fallback
+2025-11-17T02:54:14.649Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-17T02:54:15.450Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-17T02:54:25.549Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-17T02:54:26.279Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-17T02:54:42.977Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:54:42.977Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:54:42.981Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:54:42.981Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:54:42.981Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:54:42.982Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:54:43.019Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-17T02:54:43.019Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:54:43.019Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T02:54:43.020Z [DEBUG] FileHistory: Making snapshot for message 6bd6f5e0-f541-41a9-a404-605502897945
+2025-11-17T02:54:43.038Z [DEBUG] FileHistory: Added snapshot for 6bd6f5e0-f541-41a9-a404-605502897945, tracking 6 files
+2025-11-17T02:54:43.077Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:54:43.077Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:54:43.994Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:54:46.022Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:54:54.952Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-17T02:54:54.956Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-17T02:54:54.956Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:54:54.956Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:54:54.972Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-17T02:54:54.972Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:54:54.972Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-17T02:54:54.987Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:54:54.987Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:54:54.989Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:54:54.989Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:54:54.989Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:54:54.989Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:54:54.998Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:54:54.998Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:54:57.425Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:55:17.377Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-17T02:55:17.381Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-17T02:55:17.381Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:55:17.381Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:55:17.396Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/__tests__/shipmentDAO.spec.ts
+2025-11-17T02:55:17.398Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/__tests__/shipmentDAO.spec.ts.tmp.29694.1763348117398
+2025-11-17T02:55:17.398Z [DEBUG] Preserving file permissions: 100644
+2025-11-17T02:55:17.403Z [DEBUG] Temp file written successfully, size: 5345 bytes
+2025-11-17T02:55:17.403Z [DEBUG] Applied original permissions to temp file
+2025-11-17T02:55:17.403Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/__tests__/shipmentDAO.spec.ts.tmp.29694.1763348117398 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/__tests__/shipmentDAO.spec.ts
+2025-11-17T02:55:17.404Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/__tests__/shipmentDAO.spec.ts written atomically
+2025-11-17T02:55:17.409Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-17T02:55:17.409Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:55:17.409Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-17T02:55:17.454Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:55:17.454Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:55:17.455Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:55:17.456Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:55:17.456Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:55:17.456Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:55:17.464Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:55:17.464Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:55:19.943Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:55:24.094Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T02:55:24.097Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T02:55:24.097Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:55:24.097Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T02:55:24.886Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:55:25.045Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-17T02:55:25.045Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:55:25.045Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T02:55:25.061Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T02:55:25.061Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T02:55:25.064Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T02:55:25.064Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T02:55:25.064Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T02:55:25.064Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T02:55:25.077Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T02:55:25.077Z [DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+2025-11-17T02:55:25.676Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:55:27.239Z [DEBUG] Stream started - received first chunk
+2025-11-17T02:55:33.708Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-17T02:55:33.709Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:55:33.709Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T02:56:33.722Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-17T02:56:33.723Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T02:56:33.723Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-17T03:15:22.551Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2025-11-17T03:15:22.552Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T03:15:22.552Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-11-17T03:15:22.555Z [DEBUG] Cleared all session hooks for session 9f2d501a-4ca6-4153-8b65-2739934c9265

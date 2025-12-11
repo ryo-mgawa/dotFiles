@@ -1,0 +1,53 @@
+import { Test, TestingModule } from '@nestjs/testing';
+import { REQUEST } from '@nestjs/core';
+import { BaseShipmentModule } from '../baseModule';
+import { ShipmentDAO } from '../../data/dao/shipmentDAO';
+import { ShipmentRepository } from '../../data/repository/shipmentRepository';
+
+describe('BaseShipmentModule', () => {
+  let module: TestingModule;
+
+  beforeEach(async () => {
+    module = await Test.createTestingModule({
+      imports: [BaseShipmentModule],
+    })
+      .overrideProvider(ShipmentDAO)
+      .useValue({})
+      .overrideProvider(ShipmentRepository)
+      .useValue({})
+      .compile();
+  });
+
+  it('モジュールが正しく定義される', () => {
+    expect(module).toBeDefined();
+  });
+
+  it('ShipmentDAOが提供される', () => {
+    const dao = module.get(ShipmentDAO);
+    expect(dao).toBeDefined();
+  });
+
+  it('ShipmentRepositoryが提供される', () => {
+    const repository = module.get(ShipmentRepository);
+    expect(repository).toBeDefined();
+  });
+
+  it('RESPONSEトークンがリクエストから正しく提供される', async () => {
+    const mockRes = { status: jest.fn().mockReturnThis(), send: jest.fn() };
+    const mockRequest = { res: mockRes };
+
+    const testModule = await Test.createTestingModule({
+      imports: [BaseShipmentModule],
+    })
+      .overrideProvider(ShipmentDAO)
+      .useValue({})
+      .overrideProvider(ShipmentRepository)
+      .useValue({})
+      .overrideProvider(REQUEST)
+      .useValue(mockRequest)
+      .compile();
+
+    const response = await testModule.resolve('RESPONSE');
+    expect(response).toBe(mockRes);
+  });
+});

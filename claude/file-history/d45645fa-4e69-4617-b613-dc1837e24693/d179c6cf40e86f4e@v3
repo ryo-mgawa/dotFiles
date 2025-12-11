@@ -1,0 +1,332 @@
+# Issue #3027: Jointアプリケーション用Firestore構築
+
+## 概要
+顧客ごとにJointアプリケーションの表示を制御するためのFirestore環境を構築する。
+
+親Issue: #3024 - Jointのapplication情報を取得する機能
+
+## 背景・目的
+- 動態管理を使用する顧客ごとに利用可能な機能が異なる
+- Jointで作成されたアプリケーションも顧客ごとに表示制御が必要
+- 例: 顧客Aはアプリ1,2が使える / 顧客Bはアプリ1,3が使える
+
+## 技術的要件
+
+### 1. Firestoreデータベース構築 (Terraform)
+
+#### インフラ構成
+- **場所**: `infra/`配下のTerraformコード
+- **参照**: `infra/README.md`
+- **実装時**: 白幡さんと一緒に進めることを推奨
+
+#### Firestoreリソース定義
+
+```hcl
+resource "google_firestore_database" "default" {
+  project     = var.project_id
+  name        = "(default)"  # デフォルトDB名（可能であればdefault以外を推奨）
+  location_id = var.region   # 例: "asia-northeast1"
+
+  # Native モード
+  type = "FIRESTORE_NATIVE"
+
+  # 並行制御とApp Engine統合設定
+  concurrency_mode            = "OPTIMISTIC"
+  app_engine_integration_mode = "DISABLED"
+
+  # オプション: PITR や削除保護（必要に応じて）
+  # point_in_time_recovery_enablement = "POINT_IN_TIME_RECOVERY_ENABLED"
+  # delete_protection_state           = "DELETE_PROTECTION_ENABLED"
+
+  depends_on = [
+    google_project_service.firestore,
+  ]
+}
+```
+
+#### Cloud RunからのFirestore読み取り権限付与
+
+```hcl
+resource "google_project_iam_member" "cloud_run_firestore_viewer" {
+  project = var.project_id
+  role    = "roles/datastore.viewer"  # 読み取り専用
+  member  = "serviceAccount:${google_service_account.cloud_run_sa.email}"
+}
+```
+
+### 2. Firestoreデータ構造
+
+```javascript
+{
+  applications: {  // ドキュメント
+    ${applicationId1}: {  // コレクション
+      name: '',  // タブに表示される名前
+    },
+    ${applicationId2}: {
+      name: '',  // タブに表示される名前
+    }
+  },
+  organizations: {  // ドキュメント
+    ${organizationId1}: {  // コレクション
+      applications: [
+        '${applicationId1}',
+        '${applicationId2}',
+        '${applicationId3}',  // 存在しない場合はAPIレスポンスに含めない
+      ]
+    },
+    ${organizationId2}: {
+      applications: [
+        '${applicationId1}',
+      ]
+    }
+  }
+}
+```
+
+### 3. セキュリティルール
+- **要件**: adminユーザーのみがデータ取得可能
+- **実装場所**: Firestoreセキュリティルール設定
+- **CloudRunアクセス**: サービスアカウント経由でRead権限を付与（Realtime Databaseと同様の方式）
+
+### 4. 権限管理
+- **Ishizuさん（非エンジニア）**: DB Write権限を付与
+  - 非エンジニアでも管理可能なFirestoreを採用
+  - Realtime Database不採用の理由:
+    - アクセス頻度が少ない
+    - 既存リソースとの干渉を防ぐ
+    - Firestoreの方がクエリ機能が豊富
+
+## 完了条件
+- [x] dev環境にFirestoreが構築される
+- [x] Terraformコードが実装される
+- [x] Cloud Runサービスアカウントに読み取り権限が付与される
+- [x] セキュリティルールが設定される
+- [x] Ishizuさんに管理用Write権限が付与される
+
+## 受け入れ条件（親Issue #3024より）
+- [ ] APIをcallして組織が操作できるJointのApplication情報を取得できる
+- [ ] API Documentがある
+- [ ] IshizuさんがDBにWriteできる権限がある
+
+## スコープ外
+- applicationsからアプリが削除された際の、組織の存在しないapplicationIdの自動削除
+- 組織が削除された際のFirestore上の組織の自動削除
+- APIリクエスト時のapplicationのページネーション実装
+
+## 次のステップ
+Issue #3027完了後は、親Issue #3024のAPI実装に進む:
+- **API Path**: `GET: private/joint/applications`
+- **実装場所**: `server/libs/firebase`にFirestore用モジュール追加
+- **レスポンス形式**:
+```javascript
+{
+  status: 'success',
+  applications: [{
+    id: string,
+    name: string,
+  }]
+}
+```
+
+## 参考情報
+- Firestore Admin SDK使用
+- `where` / `whereIn` を使用したクエリ実装
+- `whereIn` は最大10要素まで（それ以上はバッチ処理が必要）
+
+## 実装手順
+
+### 手順1: Terraformコードの実装
+
+#### 1-1. Firestoreモジュールの作成
+
+新しいモジュールディレクトリを作成:
+```bash
+mkdir -p infra/terraform/modules/joint_application
+```
+
+以下のファイルを作成:
+
+**`infra/terraform/modules/joint_application/main.tf`**
+```hcl
+data "google_project" "default" {}
+
+# Firestore API が有効化されていることを確認
+resource "google_project_service" "firestore" {
+  project = data.google_project.default.project_id
+  service = "firestore.googleapis.com"
+
+  disable_on_destroy = false
+}
+
+# Firestoreデータベース
+resource "google_firestore_database" "joint_application" {
+  provider    = google-beta
+  project     = data.google_project.default.project_id
+  name        = "joint-application"
+  location_id = "asia-northeast1"
+
+  type = "FIRESTORE_NATIVE"
+
+  concurrency_mode            = "OPTIMISTIC"
+  app_engine_integration_mode = "DISABLED"
+
+  depends_on = [
+    google_project_service.firestore,
+  ]
+}
+```
+
+**`infra/terraform/modules/joint_application/iam.tf`**
+```hcl
+# Cloud RunサービスアカウントにFirestore読み取り権限を付与
+resource "google_project_iam_member" "cloud_run_firestore_viewer" {
+  project = data.google_project.default.project_id
+  role    = "roles/datastore.viewer"
+  member  = "serviceAccount:${var.cloud_run_sa}"
+}
+
+# Ishizuさん用のFirestore書き込み権限
+# ※ Ishizuさんのメールアドレスは実際の値に置き換える必要がある
+resource "google_project_iam_member" "ishizu_firestore_user" {
+  project = data.google_project.default.project_id
+  role    = "roles/datastore.user"
+  member  = "user:ishizu@example.com"  # 実際のメールアドレスに変更
+}
+```
+
+**`infra/terraform/modules/joint_application/variables.tf`**
+```hcl
+variable "cloud_run_sa" {
+  description = "Cloud Run service account email"
+  type        = string
+}
+```
+
+**`infra/terraform/modules/joint_application/outputs.tf`**
+```hcl
+output "firestore_database_name" {
+  description = "Firestore database name"
+  value       = google_firestore_database.joint_application.name
+}
+
+output "firestore_database_id" {
+  description = "Firestore database ID"
+  value       = google_firestore_database.joint_application.id
+}
+```
+
+#### 1-2. develop環境への組み込み
+
+**`infra/terraform/environments/develop/locals.tf`** を編集:
+```hcl
+locals {
+  service_api_list = [
+    # ... 既存のリスト ...
+    "firestore.googleapis.com",  # この行を追加（既存の場合は不要）
+  ]
+}
+```
+
+**`infra/terraform/environments/develop/main.tf`** に以下を追加:
+```hcl
+module "joint_application" {
+  source = "../../modules/joint_application"
+
+  cloud_run_sa = module.service_account.run_service_account_email
+}
+```
+
+#### 1-3. Firestoreセキュリティルールの作成
+
+**`infra/firestore/joint-application.rules`** を作成:
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/joint-application/documents {
+    // adminロールのみアクセス可能
+    match /{document=**} {
+      allow read, write: if request.auth != null &&
+                            request.auth.token.get('role', '') == 'admin';
+    }
+
+    // サービスアカウントからの読み取りを許可
+    match /applications/{applicationId} {
+      allow read: if request.auth != null;
+    }
+
+    match /organizations/{organizationId} {
+      allow read: if request.auth != null;
+    }
+  }
+}
+```
+
+#### 1-4. Terraform実行
+
+```bash
+cd infra/terraform/environments/develop
+
+# 初期化（新しいモジュールを追加したため）
+terraform init
+
+# プラン確認
+terraform plan
+
+# 適用
+terraform apply
+```
+
+### 手順2: Firestoreセキュリティルールのデプロイ
+
+```bash
+# Firebase CLIでセキュリティルールをデプロイ
+firebase deploy --only firestore:rules --project <project-id>
+```
+
+### 手順3: 権限の確認
+
+1. GCPコンソールでIAMを確認
+   - Cloud RunサービスアカウントにFirestore Viewer権限があるか
+   - Ishizuさんにdatastore.user権限があるか
+
+2. Firestoreコンソールでデータベースが作成されているか確認
+
+### 手順4: 動作確認
+
+1. Firestoreコンソールでテストデータを作成
+2. Cloud Runから読み取りテスト（API実装後）
+
+## 実装時の注意事項
+
+### 既存構成との整合性
+- **サービスアカウント**: 既存の `cloud-run-sa` を使用（`infra/terraform/modules/service_account/main.tf:12` で既に `roles/firebasedatabase.admin` 権限あり）
+- **API有効化**: `firestore.googleapis.com` は `infra/terraform/environments/develop/locals.tf` で既に有効化済みの可能性あり（要確認）
+
+### Ishizuさんのメールアドレス
+- `infra/terraform/modules/joint_application/iam.tf` の `user:ishizu@example.com` を実際のメールアドレスに変更する必要あり
+
+### データベース名
+- Issue本文では `(default)` だが、既存のFirebase Projectで既にデフォルトDBが存在する可能性があるため `joint-application` という名前を使用
+- 必要に応じて調整可能
+
+### プロバイダー設定
+- Firestoreリソースには `google-beta` プロバイダーが必要
+- `infra/terraform/environments/develop/provider.tf` で既に設定済み
+
+## トラブルシューティング
+
+### "Database already exists" エラー
+- デフォルトDBが既に存在する場合は `name` を変更
+
+### 権限エラー
+- Terraformを実行するサービスアカウントに十分な権限があるか確認
+- `roles/firebase.admin` または `roles/datastore.owner` が必要
+
+### API有効化エラー
+- `firestore.googleapis.com` が有効化されていない場合は `terraform apply` 前に手動で有効化
+
+## 関連ファイル
+- `infra/README.md` - インフラ構築手順
+- `server/libs/firebase` - Firebase/Firestoreモジュール
+- `infra/terraform/modules/service_account/main.tf` - サービスアカウント定義（既存）
+- `infra/terraform/modules/firebase/main.tf` - Firebaseプロジェクト設定（既存）

@@ -1,0 +1,128 @@
+import { useRef, useEffect, type ReactNode } from 'react';
+import type { Participant } from '@/entities';
+import './MainVideoDisplay.scss';
+
+/**
+ * ビデオレンダリング関数の型
+ */
+interface VideoRenderer {
+  renderVideo: (
+    participantId: string,
+    canvas: HTMLCanvasElement,
+    width: number,
+    height: number
+  ) => Promise<void>;
+  stopRenderVideo: (participantId: string, canvas: HTMLCanvasElement) => Promise<void>;
+}
+
+/**
+ * MainVideoDisplay Props
+ */
+interface MainVideoDisplayProps {
+  participant: Participant | null;
+  siteName?: string;
+  videoRenderer?: VideoRenderer;
+  children?: ReactNode;
+}
+
+/**
+ * メイン表示エリアのサイズ定数
+ */
+const VIDEO_DIMENSIONS = {
+  WIDTH: 1920,
+  HEIGHT: 1080,
+} as const;
+
+/**
+ * MainVideoDisplay
+ * メイン映像表示コンポーネント（画面80%占有）
+ */
+export const MainVideoDisplay = ({
+  participant,
+  siteName,
+  videoRenderer,
+  children,
+}: MainVideoDisplayProps) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // ビデオレンダリング
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !participant || !videoRenderer) return;
+
+    const renderVideo = async () => {
+      try {
+        await videoRenderer.renderVideo(
+          participant.id,
+          canvas,
+          VIDEO_DIMENSIONS.WIDTH,
+          VIDEO_DIMENSIONS.HEIGHT
+        );
+      } catch (error) {
+        console.error('Failed to render main video:', error);
+      }
+    };
+
+    if (participant.isVideoOn) {
+      renderVideo();
+    }
+
+    return () => {
+      if (participant) {
+        videoRenderer.stopRenderVideo(participant.id, canvas).catch(console.error);
+      }
+    };
+  }, [participant, videoRenderer]);
+
+  // Canvas のリサイズ処理
+  useEffect(() => {
+    const container = containerRef.current;
+    const canvas = canvasRef.current;
+    if (!container || !canvas) return;
+
+    const resizeObserver = new ResizeObserver(entries => {
+      for (const entry of entries) {
+        const { width, height } = entry.contentRect;
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+      }
+    });
+
+    resizeObserver.observe(container);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
+
+  return (
+    <div className="main-video-display" ref={containerRef}>
+      <canvas
+        ref={canvasRef}
+        className="main-video-display__canvas"
+        width={VIDEO_DIMENSIONS.WIDTH}
+        height={VIDEO_DIMENSIONS.HEIGHT}
+      />
+
+      {!participant?.isVideoOn && (
+        <div className="main-video-display__placeholder">
+          <div className="main-video-display__avatar">
+            {siteName?.[0] || '?'}
+          </div>
+          <span className="main-video-display__name">
+            {siteName || '接続待ち...'}
+          </span>
+        </div>
+      )}
+
+      {siteName && (
+        <div className="main-video-display__label">
+          <span>{siteName}</span>
+        </div>
+      )}
+
+      {children}
+    </div>
+  );
+};

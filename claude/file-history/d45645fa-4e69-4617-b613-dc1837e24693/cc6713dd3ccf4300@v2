@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/joint-application/documents {
+    // adminロールのみアクセス可能
+    match /{document=**} {
+      allow read, write: if request.auth != null &&
+                            request.auth.token.get('role', '') == 'admin';
+    }
+
+    // サービスアカウントからの読み取りを許可
+    match /applications/{applicationId} {
+      allow read: if request.auth != null;
+    }
+
+    match /organizations/{organizationId} {
+      allow read: if request.auth != null;
+    }
+  }
+}

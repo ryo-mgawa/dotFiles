@@ -1,0 +1,19 @@
+import { Role, Roles, User } from '@app/auth';
+import { UserContextTypes } from '@app/requestContext';
+import { Controller, Get, Response } from '@nestjs/common';
+import { GetApplicationsUseCase } from '../../../application/getApplicationsUseCase';
+
+@Roles(Role.ARRIVAL_MANAGER)
+@Controller('/private/automation')
+export class ApplicationsController {
+  constructor(
+    private readonly getApplicationsUseCase: GetApplicationsUseCase,
+  ) { }
+
+  @Get('/applications')
+  public async getApplications(
+    @User() user: UserContextTypes,
+  ): Promise<void> {
+    await this.getApplicationsUseCase.execute(user.organizationId);
+  }
+}

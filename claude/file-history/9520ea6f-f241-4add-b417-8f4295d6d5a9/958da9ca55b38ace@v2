@@ -1,0 +1,8 @@
+/**
+ * 顧問型定義
+ */
+export interface Advisor {
+  id: string;
+  name: string;
+  isActive: boolean;
+}

@@ -1,0 +1,5 @@
+# API Base URL
+VITE_API_BASE_URL=http://localhost:3001/api
+
+# Zoom Web Endpoint
+VITE_ZOOM_WEB_ENDPOINT=zoom.us

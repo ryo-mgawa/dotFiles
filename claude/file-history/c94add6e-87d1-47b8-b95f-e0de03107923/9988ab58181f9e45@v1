@@ -1,0 +1,153 @@
+import { Knex, knex } from 'knex';
+import knexConfig from '../../knexfile';
+import { join, resolve } from 'path';
+
+const migrationsDir = resolve(__dirname, '..');
+
+describe('20251021060220_add_shipment', () => {
+  let db: Knex;
+  let migration;
+
+  beforeAll(async () => {
+    db = knex(knexConfig.testing);
+
+    migration = await import(
+      join(migrationsDir, '20251021060220_add_shipment.ts')
+    );
+  });
+
+  afterAll(async () => {
+    await db.destroy();
+  });
+
+  beforeEach(async () => {
+    // 各テスト前にshipmentテーブルをクリーンアップ
+    const shipmentTables = ['shipment_event', 'shipment_status', 'shipment'];
+
+    // トリガーを先に削除
+    await db.raw(`DROP TRIGGER IF EXISTS update_shipment_updated_at ON shipment;`);
+
+    for (const tableName of shipmentTables) {
+      await db.schema.dropTableIfExists(tableName);
+    }
+
+    // enumの削除
+    await db.raw("DROP TYPE IF EXISTS shipment_event_type_enum;");
+    await db.raw("DROP TYPE IF EXISTS shipment_status_enum;");
+  });
+
+  it('20251021060220_add_shipmentのマイグレーションを適用し、元に戻せることを確認', async () => {
+    await migration.up(db);
+
+    // テーブルが作成されたことを確認
+    const hasShipment = await db.schema.hasTable('shipment');
+    const hasShipmentStatus = await db.schema.hasTable('shipment_status');
+    const hasShipmentEvent = await db.schema.hasTable('shipment_event');
+
+    expect(hasShipment).toBe(true);
+    expect(hasShipmentStatus).toBe(true);
+    expect(hasShipmentEvent).toBe(true);
+
+    await migration.down(db);
+
+    // テーブルが削除されたことを確認
+    const hasShipmentAfter = await db.schema.hasTable('shipment');
+    const hasShipmentStatusAfter = await db.schema.hasTable('shipment_status');
+    const hasShipmentEventAfter = await db.schema.hasTable('shipment_event');
+
+    expect(hasShipmentAfter).toBe(false);
+    expect(hasShipmentStatusAfter).toBe(false);
+    expect(hasShipmentEventAfter).toBe(false);
+  });
+
+  it('20251021060220_add_shipmentのマイグレーションを適用後、テーブルの構造が正しいことを確認', async () => {
+    await migration.up(db);
+
+    // shipmentテーブルの構造を確認
+    let shipmentColumnInfo = await db('shipment').columnInfo();
+    expect(shipmentColumnInfo).toStrictEqual({
+      'id': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'uuid' },
+      'organization_id': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'text' },
+      'slip_id': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'text' },
+      'consignor': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'jsonb' },
+      'consignee': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'jsonb' },
+      'origin_spot_id': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'text' },
+      'destination_spot_id': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'text' },
+      'meta': { 'defaultValue': null, 'maxLength': null, 'nullable': true, 'type': 'jsonb' },
+      'created_at': { 'defaultValue': 'CURRENT_TIMESTAMP', 'maxLength': null, 'nullable': false, 'type': 'timestamp with time zone' },
+      'updated_at': { 'defaultValue': 'CURRENT_TIMESTAMP', 'maxLength': null, 'nullable': false, 'type': 'timestamp with time zone' }
+    });
+
+    // shipment_statusテーブルの構造を確認
+    let shipmentStatusColumnInfo = await db('shipment_status').columnInfo();
+    expect(shipmentStatusColumnInfo).toStrictEqual({
+      'shipment_id': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'uuid' },
+      'status': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'USER-DEFINED' },
+      'executed_at': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'timestamp with time zone' }
+    });
+
+    // shipment_eventテーブルの構造を確認
+    let shipmentEventColumnInfo = await db('shipment_event').columnInfo();
+    expect(shipmentEventColumnInfo).toStrictEqual({
+      'id': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'uuid' },
+      'shipment_id': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'uuid' },
+      'type': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'USER-DEFINED' },
+      'original_spot_id': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'text' },
+      'geocode': { 'defaultValue': null, 'maxLength': null, 'nullable': true, 'type': 'point' },
+      'update_by': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'text' },
+      'executed_at': { 'defaultValue': null, 'maxLength': null, 'nullable': false, 'type': 'timestamp with time zone' }
+    });
+  });
+
+  it('updated_atトリガーが正しく動作することを確認', async () => {
+    await migration.up(db);
+
+    // 既存のorganizationを取得、なければ作成
+    let org = await db('organization').select('id').first();
+    if (!org) {
+      const orgColumns = await db('organization').columnInfo();
+      const insertData: any = { id: 'test_org' };
+      if ('enable_goto' in orgColumns) {
+        insertData.enable_goto = true;
+      }
+      await db('organization').insert(insertData);
+      org = { id: 'test_org' };
+    }
+
+    // テストデータを挿入
+    const shipmentId = 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11';
+    await db('shipment').insert({
+      id: shipmentId,
+      organization_id: org.id,
+      slip_id: 'TEST-001',
+      consignor: JSON.stringify({ id: 'consignor1', name: '発荷主A' }),
+      consignee: JSON.stringify({ id: 'consignee1', name: '着荷主B' }),
+      origin_spot_id: 'spot1',
+      destination_spot_id: 'spot2',
+      meta: JSON.stringify({ note: 'test' }),
+    });
+
+    const beforeUpdate = await db('shipment')
+      .where({ id: shipmentId })
+      .select('updated_at')
+      .first();
+
+    // 1秒待機
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // 更新
+    await db('shipment')
+      .where({ id: shipmentId })
+      .update({ slip_id: 'TEST-002' });
+
+    const afterUpdate = await db('shipment')
+      .where({ id: shipmentId })
+      .select('updated_at')
+      .first();
+
+    // updated_atが更新されていることを確認
+    expect(new Date(afterUpdate.updated_at).getTime()).toBeGreaterThan(
+      new Date(beforeUpdate.updated_at).getTime()
+    );
+  });
+});

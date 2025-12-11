@@ -1,0 +1,34 @@
+/**
+ * 大会DTO
+ */
+export interface CompetitionDto {
+  id: string;
+  name: string;
+  location: string;
+  date: string; // ISO 8601形式
+  year: number;
+}
+
+/**
+ * 大会詳細DTO（記録を含む）
+ */
+export interface CompetitionDetailDto extends CompetitionDto {
+  records: CompetitionRecordDto[];
+}
+
+/**
+ * 大会記録DTO
+ */
+export interface CompetitionRecordDto {
+  id: string;
+  event: string;
+  gender: 'M' | 'F';
+  result: number;
+  wind: number | null;
+  note: string | null;
+  gradeAtRecord: number;
+  departmentAtRecord: string;
+  memberName: string; // 姓名を結合
+  relayTeamId: string | null;
+  relayOrder: number | null;
+}

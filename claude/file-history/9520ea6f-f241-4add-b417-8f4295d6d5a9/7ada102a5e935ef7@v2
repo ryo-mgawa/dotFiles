@@ -1,0 +1,15 @@
+import { Container } from 'react-bootstrap';
+
+/**
+ * 個人の歴代記録ページ
+ * requirements.md 2.6節を参照
+ * Phase 3では未実装（Phase 4以降で実装）
+ */
+export const PersonalRecordsPage = () => {
+  return (
+    <Container>
+      <h2 className="mb-4">個人の歴代記録</h2>
+      <p>このページは現在準備中です。認証機能が必要です。</p>
+    </Container>
+  );
+};

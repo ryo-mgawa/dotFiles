@@ -1,0 +1,55 @@
+import { Logger } from '@app/logger';
+import { ShipmentDAO } from '@app/rdb';
+import { ShipmentInsert } from '@app/rdb/db/model';
+import { Injectable } from '@nestjs/common';
+import { ShipmentSaveException } from '../../../exception/shipmentSaveException';
+import { Shipment, ShipmentRow } from './types/shipment';
+
+@Injectable()
+export class ShipmentRepository {
+  constructor(
+    private readonly shipmentDAO: ShipmentDAO
+  ) { }
+
+  public async save(shipments: ShipmentInsert[]): Promise<string[]> {
+    await this.shipmentDAO.save(shipments).catch((error) => {
+      Logger.error('シップメント保存時にエラーが発生', { error: error.message });
+      throw new ShipmentSaveException('シップメント情報の保存に失敗しました。');
+    });
+
+    return shipments.map((shipment) => shipment.id);
+  }
+
+  public async get(queries: {
+    organizationId: string;
+    sinceId?: string;
+    count?: number;
+  }): Promise<Shipment[]> {
+    const count = queries.count ?? 10;
+
+    const rows = await this.shipmentDAO.get({
+      organizationId: queries.organizationId,
+      sinceId: queries.sinceId,
+      count,
+    });
+
+    return rows.map((row: ShipmentRow) => (
+      {
+        id: row.id,
+        organizationId: row.organizationId,
+        slipId: row.slipId,
+        consignor: {
+          id: row.consignor.id,
+          name: row.consignor.name ?? null,
+        },
+        consignee: {
+          id: row.consignee.id,
+          name: row.consignee.name ?? null,
+        },
+        originSpotId: row.originSpotId,
+        destinationSpotId: row.destinationSpotId,
+        meta: row.meta ?? null,
+      }
+    ));
+  }
+}

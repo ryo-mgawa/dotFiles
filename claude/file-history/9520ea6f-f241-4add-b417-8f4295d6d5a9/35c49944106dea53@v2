@@ -1,0 +1,79 @@
+import { IMemberRepository } from '../../../domain/repositories/IMemberRepository';
+import { MemberDto } from '../../dto/MemberDto';
+import { Member } from '../../../shared/types';
+import { DEPARTMENTS, DEPARTMENT_ORDER } from '../../../shared/constants/departments';
+import { calculateGrade } from '../../../shared/utils/gradeCalculator';
+
+/**
+ * 部員一覧取得ユースケース
+ * requirements.md 2.2節を参照
+ *
+ * ソート順:
+ * 1. 学年（降順: 5年 → 4年 → 3年 → 2年 → 1年）
+ * 2. 学科（M → E → I → C → A）
+ * 3. 名前（五十音順）
+ */
+export class GetMemberListUseCase {
+  constructor(private readonly memberRepository: IMemberRepository) {}
+
+  async execute(): Promise<MemberDto[]> {
+    // リポジトリから在籍中の部員を取得
+    const members = await this.memberRepository.findAllActive();
+
+    // ソート処理
+    const sortedMembers = this.sortMembers(members);
+
+    // DTOに変換
+    return sortedMembers.map((member) => this.toDto(member));
+  }
+
+  /**
+   * 部員をソート
+   * requirements.md 2.2.2節のソート順に従う
+   */
+  private sortMembers(members: Member[]): Member[] {
+    return members.sort((a, b) => {
+      // 1. 学年優先（降順）
+      const gradeA = calculateGrade(a.enrollmentYear);
+      const gradeB = calculateGrade(b.enrollmentYear);
+      if (gradeA !== gradeB) {
+        return gradeB - gradeA; // 降順
+      }
+
+      // 2. 学科優先
+      const deptOrderA = DEPARTMENT_ORDER[a.department];
+      const deptOrderB = DEPARTMENT_ORDER[b.department];
+      if (deptOrderA !== deptOrderB) {
+        return deptOrderA - deptOrderB;
+      }
+
+      // 3. 五十音順（ひらがな表記を使用）
+      const nameA = `${a.lastNameKana}${a.firstNameKana}`;
+      const nameB = `${b.lastNameKana}${b.firstNameKana}`;
+      return nameA.localeCompare(nameB, 'ja');
+    });
+  }
+
+  /**
+   * EntityをDTOに変換
+   */
+  private toDto(member: Member): MemberDto {
+    return {
+      id: member.id,
+      studentNumber: member.studentNumber,
+      lastNameKanji: member.lastNameKanji,
+      firstNameKanji: member.firstNameKanji,
+      lastNameKana: member.lastNameKana,
+      firstNameKana: member.firstNameKana,
+      lastNameEn: member.lastNameEn,
+      firstNameEn: member.firstNameEn,
+      grade: calculateGrade(member.enrollmentYear),
+      enrollmentYear: member.enrollmentYear,
+      graduationYear: member.graduationYear,
+      department: member.department,
+      departmentName: DEPARTMENTS[member.department],
+      block: member.block,
+      isActive: member.isActive,
+    };
+  }
+}

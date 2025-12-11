@@ -1,0 +1,102 @@
+import type { Participant } from '@/entities';
+import type { VideoConnectionConfig, VolumeLevel } from '../types';
+import type { VideoSessionObserver } from '../observers';
+
+/**
+ * ビデオレンダリングオプション
+ */
+export interface VideoRenderOptions {
+  participantId: string;
+  canvas: HTMLCanvasElement;
+  width: number;
+  height: number;
+}
+
+/**
+ * ビデオサービスインターフェース
+ * Zoom SDKへの依存をアプリケーション層から分離するためのAdapter Pattern
+ */
+export interface IVideoService {
+  /**
+   * ビデオセッションに接続
+   * @param config 接続設定
+   */
+  connect(config: VideoConnectionConfig): Promise<void>;
+
+  /**
+   * ビデオセッションから切断
+   */
+  disconnect(): Promise<void>;
+
+  /**
+   * オーディオのオン/オフを切り替え
+   * @returns 切り替え後のオーディオ状態（true: オン, false: オフ）
+   */
+  toggleAudio(): Promise<boolean>;
+
+  /**
+   * ビデオのオン/オフを切り替え
+   * @returns 切り替え後のビデオ状態（true: オン, false: オフ）
+   */
+  toggleVideo(): Promise<boolean>;
+
+  /**
+   * 参加者の音量を設定
+   * @param participantId 参加者ID
+   * @param level 音量レベル
+   */
+  setVolume(participantId: string, level: VolumeLevel): Promise<void>;
+
+  /**
+   * 現在の参加者一覧を取得
+   */
+  getParticipants(): Participant[];
+
+  /**
+   * イベントオブザーバーを登録
+   * @param observer オブザーバー
+   * @returns 登録解除関数
+   */
+  subscribeToEvents(observer: VideoSessionObserver): () => void;
+
+  /**
+   * 接続状態を取得
+   */
+  isConnected(): boolean;
+
+  /**
+   * オーディオ状態を取得
+   */
+  isAudioOn(): boolean;
+
+  /**
+   * ビデオ状態を取得
+   */
+  isVideoOn(): boolean;
+
+  /**
+   * 参加者のビデオをキャンバスにレンダリング
+   * @param options レンダリングオプション
+   */
+  renderVideo(options: VideoRenderOptions): Promise<void>;
+
+  /**
+   * 参加者のビデオレンダリングを停止
+   * @param participantId 参加者ID
+   * @param canvas キャンバス要素
+   */
+  stopRenderVideo(participantId: string, canvas: HTMLCanvasElement): Promise<void>;
+
+  /**
+   * 自分のビデオをキャンバスにレンダリング
+   * @param canvas キャンバス要素
+   * @param width 幅
+   * @param height 高さ
+   */
+  renderSelfVideo(canvas: HTMLCanvasElement, width: number, height: number): Promise<void>;
+
+  /**
+   * 自分のビデオレンダリングを停止
+   */
+  stopRenderSelfVideo(): Promise<void>;
+}

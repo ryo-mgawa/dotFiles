@@ -1,0 +1,17 @@
+import { Inject, Injectable } from '@nestjs/common';
+import { Response } from 'express';
+import { AddShipmentsPresenterInterface } from '../../../interface/presenter/addShipmentsPresenterInterface';
+import { Output } from '../dto/addShipments/output';
+
+@Injectable()
+export class AddShipmentsPresenter implements AddShipmentsPresenterInterface {
+  constructor(@Inject('RESPONSE') private readonly response: Response) {}
+
+  public output(): void {
+    const result: Output = {
+      status: 'success',
+    };
+
+    this.response.status(200).send(result);
+  }
+}

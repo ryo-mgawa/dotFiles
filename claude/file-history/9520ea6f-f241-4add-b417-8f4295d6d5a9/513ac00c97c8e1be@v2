@@ -1,0 +1,31 @@
+import { Advisor } from '../../shared/types';
+
+/**
+ * 顧問リポジトリインターフェース
+ */
+export interface IAdvisorRepository {
+  /**
+   * 現職の全顧問を取得
+   */
+  findAllActive(): Promise<Advisor[]>;
+
+  /**
+   * IDで顧問を検索
+   */
+  findById(id: string): Promise<Advisor | null>;
+
+  /**
+   * 顧問を作成
+   */
+  create(advisor: Omit<Advisor, 'id' | 'createdAt' | 'updatedAt'>): Promise<Advisor>;
+
+  /**
+   * 顧問を更新
+   */
+  update(id: string, advisor: Partial<Advisor>): Promise<Advisor>;
+
+  /**
+   * 顧問を削除（論理削除）
+   */
+  delete(id: string): Promise<void>;
+}

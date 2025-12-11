@@ -1,0 +1,14 @@
+import { CorsOptions } from 'cors';
+import { env } from './env';
+
+/**
+ * CORS設定
+ * requirements.md 3.4節 セキュリティ要件を参照
+ */
+export const corsOptions: CorsOptions = {
+  origin: env.frontendUrl,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  optionsSuccessStatus: 200,
+};

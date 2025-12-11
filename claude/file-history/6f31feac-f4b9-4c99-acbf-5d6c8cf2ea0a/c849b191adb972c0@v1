@@ -1,0 +1,32 @@
+import { ConfigModule } from '@app/config';
+import { FirebaseAdminModule } from '@app/firebase';
+import { Module } from '@nestjs/common';
+import { REQUEST } from '@nestjs/core';
+import { JwtModule } from '@nestjs/jwt';
+import { Request } from 'express';
+import { GenerateJointTokenService } from '../application/service/generateJointTokenService';
+import { GetApplicationsService } from '../application/service/getApplicationsService';
+
+@Module({
+  imports: [
+    ConfigModule.forRoot(),
+    FirebaseAdminModule,
+    JwtModule.register({
+      // JwtServiceの設定（sign時に個別にprivateKeyを指定するため、ここでは最小限の設定）
+      signOptions: {
+        algorithm: 'RS256',
+      },
+    }),
+  ],
+  providers: [
+    GenerateJointTokenService,
+    GetApplicationsService,
+    {
+      provide: 'RESPONSE',
+      useFactory: (request: Request) => request.res,
+      inject: [REQUEST],
+    },
+  ],
+  exports: ['RESPONSE', GenerateJointTokenService, GetApplicationsService],
+})
+export class BaseJointModule {}

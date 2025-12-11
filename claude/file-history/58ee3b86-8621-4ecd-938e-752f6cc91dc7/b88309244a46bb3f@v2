@@ -1,0 +1,137 @@
+import type { Session, CreateSessionInput, SessionParticipant } from '@/entities/index.js';
+import type { ISessionRepository } from './ISessionRepository.js';
+import { prisma } from '../prisma/client.js';
+
+export class SessionRepository implements ISessionRepository {
+  async findById(id: string): Promise<Session | null> {
+    const session = await prisma.session.findUnique({
+      where: { id },
+    });
+
+    if (!session) return null;
+
+    return this.mapToEntity(session);
+  }
+
+  async findActiveByCompanyId(companyId: string): Promise<Session | null> {
+    const session = await prisma.session.findFirst({
+      where: { companyId, status: 'active' },
+    });
+
+    if (!session) return null;
+
+    return this.mapToEntity(session);
+  }
+
+  async findByTopic(topic: string): Promise<Session | null> {
+    const session = await prisma.session.findFirst({
+      where: { topic, status: 'active' },
+    });
+
+    if (!session) return null;
+
+    return this.mapToEntity(session);
+  }
+
+  async create(input: CreateSessionInput): Promise<Session> {
+    const session = await prisma.session.create({
+      data: {
+        companyId: input.companyId,
+        topic: input.topic,
+        status: 'active',
+      },
+    });
+
+    return this.mapToEntity(session);
+  }
+
+  async endSession(id: string): Promise<Session> {
+    const session = await prisma.session.update({
+      where: { id },
+      data: {
+        status: 'ended',
+        endedAt: new Date(),
+      },
+    });
+
+    return this.mapToEntity(session);
+  }
+
+  async addParticipant(
+    sessionId: string,
+    siteId: string,
+    userId?: string
+  ): Promise<SessionParticipant> {
+    const participant = await prisma.sessionParticipant.create({
+      data: {
+        sessionId,
+        siteId,
+        userId: userId ?? null,
+      },
+    });
+
+    return this.mapParticipantToEntity(participant);
+  }
+
+  async removeParticipant(sessionId: string, siteId: string): Promise<void> {
+    await prisma.sessionParticipant.updateMany({
+      where: {
+        sessionId,
+        siteId,
+        leftAt: null,
+      },
+      data: {
+        leftAt: new Date(),
+      },
+    });
+  }
+
+  async getParticipants(sessionId: string): Promise<SessionParticipant[]> {
+    const participants = await prisma.sessionParticipant.findMany({
+      where: {
+        sessionId,
+        leftAt: null,
+      },
+    });
+
+    return participants.map((p) => this.mapParticipantToEntity(p));
+  }
+
+  private mapToEntity(session: {
+    id: string;
+    companyId: string;
+    topic: string;
+    status: string;
+    startedAt: Date;
+    endedAt: Date | null;
+    createdAt: Date;
+  }): Session {
+    return {
+      id: session.id,
+      companyId: session.companyId,
+      topic: session.topic,
+      status: session.status as 'active' | 'ended',
+      startedAt: session.startedAt,
+      endedAt: session.endedAt,
+      createdAt: session.createdAt,
+    };
+  }
+
+  private mapParticipantToEntity(participant: {
+    id: string;
+    sessionId: string;
+    siteId: string;
+    userId: string | null;
+    joinedAt: Date;
+    leftAt: Date | null;
+  }): SessionParticipant {
+    return {
+      id: participant.id,
+      sessionId: participant.sessionId,
+      siteId: participant.siteId,
+      userId: participant.userId,
+      joinedAt: participant.joinedAt,
+      leftAt: participant.leftAt,
+    };
+  }
+}

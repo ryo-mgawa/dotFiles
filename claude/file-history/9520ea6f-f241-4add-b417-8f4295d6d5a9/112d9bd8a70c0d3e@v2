@@ -1,0 +1,17 @@
+import { Router } from 'express';
+import { AdvisorsController } from '../controllers/AdvisorsController';
+import { GetAdvisorListUseCase } from '../../application/usecases/advisors/GetAdvisorListUseCase';
+import { advisorRepository } from '../../config/dependencies';
+
+const router = Router();
+
+const getAdvisorListUseCase = new GetAdvisorListUseCase(advisorRepository);
+const advisorsController = new AdvisorsController(getAdvisorListUseCase);
+
+/**
+ * GET /api/advisors
+ * 現職顧問一覧を取得
+ */
+router.get('/', (req, res, next) => advisorsController.getAdvisors(req, res, next));
+
+export default router;

@@ -1,0 +1,29 @@
+export interface LoginRequestDto {
+  email: string;
+  password: string;
+}
+
+export interface LoginResponseDto {
+  user: AuthUserDto;
+  company: {
+    id: string;
+    name: string;
+  };
+  accessToken: string;
+}
+
+export interface AuthUserDto {
+  id: string;
+  name: string;
+  email: string;
+  siteId: string;
+  role: 'admin' | 'user';
+}
+
+export interface GetCurrentUserResponseDto {
+  user: AuthUserDto;
+  company: {
+    id: string;
+    name: string;
+  };
+}

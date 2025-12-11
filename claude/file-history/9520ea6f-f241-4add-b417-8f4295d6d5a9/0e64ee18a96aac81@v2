@@ -1,0 +1,19 @@
+import apiClient from './apiClient';
+import { Member } from '@/types/models/Member';
+
+/**
+ * 部員API
+ */
+
+interface ApiResponse<T> {
+  success: boolean;
+  data: T;
+}
+
+/**
+ * 部員一覧を取得
+ */
+export const getMembers = async (): Promise<Member[]> => {
+  const response = await apiClient.get<ApiResponse<Member[]>>('/members');
+  return response.data.data;
+};

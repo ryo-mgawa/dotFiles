@@ -1,0 +1,35 @@
+import { Role, Roles, User } from '@app/auth';
+import { UserContextTypes } from '@app/requestContext';
+import { Body, Controller, Post, Res } from '@nestjs/common';
+import { AddShipmentEventsUseCase } from '../../../application/useCase/addShipmentEventsUseCase';
+import { AddShipmentEventsInput } from '../dto/addShipmentEvents/input';
+
+@Roles(Role.PAAS)
+@Controller('/public/shipment-events')
+export class AddShipmentEventsController {
+  constructor(private readonly addShipmentEventsUseCase: AddShipmentEventsUseCase) { }
+
+  @Post('/')
+  public async addShipmentEvents(
+    @User() user: UserContextTypes,
+    @Body() input: AddShipmentEventsInput,
+    @Res() _: Response,
+  ): Promise<void> {
+    const useCaseInput = {
+      events: input.events.map((event) => ({
+        shipmentId: event.shipmentId,
+        type: event.type,
+        originalSpotId: event.originalSpotId,
+        geocode: event.geocode
+          ? { x: event.geocode.longitude, y: event.geocode.latitude }
+          : undefined,
+        executedAt: new Date(event.executedAt),
+      })),
+    };
+
+    await this.addShipmentEventsUseCase.execute(
+      useCaseInput,
+      user.userId,
+    );
+  }
+}

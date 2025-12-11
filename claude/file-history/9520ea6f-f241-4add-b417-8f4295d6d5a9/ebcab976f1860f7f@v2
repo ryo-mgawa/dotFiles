@@ -1,0 +1,43 @@
+import { useEffect, useState } from 'react';
+import { Container } from 'react-bootstrap';
+import { MemberTable } from '@/components/members/MemberTable';
+import { LoadingSpinner } from '@/components/common/LoadingSpinner';
+import { ErrorMessage } from '@/components/common/ErrorMessage';
+import { getMembers } from '@/services/api/membersApi';
+import { Member } from '@/types/models/Member';
+
+/**
+ * 部員名簿ページ
+ * requirements.md 2.2節を参照
+ */
+export const MembersPage = () => {
+  const [members, setMembers] = useState<Member[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await getMembers();
+        setMembers(data);
+      } catch (err) {
+        setError('部員情報の取得に失敗しました');
+        console.error(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    void fetchData();
+  }, []);
+
+  if (loading) return <LoadingSpinner />;
+  if (error) return <ErrorMessage message={error} />;
+
+  return (
+    <Container>
+      <h2 className="mb-4">部員名簿</h2>
+      <MemberTable members={members} />
+    </Container>
+  );
+};

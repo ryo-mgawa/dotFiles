@@ -1,0 +1,29 @@
+import { Module } from '@nestjs/common';
+import { GenerateJointTokenUseCase } from '../../application/generateJointTokenUseCase';
+import { GetApplicationsUseCase } from '../../application/getApplicationsUseCase';
+import { ApplicationsPresenterProviderIdentity } from '../../interface/presenter/applicationsPresenter';
+import { ProviderIdentity } from '../../interface/presenter/jointTokenPresenter';
+import { BaseJointModule } from '../baseModule';
+import { ApplicationsController } from './controller/applicationsController';
+import { JointTokenController } from './controller/jointTokenController';
+import { ApplicationsPresenter } from './presenter/applicationsPresenter';
+import { JointTokenPresenter } from './presenter/jointTokenPresenter';
+
+@Module({
+  imports: [BaseJointModule],
+  controllers: [JointTokenController, ApplicationsController],
+  providers: [
+    GenerateJointTokenUseCase,
+    GetApplicationsUseCase,
+    {
+      provide: ProviderIdentity,
+      useClass: JointTokenPresenter,
+    },
+    {
+      provide: ApplicationsPresenterProviderIdentity,
+      useClass: ApplicationsPresenter,
+    },
+  ],
+  exports: [ProviderIdentity, ApplicationsPresenterProviderIdentity],
+})
+export class ManagerJointModule {}

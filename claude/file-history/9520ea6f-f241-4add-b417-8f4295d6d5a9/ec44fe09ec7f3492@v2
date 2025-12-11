@@ -1,0 +1,32 @@
+/**
+ * 記録DTO
+ */
+export interface RecordDto {
+  id: string;
+  competitionId: string;
+  competitionName: string;
+  location: string;
+  date: string; // ISO 8601形式
+  event: string;
+  gender: 'M' | 'F';
+  result: number;
+  wind: number | null;
+  note: string | null;
+  gradeAtRecord: number;
+  departmentAtRecord: string;
+  memberName: string;
+}
+
+/**
+ * 歴代記録DTO
+ */
+export interface AllTimeRecordDto {
+  rank: number;
+  memberName: string;
+  gradeAtRecord: number;
+  departmentAtRecord: string;
+  result: number;
+  location: string;
+  date: string;
+  wind: number | null;
+}

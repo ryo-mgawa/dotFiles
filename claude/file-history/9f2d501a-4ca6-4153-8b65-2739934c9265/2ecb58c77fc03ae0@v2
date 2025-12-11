@@ -1,0 +1,175 @@
+import {
+  Shipment,
+  ShipmentInsert,
+  ShipmentUpdate,
+  Consignor,
+  Consignee,
+  ShipmentEvent,
+  ShipmentEventInsert,
+  ShipmentEventUpdate,
+  ShipmentEventType,
+  SHIPMENT_EVENT_TYPE,
+  ShipmentStatus,
+  ShipmentStatusInsert,
+  ShipmentStatusUpdate,
+  ShipmentStatusType,
+  SHIPMENT_STATUS,
+} from '../model';
+import { DateTime } from 'luxon';
+
+describe('Shipment Models', () => {
+  describe('型定義の確認', () => {
+    it('Shipment型が正しく定義されている', () => {
+      const shipment: Shipment = {
+        id: '00000000-0000-0000-0000-000000000001',
+        organization_id: 'org-1',
+        slip_id: 'slip-1',
+        consignor: { id: 'consignor-1', name: '発荷主A' },
+        consignee: { id: 'consignee-1', name: '着荷主A' },
+        origin_spot_id: 'spot-1',
+        destination_spot_id: 'spot-2',
+        meta: null,
+      };
+
+      expect(shipment).toBeDefined();
+      expect(shipment.id).toBe('00000000-0000-0000-0000-000000000001');
+    });
+
+    it('ShipmentInsert型が正しく定義されている', () => {
+      const shipmentInsert: ShipmentInsert = {
+        id: '00000000-0000-0000-0000-000000000001',
+        organization_id: 'org-1',
+        slip_id: 'slip-1',
+        consignor: JSON.stringify({ id: 'consignor-1', name: '発荷主A' }),
+        consignee: JSON.stringify({ id: 'consignee-1', name: '着荷主A' }),
+        origin_spot_id: 'spot-1',
+        destination_spot_id: 'spot-2',
+        meta: JSON.stringify(null),
+      };
+
+      expect(shipmentInsert).toBeDefined();
+      expect(shipmentInsert.slip_id).toBe('slip-1');
+    });
+
+    it('ShipmentUpdate型が正しく定義されている', () => {
+      const shipmentUpdate: ShipmentUpdate = {
+        slip_id: 'slip-updated',
+        meta: JSON.stringify({ updated: true }),
+      };
+
+      expect(shipmentUpdate).toBeDefined();
+      expect(shipmentUpdate.slip_id).toBe('slip-updated');
+    });
+
+    it('Consignor型が正しく定義されている', () => {
+      const consignor: Consignor = {
+        id: 'consignor-1',
+        name: '発荷主A',
+      };
+
+      expect(consignor).toBeDefined();
+      expect(consignor.id).toBe('consignor-1');
+    });
+
+    it('Consignee型が正しく定義されている', () => {
+      const consignee: Consignee = {
+        id: 'consignee-1',
+        name: '着荷主A',
+      };
+
+      expect(consignee).toBeDefined();
+      expect(consignee.id).toBe('consignee-1');
+    });
+  });
+
+  describe('ShipmentEvent Models', () => {
+    it('ShipmentEvent型が正しく定義されている', () => {
+      const event: ShipmentEvent = {
+        id: '00000000-0000-0000-0000-000000000001',
+        shipment_id: '00000000-0000-0000-0000-000000000002',
+        type: 'Store',
+        original_spot_id: 'spot-1',
+        geocode: null,
+        update_by: 'user-1',
+        executed_at: new Date(),
+      };
+
+      expect(event).toBeDefined();
+      expect(event.type).toBe('Store');
+    });
+
+    it('ShipmentEventInsert型が正しく定義されている', () => {
+      const eventInsert: ShipmentEventInsert = {
+        id: '00000000-0000-0000-0000-000000000001',
+        shipment_id: '00000000-0000-0000-0000-000000000002',
+        type: 'Transfer',
+        original_spot_id: 'spot-1',
+        update_by: 'user-1',
+        executed_at: new Date(),
+      };
+
+      expect(eventInsert).toBeDefined();
+      expect(eventInsert.type).toBe('Transfer');
+    });
+
+    it('ShipmentEventUpdate型が正しく定義されている', () => {
+      const eventUpdate: ShipmentEventUpdate = {
+        type: 'Deliver',
+      };
+
+      expect(eventUpdate).toBeDefined();
+      expect(eventUpdate.type).toBe('Deliver');
+    });
+
+    it('SHIPMENT_EVENT_TYPE定数が正しく定義されている', () => {
+      expect(SHIPMENT_EVENT_TYPE).toBeDefined();
+      expect(Object.values(SHIPMENT_EVENT_TYPE)).toContain('Store');
+      expect(Object.values(SHIPMENT_EVENT_TYPE)).toContain('Transfer');
+      expect(Object.values(SHIPMENT_EVENT_TYPE)).toContain('Deliver');
+      expect(Object.values(SHIPMENT_EVENT_TYPE)).toContain('Cancel');
+    });
+  });
+
+  describe('ShipmentStatus Models', () => {
+    it('ShipmentStatus型が正しく定義されている', () => {
+      const status: ShipmentStatus = {
+        shipment_id: '00000000-0000-0000-0000-000000000001',
+        status: 'Requested',
+        executed_at: new Date(),
+      };
+
+      expect(status).toBeDefined();
+      expect(status.status).toBe('Requested');
+    });
+
+    it('ShipmentStatusInsert型が正しく定義されている', () => {
+      const statusInsert: ShipmentStatusInsert = {
+        shipment_id: '00000000-0000-0000-0000-000000000001',
+        status: 'InStorage',
+        executed_at: DateTime.now(),
+      };
+
+      expect(statusInsert).toBeDefined();
+      expect(statusInsert.status).toBe('InStorage');
+    });
+
+    it('ShipmentStatusUpdate型が正しく定義されている', () => {
+      const statusUpdate: ShipmentStatusUpdate = {
+        status: 'InTransit',
+        executed_at: DateTime.now(),
+      };
+
+      expect(statusUpdate).toBeDefined();
+      expect(statusUpdate.status).toBe('InTransit');
+    });
+
+    it('SHIPMENT_STATUS定数が正しく定義されている', () => {
+      expect(SHIPMENT_STATUS).toBeDefined();
+      expect(Object.values(SHIPMENT_STATUS)).toContain('Requested');
+      expect(Object.values(SHIPMENT_STATUS)).toContain('InStorage');
+      expect(Object.values(SHIPMENT_STATUS)).toContain('InTransit');
+      expect(Object.values(SHIPMENT_STATUS)).toContain('Completed');
+      expect(Object.values(SHIPMENT_STATUS)).toContain('Canceled');
+    });
+  });
+});

@@ -1,0 +1,233 @@
+import { INestApplication } from '@nestjs/common';
+import { Test, TestingModule } from '@nestjs/testing';
+import { ShipmentRepository } from '../../../data/repository/shipmentRepository';
+import { GetShipmentsPresenterInterface } from '../../../interface/presenter/getShipmentsPresenterInterface';
+import { GetShipmentsUseCase } from '../getShipmentsUseCase';
+import { Input } from '../../types/getShipmentsTypes';
+import { Shipment } from '../../../data/model/shipment';
+
+jest.mock('@app/requestContext/requestContext', () => {
+  return {
+    RequestContext: class DummyRequestContext {
+      public static get() {
+        return {
+          user: {
+            organizationId: 'organizationId',
+            userId: 'userId',
+            role: 'manager',
+          },
+        };
+      }
+      public static start(_, next) {
+        next();
+      }
+    },
+  };
+});
+
+describe('GetShipmentsUseCase', () => {
+  let getShipmentsUseCase: GetShipmentsUseCase;
+  let moduleRef: TestingModule;
+  let app: INestApplication;
+  let mockRepository: { getShipments: jest.Mock };
+  let mockPresenter: { output: jest.Mock };
+
+  describe('execute', () => {
+    it('sinceId/countが正しくRepositoryに渡される', async () => {
+      await createTestingModule();
+
+      const mockShipments: Shipment[] = [
+        {
+          id: 'shipment-1',
+          organizationId: 'org-1',
+          slipId: 'slip-1',
+          consignor: { id: 'consignor-1', name: '発荷主1' },
+          consignee: { id: 'consignee-1', name: '着荷主1' },
+          originSpotId: 'spot-1',
+          destinationSpotId: 'spot-2',
+          meta: { key: 'value' },
+        },
+      ];
+
+      mockRepository.getShipments.mockResolvedValue(mockShipments);
+
+      const input: Input = {
+        sinceId: 'since-id-1',
+        count: 10,
+      };
+
+      await getShipmentsUseCase.execute(input, 'organizationId');
+
+      expect(mockRepository.getShipments).toHaveBeenCalledWith({
+        organizationId: 'organizationId',
+        sinceId: 'since-id-1',
+        count: 10,
+      });
+      expect(mockPresenter.output).toHaveBeenCalledWith(mockShipments);
+    });
+
+    it('Repositoryから取得したデータがPresenterに渡される', async () => {
+      await createTestingModule();
+
+      const mockShipments: Shipment[] = [
+        {
+          id: 'shipment-1',
+          organizationId: 'org-1',
+          slipId: 'slip-1',
+          consignor: { id: 'consignor-1', name: '発荷主1' },
+          consignee: { id: 'consignee-1', name: '着荷主1' },
+          originSpotId: 'spot-1',
+          destinationSpotId: 'spot-2',
+          meta: null,
+        },
+        {
+          id: 'shipment-2',
+          organizationId: 'org-1',
+          slipId: 'slip-2',
+          consignor: { id: 'consignor-2', name: '発荷主2' },
+          consignee: { id: 'consignee-2', name: '着荷主2' },
+          originSpotId: 'spot-3',
+          destinationSpotId: 'spot-4',
+          meta: { weight: 10 },
+        },
+      ];
+
+      mockRepository.getShipments.mockResolvedValue(mockShipments);
+
+      const input: Input = {
+        count: 20,
+      };
+
+      await getShipmentsUseCase.execute(input, 'organizationId');
+
+      expect(mockPresenter.output).toHaveBeenCalledWith(mockShipments);
+    });
+
+    it('空配列の場合も正しく処理される', async () => {
+      await createTestingModule();
+
+      mockRepository.getShipments.mockResolvedValue([]);
+
+      const input: Input = {
+        count: 20,
+      };
+
+      await getShipmentsUseCase.execute(input, 'organizationId');
+
+      expect(mockRepository.getShipments).toHaveBeenCalledWith({
+        organizationId: 'organizationId',
+        sinceId: undefined,
+        count: 20,
+      });
+      expect(mockPresenter.output).toHaveBeenCalledWith([]);
+    });
+
+    it('sinceIdなしで最初のページを取得', async () => {
+      await createTestingModule();
+
+      const mockShipments: Shipment[] = [
+        {
+          id: 'shipment-1',
+          organizationId: 'org-1',
+          slipId: 'slip-1',
+          consignor: { id: 'consignor-1', name: '発荷主1' },
+          consignee: { id: 'consignee-1', name: '着荷主1' },
+          originSpotId: 'spot-1',
+          destinationSpotId: 'spot-2',
+        },
+      ];
+
+      mockRepository.getShipments.mockResolvedValue(mockShipments);
+
+      const input: Input = {
+        count: 10,
+      };
+
+      await getShipmentsUseCase.execute(input, 'organizationId');
+
+      expect(mockRepository.getShipments).toHaveBeenCalledWith({
+        organizationId: 'organizationId',
+        sinceId: undefined,
+        count: 10,
+      });
+    });
+
+    it('境界値テスト（count=1）', async () => {
+      await createTestingModule();
+
+      mockRepository.getShipments.mockResolvedValue([]);
+
+      const input: Input = {
+        count: 1,
+      };
+
+      await getShipmentsUseCase.execute(input, 'organizationId');
+
+      expect(mockRepository.getShipments).toHaveBeenCalledWith({
+        organizationId: 'organizationId',
+        sinceId: undefined,
+        count: 1,
+      });
+    });
+
+    it('境界値テスト（count=100）', async () => {
+      await createTestingModule();
+
+      mockRepository.getShipments.mockResolvedValue([]);
+
+      const input: Input = {
+        sinceId: 'since-id-100',
+        count: 100,
+      };
+
+      await getShipmentsUseCase.execute(input, 'organizationId');
+
+      expect(mockRepository.getShipments).toHaveBeenCalledWith({
+        organizationId: 'organizationId',
+        sinceId: 'since-id-100',
+        count: 100,
+      });
+    });
+  });
+
+  const createTestingModule = async () => {
+    mockRepository = {
+      getShipments: jest.fn().mockResolvedValue([]),
+    };
+
+    mockPresenter = {
+      output: jest.fn(),
+    };
+
+    moduleRef = await Test.createTestingModule({
+      imports: [],
+      providers: [
+        GetShipmentsUseCase,
+        {
+          provide: ShipmentRepository,
+          useValue: mockRepository,
+        },
+        {
+          provide: 'GetShipmentsPresenter',
+          useValue: mockPresenter,
+        },
+      ],
+    }).compile();
+
+    app = moduleRef.createNestApplication();
+    await app.init();
+
+    getShipmentsUseCase = moduleRef.get<GetShipmentsUseCase>(
+      GetShipmentsUseCase,
+    );
+  };
+
+  afterEach(async () => {
+    if (app) {
+      await app.close();
+    }
+    if (moduleRef) {
+      await moduleRef.close();
+    }
+  });
+});

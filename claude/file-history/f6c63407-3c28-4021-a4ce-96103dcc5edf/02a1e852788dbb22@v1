@@ -1,0 +1,17 @@
+required:
+  - status
+  - applications
+type: object
+properties:
+  status:
+    type: string
+    default: success
+    enum:
+      - success
+      - error
+    description: 正常に取得に成功した場合はsuccess、失敗した場合はerrorが入ります。
+  applications:
+    type: array
+    description: アプリ情報のリスト
+    items:
+      $ref: ./AutomationApplication.yml

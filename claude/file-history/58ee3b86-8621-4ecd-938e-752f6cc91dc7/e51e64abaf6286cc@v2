@@ -1,0 +1,9 @@
+export interface SiteDto {
+  id: string;
+  name: string;
+  displayOrder: number;
+}
+
+export interface GetSitesResponseDto {
+  sites: SiteDto[];
+}

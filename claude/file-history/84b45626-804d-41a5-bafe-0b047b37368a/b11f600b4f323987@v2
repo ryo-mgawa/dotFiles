@@ -1,0 +1,10 @@
+import { IsDefined, IsString, MaxLength } from 'class-validator';
+
+const MAX_ID_LENGTH = 256;
+
+export class DestinationSpot {
+  @IsDefined()
+  @IsString()
+  @MaxLength(MAX_ID_LENGTH)
+  public id: string;
+}

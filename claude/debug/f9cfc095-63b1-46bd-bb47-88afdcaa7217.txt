@@ -1,0 +1,154 @@
+[DEBUG] Watching for changes in setting files /Users/miyagawaryouta/.claude/settings.json...
+[DEBUG] [LSP MANAGER] initializeLspServerManager() called
+[DEBUG] [LSP MANAGER] Created manager instance, state=pending
+[DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+[DEBUG] [LSP SERVER MANAGER] initialize() called
+[DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+[DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+[DEBUG] Total LSP servers loaded: 0
+[DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+[DEBUG] LSP manager initialized with 0 servers
+[DEBUG] LSP server manager initialized successfully
+[DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+[DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/miyagawaryouta/.claude/skills, project=/Users/miyagawaryouta/Documents/GitHub/Split-Flap-Display/.claude/skills
+[DEBUG] >>>>> getPluginSkills CALLED <<<<<
+[DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+[DEBUG] Looking for shell config file: /Users/miyagawaryouta/.zshrc
+[DEBUG] Snapshots directory: /Users/miyagawaryouta/.claude/shell-snapshots
+[DEBUG] Creating snapshot at: /Users/miyagawaryouta/.claude/shell-snapshots/snapshot-zsh-1762479484265-6tu1sn.sh
+[DEBUG] Shell binary exists: true
+[DEBUG] Execution timeout: 10000ms
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f9cfc095-63b1-46bd-bb47-88afdcaa7217-agent-f9cfc095-63b1-46bd-bb47-88afdcaa7217.json.tmp.2752.1762479484267
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f9cfc095-63b1-46bd-bb47-88afdcaa7217-agent-f9cfc095-63b1-46bd-bb47-88afdcaa7217.json.tmp.2752.1762479484267 to /Users/miyagawaryouta/.claude/todos/f9cfc095-63b1-46bd-bb47-88afdcaa7217-agent-f9cfc095-63b1-46bd-bb47-88afdcaa7217.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/f9cfc095-63b1-46bd-bb47-88afdcaa7217-agent-f9cfc095-63b1-46bd-bb47-88afdcaa7217.json written atomically
+[DEBUG] getPluginSkills: Processing 0 enabled plugins
+[DEBUG] Total plugin skills loaded: 0
+[DEBUG] Total plugin commands loaded: 0
+[DEBUG] Registered 0 hooks from 0 plugins
+[DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+[DEBUG] getSkillsIfEnabled returning: 0 skill dir commands, 0 plugin skills
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479484479
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 63674 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479484479 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+[DEBUG] Total plugin agents loaded: 0
+[DEBUG] MCP server "sequential-thinking": Starting connection with timeout of 30000ms
+[DEBUG] MCP server "serena": Starting connection with timeout of 30000ms
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479484518
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 63674 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479484518 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Getting matching hook commands for SessionStart with query: startup
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479484590
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 63569 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479484590 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479484596
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 63569 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479484596 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479484608
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 64031 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479484608 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+[DEBUG] performStartupChecks called
+[DEBUG] Starting background plugin installations
+[DEBUG] performBackgroundPluginInstallations called
+[DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+[DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+[DEBUG] MCP server "sequential-thinking": Successfully connected to stdio server in 520ms
+[DEBUG] MCP server "sequential-thinking": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":false,"serverVersion":{"name":"mcp-sequentialthinking-tools","version":"0.0.5"}}
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479485023
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 64031 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479485023 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479485032
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 64031 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479485032 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479485040
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 64136 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479485040 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at WT (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:51:1136)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:56:9845)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at pGA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:58:2129)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Zt2 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:3782:7804)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479485117
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 64136 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479485117 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479485329
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 64136 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479485329 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[ERROR] MCP server "serena" Server stderr: Updating https://github.com/oraios/serena (HEAD)
+[DEBUG] Shell snapshot created successfully (96429 bytes)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479486518
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 64324 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479486518 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[ERROR] MCP server "serena" Server stderr: Updated https://github.com/oraios/serena (c3827d9d572b9b67a1fdeb42965ae2ae8422d3a2)
+[ERROR] MCP server "serena" Server stderr: Building serena-agent @ git+https://github.com/oraios/serena@c3827d9d572b9b67a1fdeb42965ae2ae8422d3a2
+[ERROR] MCP server "serena" Server stderr: Built serena-agent @ git+https://github.com/oraios/serena@c3827d9d572b9b67a1fdeb42965ae2ae8422d3a2
+[ERROR] MCP server "serena" Server stderr: Installed 58 packages in 176ms
+[DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[ERROR] MCP server "serena" Server stderr: INFO  2025-11-07 10:38:10,177 [MainThread] serena.cli:start_mcp_server:172 - Initializing Serena MCP server
+[ERROR] MCP server "serena" Server stderr: INFO  2025-11-07 10:38:10,177 [MainThread] serena.cli:start_mcp_server:173 - Storing logs in /Users/miyagawaryouta/.serena/logs/2025-11-07/mcp_20251107-103810.txt
+[ERROR] MCP server "serena" Server stderr: INFO  2025-11-07 10:38:10,178 [MainThread] serena.config.serena_config:from_config_file:458 - Loading Serena configuration from /Users/miyagawaryouta/.serena/serena_config.yml
+[DEBUG] Getting matching hook commands for SessionEnd with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] MCP server "sequential-thinking": Sending SIGINT to MCP server process
+[DEBUG] Cleaned up session snapshot: /Users/miyagawaryouta/.claude/shell-snapshots/snapshot-zsh-1762479484265-6tu1sn.sh
+[DEBUG] LSP server manager shut down successfully
+[ERROR] MCP server "serena" Server stderr: WARNING 2025-11-07 10:38:10,182 [MainThread] serena.config.serena_config:from_config_file:477 - Project path /Users/miyagawaryouta/Documents/GitHub/finn-portal does not exist or does not contain a project configuration file, skipping.
+[ERROR] MCP server "serena" Server stderr: INFO  2025-11-07 10:38:10,190 [MainThread] serena.agent:__init__:130 - Will record tool usage statistics with token count estimator: TIKTOKEN_GPT4O.
+[DEBUG] MCP server "sequential-thinking": MCP server process exited cleanly
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2752.1762479490238
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 64758 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2752.1762479490238 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically

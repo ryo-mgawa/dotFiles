@@ -1,0 +1,39 @@
+import type { IUserRepository } from '@/infrastructure/database/repositories/index.js';
+import type { ICompanyRepository } from '@/infrastructure/database/repositories/index.js';
+import type { GetCurrentUserResponseDto } from '../dto/AuthDto.js';
+import { NotFoundError } from '@/shared/errors/index.js';
+
+export class GetCurrentUserUseCase {
+  constructor(
+    private userRepository: IUserRepository,
+    private companyRepository: ICompanyRepository
+  ) {}
+
+  async execute(userId: string): Promise<GetCurrentUserResponseDto> {
+    const user = await this.userRepository.findById(userId);
+
+    if (!user) {
+      throw new NotFoundError('User');
+    }
+
+    const company = await this.companyRepository.findById(user.companyId);
+
+    if (!company) {
+      throw new NotFoundError('Company');
+    }
+
+    return {
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        siteId: user.siteId,
+        role: user.role,
+      },
+      company: {
+        id: company.id,
+        name: company.name,
+      },
+    };
+  }
+}

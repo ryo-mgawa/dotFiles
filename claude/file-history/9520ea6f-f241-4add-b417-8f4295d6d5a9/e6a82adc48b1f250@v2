@@ -1,0 +1,60 @@
+import { v4 as uuidv4 } from 'uuid';
+import { IAdvisorRepository } from '../../domain/repositories/IAdvisorRepository';
+import { Advisor } from '../../shared/types';
+import { NotFoundError } from '../../shared/errors/AppError';
+import { mockAdvisors } from './data';
+
+/**
+ * 顧問モックリポジトリ
+ */
+export class MockAdvisorRepository implements IAdvisorRepository {
+  private advisors: Advisor[] = [...mockAdvisors];
+
+  async findAllActive(): Promise<Advisor[]> {
+    return this.advisors.filter((a) => a.isActive);
+  }
+
+  async findById(id: string): Promise<Advisor | null> {
+    const advisor = this.advisors.find((a) => a.id === id);
+    return advisor || null;
+  }
+
+  async create(data: Omit<Advisor, 'id' | 'createdAt' | 'updatedAt'>): Promise<Advisor> {
+    const now = new Date();
+    const newAdvisor: Advisor = {
+      ...data,
+      id: uuidv4(),
+      createdAt: now,
+      updatedAt: now,
+    };
+    this.advisors.push(newAdvisor);
+    return newAdvisor;
+  }
+
+  async update(id: string, data: Partial<Advisor>): Promise<Advisor> {
+    const index = this.advisors.findIndex((a) => a.id === id);
+    if (index === -1) {
+      throw new NotFoundError('Advisor');
+    }
+
+    const updatedAdvisor: Advisor = {
+      ...this.advisors[index],
+      ...data,
+      id: this.advisors[index].id,
+      updatedAt: new Date(),
+    };
+    this.advisors[index] = updatedAdvisor;
+    return updatedAdvisor;
+  }
+
+  async delete(id: string): Promise<void> {
+    const index = this.advisors.findIndex((a) => a.id === id);
+    if (index === -1) {
+      throw new NotFoundError('Advisor');
+    }
+
+    // 論理削除
+    this.advisors[index].isActive = false;
+    this.advisors[index].updatedAt = new Date();
+  }
+}

@@ -1,0 +1,517 @@
+# Issue #3026: Automation Application情報取得API 実装
+
+## 概要
+
+`GET /private/automation/applications` エンドポイントを実装し、オートメーション連携のApplication情報一覧を取得できるようにする。
+
+## API仕様
+
+- **エンドポイント**: `GET /api/manager/private/automation/applications`
+- **認証**: BearerToken（ARRIVAL_MANAGER以上のロール）
+- **リクエストパラメータ**: なし
+- **レスポンス**:
+  ```json
+  {
+    "status": "success",
+    "applications": [
+      {
+        "id": "string",
+        "name": "string"
+      }
+    ]
+  }
+  ```
+
+## データソース
+
+**Firestore** からアプリケーション情報を取得する。
+
+### Firestoreコレクション設計（想定）
+
+コレクション: `applications`（または `joint_applications` など）
+
+```
+/applications/{applicationId}
+{
+  "id": "app-001",
+  "name": "Sample Application",
+  "organizationId": "org-123",  // 組織ごとに紐付ける場合
+  "status": "active",
+  "createdAt": timestamp,
+  "updatedAt": timestamp
+}
+```
+
+## 実装方針
+
+### 1. Firestore セットアップ（server/libs/firebase）
+
+`server/libs/firebase` に Firestore 用のファクトリを追加：
+
+```typescript
+// server/libs/firebase/src/factories/firestoreFactory/firestoreFactory.ts
+import { ConfigService } from '@nestjs/config';
+import * as admin from 'firebase-admin';
+import { FIREBASE_APP_NAME } from '../../firebaseAppName';
+import { createFirebaseAdminApp } from '../createFirebaseAdminApp';
+import { FirestoreProviderIdentity } from './providerIdentity';
+
+export const FirestoreFactory = {
+  provide: FirestoreProviderIdentity,
+  useFactory(configService: ConfigService): admin.firestore.Firestore {
+    const app = createFirebaseAdminApp({
+      appName: FIREBASE_APP_NAME.FIREBASE_ADMIN_CLIENT_APP,
+      initializeOptions: {
+        serviceAccountId: configService.get('FIREBASE_TOKEN_ADMIN_SERVICE_ACCOUNT'),
+      },
+    });
+    return app.firestore();
+  },
+  inject: [ConfigService],
+};
+```
+
+### 2. Clean Architecture パターン
+
+既存の `joint` モジュールの構造に従い、以下の層で実装：
+
+```
+server/apps/joint/src/
+├── application/              # アプリケーション層
+│   ├── getApplicationsUseCase.ts
+│   └── service/
+│       └── getApplicationsService.ts
+├── interface/               # インターフェース層
+│   └── presenter/
+│       └── applicationsPresenter/
+│           ├── index.ts
+│           ├── applicationsPresenterInterface.ts
+│           └── providerIdentity.ts
+└── presentation/            # プレゼンテーション層
+    └── manager/
+        ├── controller/
+        │   └── applicationsController.ts
+        └── presenter/
+            └── applicationsPresenter.ts
+```
+
+## 実装内容
+
+### 1. Controller層（プレゼンテーション層）
+
+**ファイル**: `server/apps/joint/src/presentation/manager/controller/applicationsController.ts`
+
+```typescript
+import { Role, Roles, User } from '@app/auth';
+import { UserContextTypes } from '@app/requestContext';
+import { Controller, Get, Response } from '@nestjs/common';
+import { GetApplicationsUseCase } from '../../../application/getApplicationsUseCase';
+
+@Roles(Role.ARRIVAL_MANAGER)
+@Controller('/private/automation')
+export class ApplicationsController {
+  constructor(
+    private readonly getApplicationsUseCase: GetApplicationsUseCase,
+  ) {}
+
+  @Get('/applications')
+  public getApplications(
+    @User() user: UserContextTypes,
+    @Response() _,
+  ) {
+    this.getApplicationsUseCase.execute(user.organizationId);
+  }
+}
+```
+
+**注意点**:
+- `@Controller('/private/automation')` として、automationパスを使用
+- `@Roles(Role.ARRIVAL_MANAGER)` で適切な権限チェック
+- UseCaseを呼び出すのみ（ビジネスロジックは含まない）
+
+### 2. UseCase層（アプリケーション層）
+
+**ファイル**: `server/apps/joint/src/application/getApplicationsUseCase.ts`
+
+```typescript
+import { Inject, Injectable } from '@nestjs/common';
+import {
+  ApplicationsPresenterInterface,
+  ProviderIdentity,
+} from '../interface/presenter/applicationsPresenter';
+import { GetApplicationsService } from './service/getApplicationsService';
+
+@Injectable()
+export class GetApplicationsUseCase {
+  constructor(
+    private readonly getApplicationsService: GetApplicationsService,
+    @Inject(ProviderIdentity)
+    private readonly presenter: ApplicationsPresenterInterface,
+  ) {}
+
+  public async execute(organizationId: string): Promise<void> {
+    const applications = await this.getApplicationsService.execute(organizationId);
+    this.presenter.output(applications);
+  }
+}
+```
+
+### 3. Service層（ビジネスロジック）- Firestore使用
+
+**ファイル**: `server/apps/joint/src/application/service/getApplicationsService.ts`
+
+```typescript
+import { Inject, Injectable } from '@nestjs/common';
+import * as admin from 'firebase-admin';
+import { FirestoreProviderIdentity } from '@app/firebase'; // libs/firebase から
+
+export type Application = {
+  id: string;
+  name: string;
+};
+
+@Injectable()
+export class GetApplicationsService {
+  constructor(
+    @Inject(FirestoreProviderIdentity)
+    private readonly firestore: admin.firestore.Firestore,
+  ) {}
+
+  public async execute(organizationId: string): Promise<Application[]> {
+    // Firestoreからアプリケーション一覧を取得
+    const snapshot = await this.firestore
+      .collection('applications')
+      .where('organizationId', '==', organizationId)
+      .where('status', '==', 'active')
+      .get();
+
+    return snapshot.docs.map((doc) => ({
+      id: doc.id,
+      name: doc.data().name,
+    }));
+  }
+}
+```
+
+**Firestore クエリのポイント（Notionより）**:
+- `.where()` はすべて **AND 条件**
+- `in` 演算子は最大10個まで
+- 10個以上の場合は分割してクエリ
+
+**実装検討事項**:
+- コレクション名を確認（`applications`? `joint_applications`?）
+- フィルタ条件を確認（organizationIdで絞り込み？status?）
+- エラーハンドリング（Firestore接続失敗時の処理）
+
+### 4. Presenter Interface（インターフェース層）
+
+**ファイル**: `server/apps/joint/src/interface/presenter/applicationsPresenter/applicationsPresenterInterface.ts`
+
+```typescript
+import { Application } from '../../../application/service/getApplicationsService';
+
+export interface ApplicationsPresenterInterface {
+  output(applications: Application[]): void;
+}
+```
+
+**ファイル**: `server/apps/joint/src/interface/presenter/applicationsPresenter/providerIdentity.ts`
+
+```typescript
+export const ProviderIdentity = Symbol('ApplicationsPresenterInterface');
+```
+
+**ファイル**: `server/apps/joint/src/interface/presenter/applicationsPresenter/index.ts`
+
+```typescript
+export * from './applicationsPresenterInterface';
+export * from './providerIdentity';
+```
+
+### 5. Presenter実装（プレゼンテーション層）
+
+**ファイル**: `server/apps/joint/src/presentation/manager/presenter/applicationsPresenter.ts`
+
+```typescript
+import { Inject, Injectable } from '@nestjs/common';
+import { Response } from 'express';
+import { Application } from '../../../application/service/getApplicationsService';
+import { ApplicationsPresenterInterface } from '../../../interface/presenter/applicationsPresenter';
+
+type GetApplicationsOutput = {
+  status: 'success';
+  applications: Application[];
+};
+
+@Injectable()
+export class ApplicationsPresenter implements ApplicationsPresenterInterface {
+  constructor(@Inject('RESPONSE') private readonly response: Response) {}
+
+  public output(applications: Application[]): void {
+    const output: GetApplicationsOutput = {
+      status: 'success',
+      applications,
+    };
+    this.response.status(200).json(output);
+  }
+}
+```
+
+### 6. Module更新
+
+**ファイル**: `server/apps/joint/src/presentation/manager/module.ts`
+
+既存のモジュールに新しいコントローラー、ユースケース、プレゼンターを追加：
+
+```typescript
+import { Module } from '@nestjs/common';
+import { GetApplicationsUseCase } from '../../application/getApplicationsUseCase';
+import { GenerateJointTokenUseCase } from '../../application/generateJointTokenUseCase';
+import { ProviderIdentity as ApplicationsProviderIdentity } from '../../interface/presenter/applicationsPresenter';
+import { ProviderIdentity as TokenProviderIdentity } from '../../interface/presenter/jointTokenPresenter';
+import { BaseJointModule } from '../baseModule';
+import { ApplicationsController } from './controller/applicationsController';
+import { JointTokenController } from './controller/jointTokenController';
+import { ApplicationsPresenter } from './presenter/applicationsPresenter';
+import { JointTokenPresenter } from './presenter/jointTokenPresenter';
+
+@Module({
+  imports: [BaseJointModule],
+  controllers: [
+    JointTokenController,
+    ApplicationsController, // 追加
+  ],
+  providers: [
+    GenerateJointTokenUseCase,
+    GetApplicationsUseCase, // 追加
+    {
+      provide: TokenProviderIdentity,
+      useClass: JointTokenPresenter,
+    },
+    {
+      provide: ApplicationsProviderIdentity, // 追加
+      useClass: ApplicationsPresenter,
+    },
+  ],
+  exports: [TokenProviderIdentity, ApplicationsProviderIdentity],
+})
+export class ManagerJointModule {}
+```
+
+**注意**: ProviderIdentityが重複するため、importで別名を付ける必要がある。
+
+### 7. BaseModule更新（必要に応じて）
+
+**ファイル**: `server/apps/joint/src/presentation/baseModule.ts`
+
+GetApplicationsServiceをprovidersに追加：
+
+```typescript
+import { ConfigModule } from '@app/config';
+import { Module } from '@nestjs/common';
+import { REQUEST } from '@nestjs/core';
+import { JwtModule } from '@nestjs/jwt';
+import { Request } from 'express';
+import { GetApplicationsService } from '../application/service/getApplicationsService';
+import { GenerateJointTokenService } from '../application/service/generateJointTokenService';
+
+@Module({
+  imports: [
+    ConfigModule.forRoot(),
+    JwtModule.register({
+      signOptions: {
+        algorithm: 'RS256',
+      },
+    }),
+    // 必要に応じてHttpModuleを追加
+    // HttpModule,
+  ],
+  providers: [
+    GenerateJointTokenService,
+    GetApplicationsService, // 追加
+    {
+      provide: 'RESPONSE',
+      useFactory: (request: Request) => request.res,
+      inject: [REQUEST],
+    },
+  ],
+  exports: [
+    'RESPONSE',
+    GenerateJointTokenService,
+    GetApplicationsService, // 追加
+  ],
+})
+export class BaseJointModule {}
+```
+
+## テスト実装
+
+### 1. Controller テスト
+
+**ファイル**: `server/apps/joint/src/presentation/manager/controller/__tests__/applicationsController.test.ts`
+
+```typescript
+import { Test, TestingModule } from '@nestjs/testing';
+import { GetApplicationsUseCase } from '../../../../application/getApplicationsUseCase';
+import { ApplicationsController } from '../applicationsController';
+
+describe('ApplicationsController', () => {
+  let controller: ApplicationsController;
+  let useCase: GetApplicationsUseCase;
+
+  beforeEach(async () => {
+    const module: TestingModule = await Test.createTestingModule({
+      controllers: [ApplicationsController],
+      providers: [
+        {
+          provide: GetApplicationsUseCase,
+          useValue: {
+            execute: jest.fn(),
+          },
+        },
+      ],
+    }).compile();
+
+    controller = module.get<ApplicationsController>(ApplicationsController);
+    useCase = module.get<GetApplicationsUseCase>(GetApplicationsUseCase);
+  });
+
+  it('should be defined', () => {
+    expect(controller).toBeDefined();
+  });
+
+  describe('getApplications', () => {
+    it('should call useCase.execute with organizationId', () => {
+      const user = { organizationId: 'org-123' };
+      controller.getApplications(user as any, {} as any);
+      expect(useCase.execute).toHaveBeenCalledWith('org-123');
+    });
+  });
+});
+```
+
+### 2. UseCase テスト
+
+**ファイル**: `server/apps/joint/src/application/__tests__/getApplicationsUseCase.test.ts`
+
+### 3. Service テスト
+
+**ファイル**: `server/apps/joint/src/application/service/__tests__/getApplicationsService.test.ts`
+
+### 4. Presenter テスト
+
+**ファイル**: `server/apps/joint/src/presentation/manager/presenter/__tests__/applicationsPresenter.test.ts`
+
+### 5. E2E テスト
+
+**ファイル**: `server/apps/joint/test/joint.e2e.spec.ts`
+
+既存のE2Eテストに新しいエンドポイントのテストケースを追加。
+
+## 実装手順
+
+1. **Interface層の実装**
+   - ApplicationsPresenterInterface
+   - ProviderIdentity
+   - index.ts
+
+2. **Service層の実装**
+   - GetApplicationsService（まずはモックデータで実装）
+
+3. **UseCase層の実装**
+   - GetApplicationsUseCase
+
+4. **Presenter層の実装**
+   - ApplicationsPresenter
+
+5. **Controller層の実装**
+   - ApplicationsController
+
+6. **Module更新**
+   - BaseJointModule
+   - ManagerJointModule
+
+7. **テスト実装**
+   - 各層のユニットテスト
+   - E2Eテスト
+
+8. **動作確認**
+   - ローカル環境でAPIを呼び出して動作確認
+   - Postman/Brunoでテスト
+
+9. **外部API統合（必要に応じて）**
+   - Joint外部APIのエンドポイント確認
+   - 環境変数設定
+   - HttpServiceを使った外部API呼び出し実装
+
+## 確認事項
+
+### 必須確認
+1. **Firestoreコレクション設計**
+   - コレクション名は？（`applications`? `joint_applications`?）
+   - ドキュメント構造は？（id, name 以外に何がある？）
+   - 組織ごとの紐付けは？（`organizationId` フィールドがある？）
+
+2. **Firebaseプロジェクト設定**
+   - どのFirebaseプロジェクトを使用する？
+   - 既存の `FIREBASE_TOKEN_ADMIN_SERVICE_ACCOUNT` を使用？
+   - 新しいFirestoreファクトリの設定
+
+3. **エラーハンドリング**
+   - Firestore接続失敗時の処理
+   - ドキュメントが存在しない場合の処理
+   - 権限エラー時の処理
+
+### オプション確認
+1. **フィルタリング**
+   - status（active/inactive）で絞り込み？
+   - 他の条件は？
+
+2. **ページネーション**
+   - 将来的にページネーションが必要か？
+
+3. **キャッシング**
+   - アプリケーション一覧をキャッシュするか？
+
+## 実装手順（更新版）
+
+1. **Firestore セットアップ**
+   - `server/libs/firebase/src/factories/firestoreFactory/` を作成
+   - FirebaseAdminModule に追加
+
+2. **Interface層の実装**
+   - ApplicationsPresenterInterface
+   - ProviderIdentity
+   - index.ts
+
+3. **Service層の実装**
+   - GetApplicationsService（Firestoreクエリ）
+
+4. **UseCase層の実装**
+   - GetApplicationsUseCase
+
+5. **Presenter層の実装**
+   - ApplicationsPresenter
+
+6. **Controller層の実装**
+   - ApplicationsController
+
+7. **Module更新**
+   - BaseJointModule（FirebaseAdminModuleをimport）
+   - ManagerJointModule
+
+8. **テスト実装**
+   - 各層のユニットテスト
+   - E2Eテスト
+
+9. **動作確認**
+   - ローカル環境でAPIを呼び出して動作確認
+   - Firestore Emulator でのテスト
+
+## 参考
+
+- 既存実装: `server/apps/joint/src/presentation/manager/controller/jointTokenController.ts`
+- Firebase libs: `server/libs/firebase/src/`
+- Clean Architecture: `@docs/coding/backend/directory`
+- NestJS公式ドキュメント: https://docs.nestjs.com/
+- Firestore Admin SDK: https://firebase.google.com/docs/firestore/quickstart#node.js

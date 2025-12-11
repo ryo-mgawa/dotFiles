@@ -1,0 +1,65 @@
+import { v4 as uuidv4 } from 'uuid';
+import { IActivityRepository } from '../../domain/repositories/IActivityRepository';
+import { Activity } from '../../shared/types';
+import { NotFoundError } from '../../shared/errors/AppError';
+import { mockActivities } from './data';
+
+/**
+ * 活動情報モックリポジトリ
+ */
+export class MockActivityRepository implements IActivityRepository {
+  private activities: Activity[] = [...mockActivities];
+
+  async findAll(): Promise<Activity[]> {
+    // 曜日順でソート
+    return [...this.activities].sort((a, b) => a.dayOfWeek - b.dayOfWeek);
+  }
+
+  async findByDayOfWeek(dayOfWeek: number): Promise<Activity[]> {
+    return this.activities.filter((a) => a.dayOfWeek === dayOfWeek);
+  }
+
+  async findById(id: string): Promise<Activity | null> {
+    const activity = this.activities.find((a) => a.id === id);
+    return activity || null;
+  }
+
+  async create(
+    data: Omit<Activity, 'id' | 'createdAt' | 'updatedAt'>
+  ): Promise<Activity> {
+    const now = new Date();
+    const newActivity: Activity = {
+      ...data,
+      id: uuidv4(),
+      createdAt: now,
+      updatedAt: now,
+    };
+    this.activities.push(newActivity);
+    return newActivity;
+  }
+
+  async update(id: string, data: Partial<Activity>): Promise<Activity> {
+    const index = this.activities.findIndex((a) => a.id === id);
+    if (index === -1) {
+      throw new NotFoundError('Activity');
+    }
+
+    const updatedActivity: Activity = {
+      ...this.activities[index],
+      ...data,
+      id: this.activities[index].id,
+      updatedAt: new Date(),
+    };
+    this.activities[index] = updatedActivity;
+    return updatedActivity;
+  }
+
+  async delete(id: string): Promise<void> {
+    const index = this.activities.findIndex((a) => a.id === id);
+    if (index === -1) {
+      throw new NotFoundError('Activity');
+    }
+
+    this.activities.splice(index, 1);
+  }
+}

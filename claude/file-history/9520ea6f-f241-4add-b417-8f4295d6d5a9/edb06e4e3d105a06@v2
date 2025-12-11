@@ -1,0 +1,84 @@
+/**
+ * 陸上競技種目定数
+ */
+
+// 男子種目
+export const MALE_EVENTS = {
+  // 短距離
+  '100m': '100m',
+  '200m': '200m',
+  '400m': '400m',
+  // 中距離
+  '800m': '800m',
+  '1500m': '1500m',
+  // 長距離
+  '5000m': '5000m',
+  '10000m': '10000m',
+  // ハードル
+  '110mH': '110mH',
+  '400mH': '400mH',
+  // リレー
+  '4×100mR': '4×100mR',
+  '4×400mR': '4×400mR',
+  // 跳躍
+  '走高跳': '走高跳',
+  '棒高跳': '棒高跳',
+  '走幅跳': '走幅跳',
+  '三段跳': '三段跳',
+  // 投擲
+  '砲丸投': '砲丸投',
+  '円盤投': '円盤投',
+  'ハンマー投': 'ハンマー投',
+  'やり投': 'やり投',
+} as const;
+
+// 女子種目
+export const FEMALE_EVENTS = {
+  // 短距離
+  '100m': '100m',
+  '200m': '200m',
+  '400m': '400m',
+  // 中距離
+  '800m': '800m',
+  '1500m': '1500m',
+  // 長距離
+  '3000m': '3000m',
+  '5000m': '5000m',
+  // ハードル
+  '100mH': '100mH',
+  '400mH': '400mH',
+  // リレー
+  '4×100mR': '4×100mR',
+  '4×400mR': '4×400mR',
+  // 跳躍
+  '走高跳': '走高跳',
+  '棒高跳': '棒高跳',
+  '走幅跳': '走幅跳',
+  '三段跳': '三段跳',
+  // 投擲
+  '砲丸投': '砲丸投',
+  '円盤投': '円盤投',
+  'ハンマー投': 'ハンマー投',
+  'やり投': 'やり投',
+} as const;
+
+export type MaleEvent = keyof typeof MALE_EVENTS;
+export type FemaleEvent = keyof typeof FEMALE_EVENTS;
+export type Event = MaleEvent | FemaleEvent;
+
+/**
+ * リレー種目かどうかを判定
+ */
+export function isRelayEvent(event: string): boolean {
+  return event.endsWith('R');
+}
+
+/**
+ * 性別
+ */
+export const GENDERS = {
+  M: '男子',
+  F: '女子',
+} as const;
+
+export type GenderCode = keyof typeof GENDERS;

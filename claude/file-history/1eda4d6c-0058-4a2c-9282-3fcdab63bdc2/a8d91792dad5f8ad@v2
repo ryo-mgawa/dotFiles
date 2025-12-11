@@ -1,0 +1,93 @@
+import { VideoQuality } from '@zoom/videosdk';
+import type { Participant } from '@/entities';
+import type { IVideoService, VideoAttachOptions } from './IVideoService';
+import type { VideoConnectionConfig, VolumeLevel } from '../types';
+import type { VideoSessionObserver } from '../observers';
+import { VideoSessionSubject } from '../observers';
+import { ZoomVideoFacade } from '../facade';
+
+/**
+ * Zoom Video SDK Adapter
+ * IVideoServiceインターフェースを実装し、ZoomVideoFacadeを使用して
+ * アプリケーション層とZoom SDKを接続する
+ */
+export class ZoomVideoAdapter implements IVideoService {
+  private facade: ZoomVideoFacade;
+  private sessionSubject: VideoSessionSubject;
+
+  constructor(sessionSubject?: VideoSessionSubject) {
+    this.sessionSubject = sessionSubject ?? new VideoSessionSubject();
+    this.facade = new ZoomVideoFacade(this.sessionSubject);
+  }
+
+  async connect(config: VideoConnectionConfig): Promise<void> {
+    await this.facade.joinSession({
+      topic: config.sessionTopic,
+      token: config.token,
+      userName: config.userName,
+      videoQuality: VideoQuality.Video_1080P,
+    });
+  }
+
+  async disconnect(): Promise<void> {
+    await this.facade.leaveSession();
+  }
+
+  async toggleAudio(): Promise<boolean> {
+    return this.facade.toggleMicrophone();
+  }
+
+  async toggleVideo(): Promise<boolean> {
+    return this.facade.toggleCamera();
+  }
+
+  async setVolume(participantId: string, level: VolumeLevel): Promise<void> {
+    await this.facade.setParticipantVolume(participantId, level.value);
+  }
+
+  getParticipants(): Participant[] {
+    return this.facade.getParticipants();
+  }
+
+  subscribeToEvents(observer: VideoSessionObserver): () => void {
+    return this.facade.subscribe(observer);
+  }
+
+  isConnected(): boolean {
+    return this.facade.isSessionInitialized();
+  }
+
+  isAudioOn(): boolean {
+    return !this.facade.isAudioMuted();
+  }
+
+  isVideoOn(): boolean {
+    return this.facade.isCapturingVideo();
+  }
+
+  async attachVideo(options: VideoAttachOptions): Promise<void> {
+    await this.facade.attachVideo(
+      options.participantId,
+      options.container
+    );
+  }
+
+  async detachVideo(participantId: string, container: HTMLElement): Promise<void> {
+    await this.facade.detachVideo(participantId, container);
+  }
+
+  async attachSelfVideo(container: HTMLElement): Promise<void> {
+    await this.facade.attachSelfVideo(container);
+  }
+
+  async detachSelfVideo(container: HTMLElement): Promise<void> {
+    await this.facade.detachSelfVideo(container);
+  }
+
+  /**
+   * Facadeインスタンスを取得（高度な操作が必要な場合）
+   */
+  getFacade(): ZoomVideoFacade {
+    return this.facade;
+  }
+}

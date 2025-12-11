@@ -1,0 +1,20 @@
+import { RDBModule, ShipmentDAO } from '@app/rdb';
+import { Module } from '@nestjs/common';
+import { v7 as uuidv7 } from 'uuid';
+import { ShipmentConverter } from './data/converter/shipmentConverter';
+import { ShipmentRepository } from './data/repository/shipmentRepository';
+
+@Module({
+  imports: [RDBModule],
+  providers: [
+    ShipmentDAO,
+    ShipmentConverter,
+    ShipmentRepository,
+    {
+      provide: 'uuid',
+      useValue: uuidv7,
+    },
+  ],
+  exports: [ShipmentRepository],
+})
+export class ShipmentModule {}

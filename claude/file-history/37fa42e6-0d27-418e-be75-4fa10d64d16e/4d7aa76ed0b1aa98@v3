@@ -1,0 +1,21 @@
+export type ShipmentRow = {
+  id: string;
+  organizationId: string;
+  slipId: string;
+  consignor: { id: string; name?: string | null; };
+  consignee: { id: string; name?: string | null; };
+  originSpotId: string;
+  destinationSpotId: string;
+  meta?: object | null;
+};
+
+export type Shipment = {
+  id: string;
+  organizationId: string;
+  slipId: string;
+  consignor: { id: string; name: string | null; };
+  consignee: { id: string; name: string | null; };
+  originSpotId: string;
+  destinationSpotId: string;
+  meta: object | null;
+};

@@ -1,0 +1,12 @@
+import { Router } from 'express';
+import { SiteController } from '../controller/SiteController.js';
+import { authMiddleware } from '@/shared/middleware/index.js';
+
+const router = Router();
+const siteController = new SiteController();
+
+router.get('/', authMiddleware, (req, res, next) => {
+  siteController.getSites(req, res, next);
+});
+
+export { router as siteRoutes };

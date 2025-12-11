@@ -1,0 +1,16 @@
+export interface Site {
+  id: string;
+  companyId: string;
+  name: string;
+  displayOrder: number;
+  accessToken: string;
+  createdAt: Date;
+  updatedAt: Date;
+  deletedAt: Date | null;
+}
+
+export interface CreateSiteInput {
+  companyId: string;
+  name: string;
+  displayOrder?: number;
+}

@@ -1,0 +1,365 @@
+import { LogicException } from '@app/errors';
+import { Driver } from '@app/rdb/db/model';
+import { DateTime } from 'luxon';
+import {
+  Activity,
+  Course,
+  Evidence,
+  Job,
+  OrderedSpot,
+  Route,
+  Spot,
+} from '../../../data/queryService/dto/output';
+import { ActivityDetail, Range, TimeWindow } from '../types/activityDetail';
+import { CalculateOptions } from '../types/calculateOptions';
+import { CourseDetail } from '../types/courseDetail';
+import { EvidenceDetail } from '../types/evidenceDetail';
+import { JobDetail } from '../types/jobDetail';
+import {
+  OrderedSpotStatus,
+  OrderedSpotDetail,
+} from '../types/orderedSpotDetail';
+import { RouteDetail } from '../types/routeDetail';
+import { GuidanceLocation, SpotDetail } from '../types/spotDetail';
+
+interface Input {
+  courses: Course[];
+  jobMap: Map<string, Job[]>;
+  orderedSpotMap: Map<string, OrderedSpot[]>;
+  routeMap: Map<string, Route[]>;
+  activityMap: Map<string, Activity[]>;
+  spotMap: Map<string, Spot[]>;
+  driverMap: Map<string, Pick<Driver, 'has_paid_subscription' | 'id'>>;
+  evidenceMap: Map<string, Evidence[]>;
+  role: string;
+}
+
+export class CourseDetailConverter {
+  public static create({
+    courses,
+    jobMap,
+    orderedSpotMap,
+    routeMap,
+    activityMap,
+    spotMap,
+    driverMap,
+    evidenceMap,
+  }: Input): CourseDetail[] {
+    return courses.map((course) => {
+      const userDriverMap = driverMap.get(course.user_id);
+      const hasPaidSubscription =
+        userDriverMap?.has_paid_subscription ?? false;
+
+      const jobsDetail = this.createJobDetail(jobMap.get(course.id));
+      const orderedSpots = this.createOrderedSpots(
+        course,
+        orderedSpotMap.get(course.id),
+      );
+
+      const courseRouteMap = routeMap.get(course.id);
+
+      if (!courseRouteMap) {
+        throw new LogicException('コースIDに該当するrouteを見つけられませんでした。');
+      }
+
+      const routes = this.createRoutes(courseRouteMap);
+
+      const activities = this.createActivities(activityMap.get(course.id));
+      const spots = this.createSpots(spotMap.get(course.id));
+      const evidences = this.createEvidences(evidenceMap.get(course.id));
+
+      const calculateOptions = this.createCalculateOptions(course);
+
+      return this.createCourseDetail(
+        course,
+        hasPaidSubscription,
+        jobsDetail,
+        orderedSpots,
+        routes,
+        activities,
+        spots,
+        evidences,
+        calculateOptions,
+      );
+    });
+  }
+
+  private static createCourseDetail(
+    course: Course,
+    hasPaidSubscription: boolean,
+    jobs: JobDetail[],
+    orderedSpots: OrderedSpotDetail[],
+    routes: RouteDetail[],
+    activities: ActivityDetail[],
+    spots: SpotDetail[],
+    evidences: EvidenceDetail[],
+    calculateOptions: CalculateOptions,
+  ): CourseDetail {
+    const latest = course.calculated_at ? true : false;
+
+    return {
+      id: course.id,
+      projectId: course.original_project_id,
+      traceId: course.trace_id ?? course.original_project_id,
+      userId: course.user_id,
+      name: course.name,
+      driverName: course.driver_name,
+      driverId: course.driver_id,
+      vehicleId: course.vehicle_id ?? 'unregistered',
+      driverColor: course.driver_color,
+      vehicleName: course.vehicle_name,
+      vehicleType: course.vehicle_type as CourseDetail['vehicleType'],
+      hasEtc: course.has_etc,
+      hasPaidSubscription: hasPaidSubscription,
+      status: course.status,
+      nextSpotId: course.next_spot_id,
+      currentSpotId: course.current_spot_id,
+      currentSpotArrivedAt: course.current_spot_arrived_at
+        ? DateTime.fromJSDate(course.current_spot_arrived_at).toISO() : null,
+      latest,
+      estimatedCalculationTime: course.estimated_calculation_time,
+      requestedAt: DateTime.fromJSDate(course.requested_at).toISO()!,
+      operationalStartAt: DateTime.fromJSDate(course.operational_start_at).toISO()!,
+      operationalEndAt: DateTime.fromJSDate(course.operational_end_at).toISO()!,
+      startAt: course.start_at ? DateTime.fromJSDate(course.start_at).toISO() : null,
+      endAt: course.end_at ? DateTime.fromJSDate(course.end_at).toISO() : null,
+      startedAt: course.started_at
+        ? DateTime.fromJSDate(course.started_at).toISO()
+        : null,
+      endedAt: course.ended_at
+        ? DateTime.fromJSDate(course.ended_at).toISO()
+        : null,
+      jobs,
+      activities,
+      orderedSpots,
+      routes,
+      spots,
+      evidences,
+      calculateOptions,
+    };
+  }
+
+  private static createJobDetail(jobs?: Job[]): JobDetail[] {
+    if (!jobs || !jobs.length) {
+      return [];
+    }
+
+    return jobs.map((job): JobDetail => {
+      return {
+        id: job.id,
+        traceId: job.trace_id ?? job.original_job_id,
+        type: job.type,
+        name: job.name,
+        activityIds: {
+          pickupId: job.pickup_activity_id,
+          deliveryId: job.delivery_activity_id,
+        },
+        status: job.status,
+      };
+    });
+  }
+
+  private static createOrderedSpots(
+    course: Course,
+    orderedSpots?: OrderedSpot[],
+  ): OrderedSpotDetail[] {
+    if (!orderedSpots || !orderedSpots.length) {
+      return [];
+    }
+
+    return orderedSpots.map((orderedSpot): OrderedSpotDetail => {
+      let status: OrderedSpotStatus = 'Ready';
+
+      if (course.current_spot_id === orderedSpot.spot_id) {
+        status = 'Arrival';
+      }
+
+      if (orderedSpot.departed_at !== null) {
+        status = 'Departure';
+      }
+
+      return {
+        id: orderedSpot.id,
+        spotId: orderedSpot.spot_id,
+        arrivalAt: orderedSpot.arrival_at
+          ? DateTime.fromJSDate(orderedSpot.arrival_at).toISO()
+          : null,
+        departureAt: orderedSpot.departure_at
+          ? DateTime.fromJSDate(orderedSpot.departure_at).toISO()
+          : null,
+        arrivedAt: orderedSpot.arrived_at
+          ? DateTime.fromJSDate(orderedSpot.arrived_at).toISO()
+          : null,
+        departedAt: orderedSpot.departed_at
+          ? DateTime.fromJSDate(orderedSpot.departed_at).toISO()
+          : null,
+        status,
+      };
+    });
+  }
+
+  private static createRoutes(
+    routes: Route[],
+  ): RouteDetail[] {
+    return routes.map((route: Route): RouteDetail => {
+      return {
+        departureOrderedSpotId: route.departure_ordered_spot_id,
+        arrivalAt: DateTime.fromJSDate(route.arrival_at).toISO()!,
+        departureAt: route.departure_at
+          ? DateTime.fromJSDate(route.departure_at).toISO() ?? null
+          : null,
+        duration: route.duration_seconds ?? 0,
+        polyline: route.polyline ?? '',
+        arrivalHeading: route.departure_heading ?? null,
+        departureHeading: route.departure_heading ?? null,
+        toll: route.toll ?? null,
+      };
+    });
+  }
+
+  private static createSpots(spots?: Spot[]): SpotDetail[] {
+    if (!spots || !spots.length) {
+      return [];
+    }
+
+    return spots.map((spot): SpotDetail => {
+      const guidanceLocations =
+        spot.guidance_location?.map?.(
+          ({ geocode, travelDuration }): GuidanceLocation => ({
+            geocode: {
+              lat: geocode.latitude,
+              lng: geocode.longitude,
+            },
+            travelDuration,
+          }),
+        ) ?? null;
+
+      return {
+        id: spot.id,
+        traceId: spot.trace_id ?? spot.original_spot_id,
+        name: spot.name,
+        geocode: { lat: spot.geocode.x, lng: spot.geocode.y },
+        postalCode: spot.postal_code,
+        prefecture: spot.prefecture ?? null,
+        address1: spot.address ?? null,
+        address2: spot.address2 ?? null,
+        building: spot.building ?? null,
+        typeLabels: spot.type_labels,
+        guidanceLocations: guidanceLocations,
+      };
+    });
+  }
+
+  private static createActivities(activities?: Activity[]): ActivityDetail[] {
+    if (!activities || !activities.length) {
+      return [];
+    }
+
+    return activities.map((activity: Activity): ActivityDetail => {
+      const timeWindow: TimeWindow = {
+        type: activity.time_window?.type ?? 'None',
+        ranges:
+          activity.time_window?.ranges?.map(
+            (range): Range => ({
+              dueAt: DateTime.fromISO(range.dueTime).toISO()!,
+              readyAt: DateTime.fromISO(range.readyTime).toISO()!,
+              acceptableLateness: range.acceptableLateness ?? 0,
+            }),
+          ) ?? [],
+      };
+
+      return {
+        id: activity.id,
+        spotId: activity.spot_id,
+        orderedSpotId: activity.ordered_spot_id,
+        name: activity.name,
+        duration: activity.duration_seconds,
+        timeWindow: timeWindow,
+        demands: activity.demands,
+        memo: activity.memo,
+        type: activity.type,
+        schedule: {
+          startAt: activity.starts_at
+            ? DateTime.fromJSDate(activity.starts_at).toISO() ?? null
+            : null,
+          beforeWaitTime: activity.before_wait_seconds ?? 0,
+          afterWaitTime: activity.after_wait_seconds ?? 0,
+          lateness: activity.lateness_seconds ?? 0,
+        },
+        status: activity.status,
+        startedAt: activity.started_at
+          ? DateTime.fromJSDate(activity.started_at).toISO()
+          : null,
+        finishedAt:
+          (activity.status === 'Complete' || activity.status === 'Skip') &&
+            activity.executed_at
+            ? DateTime.fromJSDate(activity.executed_at).toISO()
+            : null,
+      };
+    });
+  }
+
+  private static createCalculateOptions(course: Course): CalculateOptions {
+    return {
+      allowHighway: course.allow_highway ?? 'Never',
+      forceTargetLeft: course.force_target_left ?? false,
+      turnDirectionRestriction: course.turn_direction_restriction
+        ? JSON.parse(course.turn_direction_restriction)
+        : null,
+      keepStraight: course.keep_straight ?? 3,
+      restrictUturn: course.restrict_uturn ?? false,
+    };
+  }
+
+  private static createEvidences(evidences?: Evidence[]): EvidenceDetail[] {
+    if (!evidences || !evidences.length) {
+      return [];
+    }
+
+    return evidences.map(
+      (evidence): EvidenceDetail => ({
+        id: evidence.activity_id,
+        memo: evidence?.memo ?? null,
+        type: 'Activity',
+        geocode: evidence?.geocode
+          ? {
+            lat: evidence.geocode.x,
+            lng: evidence.geocode.y,
+          }
+          : null,
+        files:
+          evidence?.file_paths?.map((filePath) => {
+            const { name, extension } = this.generateFileName(filePath.default);
+            return {
+              name,
+              extension,
+              filePaths: {
+                default: filePath.default,
+                thumbnail: filePath.thumbnail,
+              },
+            };
+          }) ?? null,
+      }),
+    );
+  }
+
+  private static generateFileName = (
+    filePath: string,
+  ): {
+    name: string;
+    extension: 'png' | 'jpg' | 'jpeg';
+  } => {
+    const fullName = filePath.split('/').pop();
+
+    if (!fullName) {
+      throw new LogicException('ファイルパスが無効です');
+    }
+
+    const [name, extension] = fullName.split('.');
+
+    return {
+      name,
+      extension: extension as 'png' | 'jpg' | 'jpeg',
+    };
+  };
+}

@@ -1,0 +1,39 @@
+import { Test } from '@nestjs/testing';
+import { ShipmentModule } from '../module';
+import { ShipmentRepository } from '../data/repository/shipmentRepository';
+import { ShipmentConverter } from '../data/converter/shipmentConverter';
+import { RDBModule, ShipmentDAO } from '@app/rdb';
+
+describe('ShipmentModule', () => {
+  it('モジュールが正しくコンパイルされる', async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [ShipmentModule, RDBModule],
+    }).compile();
+
+    expect(moduleRef).toBeDefined();
+  });
+
+  it('ShipmentRepositoryがエクスポートされている', async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [ShipmentModule, RDBModule],
+    }).compile();
+
+    const repository = moduleRef.get<ShipmentRepository>(ShipmentRepository);
+    expect(repository).toBeDefined();
+    expect(repository).toBeInstanceOf(ShipmentRepository);
+  });
+
+  it('必要なプロバイダーがすべて登録されている', async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [ShipmentModule, RDBModule],
+    }).compile();
+
+    const repository = moduleRef.get<ShipmentRepository>(ShipmentRepository);
+    const converter = moduleRef.get<ShipmentConverter>(ShipmentConverter);
+    const dao = moduleRef.get<ShipmentDAO>(ShipmentDAO);
+
+    expect(repository).toBeDefined();
+    expect(converter).toBeDefined();
+    expect(dao).toBeDefined();
+  });
+});

@@ -1,0 +1,32 @@
+import {useNavigate} from '@tanstack/react-router';
+import {useAdminDriverDeleteMutation} from '@/hooks/useBaseQueries/driver/useAdminDriverDeleteMutation';
+import {useDeleteDriverToast} from '../useDeleteDriverToast';
+
+type UseDriverSettingParams = {
+  organizationId: string;
+  userId: string;
+  isAdminRole: boolean;
+};
+
+export const useDriverSetting = ({organizationId, userId, isAdminRole}: UseDriverSettingParams) => {
+  const navigate = useNavigate();
+  const {mutate, isLoading: isDeleting, isSuccess, isError} = useAdminDriverDeleteMutation();
+  useDeleteDriverToast(isDeleting, isSuccess, isError);
+
+  const handleBackClick = () => {
+    void navigate({
+      to: isAdminRole ? `/admin/organizations/${organizationId}#DriverList` : '/manager/setting#DriverList',
+    });
+  };
+
+  const handleDeleteDriver = () => {
+    mutate({organizationId, userId});
+    handleBackClick();
+  };
+
+  return {
+    isDeleting,
+    handleBackClick,
+    handleDeleteDriver,
+  };
+};

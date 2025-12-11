@@ -1,0 +1,70 @@
+.control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, opacity 0.2s, transform 0.1s;
+
+  &:hover:not(:disabled) {
+    transform: scale(1.05);
+  }
+
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &--on {
+    background-color: #2d7a3d;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background-color: #35924a;
+    }
+  }
+
+  &--off {
+    background-color: #c53030;
+    color: #fff;
+
+    &:hover:not(:disabled) {
+      background-color: #e23838;
+    }
+  }
+
+  &__icon {
+    font-size: 18px;
+  }
+
+  &__label {
+    font-size: 12px;
+  }
+}
+
+/* 4K縦向き対応 */
+@media (min-height: 2160px) {
+  .control-button {
+    gap: 12px;
+    padding: 18px 30px;
+    border-radius: 32px;
+    font-size: 18px;
+
+    &__icon {
+      font-size: 24px;
+    }
+
+    &__label {
+      font-size: 16px;
+    }
+  }
+}

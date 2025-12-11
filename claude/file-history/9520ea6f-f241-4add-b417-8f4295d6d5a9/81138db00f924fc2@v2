@@ -1,0 +1,297 @@
+import { v4 as uuidv4 } from 'uuid';
+import {
+  Member,
+  Competition,
+  Record,
+  Advisor,
+  Activity,
+} from '../../shared/types';
+
+/**
+ * モック部員データ
+ * requirements.md 2.2節、db_design.md 8.1節を参照
+ */
+export const mockMembers: Member[] = [
+  {
+    id: uuidv4(),
+    studentNumber: '21M001',
+    lastNameKanji: '山田',
+    firstNameKanji: '太郎',
+    lastNameKana: 'やまだ',
+    firstNameKana: 'たろう',
+    lastNameEn: 'Yamada',
+    firstNameEn: 'Taro',
+    enrollmentYear: 2021,
+    graduationYear: null,
+    department: 'M',
+    block: '短距離',
+    isActive: true,
+    createdAt: new Date('2021-04-01'),
+    updatedAt: new Date('2021-04-01'),
+  },
+  {
+    id: uuidv4(),
+    studentNumber: '22E002',
+    lastNameKanji: '佐藤',
+    firstNameKanji: '花子',
+    lastNameKana: 'さとう',
+    firstNameKana: 'はなこ',
+    lastNameEn: 'Sato',
+    firstNameEn: 'Hanako',
+    enrollmentYear: 2022,
+    graduationYear: null,
+    department: 'E',
+    block: '中長距離',
+    isActive: true,
+    createdAt: new Date('2022-04-01'),
+    updatedAt: new Date('2022-04-01'),
+  },
+  {
+    id: uuidv4(),
+    studentNumber: '23I003',
+    lastNameKanji: '田中',
+    firstNameKanji: '一郎',
+    lastNameKana: 'たなか',
+    firstNameKana: 'いちろう',
+    lastNameEn: 'Tanaka',
+    firstNameEn: 'Ichiro',
+    enrollmentYear: 2023,
+    graduationYear: null,
+    department: 'I',
+    block: '跳躍',
+    isActive: true,
+    createdAt: new Date('2023-04-01'),
+    updatedAt: new Date('2023-04-01'),
+  },
+  {
+    id: uuidv4(),
+    studentNumber: '23C004',
+    lastNameKanji: '鈴木',
+    firstNameKanji: '次郎',
+    lastNameKana: 'すずき',
+    firstNameKana: 'じろう',
+    lastNameEn: 'Suzuki',
+    firstNameEn: 'Jiro',
+    enrollmentYear: 2023,
+    graduationYear: null,
+    department: 'C',
+    block: '投擲',
+    isActive: true,
+    createdAt: new Date('2023-04-01'),
+    updatedAt: new Date('2023-04-01'),
+  },
+  {
+    id: uuidv4(),
+    studentNumber: '24A005',
+    lastNameKanji: '高橋',
+    firstNameKanji: '美咲',
+    lastNameKana: 'たかはし',
+    firstNameKana: 'みさき',
+    lastNameEn: 'Takahashi',
+    firstNameEn: 'Misaki',
+    enrollmentYear: 2024,
+    graduationYear: null,
+    department: 'A',
+    block: '短距離',
+    isActive: true,
+    createdAt: new Date('2024-04-01'),
+    updatedAt: new Date('2024-04-01'),
+  },
+  {
+    id: uuidv4(),
+    studentNumber: '24M006',
+    lastNameKanji: '伊藤',
+    firstNameKanji: '健太',
+    lastNameKana: 'いとう',
+    firstNameKana: 'けんた',
+    lastNameEn: 'Ito',
+    firstNameEn: 'Kenta',
+    enrollmentYear: 2024,
+    graduationYear: null,
+    department: 'M',
+    block: '中長距離',
+    isActive: true,
+    createdAt: new Date('2024-04-01'),
+    updatedAt: new Date('2024-04-01'),
+  },
+];
+
+/**
+ * モック大会データ
+ * requirements.md 2.4節を参照
+ */
+export const mockCompetitions: Competition[] = [
+  {
+    id: uuidv4(),
+    name: '東海地区高専体育大会陸上競技',
+    location: '岐阜メモリアルセンター長良川競技場',
+    date: new Date('2024-07-13'),
+    year: 2024,
+    createdAt: new Date('2024-06-01'),
+    updatedAt: new Date('2024-06-01'),
+  },
+  {
+    id: uuidv4(),
+    name: '愛知県高等学校総合体育大会陸上競技',
+    location: 'パロマ瑞穂北陸上競技場',
+    date: new Date('2024-06-01'),
+    year: 2024,
+    createdAt: new Date('2024-05-01'),
+    updatedAt: new Date('2024-05-01'),
+  },
+  {
+    id: uuidv4(),
+    name: '西三河支部春季陸上競技大会',
+    location: '岡崎市龍北総合運動場陸上競技場',
+    date: new Date('2024-04-20'),
+    year: 2024,
+    createdAt: new Date('2024-03-01'),
+    updatedAt: new Date('2024-03-01'),
+  },
+];
+
+/**
+ * モック記録データ
+ * requirements.md 2.4.3節、2.5節、db_design.md 3.3節を参照
+ */
+export const mockRecords: Record[] = [
+  {
+    id: uuidv4(),
+    competitionId: mockCompetitions[0].id,
+    memberId: mockMembers[0].id,
+    gradeAtRecord: 4,
+    departmentAtRecord: 'M',
+    event: '100m',
+    gender: 'M',
+    result: 11.25,
+    wind: 1.5,
+    note: null,
+    relayTeamId: null,
+    relayOrder: null,
+    createdAt: new Date('2024-07-13'),
+    updatedAt: new Date('2024-07-13'),
+  },
+  {
+    id: uuidv4(),
+    competitionId: mockCompetitions[0].id,
+    memberId: mockMembers[1].id,
+    gradeAtRecord: 3,
+    departmentAtRecord: 'E',
+    event: '1500m',
+    gender: 'F',
+    result: 285.43,
+    wind: null,
+    note: null,
+    relayTeamId: null,
+    relayOrder: null,
+    createdAt: new Date('2024-07-13'),
+    updatedAt: new Date('2024-07-13'),
+  },
+  {
+    id: uuidv4(),
+    competitionId: mockCompetitions[0].id,
+    memberId: mockMembers[2].id,
+    gradeAtRecord: 2,
+    departmentAtRecord: 'I',
+    event: '走幅跳',
+    gender: 'M',
+    result: 6.25,
+    wind: 0.8,
+    note: null,
+    relayTeamId: null,
+    relayOrder: null,
+    createdAt: new Date('2024-07-13'),
+    updatedAt: new Date('2024-07-13'),
+  },
+  {
+    id: uuidv4(),
+    competitionId: mockCompetitions[1].id,
+    memberId: mockMembers[0].id,
+    gradeAtRecord: 4,
+    departmentAtRecord: 'M',
+    event: '200m',
+    gender: 'M',
+    result: 22.87,
+    wind: -0.3,
+    note: null,
+    relayTeamId: null,
+    relayOrder: null,
+    createdAt: new Date('2024-06-01'),
+    updatedAt: new Date('2024-06-01'),
+  },
+];
+
+/**
+ * モック顧問データ
+ * requirements.md 2.3節を参照
+ */
+export const mockAdvisors: Advisor[] = [
+  {
+    id: uuidv4(),
+    name: '田中先生',
+    isActive: true,
+    createdAt: new Date('2020-04-01'),
+    updatedAt: new Date('2020-04-01'),
+  },
+  {
+    id: uuidv4(),
+    name: '鈴木先生',
+    isActive: true,
+    createdAt: new Date('2021-04-01'),
+    updatedAt: new Date('2021-04-01'),
+  },
+  {
+    id: uuidv4(),
+    name: '山本先生',
+    isActive: false,
+    createdAt: new Date('2018-04-01'),
+    updatedAt: new Date('2023-03-31'),
+  },
+];
+
+/**
+ * モック活動情報データ
+ * requirements.md 2.1.4節を参照
+ */
+export const mockActivities: Activity[] = [
+  {
+    id: uuidv4(),
+    dayOfWeek: 1, // 月曜
+    startTime: '16:30',
+    endTime: '18:30',
+    createdAt: new Date('2024-04-01'),
+    updatedAt: new Date('2024-04-01'),
+  },
+  {
+    id: uuidv4(),
+    dayOfWeek: 2, // 火曜
+    startTime: '16:30',
+    endTime: '18:30',
+    createdAt: new Date('2024-04-01'),
+    updatedAt: new Date('2024-04-01'),
+  },
+  {
+    id: uuidv4(),
+    dayOfWeek: 3, // 水曜
+    startTime: '16:30',
+    endTime: '18:30',
+    createdAt: new Date('2024-04-01'),
+    updatedAt: new Date('2024-04-01'),
+  },
+  {
+    id: uuidv4(),
+    dayOfWeek: 4, // 木曜
+    startTime: '16:30',
+    endTime: '18:30',
+    createdAt: new Date('2024-04-01'),
+    updatedAt: new Date('2024-04-01'),
+  },
+  {
+    id: uuidv4(),
+    dayOfWeek: 5, // 金曜
+    startTime: '16:30',
+    endTime: '18:30',
+    createdAt: new Date('2024-04-01'),
+    updatedAt: new Date('2024-04-01'),
+  },
+];

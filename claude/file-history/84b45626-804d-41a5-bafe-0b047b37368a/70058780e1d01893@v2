@@ -1,0 +1,60 @@
+import { Type } from 'class-transformer';
+import {
+  ArrayNotEmpty,
+  IsDefined,
+  IsObject,
+  IsOptional,
+  IsString,
+  MaxLength,
+  Validate,
+  ValidateNested,
+} from 'class-validator';
+import {
+  Consignee,
+  Consignor,
+  DestinationSpot,
+  MetaSizeValidator,
+  OriginSpot,
+} from '../common';
+
+const MAX_SLIP_ID_LENGTH = 256;
+
+export class AddShipmentItem {
+  @IsDefined()
+  @IsString()
+  @MaxLength(MAX_SLIP_ID_LENGTH)
+  public slipId: string;
+
+  @IsDefined()
+  @ValidateNested()
+  @Type(() => Consignor)
+  public consignor: Consignor;
+
+  @IsDefined()
+  @ValidateNested()
+  @Type(() => Consignee)
+  public consignee: Consignee;
+
+  @IsDefined()
+  @ValidateNested()
+  @Type(() => OriginSpot)
+  public originSpot: OriginSpot;
+
+  @IsDefined()
+  @ValidateNested()
+  @Type(() => DestinationSpot)
+  public destinationSpot: DestinationSpot;
+
+  @IsOptional()
+  @IsObject()
+  @Validate(MetaSizeValidator)
+  public meta?: object;
+}
+
+export class AddShipmentsInput {
+  @IsDefined()
+  @ArrayNotEmpty()
+  @ValidateNested({ each: true })
+  @Type(() => AddShipmentItem)
+  public shipments: AddShipmentItem[];
+}

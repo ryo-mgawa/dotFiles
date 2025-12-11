@@ -1,0 +1,28 @@
+import { Request, Response, NextFunction } from 'express';
+import { GetCompetitionsByYearUseCase } from '../../application/usecases/competitions/GetCompetitionsByYearUseCase';
+
+/**
+ * 大会コントローラー
+ */
+export class CompetitionsController {
+  constructor(private readonly getCompetitionsByYearUseCase: GetCompetitionsByYearUseCase) {}
+
+  /**
+   * GET /api/competitions?year=2024
+   * 大会一覧を取得（年度フィルタオプション）
+   */
+  async getCompetitions(req: Request, res: Response, next: NextFunction): Promise<void> {
+    try {
+      const year = req.query.year ? parseInt(req.query.year as string, 10) : undefined;
+
+      const competitions = await this.getCompetitionsByYearUseCase.execute(year);
+
+      res.status(200).json({
+        success: true,
+        data: competitions,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+}

@@ -1,0 +1,51 @@
+import { Record } from '../../shared/types';
+import { GenderCode } from '../../shared/constants/events';
+
+/**
+ * 記録リポジトリインターフェース
+ */
+export interface IRecordRepository {
+  /**
+   * 全記録を取得
+   */
+  findAll(): Promise<Record[]>;
+
+  /**
+   * 大会IDで記録を検索
+   */
+  findByCompetitionId(competitionId: string): Promise<Record[]>;
+
+  /**
+   * 部員IDで記録を検索
+   */
+  findByMemberId(memberId: string): Promise<Record[]>;
+
+  /**
+   * 歴代記録を取得（種目・性別でフィルタ、上位limit件）
+   */
+  findAllTimeRecords(
+    event: string,
+    gender: GenderCode,
+    limit?: number
+  ): Promise<Record[]>;
+
+  /**
+   * IDで記録を検索
+   */
+  findById(id: string): Promise<Record | null>;
+
+  /**
+   * 記録を作成
+   */
+  create(record: Omit<Record, 'id' | 'createdAt' | 'updatedAt'>): Promise<Record>;
+
+  /**
+   * 記録を更新
+   */
+  update(id: string, record: Partial<Record>): Promise<Record>;
+
+  /**
+   * 記録を削除
+   */
+  delete(id: string): Promise<void>;
+}

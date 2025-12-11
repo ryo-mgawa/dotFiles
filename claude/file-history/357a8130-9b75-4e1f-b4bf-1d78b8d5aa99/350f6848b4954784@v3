@@ -1,0 +1,16 @@
+export type JobType = 'PickupAndDelivery' | 'Delivery' | 'Pickup';
+export type JobStatus = 'Ready' | 'Complete' | 'Skip';
+
+export type ActivityIds = {
+  pickupId: string;
+  deliveryId: string;
+};
+
+export type JobDetail = {
+  id: string;
+  traceId: string;
+  type: JobType;
+  name: string;
+  activityIds: ActivityIds;
+  status: JobStatus;
+};

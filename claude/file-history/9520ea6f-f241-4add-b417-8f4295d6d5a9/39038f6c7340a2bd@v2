@@ -1,0 +1,76 @@
+import { IMemberRepository } from '../domain/repositories/IMemberRepository';
+import { ICompetitionRepository } from '../domain/repositories/ICompetitionRepository';
+import { IRecordRepository } from '../domain/repositories/IRecordRepository';
+import { IAdvisorRepository } from '../domain/repositories/IAdvisorRepository';
+import { IActivityRepository } from '../domain/repositories/IActivityRepository';
+
+// Mock Repositories (Phase 1-3)
+import { MockMemberRepository } from '../infrastructure/mock/MockMemberRepository';
+import { MockCompetitionRepository } from '../infrastructure/mock/MockCompetitionRepository';
+import { MockRecordRepository } from '../infrastructure/mock/MockRecordRepository';
+import { MockAdvisorRepository } from '../infrastructure/mock/MockAdvisorRepository';
+import { MockActivityRepository } from '../infrastructure/mock/MockActivityRepository';
+
+// Prisma Repositories (Phase 4)
+// import { PrismaMemberRepository } from '../infrastructure/database/repositories/PrismaMemberRepository';
+// import { PrismaCompetitionRepository } from '../infrastructure/database/repositories/PrismaCompetitionRepository';
+// import { PrismaRecordRepository } from '../infrastructure/database/repositories/PrismaRecordRepository';
+// import { PrismaAdvisorRepository } from '../infrastructure/database/repositories/PrismaAdvisorRepository';
+// import { PrismaActivityRepository } from '../infrastructure/database/repositories/PrismaActivityRepository';
+// import { PrismaClient } from '@prisma/client';
+
+/**
+ * Dependency Injection Container
+ *
+ * Phase 1-3: USE_MOCK=true でモックリポジトリを使用
+ * Phase 4: USE_MOCK=false でPrismaリポジトリを使用
+ *
+ * 切り替え方法:
+ * 1. .envファイルでUSE_MOCKをfalseに変更
+ * 2. 下記のコメントアウトを解除
+ * 3. モックリポジトリの初期化をコメントアウト
+ */
+
+const USE_MOCK = process.env.USE_MOCK === 'true';
+
+// リポジトリインスタンス
+let memberRepository: IMemberRepository;
+let competitionRepository: ICompetitionRepository;
+let recordRepository: IRecordRepository;
+let advisorRepository: IAdvisorRepository;
+let activityRepository: IActivityRepository;
+
+if (USE_MOCK) {
+  // Phase 1-3: モックリポジトリを使用
+  console.log('[DI] Using Mock Repositories');
+  memberRepository = new MockMemberRepository();
+  competitionRepository = new MockCompetitionRepository();
+  recordRepository = new MockRecordRepository();
+  advisorRepository = new MockAdvisorRepository();
+  activityRepository = new MockActivityRepository();
+} else {
+  // Phase 4: Prismaリポジトリを使用
+  // console.log('[DI] Using Prisma Repositories');
+  // const prisma = new PrismaClient();
+  // memberRepository = new PrismaMemberRepository(prisma);
+  // competitionRepository = new PrismaCompetitionRepository(prisma);
+  // recordRepository = new PrismaRecordRepository(prisma);
+  // advisorRepository = new PrismaAdvisorRepository(prisma);
+  // activityRepository = new PrismaActivityRepository(prisma);
+
+  throw new Error(
+    'Prisma repositories are not implemented yet. Please set USE_MOCK=true in .env file.'
+  );
+}
+
+/**
+ * リポジトリのエクスポート
+ * UseCaseやControllerからはこれらのエクスポートされたインスタンスを使用する
+ */
+export {
+  memberRepository,
+  competitionRepository,
+  recordRepository,
+  advisorRepository,
+  activityRepository,
+};

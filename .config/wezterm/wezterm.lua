@@ -59,12 +59,14 @@ local snow = "#FFFAFA"
 local ivory = "#FFFFF0"
 
 -- 外観・テーマ設定
-config.color_scheme = "Dracula"
-config.font = wezterm.font("Fira Code", { weight = "Regular" })
-config.font_size = 12
+-- config.font = wezterm.font("Input Mono Condensed", { weight = "Regular" })
+config.font = wezterm.font("Cica", { weight = "Regular" })
+config.font_size = 15
 config.line_height = 0.9
-config.window_background_opacity = 0.80
-config.window_decorations = "RESIZE" -- TITLE | RESIZE | NONE から選択
+config.window_background_opacity = 0.70
+config.window_decorations = "TITLE | RESIZE" -- TITLE | RESIZE | NONE から選択
+config.macos_window_background_blur = 20
+config.text_background_opacity = 1.0
 
 -- カラー設定
 config.colors = {
@@ -78,7 +80,7 @@ config.colors = {
 		red,
 		green,
 		yellow,
-		light_blue,
+		blue,
 		magenta,
 		teal,
 		silver,
@@ -98,6 +100,10 @@ config.colors = {
 -- 設定ファイルの自動リロード
 config.automatically_reload_config = true
 
+-- スクロールバー設定
+config.enable_scroll_bar = true
+config.min_scroll_bar_height = "2cell"
+
 -- 環境変数の設定（lazygit等を日本語化）
 config.set_environment_variables = {
 	LANG = "ja_JP.UTF-8",
@@ -109,7 +115,7 @@ config.set_environment_variables = {
 -- アクティブ/非アクティブペインの視覚的区別
 config.inactive_pane_hsb = {
 	saturation = 0.9, -- 彩度を下げる
-	brightness = 0.4, -- 明度を下げる（暗くする）
+	brightness = 0.2, -- 明度を下げる（暗くする）
 }
 
 -- リーダーキー設定 (ctrl + f)
@@ -149,11 +155,11 @@ config.keys = {
 			cwd = wezterm.home_dir,
 		}),
 	},
-	-- cmd + w で現在のペインを閉じる
+	-- cmd + w で現在のペインを閉じる（確認なし）
 	{
 		key = "w",
 		mods = "CMD",
-		action = wezterm.action.CloseCurrentPane({ confirm = true }),
+		action = wezterm.action.CloseCurrentPane({ confirm = false }),
 	},
 	-- リーダーキー + h,j,k,l で分割した画面の移動 (Vimスタイル)
 	{

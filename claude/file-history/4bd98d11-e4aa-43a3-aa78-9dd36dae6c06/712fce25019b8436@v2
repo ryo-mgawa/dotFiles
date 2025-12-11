@@ -1,0 +1,14 @@
+import { ShipmentDAO } from '@app/rdb';
+import { ShipmentInsert } from '@app/rdb/db/model';
+import { Injectable } from '@nestjs/common';
+
+@Injectable()
+export class ShipmentRepository {
+  constructor(private readonly shipmentDAO: ShipmentDAO) {}
+
+  public async save(shipments: ShipmentInsert[]): Promise<string[]> {
+    await this.shipmentDAO.save(shipments);
+
+    return shipments.map((shipment) => shipment.id);
+  }
+}

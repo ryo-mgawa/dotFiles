@@ -1,0 +1,101 @@
+.video-call-page {
+  width: 100%;
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+
+  &--loading,
+  &--error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  &__loading-text {
+    color: #888;
+    font-size: 16px;
+  }
+
+  &__error-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 32px;
+    background-color: #1a1a1a;
+    border-radius: 12px;
+    text-align: center;
+
+    h2 {
+      color: #fff;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    p {
+      color: #888;
+      font-size: 14px;
+      margin: 0;
+    }
+  }
+
+  &__retry-button,
+  &__logout-button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  &__retry-button {
+    background-color: #4a90d9;
+    color: #fff;
+
+    &:hover {
+      background-color: #5a9fe8;
+    }
+  }
+
+  &__logout-button {
+    background-color: #333;
+    color: #fff;
+
+    &:hover {
+      background-color: #444;
+    }
+  }
+}
+
+/* 4K縦向き対応 */
+@media (min-height: 2160px) {
+  .video-call-page {
+    &__loading-text {
+      font-size: 24px;
+    }
+
+    &__error-content {
+      padding: 48px;
+      border-radius: 16px;
+
+      h2 {
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 20px;
+      }
+    }
+
+    &__retry-button,
+    &__logout-button {
+      padding: 18px 36px;
+      border-radius: 12px;
+      font-size: 20px;
+    }
+  }
+}

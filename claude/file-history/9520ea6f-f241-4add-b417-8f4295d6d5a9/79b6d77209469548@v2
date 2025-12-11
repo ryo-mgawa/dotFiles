@@ -1,0 +1,36 @@
+import { Activity } from '../../shared/types';
+
+/**
+ * 活動情報リポジトリインターフェース
+ */
+export interface IActivityRepository {
+  /**
+   * 全活動情報を取得（曜日順）
+   */
+  findAll(): Promise<Activity[]>;
+
+  /**
+   * 曜日で活動情報を検索
+   */
+  findByDayOfWeek(dayOfWeek: number): Promise<Activity[]>;
+
+  /**
+   * IDで活動情報を検索
+   */
+  findById(id: string): Promise<Activity | null>;
+
+  /**
+   * 活動情報を作成
+   */
+  create(activity: Omit<Activity, 'id' | 'createdAt' | 'updatedAt'>): Promise<Activity>;
+
+  /**
+   * 活動情報を更新
+   */
+  update(id: string, activity: Partial<Activity>): Promise<Activity>;
+
+  /**
+   * 活動情報を削除
+   */
+  delete(id: string): Promise<void>;
+}

@@ -1,0 +1,5 @@
+// Vercel Serverless Functions用エントリポイント
+// app.listen()を呼ばずにappをエクスポート
+import { app } from './app.js';
+
+export default app;

@@ -1,0 +1,16 @@
+import { IsDefined, IsString, MaxLength } from 'class-validator';
+
+const MAX_ID_LENGTH = 256;
+const MAX_NAME_LENGTH = 256;
+
+export class Consignor {
+  @IsDefined()
+  @IsString()
+  @MaxLength(MAX_ID_LENGTH)
+  public id: string;
+
+  @IsDefined()
+  @IsString()
+  @MaxLength(MAX_NAME_LENGTH)
+  public name: string;
+}

@@ -1,0 +1,11 @@
+import { RDBModule, ShipmentDAO } from '@app/rdb';
+import { Module } from '@nestjs/common';
+import { ShipmentConverter } from './data/converter/shipmentConverter';
+import { ShipmentRepository } from './data/repository/shipmentRepository';
+
+@Module({
+  imports: [RDBModule],
+  providers: [ShipmentDAO, ShipmentConverter, ShipmentRepository],
+  exports: [ShipmentRepository],
+})
+export class ShipmentModule {}

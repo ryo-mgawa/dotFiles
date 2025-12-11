@@ -1,0 +1,68 @@
+import { validate } from 'class-validator';
+import { AddShipmentEventItem, AddShipmentEventsInput } from '../input';
+
+const createValidEventItem = (): AddShipmentEventItem => {
+  const item = new AddShipmentEventItem();
+  item.shipmentId = 'shipment-001';
+  item.type = 'STORE';
+  item.originalSpotId = 'spot-001';
+  item.executedAt = '2024-01-01T00:00:00.000Z';
+  return item;
+};
+
+describe('AddShipmentEventsInput', () => {
+  describe('events', () => {
+    it('IsDefined: 必須プロパティが未定義の場合、バリデーションエラー', async () => {
+      const input = new AddShipmentEventsInput();
+      input.events = undefined as any;
+
+      const errors = await validate(input);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'events' && e.constraints?.isDefined)).toBe(true);
+    });
+
+    it('ArrayNotEmpty: 空配列の場合、バリデーションエラー', async () => {
+      const input = new AddShipmentEventsInput();
+      input.events = [];
+
+      const errors = await validate(input);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'events' && e.constraints?.arrayNotEmpty)).toBe(true);
+    });
+
+    it('ValidateNested: 配列要素が無効な場合、バリデーションエラー', async () => {
+      const input = new AddShipmentEventsInput();
+      const invalidItem = new AddShipmentEventItem();
+      invalidItem.shipmentId = undefined as any;
+      input.events = [invalidItem];
+
+      const errors = await validate(input);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'events')).toBe(true);
+    });
+
+    it('有効なイベント配列の場合、バリデーション成功', async () => {
+      const input = new AddShipmentEventsInput();
+      input.events = [createValidEventItem()];
+
+      const errors = await validate(input);
+
+      expect(errors.length).toBe(0);
+    });
+
+    it('複数の有効なイベントの場合、バリデーション成功', async () => {
+      const input = new AddShipmentEventsInput();
+      const item1 = createValidEventItem();
+      const item2 = createValidEventItem();
+      item2.shipmentId = 'shipment-002';
+      input.events = [item1, item2];
+
+      const errors = await validate(input);
+
+      expect(errors.length).toBe(0);
+    });
+  });
+});

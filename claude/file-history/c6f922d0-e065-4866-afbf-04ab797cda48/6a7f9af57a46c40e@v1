@@ -1,0 +1,19 @@
+import { Inject, Injectable } from '@nestjs/common';
+import { ShipmentRepository } from '../../data/repository/shipmentRepository';
+import { AddShipmentsPresenterInterface } from '../../interface/presenter/addShipmentsPresenterInterface';
+import { Input } from './addShipments/types';
+
+@Injectable()
+export class AddShipmentsUseCase {
+  constructor(
+    @Inject('AddShipmentsPresenter')
+    private readonly presenter: AddShipmentsPresenterInterface,
+    private readonly shipmentRepository: ShipmentRepository,
+  ) { }
+
+  public async execute(input: Input, organizationId: string): Promise<void> {
+    const shipmentIds = await this.shipmentRepository.save(organizationId, input.shipments);
+
+    this.presenter.output(shipmentIds);
+  }
+}

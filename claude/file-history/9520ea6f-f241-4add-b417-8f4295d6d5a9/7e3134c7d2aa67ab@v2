@@ -1,0 +1,41 @@
+import axios, { AxiosInstance } from 'axios';
+
+/**
+ * Axiosクライアントの作成
+ * design.md 3.4節を参照
+ */
+const apiClient: AxiosInstance = axios.create({
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api',
+  timeout: 10000,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// リクエストインターセプター
+apiClient.interceptors.request.use(
+  (config) => {
+    // 将来的に認証トークンを追加する場合はここで
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// レスポンスインターセプター
+apiClient.interceptors.response.use(
+  (response) => {
+    return response;
+  },
+  (error) => {
+    // エラーハンドリング
+    if (error.response?.status === 401) {
+      // 認証エラー処理
+      console.error('Authentication error');
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default apiClient;

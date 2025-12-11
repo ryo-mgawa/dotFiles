@@ -1,0 +1,66 @@
+import { v4 as uuidv4 } from 'uuid';
+import { IMemberRepository } from '../../domain/repositories/IMemberRepository';
+import { Member } from '../../shared/types';
+import { NotFoundError } from '../../shared/errors/AppError';
+import { mockMembers } from './data';
+
+/**
+ * 部員モックリポジトリ
+ * Phase 1-3で使用。Phase 4でPrismaMemberRepositoryに切り替える
+ */
+export class MockMemberRepository implements IMemberRepository {
+  private members: Member[] = [...mockMembers];
+
+  async findAllActive(): Promise<Member[]> {
+    return this.members.filter((m) => m.isActive);
+  }
+
+  async findById(id: string): Promise<Member | null> {
+    const member = this.members.find((m) => m.id === id);
+    return member || null;
+  }
+
+  async findByStudentNumber(studentNumber: string): Promise<Member | null> {
+    const member = this.members.find((m) => m.studentNumber === studentNumber);
+    return member || null;
+  }
+
+  async create(data: Omit<Member, 'id' | 'createdAt' | 'updatedAt'>): Promise<Member> {
+    const now = new Date();
+    const newMember: Member = {
+      ...data,
+      id: uuidv4(),
+      createdAt: now,
+      updatedAt: now,
+    };
+    this.members.push(newMember);
+    return newMember;
+  }
+
+  async update(id: string, data: Partial<Member>): Promise<Member> {
+    const index = this.members.findIndex((m) => m.id === id);
+    if (index === -1) {
+      throw new NotFoundError('Member');
+    }
+
+    const updatedMember: Member = {
+      ...this.members[index],
+      ...data,
+      id: this.members[index].id,
+      updatedAt: new Date(),
+    };
+    this.members[index] = updatedMember;
+    return updatedMember;
+  }
+
+  async delete(id: string): Promise<void> {
+    const index = this.members.findIndex((m) => m.id === id);
+    if (index === -1) {
+      throw new NotFoundError('Member');
+    }
+
+    // 論理削除
+    this.members[index].isActive = false;
+    this.members[index].updatedAt = new Date();
+  }
+}

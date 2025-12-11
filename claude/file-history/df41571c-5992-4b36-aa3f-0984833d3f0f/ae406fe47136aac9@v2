@@ -1,0 +1,14 @@
+import { Type } from 'class-transformer';
+import { ArrayNotEmpty, IsDefined, ValidateNested } from 'class-validator';
+import { AddShipmentEventItem } from './addShipmentEventItem';
+
+export { AddShipmentEventItem } from './addShipmentEventItem';
+export { Geocode } from './addShipmentEventItem';
+
+export class AddShipmentEventsInput {
+  @IsDefined()
+  @ArrayNotEmpty()
+  @ValidateNested({ each: true })
+  @Type(() => AddShipmentEventItem)
+  public events: AddShipmentEventItem[];
+}

@@ -1,0 +1,6 @@
+import { Application } from '../applicationsPresenter';
+
+export type GetApplicationsOutput = {
+  status: 'success';
+  applications: Application[];
+};

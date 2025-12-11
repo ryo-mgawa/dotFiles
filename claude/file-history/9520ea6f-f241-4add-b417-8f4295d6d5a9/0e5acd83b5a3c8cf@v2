@@ -1,0 +1,12 @@
+/**
+ * 学科定数
+ */
+export const DEPARTMENTS = {
+  M: '機械工学科',
+  E: '電気・電子システム工学科',
+  I: '情報工学科',
+  C: '環境都市工学科',
+  A: '建築学科',
+} as const;
+
+export type DepartmentCode = keyof typeof DEPARTMENTS;

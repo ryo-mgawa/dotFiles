@@ -1,0 +1,261 @@
+import { useEffect, useCallback, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/features/auth';
+import {
+  useVideo,
+  VerticalLayout,
+  MainVideoDisplay,
+  SelfVideoDisplay,
+  SubVideoDisplay,
+  VideoControls,
+  useKeyboardShortcut,
+} from '@/features/video-call';
+import {
+  useOperatingHoursMonitor,
+  OperatingHoursWarning,
+} from '@/features/operating-hours';
+import { LoadingSpinner } from '@/shared/components';
+import './VideoCallPage.scss';
+
+/**
+ * 拠点数の閾値（シンプルモード判定用）
+ */
+const SIMPLE_MODE_THRESHOLD = 2;
+
+/**
+ * VideoCallPage
+ * ビデオ通話ページ - 全コンポーネントを統合
+ */
+export const VideoCallPage = () => {
+  const navigate = useNavigate();
+  const { site, logout } = useAuth();
+  const {
+    state,
+    joinSession,
+    leaveSession,
+    toggleMic,
+    toggleCamera,
+    switchMainSite,
+    sites,
+  } = useVideo();
+
+  const { sessionStatus, participants, mainSiteId, localMedia, error } = state;
+
+  /**
+   * 稼働時間監視
+   */
+  const {
+    remainingMinutes,
+    showWarning,
+    isOperating: _isOperating,
+    endTime,
+    subscribe: _subscribe,
+  } = useOperatingHoursMonitor(sessionStatus === 'connected');
+  // TODO: デバッグ完了後に _isOperating と _subscribe を使用する処理を有効化
+
+  /**
+   * セッション参加
+   */
+  useEffect(() => {
+    if (site?.id && sessionStatus === 'idle') {
+      joinSession(site.id);
+    }
+  }, [site?.id, sessionStatus, joinSession]);
+
+  /**
+   * エラー時・切断時のリダイレクト
+   */
+  useEffect(() => {
+    if (sessionStatus === 'disconnected') {
+      navigate('/session-ended');
+    }
+  }, [sessionStatus, navigate]);
+
+  /**
+   * ページ離脱時のクリーンアップ
+   */
+  useEffect(() => {
+    return () => {
+      if (sessionStatus === 'connected') {
+        leaveSession();
+      }
+    };
+  }, [sessionStatus, leaveSession]);
+
+  /**
+   * 稼働時間終了時の自動切断
+   * TODO: デバッグ完了後に有効化
+   */
+  // useEffect(() => {
+  //   if (!isOperating && sessionStatus === 'connected') {
+  //     leaveSession();
+  //     navigate('/session-ended');
+  //   }
+  // }, [isOperating, sessionStatus, leaveSession, navigate]);
+
+  /**
+   * 稼働時間イベントの購読
+   * TODO: デバッグ完了後に有効化
+   */
+  // useEffect(() => {
+  //   const unsubscribe = subscribe((event: OperatingHoursEvent) => {
+  //     if (event.type === 'EXPIRED') {
+  //       leaveSession();
+  //       navigate('/session-ended');
+  //     }
+  //   });
+
+  //   return unsubscribe;
+  // }, [subscribe, leaveSession, navigate]);
+
+  /**
+   * メイン参加者の取得
+   */
+  const mainParticipant = useMemo(() => {
+    if (!mainSiteId) return null;
+    return participants.find(p => p.siteId === mainSiteId) ?? null;
+  }, [mainSiteId, participants]);
+
+  /**
+   * メイン拠点名の取得
+   */
+  const mainSiteName = useMemo(() => {
+    if (!mainSiteId) return undefined;
+    const siteInfo = sites.find(s => s.id === mainSiteId);
+    return siteInfo?.name;
+  }, [mainSiteId, sites]);
+
+  /**
+   * 自拠点名の取得
+   */
+  const selfSiteName = useMemo(() => {
+    return site?.name;
+  }, [site?.name]);
+
+  /**
+   * シンプルモード判定（2拠点のみの場合）
+   */
+  const isSimpleMode = useMemo(() => {
+    return participants.length < SIMPLE_MODE_THRESHOLD;
+  }, [participants.length]);
+
+  /**
+   * 次の拠点に切り替え
+   */
+  const handleSwitchToNextSite = useCallback(() => {
+    const otherParticipants = participants.filter(p => p.siteId !== site?.id);
+    if (otherParticipants.length === 0) return;
+
+    const currentIndex = otherParticipants.findIndex(
+      p => p.siteId === mainSiteId
+    );
+    const nextIndex = (currentIndex + 1) % otherParticipants.length;
+    const nextParticipant = otherParticipants[nextIndex];
+
+    if (nextParticipant) {
+      switchMainSite(nextParticipant.siteId);
+    }
+  }, [participants, site?.id, mainSiteId, switchMainSite]);
+
+  /**
+   * キーボードショートカット設定
+   */
+  useKeyboardShortcut({
+    onToggleMic: toggleMic,
+    onToggleCamera: toggleCamera,
+    onSwitchSite: handleSwitchToNextSite,
+    enabled: sessionStatus === 'connected',
+  });
+
+  /**
+   * ログアウト処理
+   */
+  const handleLogout = useCallback(async () => {
+    await leaveSession();
+    logout();
+  }, [leaveSession, logout]);
+
+  /**
+   * 接続中の表示
+   */
+  if (sessionStatus === 'connecting') {
+    return (
+      <div className="video-call-page video-call-page--loading">
+        <LoadingSpinner />
+        <p className="video-call-page__loading-text">セッションに接続中...</p>
+      </div>
+    );
+  }
+
+  /**
+   * エラー表示
+   */
+  if (sessionStatus === 'error' || error) {
+    return (
+      <div className="video-call-page video-call-page--error">
+        <div className="video-call-page__error-content">
+          <h2>接続エラー</h2>
+          <p>{error || 'セッションへの接続に失敗しました'}</p>
+          <button
+            type="button"
+            className="video-call-page__retry-button"
+            onClick={() => site?.id && joinSession(site.id)}
+          >
+            再接続
+          </button>
+          <button
+            type="button"
+            className="video-call-page__logout-button"
+            onClick={handleLogout}
+          >
+            ログアウト
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="video-call-page">
+      {showWarning && (
+        <OperatingHoursWarning
+          remainingMinutes={remainingMinutes ?? 0}
+          endTime={endTime}
+        />
+      )}
+      <VerticalLayout
+        isSimpleMode={isSimpleMode}
+        mainContent={
+          <MainVideoDisplay
+            participant={mainParticipant}
+            siteName={mainSiteName}
+          >
+            <SelfVideoDisplay
+              isVideoOn={localMedia.isCameraOn}
+              siteName={selfSiteName}
+            />
+          </MainVideoDisplay>
+        }
+        subContent={
+          !isSimpleMode && (
+            <SubVideoDisplay
+              participants={participants}
+              sites={sites}
+              mainSiteId={mainSiteId}
+              onSiteSelect={switchMainSite}
+            />
+          )
+        }
+        controlsContent={
+          <VideoControls
+            isMicOn={localMedia.isMicOn}
+            isCameraOn={localMedia.isCameraOn}
+            onToggleMic={toggleMic}
+            onToggleCamera={toggleCamera}
+            disabled={sessionStatus !== 'connected'}
+          />
+        }
+      />
+    </div>
+  );
+};

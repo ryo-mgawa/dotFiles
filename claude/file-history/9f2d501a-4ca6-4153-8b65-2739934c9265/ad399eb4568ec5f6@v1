@@ -1,0 +1,22 @@
+import { ShipmentInsert } from '@app/rdb/db/model';
+import { Injectable } from '@nestjs/common';
+import { ShipmentRepositoryInput } from '../repository/types/shipmentRepositoryTypes';
+
+@Injectable()
+export class ShipmentConverter {
+  public convertToInsert(
+    organizationId: string,
+    shipments: ShipmentRepositoryInput[]
+  ): ShipmentInsert[] {
+    return shipments.map((shipment) => ({
+      id: shipment.id,
+      organization_id: organizationId,
+      slip_id: shipment.slipId,
+      consignor: JSON.stringify(shipment.consignor),
+      consignee: JSON.stringify(shipment.consignee),
+      origin_spot_id: shipment.originSpotId,
+      destination_spot_id: shipment.destinationSpotId,
+      meta: shipment.meta ? JSON.stringify(shipment.meta) : null,
+    }));
+  }
+}

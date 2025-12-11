@@ -1,0 +1,1155 @@
+2025-12-02T01:26:31.387Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2025-12-02T01:26:31.387Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:26:31.387Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-12-02T01:26:31.388Z [DEBUG] Cleared all session hooks for session be240a10-d9e1-4257-9d3e-ac10b00f9bc9
+2025-12-02T01:26:31.407Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2025-12-02T01:26:31.407Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:26:31.407Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-12-02T01:26:31.421Z [DEBUG] FileHistory: Added snapshot for 4d837e53-8fdb-4273-a636-76ae4620a8b4, tracking 0 files
+2025-12-02T01:26:31.429Z [DEBUG] Rendering user message with 1 content blocks
+2025-12-02T01:26:31.430Z [DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+2025-12-02T01:26:31.430Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-12-02T01:26:31.430Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-02T01:26:31.700Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-12-02T01:28:15.346Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:28:15.348Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:28:15.353Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:28:15.353Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:28:15.372Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-02T01:28:15.372Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:28:15.372Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T01:28:15.372Z [DEBUG] FileHistory: Making snapshot for message d66babdc-792c-474a-bb91-0d2ed679eee5
+2025-12-02T01:28:15.373Z [DEBUG] FileHistory: Added snapshot for d66babdc-792c-474a-bb91-0d2ed679eee5, tracking 0 files
+2025-12-02T01:28:16.419Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:19.174Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:21.425Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-02T01:28:21.430Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-02T01:28:21.430Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:28:21.430Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:28:23.025Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:24.068Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-02T01:28:24.068Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:28:24.068Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:28:24.101Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:28:24.101Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:28:24.104Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:28:24.104Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:28:25.005Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:26.123Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:27.746Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-02T01:28:27.748Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-02T01:28:27.748Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:28:27.748Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:28:28.349Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T01:28:28.465Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:29.452Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-02T01:28:29.452Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:28:29.452Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:28:29.486Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:28:29.486Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:28:29.489Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:28:29.489Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:28:30.312Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:32.539Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:34.518Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-02T01:28:34.520Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-02T01:28:34.520Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:28:34.520Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T01:28:34.553Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-02T01:28:34.553Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:28:34.553Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T01:28:34.565Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:28:34.565Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:28:34.567Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:28:34.567Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:28:36.679Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:38.890Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-02T01:28:38.892Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-02T01:28:38.892Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:28:38.892Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:28:39.732Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:40.121Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:40.888Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-02T01:28:40.888Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:28:40.888Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:28:40.900Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:28:40.900Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:28:40.902Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:28:40.902Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:28:41.583Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:45.928Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:28:47.461Z [DEBUG] executePreToolHooks called for tool: WebSearch
+2025-12-02T01:28:47.467Z [DEBUG] Getting matching hook commands for PreToolUse with query: WebSearch
+2025-12-02T01:28:47.467Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:28:47.467Z [DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
+2025-12-02T01:28:50.032Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:03.346Z [ERROR] Error: Error: Web search error: unavailable
+    at UR3 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2865:1845)
+    at Object.call (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2865:5881)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Hm5 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2284:16733)
+2025-12-02T01:29:03.357Z [DEBUG] Getting matching hook commands for PostToolUse with query: WebSearch
+2025-12-02T01:29:03.357Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:03.357Z [DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
+2025-12-02T01:29:03.373Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:29:03.373Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:29:03.376Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:29:03.376Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:29:05.665Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:07.868Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-12-02T01:29:07.871Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-12-02T01:29:07.871Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:07.871Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-12-02T01:29:07.925Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-12-02T01:29:07.925Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:07.925Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-12-02T01:29:07.938Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:29:07.938Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:29:07.941Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:29:07.941Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:29:11.194Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:13.577Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-02T01:29:13.580Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-02T01:29:13.580Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:13.580Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:29:14.731Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:14.825Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:16.837Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-02T01:29:16.837Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:16.837Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:29:16.857Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:29:16.857Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:29:16.860Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:29:16.860Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:29:19.320Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:21.834Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:23.818Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-02T01:29:23.821Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-02T01:29:23.821Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:23.821Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:29:24.650Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:24.747Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:25.646Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-02T01:29:25.646Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:25.646Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:29:25.660Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:29:25.660Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:29:25.665Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:29:25.665Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:29:26.668Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:27.257Z [ERROR] Error: Error: EISDIR: illegal operation on a directory, read
+    at Module.readFileSync (node:fs:448:20)
+    at Object.readFileSync (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:9:299)
+    at i22 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:4242:17034)
+    at Object.call (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1514:909)
+    at file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1706:1473
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-12-02T01:29:27.261Z [ERROR] Error: Error: EISDIR: illegal operation on a directory, read
+    at Module.readFileSync (node:fs:448:20)
+    at Object.readFileSync (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:9:299)
+    at i22 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:4242:17034)
+    at Object.call (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1514:909)
+    at file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1706:1473
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-12-02T01:29:27.264Z [ERROR] Error: Error: EISDIR: illegal operation on a directory, read
+    at Module.readFileSync (node:fs:448:20)
+    at Object.readFileSync (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:9:299)
+    at i22 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:4242:17034)
+    at Object.call (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1514:909)
+    at file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1706:1473
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-12-02T01:29:29.491Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:31.322Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-02T01:29:31.324Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-02T01:29:31.324Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:31.325Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:29:32.087Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:32.378Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:34.304Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-02T01:29:34.304Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:34.304Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-02T01:29:34.322Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:29:34.322Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:29:34.325Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:29:34.325Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:29:35.113Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:36.831Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:39.137Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-02T01:29:39.138Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-02T01:29:39.138Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:39.138Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T01:29:39.166Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-02T01:29:39.167Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:39.167Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T01:29:39.184Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T01:29:39.184Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T01:29:39.192Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T01:29:39.192Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T01:29:42.523Z [DEBUG] Stream started - received first chunk
+2025-12-02T01:29:55.857Z [DEBUG] Language not supported while highlighting code, falling back to markdown: hcl
+2025-12-02T01:29:55.858Z [DEBUG] Language not supported while highlighting code, falling back to markdown: hcl
+2025-12-02T01:29:55.886Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-02T01:29:55.886Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:29:55.886Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T01:30:56.083Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-12-02T01:30:56.083Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T01:30:56.083Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-12-02T01:33:28.493Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T01:38:28.438Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T01:43:28.528Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T01:48:28.500Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T01:53:28.475Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T01:56:32.702Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-12-02T01:56:32.702Z [DEBUG] AutoUpdater: Using global update method
+2025-12-02T01:56:34.880Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.82270.1764640594880
+2025-12-02T01:56:34.880Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T01:56:34.888Z [DEBUG] Temp file written successfully, size: 70048 bytes
+2025-12-02T01:56:34.889Z [DEBUG] Applied original permissions to temp file
+2025-12-02T01:56:34.889Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.82270.1764640594880 to /Users/miyagawaryouta/.claude.json
+2025-12-02T01:56:34.889Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-12-02T01:58:28.461Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:03:28.488Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:08:28.499Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:13:28.492Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:18:28.505Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:23:28.508Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:26:32.943Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-12-02T02:26:32.944Z [DEBUG] AutoUpdater: Using global update method
+2025-12-02T02:26:33.774Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.82270.1764642393774
+2025-12-02T02:26:33.775Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T02:26:33.783Z [DEBUG] Temp file written successfully, size: 70048 bytes
+2025-12-02T02:26:33.783Z [DEBUG] Applied original permissions to temp file
+2025-12-02T02:26:33.783Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.82270.1764642393774 to /Users/miyagawaryouta/.claude.json
+2025-12-02T02:26:33.783Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-12-02T02:28:28.469Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:33:28.465Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:38:28.491Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:43:28.614Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:48:28.534Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:53:28.526Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T02:56:32.984Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-12-02T02:56:32.984Z [DEBUG] AutoUpdater: Using global update method
+2025-12-02T02:56:33.891Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.82270.1764644193891
+2025-12-02T02:56:33.891Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T02:56:33.901Z [DEBUG] Temp file written successfully, size: 70048 bytes
+2025-12-02T02:56:33.901Z [DEBUG] Applied original permissions to temp file
+2025-12-02T02:56:33.901Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.82270.1764644193891 to /Users/miyagawaryouta/.claude.json
+2025-12-02T02:56:33.902Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-12-02T02:58:28.486Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T03:03:28.483Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T03:08:28.613Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T03:13:29.542Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T03:14:07.417Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:14:07.418Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:14:07.423Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:14:07.423Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:14:07.461Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-02T03:14:07.461Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:07.461Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T03:14:07.464Z [DEBUG] FileHistory: Making snapshot for message a2f7d0d7-1ae5-427f-b2c7-15a998ae35e6
+2025-12-02T03:14:07.465Z [DEBUG] FileHistory: Added snapshot for a2f7d0d7-1ae5-427f-b2c7-15a998ae35e6, tracking 0 files
+2025-12-02T03:14:08.430Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:14:10.821Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:14:14.202Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-02T03:14:14.205Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-02T03:14:14.205Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:14.205Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:14:14.214Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764645254214
+2025-12-02T03:14:14.218Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:14:14.218Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764645254214 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json
+2025-12-02T03:14:14.218Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json written atomically
+2025-12-02T03:14:14.219Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764645254219
+2025-12-02T03:14:14.223Z [DEBUG] Temp file written successfully, size: 429 bytes
+2025-12-02T03:14:14.223Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764645254219 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json
+2025-12-02T03:14:14.223Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json written atomically
+2025-12-02T03:14:14.233Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-02T03:14:14.233Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:14.233Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:14:14.275Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:14:14.275Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:14:14.281Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:14:14.281Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:14:18.160Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:14:23.094Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-02T03:14:23.097Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-02T03:14:23.097Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:23.097Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:14:23.114Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/modules/automation/main.tf
+2025-12-02T03:14:23.116Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/modules/automation/main.tf.tmp.82270.1764645263116
+2025-12-02T03:14:23.116Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:14:23.124Z [DEBUG] Temp file written successfully, size: 1024 bytes
+2025-12-02T03:14:23.124Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:14:23.124Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/modules/automation/main.tf.tmp.82270.1764645263116 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/modules/automation/main.tf
+2025-12-02T03:14:23.125Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/modules/automation/main.tf written atomically
+2025-12-02T03:14:23.133Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-02T03:14:23.133Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:23.133Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:14:23.166Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:14:23.166Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:14:23.172Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:14:23.172Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:14:26.131Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:14:31.282Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-02T03:14:31.285Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-02T03:14:31.285Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:31.285Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:14:31.293Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764645271293
+2025-12-02T03:14:31.293Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:14:31.299Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:14:31.299Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:14:31.299Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764645271293 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json
+2025-12-02T03:14:31.300Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json written atomically
+2025-12-02T03:14:31.300Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764645271300
+2025-12-02T03:14:31.300Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:14:31.304Z [DEBUG] Temp file written successfully, size: 431 bytes
+2025-12-02T03:14:31.304Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:14:31.304Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764645271300 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json
+2025-12-02T03:14:31.304Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json written atomically
+2025-12-02T03:14:31.318Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-02T03:14:31.318Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:31.318Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:14:31.337Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:14:31.337Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:14:31.342Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:14:31.342Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:14:33.321Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:14:34.709Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-02T03:14:34.712Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-02T03:14:34.712Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:34.712Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:14:34.729Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-02T03:14:34.729Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:34.729Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:14:34.754Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:14:34.754Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:14:34.757Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:14:34.757Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:14:37.758Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:14:39.672Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-02T03:14:39.676Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-02T03:14:39.676Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:39.676Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:14:39.695Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-02T03:14:39.695Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:39.695Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:14:39.714Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:14:39.714Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:14:39.722Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:14:39.722Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:14:41.617Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:14:44.359Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-02T03:14:44.361Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-02T03:14:44.361Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:44.361Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:14:44.376Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/locals.tf
+2025-12-02T03:14:44.379Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/locals.tf.tmp.82270.1764645284379
+2025-12-02T03:14:44.379Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T03:14:44.384Z [DEBUG] Temp file written successfully, size: 1332 bytes
+2025-12-02T03:14:44.384Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:14:44.384Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/locals.tf.tmp.82270.1764645284379 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/locals.tf
+2025-12-02T03:14:44.384Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/locals.tf written atomically
+2025-12-02T03:14:44.392Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-02T03:14:44.392Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:44.392Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:14:44.422Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:14:44.422Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:14:44.425Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:14:44.425Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:14:46.841Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:14:49.435Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-02T03:14:49.438Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-02T03:14:49.438Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:49.438Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:14:49.451Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/main.tf
+2025-12-02T03:14:49.454Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/main.tf.tmp.82270.1764645289454
+2025-12-02T03:14:49.454Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T03:14:49.458Z [DEBUG] Temp file written successfully, size: 6763 bytes
+2025-12-02T03:14:49.458Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:14:49.458Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/main.tf.tmp.82270.1764645289454 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/main.tf
+2025-12-02T03:14:49.459Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/main.tf written atomically
+2025-12-02T03:14:49.466Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-02T03:14:49.466Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:49.466Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:14:49.487Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:14:49.487Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:14:49.491Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:14:49.491Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:14:54.796Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:14:56.987Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-02T03:14:56.990Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-02T03:14:56.990Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:56.990Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:14:57.008Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764645297008
+2025-12-02T03:14:57.008Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:14:57.012Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:14:57.012Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:14:57.012Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764645297008 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json
+2025-12-02T03:14:57.012Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json written atomically
+2025-12-02T03:14:57.012Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764645297012
+2025-12-02T03:14:57.012Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:14:57.016Z [DEBUG] Temp file written successfully, size: 433 bytes
+2025-12-02T03:14:57.016Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:14:57.016Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764645297012 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json
+2025-12-02T03:14:57.016Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json written atomically
+2025-12-02T03:14:57.023Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-02T03:14:57.023Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:14:57.023Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:14:57.038Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:14:57.038Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:14:57.041Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:14:57.041Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:14:58.843Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:15:00.238Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-12-02T03:15:00.241Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-12-02T03:15:00.241Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:00.241Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-02T03:15:00.433Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-12-02T03:15:00.433Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:00.433Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-02T03:15:00.447Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:15:00.447Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:15:00.451Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:15:00.451Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:15:02.724Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:15:03.313Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-02T03:15:03.316Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-02T03:15:03.316Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:03.316Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:15:03.332Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-02T03:15:03.332Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:03.332Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:15:03.346Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:15:03.346Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:15:03.350Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:15:03.350Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:15:05.396Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:15:07.639Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-02T03:15:07.642Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-02T03:15:07.642Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:07.642Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:15:07.663Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/locals.tf
+2025-12-02T03:15:07.677Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/locals.tf.tmp.82270.1764645307677
+2025-12-02T03:15:07.677Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T03:15:07.681Z [DEBUG] Temp file written successfully, size: 1332 bytes
+2025-12-02T03:15:07.681Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:15:07.681Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/locals.tf.tmp.82270.1764645307677 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/locals.tf
+2025-12-02T03:15:07.682Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/locals.tf written atomically
+2025-12-02T03:15:07.705Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-02T03:15:07.705Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:07.705Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:15:07.728Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:15:07.728Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:15:07.734Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:15:07.734Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:15:11.263Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:15:12.015Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-02T03:15:12.018Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-02T03:15:12.018Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:12.018Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:15:12.037Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-02T03:15:12.037Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:12.037Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:15:12.051Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:15:12.051Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:15:12.055Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:15:12.055Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:15:15.439Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:15:18.665Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-02T03:15:18.669Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-02T03:15:18.669Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:18.669Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:15:18.686Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/main.tf
+2025-12-02T03:15:18.689Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/main.tf.tmp.82270.1764645318689
+2025-12-02T03:15:18.689Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T03:15:18.693Z [DEBUG] Temp file written successfully, size: 6936 bytes
+2025-12-02T03:15:18.694Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:15:18.694Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/main.tf.tmp.82270.1764645318689 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/main.tf
+2025-12-02T03:15:18.694Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/main.tf written atomically
+2025-12-02T03:15:18.701Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-02T03:15:18.701Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:18.701Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:15:18.723Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:15:18.723Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:15:18.727Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:15:18.727Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:15:21.013Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:15:22.989Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-02T03:15:22.992Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-02T03:15:22.992Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:22.992Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:15:23.000Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764645323000
+2025-12-02T03:15:23.000Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:15:23.009Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:15:23.009Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:15:23.009Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764645323000 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json
+2025-12-02T03:15:23.009Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json written atomically
+2025-12-02T03:15:23.009Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764645323009
+2025-12-02T03:15:23.009Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:15:23.015Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:15:23.015Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:15:23.015Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764645323009 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json
+2025-12-02T03:15:23.015Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json written atomically
+2025-12-02T03:15:23.021Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-02T03:15:23.021Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:23.021Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:15:23.032Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:15:23.032Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:15:23.040Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:15:23.040Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:15:25.874Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:15:34.142Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-02T03:15:34.142Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:15:34.142Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T03:16:34.426Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-12-02T03:16:34.427Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:16:34.428Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-12-02T03:18:28.511Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T03:21:19.381Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:21:19.383Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:21:19.396Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:21:19.396Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:21:19.443Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-02T03:21:19.443Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:21:19.443Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T03:21:19.445Z [DEBUG] FileHistory: Making snapshot for message 630d47e5-9c02-4a86-bddf-65c7ffc036a5
+2025-12-02T03:21:19.472Z [DEBUG] FileHistory: Added snapshot for 630d47e5-9c02-4a86-bddf-65c7ffc036a5, tracking 5 files
+2025-12-02T03:21:20.642Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:21:22.217Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:21:38.215Z [DEBUG] Language not supported while highlighting code, falling back to markdown: hcl
+2025-12-02T03:21:38.218Z [DEBUG] Language not supported while highlighting code, falling back to markdown: hcl
+2025-12-02T03:21:38.277Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-02T03:21:38.277Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:21:38.277Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T03:22:38.503Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-12-02T03:22:38.503Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:22:38.504Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-12-02T03:23:28.410Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T03:23:33.706Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:23:33.708Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:23:33.717Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:23:33.717Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:23:33.732Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-02T03:23:33.732Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:23:33.732Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T03:23:33.735Z [DEBUG] FileHistory: Making snapshot for message a3211a5a-38af-442a-923c-90b80e0a371e
+2025-12-02T03:23:33.736Z [DEBUG] FileHistory: Added snapshot for a3211a5a-38af-442a-923c-90b80e0a371e, tracking 5 files
+2025-12-02T03:23:34.511Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:23:35.801Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:23:37.114Z [DEBUG] Streaming aborted by user: Request was aborted.
+2025-12-02T03:23:37.114Z [ERROR] Error in non-streaming fallback: Request was aborted.
+2025-12-02T03:23:37.115Z [ERROR] Error: Error: Request was aborted.
+    at Bt._createMessage (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:463:3151)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-12-02T03:23:44.481Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:23:44.481Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:23:44.484Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:23:44.485Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:23:44.502Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-02T03:23:44.502Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:23:44.502Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T03:23:44.502Z [DEBUG] FileHistory: Making snapshot for message 68c0a096-631a-413c-8ffa-7220f6b82958
+2025-12-02T03:23:44.503Z [DEBUG] FileHistory: Added snapshot for 68c0a096-631a-413c-8ffa-7220f6b82958, tracking 5 files
+2025-12-02T03:23:45.471Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:23:47.581Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:23:51.096Z [DEBUG] executePreToolHooks called for tool: WebFetch
+2025-12-02T03:23:51.099Z [DEBUG] Getting matching hook commands for PreToolUse with query: WebFetch
+2025-12-02T03:23:51.099Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:23:51.099Z [DEBUG] Matched 0 unique hooks for query "WebFetch" (0 before deduplication)
+2025-12-02T03:23:52.723Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:23:54.954Z [DEBUG] Getting matching hook commands for PostToolUse with query: WebFetch
+2025-12-02T03:23:54.954Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:23:54.954Z [DEBUG] Matched 0 unique hooks for query "WebFetch" (0 before deduplication)
+2025-12-02T03:23:54.974Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:23:54.974Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:23:54.976Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:23:54.976Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:23:57.059Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:23:58.540Z [DEBUG] executePreToolHooks called for tool: WebSearch
+2025-12-02T03:23:58.542Z [DEBUG] Getting matching hook commands for PreToolUse with query: WebSearch
+2025-12-02T03:23:58.542Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:23:58.542Z [DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
+2025-12-02T03:24:00.603Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:24:13.391Z [DEBUG] Getting matching hook commands for PostToolUse with query: WebSearch
+2025-12-02T03:24:13.391Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:24:13.391Z [DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
+2025-12-02T03:24:13.411Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:24:13.412Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:24:13.419Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:24:13.419Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:24:16.769Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:24:28.551Z [DEBUG] Language not supported while highlighting code, falling back to markdown: hcl
+2025-12-02T03:24:28.555Z [DEBUG] Language not supported while highlighting code, falling back to markdown: hcl
+2025-12-02T03:24:28.625Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-02T03:24:28.625Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:24:28.625Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T03:25:28.891Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-12-02T03:25:28.891Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:25:28.892Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-12-02T03:26:32.624Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-12-02T03:26:32.624Z [DEBUG] AutoUpdater: Using global update method
+2025-12-02T03:26:33.550Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.82270.1764645993550
+2025-12-02T03:26:33.550Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T03:26:33.561Z [DEBUG] Temp file written successfully, size: 70048 bytes
+2025-12-02T03:26:33.561Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:26:33.561Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.82270.1764645993550 to /Users/miyagawaryouta/.claude.json
+2025-12-02T03:26:33.561Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-12-02T03:27:11.950Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:27:11.951Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:27:11.956Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:27:11.956Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:27:11.981Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-02T03:27:11.981Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:11.981Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T03:27:11.982Z [DEBUG] FileHistory: Making snapshot for message b7ae9423-a0a4-4373-a310-871fc1f6cbdf
+2025-12-02T03:27:11.983Z [DEBUG] FileHistory: Added snapshot for b7ae9423-a0a4-4373-a310-871fc1f6cbdf, tracking 5 files
+2025-12-02T03:27:13.280Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:27:16.765Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:27:20.173Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-02T03:27:20.176Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-02T03:27:20.176Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:20.176Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:27:20.185Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764646040185
+2025-12-02T03:27:20.185Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:27:20.190Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:27:20.190Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:27:20.190Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764646040185 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json
+2025-12-02T03:27:20.191Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json written atomically
+2025-12-02T03:27:20.192Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764646040192
+2025-12-02T03:27:20.192Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:27:20.196Z [DEBUG] Temp file written successfully, size: 568 bytes
+2025-12-02T03:27:20.196Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:27:20.196Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764646040192 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json
+2025-12-02T03:27:20.197Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json written atomically
+2025-12-02T03:27:20.207Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-02T03:27:20.207Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:20.207Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:27:20.220Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:27:20.221Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:27:20.225Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:27:20.225Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:27:22.423Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:27:24.794Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-02T03:27:24.799Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-02T03:27:24.799Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:24.799Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:27:24.818Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-02T03:27:24.818Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:24.818Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:27:24.834Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:27:24.834Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:27:24.837Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:27:24.837Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:27:30.007Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:27:34.743Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-02T03:27:34.746Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-02T03:27:34.746Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:34.746Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:27:34.761Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/modules/automation/main.tf.tmp.82270.1764646054761
+2025-12-02T03:27:34.761Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:27:34.767Z [DEBUG] Temp file written successfully, size: 1899 bytes
+2025-12-02T03:27:34.767Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:27:34.767Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/modules/automation/main.tf.tmp.82270.1764646054761 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/modules/automation/main.tf
+2025-12-02T03:27:34.767Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/modules/automation/main.tf written atomically
+2025-12-02T03:27:34.782Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-02T03:27:34.782Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:34.782Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:27:34.815Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:27:34.815Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:27:34.818Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:27:34.818Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:27:38.082Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:27:43.894Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-02T03:27:43.898Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-02T03:27:43.898Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:43.898Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:27:43.909Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764646063909
+2025-12-02T03:27:43.909Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:27:43.918Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:27:43.918Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:27:43.918Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764646063909 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json
+2025-12-02T03:27:43.918Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json written atomically
+2025-12-02T03:27:43.918Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764646063918
+2025-12-02T03:27:43.918Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:27:43.923Z [DEBUG] Temp file written successfully, size: 570 bytes
+2025-12-02T03:27:43.924Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:27:43.924Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764646063918 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json
+2025-12-02T03:27:43.924Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json written atomically
+2025-12-02T03:27:43.935Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-02T03:27:43.935Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:43.935Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:27:43.954Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:27:43.954Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:27:43.958Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:27:43.958Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:27:46.847Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:27:49.174Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-02T03:27:49.180Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-02T03:27:49.180Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:49.180Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:27:49.219Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-02T03:27:49.219Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:49.219Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-02T03:27:49.249Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:27:49.249Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:27:49.253Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:27:49.253Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:27:52.307Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:27:54.174Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-02T03:27:54.178Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-02T03:27:54.178Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:54.178Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:27:54.198Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/develop/locals.tf
+2025-12-02T03:27:54.205Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/develop/locals.tf.tmp.82270.1764646074205
+2025-12-02T03:27:54.205Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T03:27:54.209Z [DEBUG] Temp file written successfully, size: 1368 bytes
+2025-12-02T03:27:54.209Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:27:54.209Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/develop/locals.tf.tmp.82270.1764646074205 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/develop/locals.tf
+2025-12-02T03:27:54.210Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/develop/locals.tf written atomically
+2025-12-02T03:27:54.218Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-02T03:27:54.218Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:27:54.218Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:27:54.246Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:27:54.246Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:27:54.250Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:27:54.250Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:27:58.618Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:28:04.765Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-02T03:28:04.769Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-02T03:28:04.769Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:04.769Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:28:04.780Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764646084780
+2025-12-02T03:28:04.780Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:28:04.785Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:28:04.785Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:28:04.785Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764646084780 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json
+2025-12-02T03:28:04.785Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json written atomically
+2025-12-02T03:28:04.785Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764646084785
+2025-12-02T03:28:04.785Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:28:04.789Z [DEBUG] Temp file written successfully, size: 572 bytes
+2025-12-02T03:28:04.789Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:28:04.789Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764646084785 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json
+2025-12-02T03:28:04.789Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json written atomically
+2025-12-02T03:28:04.798Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-02T03:28:04.798Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:04.798Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:28:04.825Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:28:04.825Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:28:04.835Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:28:04.835Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:28:08.806Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:28:10.567Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-02T03:28:10.571Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-02T03:28:10.571Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:10.571Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:28:10.581Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/locals.tf.tmp.82270.1764646090581
+2025-12-02T03:28:10.581Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T03:28:10.591Z [DEBUG] Temp file written successfully, size: 1368 bytes
+2025-12-02T03:28:10.591Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:28:10.591Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/locals.tf.tmp.82270.1764646090581 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/locals.tf
+2025-12-02T03:28:10.593Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/staging/locals.tf written atomically
+2025-12-02T03:28:10.607Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-02T03:28:10.607Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:10.607Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:28:10.635Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:28:10.635Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:28:10.639Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:28:10.639Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:28:14.218Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:28:18.407Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-02T03:28:18.410Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-02T03:28:18.410Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:18.410Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:28:18.418Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764646098418
+2025-12-02T03:28:18.418Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:28:18.425Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:28:18.425Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:28:18.425Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764646098418 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json
+2025-12-02T03:28:18.425Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json written atomically
+2025-12-02T03:28:18.425Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764646098425
+2025-12-02T03:28:18.425Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:28:18.432Z [DEBUG] Temp file written successfully, size: 574 bytes
+2025-12-02T03:28:18.432Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:28:18.432Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764646098425 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json
+2025-12-02T03:28:18.432Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json written atomically
+2025-12-02T03:28:18.443Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-02T03:28:18.443Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:18.443Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:28:18.460Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:28:18.460Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:28:18.465Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:28:18.465Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:28:23.093Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:28:25.040Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-02T03:28:25.047Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-02T03:28:25.047Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:25.047Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:28:25.059Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/locals.tf.tmp.82270.1764646105059
+2025-12-02T03:28:25.059Z [DEBUG] Preserving file permissions: 100644
+2025-12-02T03:28:25.065Z [DEBUG] Temp file written successfully, size: 1368 bytes
+2025-12-02T03:28:25.065Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:28:25.065Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/locals.tf.tmp.82270.1764646105059 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/locals.tf
+2025-12-02T03:28:25.068Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/infra/terraform/environments/production/locals.tf written atomically
+2025-12-02T03:28:25.077Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-02T03:28:25.077Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:25.077Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-02T03:28:25.102Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:28:25.102Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:28:25.106Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:28:25.106Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:28:28.368Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T03:28:30.182Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:28:34.353Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-02T03:28:34.355Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-02T03:28:34.355Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:34.355Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:28:34.365Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764646114365
+2025-12-02T03:28:34.365Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:28:34.372Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:28:34.372Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:28:34.372Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json.tmp.82270.1764646114365 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json
+2025-12-02T03:28:34.372Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-411f36d1-315f-48b0-8474-6924c0eba47f.json written atomically
+2025-12-02T03:28:34.373Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764646114373
+2025-12-02T03:28:34.373Z [DEBUG] Preserving file permissions: 100600
+2025-12-02T03:28:34.376Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-02T03:28:34.376Z [DEBUG] Applied original permissions to temp file
+2025-12-02T03:28:34.376Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json.tmp.82270.1764646114373 to /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json
+2025-12-02T03:28:34.376Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/9abd263e-a771-40ae-a6e6-4a03e710b855-agent-9abd263e-a771-40ae-a6e6-4a03e710b855.json written atomically
+2025-12-02T03:28:34.383Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-02T03:28:34.383Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:34.383Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-02T03:28:34.395Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-02T03:28:34.395Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-02T03:28:34.399Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-02T03:28:34.399Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-02T03:28:36.960Z [DEBUG] Stream started - received first chunk
+2025-12-02T03:28:47.951Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-02T03:28:47.951Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:28:47.951Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-02T03:29:48.215Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-12-02T03:29:48.216Z [DEBUG] Found 0 hook matchers in settings
+2025-12-02T03:29:48.216Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-12-02T03:33:28.528Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T03:38:28.497Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T03:43:28.600Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)
+2025-12-02T03:48:28.484Z [ERROR] AxiosError: AxiosError: Request failed with status code 403
+    at kj (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:24:1137)
+    at Unzip.<anonymous> (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:29:9864)
+    at Unzip.emit (node:events:530:35)
+    at Unzip.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1698:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at EVA.request (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:31:2130)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BjA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37479)
+    at async gG9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:37751)
+    at async B (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2827:38567)

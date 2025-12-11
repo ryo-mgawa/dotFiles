@@ -1,0 +1,37 @@
+import { Table } from 'react-bootstrap';
+import { Member } from '@/types/models/Member';
+
+interface MemberTableProps {
+  members: Member[];
+}
+
+/**
+ * 部員一覧テーブル
+ * requirements.md 2.2節を参照
+ */
+export const MemberTable = ({ members }: MemberTableProps) => {
+  return (
+    <Table striped bordered hover responsive>
+      <thead>
+        <tr>
+          <th>学年</th>
+          <th>学科</th>
+          <th>名前</th>
+          <th>ブロック</th>
+        </tr>
+      </thead>
+      <tbody>
+        {members.map((member) => (
+          <tr key={member.id}>
+            <td>{member.grade}年</td>
+            <td>{member.departmentName}</td>
+            <td>
+              {member.lastNameKanji} {member.firstNameKanji}
+            </td>
+            <td>{member.block}</td>
+          </tr>
+        ))}
+      </tbody>
+    </Table>
+  );
+};

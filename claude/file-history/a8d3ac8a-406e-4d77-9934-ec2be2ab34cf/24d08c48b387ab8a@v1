@@ -1,0 +1,17 @@
+# Supabase Edge Functions用環境変数
+
+# Slack共通設定（必須 - 全てのSlackアプリで共有）
+SLACK_BOT_TOKEN=xoxb-your-bot-token-here
+SLACK_SIGNING_SECRET=your_signing_secret_here
+
+# Slack共通設定（任意 - 設定するとコマンドを使用できるチャンネルを制限）
+SLACK_ALLOWED_CHANNEL_IDS=C01234567,C98765432
+
+# 承認者設定（必須）
+PURCHASE_REQUEST_FIRST_APPROVER_NAGOYA=U01234567
+PURCHASE_REQUEST_FIRST_APPROVER_TOKYO=U98765432
+PURCHASE_REQUEST_SECOND_APPROVER=U99999999
+
+# Notion連携設定（任意 - 両方設定した場合のみ有効）
+PURCHASE_REQUEST_NOTION_TOKEN=secret_your_notion_token_here
+PURCHASE_REQUEST_NOTION_DATABASE_ID=your_database_id_here

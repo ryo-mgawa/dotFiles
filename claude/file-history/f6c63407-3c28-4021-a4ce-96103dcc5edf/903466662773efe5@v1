@@ -1,0 +1,15 @@
+get:
+  tags:
+    - automation
+  summary: アプリ情報一覧を取得
+  description: オートメーションのアプリ情報一覧を取得します。
+  operationId: getAutomationApplications
+  responses:
+    "200":
+      $ref: ../../globalComponents/responses/automation/200.yml
+    "400":
+      $ref: ../../globalComponents/Errors/400.yml
+    "401":
+      $ref: ../../globalComponents/Errors/401.yml
+    "500":
+      $ref: ../../globalComponents/Errors/500.yml

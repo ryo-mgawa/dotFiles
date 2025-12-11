@@ -1,0 +1,12 @@
+export interface JobShipmentMap {
+  job_id: string;
+  shipment_id: string;
+}
+
+export interface JobShipmentMapInsert {
+  job_id: string;
+  shipment_id: string;
+}
+
+export interface JobShipmentMapUpdate {
+}

@@ -1,0 +1,307 @@
+[DEBUG] Skipping SessionStart:clear hook execution - workspace trust not accepted
+[DEBUG] FileHistory: Added snapshot for fc0e2875-0c4f-40e1-a779-45f3d89afa6f, tracking 0 files
+[DEBUG] Rendering user message with 1 content blocks
+[DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+[DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761727994692
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 787970 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761727994692 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761727994718
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 788054 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761727994718 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global, using native: false
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global, using native: false
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skipping UserPromptSubmit hook execution - workspace trust not accepted
+[DEBUG] FileHistory: Making snapshot for message cb399fd5-f84c-465d-b9df-587b3095888b
+[DEBUG] FileHistory: Added snapshot for cb399fd5-f84c-465d-b9df-587b3095888b, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Skipping PreToolUse:Read hook execution - workspace trust not accepted
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Skipping PreToolUse:Read hook execution - workspace trust not accepted
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Skipping PreToolUse:Read hook execution - workspace trust not accepted
+[DEBUG] Skipping PostToolUse:Read hook execution - workspace trust not accepted
+[DEBUG] Skipping PostToolUse:Read hook execution - workspace trust not accepted
+[DEBUG] Skipping PostToolUse:Read hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Skipping PreToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728062780
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1429 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728062780 to /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md written atomically
+[DEBUG] Skipping PostToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Skipping PreToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728069934
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1426 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728069934 to /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md written atomically
+[DEBUG] Skipping PostToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Skipping PreToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728077228
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1325 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728077228 to /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md written atomically
+[DEBUG] Skipping PostToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Skipping PreToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728082903
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1386 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728082903 to /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md written atomically
+[DEBUG] Skipping PostToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Skipping PreToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728095058
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1432 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728095058 to /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md written atomically
+[DEBUG] Skipping PostToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Skipping PreToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728106729
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1689 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md.tmp.41290.1761728106729 to /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/calendar-folders/README.md written atomically
+[DEBUG] Skipping PostToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761728116839
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 788054 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761728116839 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Skipping Stop hook execution - workspace trust not accepted
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761728116874
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 788054 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761728116874 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761728116898
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 788205 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761728116898 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Skipping Notification hook execution - workspace trust not accepted
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global, using native: false
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skipping UserPromptSubmit hook execution - workspace trust not accepted
+[DEBUG] FileHistory: Making snapshot for message b5add1b3-59ac-4a90-a949-2f802e1f04a6
+[DEBUG] FileHistory: Added snapshot for b5add1b3-59ac-4a90-a949-2f802e1f04a6, tracking 1 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Skipping PreToolUse:Bash hook execution - workspace trust not accepted
+[DEBUG] Skipping PostToolUse:Bash hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Skipping PreToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/README.md
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/README.md.tmp.41290.1761728957509
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 860 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/README.md.tmp.41290.1761728957509 to /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/README.md
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/README.md written atomically
+[DEBUG] Skipping PostToolUse:Edit hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761728966004
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 788205 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761728966004 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Skipping Stop hook execution - workspace trust not accepted
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761728966046
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 788205 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761728966046 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761728966073
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 788405 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761728966073 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global, using native: false
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global, using native: false
+[DEBUG] Metadata string for init:
+[DEBUG] <command-message>init is analyzing your codebase…</command-message>
+<command-name>/init</command-name>
+[DEBUG] command-message tags in metadata: 1
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] processPromptSlashCommand creating 3 messages for init
+[DEBUG] Message 1: <command-message>init is analyzing your codebase…</command-message>
+<command-name>/init</command-name>
+[DEBUG] Message 2 [META]: [{"type":"text","text":"Please analyze this codebase and create a CLAUDE.md file, which will be given to future instances of Claude Code to operate in this repository.\n\nWhat to add:\n1. Commands tha
+[DEBUG] Message 3: [ATTACHMENT]
+[DEBUG] Skipping UserPromptSubmit hook execution - workspace trust not accepted
+[DEBUG] FileHistory: Making snapshot for message ab47659d-d0ff-4e62-9654-5d763a2e39c9
+[DEBUG] FileHistory: Added snapshot for ab47659d-d0ff-4e62-9654-5d763a2e39c9, tracking 2 files
+[DEBUG] Rendering user message with 1 content blocks
+[DEBUG] Block 0: <command-message>init is analyzing your codebase…</command-message>
+<command-name>/init</command-nam...
+[DEBUG] UserCommandMessage rendering: "init is analyzing your codebase…" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Skipping PreToolUse:Glob hook execution - workspace trust not accepted
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Skipping PreToolUse:Glob hook execution - workspace trust not accepted
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Skipping PreToolUse:Glob hook execution - workspace trust not accepted
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Skipping PreToolUse:Read hook execution - workspace trust not accepted
+[DEBUG] Skipping PostToolUse:Read hook execution - workspace trust not accepted
+[DEBUG] Skipping PostToolUse:Glob hook execution - workspace trust not accepted
+[DEBUG] Skipping PostToolUse:Glob hook execution - workspace trust not accepted
+[DEBUG] Skipping PostToolUse:Glob hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Write
+[DEBUG] Skipping PreToolUse:Write hook execution - workspace trust not accepted
+[DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/CLAUDE.md
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/CLAUDE.md.tmp.41290.1761729034667
+[DEBUG] Temp file written successfully, size: 2385 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/CLAUDE.md.tmp.41290.1761729034667 to /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/CLAUDE.md
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/ChromeExtensions/CLAUDE.md written atomically
+[DEBUG] Skipping PostToolUse:Write hook execution - workspace trust not accepted
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761729043265
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 788405 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761729043265 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Skipping Stop hook execution - workspace trust not accepted
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761729043307
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 788405 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761729043307 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.41290.1761729043329
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 788488 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.41290.1761729043329 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global, using native: false
+[DEBUG] Skipping SessionEnd:clear hook execution - workspace trust not accepted

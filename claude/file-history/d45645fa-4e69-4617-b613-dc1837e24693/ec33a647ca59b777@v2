@@ -1,0 +1,4 @@
+variable "cloud_run_sa" {
+  description = "Cloud Run service account email"
+  type        = string
+}

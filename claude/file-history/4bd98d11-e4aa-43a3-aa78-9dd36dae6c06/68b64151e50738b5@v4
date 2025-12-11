@@ -1,0 +1,116 @@
+import { resolve } from 'path';
+import { ProviderIdentity, RDBModule } from '@app/rdb';
+import { INestApplication } from '@nestjs/common';
+import { Test } from '@nestjs/testing';
+import { Knex } from 'knex';
+import { ShipmentDAO } from '../../dao/shipmentDAO';
+import { ShipmentRepository } from '../shipmentRepository';
+
+jest.mock('@app/requestContext/requestContext', () => {
+  return {
+    RequestContext: class DummyRequestContext {
+      public static get() {
+        return {
+          user: {
+            organizationId: 'test-org-1',
+            userId: 'test-user-1',
+            role: 'manager',
+          },
+        };
+      }
+      public static start(_, next) {
+        next();
+      }
+    },
+  };
+});
+
+describe('ShipmentRepository', () => {
+  let shipmentRepository: ShipmentRepository;
+  let app: INestApplication;
+  let rdb: Knex;
+
+  beforeEach(async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [RDBModule],
+      providers: [ShipmentDAO, ShipmentRepository],
+    }).compile();
+
+    rdb = await moduleRef.get<Knex>(ProviderIdentity);
+    app = moduleRef.createNestApplication();
+
+    await Promise.all([
+      app.init(),
+      rdb.transaction(async (trx) => {
+        await trx.raw('SET CONSTRAINTS ALL DEFERRED');
+        await trx.seed.run({
+          directory: resolve(__dirname, './fixtures/seeds'),
+          specific: 'shipment.ts',
+        });
+        await trx.raw('SET CONSTRAINTS ALL IMMEDIATE');
+      }),
+    ]);
+
+    shipmentRepository = await moduleRef.get<ShipmentRepository>(
+      ShipmentRepository
+    );
+  });
+
+  describe('save', () => {
+    it('複数のshipmentを保存でき、IDが自動生成される', async () => {
+      const shipments = [
+        {
+          slipId: 'slip-001',
+          consignor: { id: 'consignor-1', name: '発荷主A' },
+          consignee: { id: 'consignee-1', name: '着荷主A' },
+          originSpotId: 'spot-origin-1',
+          destinationSpotId: 'spot-dest-1',
+          meta: { note: 'テスト' },
+        },
+        {
+          slipId: 'slip-002',
+          consignor: { id: 'consignor-2', name: '発荷主B' },
+          consignee: { id: 'consignee-2', name: '着荷主B' },
+          originSpotId: 'spot-origin-2',
+          destinationSpotId: 'spot-dest-2',
+        },
+      ];
+
+      const shipmentIds = await shipmentRepository.save('test-org-1', shipments);
+
+      expect(shipmentIds).toHaveLength(2);
+      expect(shipmentIds[0]).toBeDefined();
+      expect(shipmentIds[1]).toBeDefined();
+
+      const results = await rdb
+        .from('shipment')
+        .where('organization_id', 'test-org-1')
+        .orderBy('slip_id', 'asc');
+
+      expect(results).toHaveLength(2);
+      expect(results[0].id).toBe(shipmentIds[0]);
+      expect(results[0].organization_id).toBe('test-org-1');
+      expect(results[0].slip_id).toBe('slip-001');
+      expect(results[0].consignor).toEqual({
+        id: 'consignor-1',
+        name: '発荷主A',
+      });
+      expect(results[1].id).toBe(shipmentIds[1]);
+      expect(results[1].slip_id).toBe('slip-002');
+      expect(results[1].meta).toBeNull();
+    });
+
+    it('空配列の場合は何もしない', async () => {
+      const shipmentIds = await shipmentRepository.save('test-org-1', []);
+
+      expect(shipmentIds).toHaveLength(0);
+
+      const results = await rdb.from('shipment');
+      expect(results).toHaveLength(0);
+    });
+  });
+
+  afterEach(() => {
+    rdb.destroy();
+  });
+});

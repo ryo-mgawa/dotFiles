@@ -1,0 +1,38 @@
+import './ControlButton.scss';
+
+/**
+ * MicrophoneButton Props
+ */
+interface MicrophoneButtonProps {
+  isMuted: boolean;
+  onClick: () => void;
+  disabled?: boolean;
+}
+
+/**
+ * MicrophoneButton
+ * マイクミュート切り替えボタン
+ */
+export const MicrophoneButton = ({
+  isMuted,
+  onClick,
+  disabled = false,
+}: MicrophoneButtonProps) => {
+  return (
+    <button
+      type="button"
+      className={`control-button ${isMuted ? 'control-button--off' : 'control-button--on'}`}
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={isMuted ? 'マイクをオンにする' : 'マイクをミュートにする'}
+      title={isMuted ? 'マイクをオンにする (Opt+A)' : 'マイクをミュートにする (Opt+A)'}
+    >
+      <span className="control-button__icon">
+        {isMuted ? '🔇' : '🎤'}
+      </span>
+      <span className="control-button__label">
+        {isMuted ? 'ミュート中' : 'マイクオン'}
+      </span>
+    </button>
+  );
+};

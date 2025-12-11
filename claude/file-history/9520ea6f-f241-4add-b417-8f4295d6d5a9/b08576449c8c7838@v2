@@ -1,0 +1,72 @@
+import express, { Application } from 'express';
+import cors from 'cors';
+import helmet from 'helmet';
+import { env, validateEnv } from './config/env';
+import { corsOptions } from './config/cors';
+import { errorHandler, notFoundHandler } from './interface/middlewares/errorHandler';
+
+/**
+ * Expressアプリケーションの初期化
+ * design.md 5.2節を参照
+ */
+function createApp(): Application {
+  const app = express();
+
+  // セキュリティミドルウェア
+  app.use(helmet());
+  app.use(cors(corsOptions));
+
+  // JSONパーサー
+  app.use(express.json());
+  app.use(express.urlencoded({ extended: true }));
+
+  // ヘルスチェックエンドポイント
+  app.get('/health', (_req, res) => {
+    res.json({
+      status: 'ok',
+      timestamp: new Date().toISOString(),
+      environment: env.nodeEnv,
+      dataSource: env.useMock ? 'mock' : 'database',
+    });
+  });
+
+  // APIルート
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const apiRoutes = require('./interface/routes/index').default;
+  app.use('/api', apiRoutes);
+
+  // 404ハンドラー
+  app.use(notFoundHandler);
+
+  // エラーハンドラー
+  app.use(errorHandler);
+
+  return app;
+}
+
+/**
+ * サーバー起動
+ */
+function startServer(): void {
+  try {
+    // 環境変数のバリデーション
+    validateEnv();
+
+    // アプリケーション作成
+    const app = createApp();
+
+    // サーバー起動
+    app.listen(env.port, () => {
+      console.log(`[SERVER] Server is running on port ${env.port}`);
+      console.log(`[SERVER] Environment: ${env.nodeEnv}`);
+      console.log(`[SERVER] Frontend URL: ${env.frontendUrl}`);
+      console.log(`[SERVER] Health check: http://localhost:${env.port}/health`);
+    });
+  } catch (error) {
+    console.error('[SERVER] Failed to start server:', error);
+    process.exit(1);
+  }
+}
+
+// サーバー起動
+startServer();

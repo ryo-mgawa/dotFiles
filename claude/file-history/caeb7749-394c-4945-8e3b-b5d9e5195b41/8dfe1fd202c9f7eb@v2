@@ -1,0 +1,20 @@
+import { Inject, Injectable } from '@nestjs/common';
+import {
+  ApplicationsPresenterInterface,
+  ApplicationsPresenterProviderIdentity,
+} from '../interface/presenter/applicationsPresenter';
+import { GetApplicationsService } from './service/getApplicationsService';
+
+@Injectable()
+export class GetApplicationsUseCase {
+  constructor(
+    private readonly getApplicationsService: GetApplicationsService,
+    @Inject(ApplicationsPresenterProviderIdentity)
+    private readonly presenter: ApplicationsPresenterInterface,
+  ) {}
+
+  public async execute(organizationId: string): Promise<void> {
+    const applications = await this.getApplicationsService.execute(organizationId);
+    this.presenter.output(applications);
+  }
+}

@@ -1,0 +1,23 @@
+/**
+ * 部員型定義
+ * バックエンドのMemberDtoに対応
+ */
+export interface Member {
+  id: string;
+  studentNumber: string;
+  lastNameKanji: string;
+  firstNameKanji: string;
+  lastNameKana: string;
+  firstNameKana: string;
+  lastNameEn: string;
+  firstNameEn: string;
+  grade: number;
+  enrollmentYear: number;
+  graduationYear: number | null;
+  department: DepartmentCode;
+  departmentName: string;
+  block: string;
+  isActive: boolean;
+}
+
+export type DepartmentCode = 'M' | 'E' | 'I' | 'C' | 'A';

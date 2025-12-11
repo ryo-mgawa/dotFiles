@@ -1,0 +1,44 @@
+import { type ReactNode } from 'react';
+import './VerticalLayout.scss';
+
+/**
+ * VerticalLayout Props
+ */
+interface VerticalLayoutProps {
+  mainContent: ReactNode;
+  subContent?: ReactNode;
+  controlsContent?: ReactNode;
+  isSimpleMode?: boolean;
+}
+
+/**
+ * VerticalLayout
+ * 縦画面レイアウト（4K縦向き対応）
+ * - メイン表示エリア: 上部80%（シンプルモード時は100%）
+ * - サブ表示エリア: 下部20%（シンプルモード時は非表示）
+ * - コントロールバー: 最下部
+ */
+export const VerticalLayout = ({
+  mainContent,
+  subContent,
+  controlsContent,
+  isSimpleMode = false,
+}: VerticalLayoutProps) => {
+  return (
+    <div className="vertical-layout">
+      <div
+        className={`vertical-layout__main ${isSimpleMode ? 'vertical-layout__main--full' : ''}`}
+      >
+        {mainContent}
+      </div>
+
+      {!isSimpleMode && subContent && (
+        <div className="vertical-layout__sub">{subContent}</div>
+      )}
+
+      {controlsContent && (
+        <div className="vertical-layout__controls">{controlsContent}</div>
+      )}
+    </div>
+  );
+};

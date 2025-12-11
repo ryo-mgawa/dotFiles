@@ -1,0 +1,22 @@
+import { Router } from 'express';
+import { MembersController } from '../controllers/MembersController';
+import { GetMemberListUseCase } from '../../application/usecases/members/GetMemberListUseCase';
+import { memberRepository } from '../../config/dependencies';
+
+/**
+ * 部員ルート
+ * design.md 4.2.1節を参照
+ */
+const router = Router();
+
+// UseCaseとControllerのインスタンス化
+const getMemberListUseCase = new GetMemberListUseCase(memberRepository);
+const membersController = new MembersController(getMemberListUseCase);
+
+/**
+ * GET /api/members
+ * 在籍中の部員一覧を取得
+ */
+router.get('/', (req, res, next) => membersController.getMembers(req, res, next));
+
+export default router;

@@ -1,0 +1,217 @@
+import { resolve } from 'path';
+import { ProviderIdentity, RDBModule } from '@app/rdb';
+import { INestApplication } from '@nestjs/common';
+import { Test } from '@nestjs/testing';
+import { Knex } from 'knex';
+import { v7 as uuidv7 } from 'uuid';
+import { ShipmentDAO } from '../shipmentDAO';
+import { ShipmentConflictException } from '../../../exception/shipmentConflictException';
+import { ShipmentSaveException } from '../../../exception/shipmentSaveException';
+
+jest.mock('@app/requestContext/requestContext', () => {
+  return {
+    RequestContext: class DummyRequestContext {
+      public static get() {
+        return {
+          user: {
+            organizationId: 'test-org-1',
+            userId: 'test-user-1',
+            role: 'manager',
+          },
+        };
+      }
+      public static start(_, next) {
+        next();
+      }
+    },
+  };
+});
+
+describe('ShipmentDAO', () => {
+  let shipmentDAO: ShipmentDAO;
+  let app: INestApplication;
+  let rdb: Knex;
+
+  beforeEach(async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [RDBModule],
+      providers: [ShipmentDAO],
+    }).compile();
+
+    rdb = await moduleRef.get<Knex>(ProviderIdentity);
+    app = moduleRef.createNestApplication();
+
+    await Promise.all([
+      app.init(),
+      rdb.transaction(async (trx) => {
+        await trx.raw('SET CONSTRAINTS ALL DEFERRED');
+        await trx.seed.run({
+          directory: resolve(__dirname, './fixtures/seeds'),
+          specific: 'shipment.ts',
+        });
+        await trx.raw('SET CONSTRAINTS ALL IMMEDIATE');
+      }),
+    ]);
+
+    shipmentDAO = await moduleRef.get<ShipmentDAO>(ShipmentDAO);
+  });
+
+  describe('save', () => {
+    it('複数のshipmentを一括保存できる', async () => {
+      const shipmentId1 = uuidv7();
+      const shipmentId2 = uuidv7();
+
+      const shipments = [
+        {
+          id: shipmentId1,
+          organizationId: 'test-org-1',
+          slipId: 'slip-001',
+          consignor: { id: 'consignor-1', name: '発荷主A' },
+          consignee: { id: 'consignee-1', name: '着荷主A' },
+          originSpotId: 'spot-origin-1',
+          destinationSpotId: 'spot-dest-1',
+          meta: { note: 'テストメタデータ' },
+        },
+        {
+          id: shipmentId2,
+          organizationId: 'test-org-1',
+          slipId: 'slip-002',
+          consignor: { id: 'consignor-2', name: '発荷主B' },
+          consignee: { id: 'consignee-2', name: '着荷主B' },
+          originSpotId: 'spot-origin-2',
+          destinationSpotId: 'spot-dest-2',
+        },
+      ];
+
+      await shipmentDAO.save(shipments);
+
+      const results = await rdb
+        .from('shipment')
+        .whereIn('id', [shipmentId1, shipmentId2])
+        .orderBy('slip_id', 'asc');
+
+      expect(results).toHaveLength(2);
+      expect(results[0]).toMatchObject({
+        id: shipmentId1,
+        organization_id: 'test-org-1',
+        slip_id: 'slip-001',
+        origin_spot_id: 'spot-origin-1',
+        destination_spot_id: 'spot-dest-1',
+      });
+      expect(results[0].consignor).toEqual({
+        id: 'consignor-1',
+        name: '発荷主A',
+      });
+      expect(results[0].consignee).toEqual({
+        id: 'consignee-1',
+        name: '着荷主A',
+      });
+      expect(results[0].meta).toEqual({ note: 'テストメタデータ' });
+      expect(results[1].meta).toBeNull();
+    });
+
+    it('空配列の場合は何もしない', async () => {
+      const beforeCount = await rdb.from('shipment').count('* as count');
+
+      await shipmentDAO.saveShipments([]);
+
+      const afterCount = await rdb.from('shipment').count('* as count');
+      expect(afterCount[0].count).toBe(beforeCount[0].count);
+    });
+
+    it('例外が正常にスローされる', async () => {
+      await expect(
+        async () =>
+          await shipmentDAO.save([
+            {
+              id: uuidv7(),
+              organizationId: 'non-existent-org',
+              slipId: 'slip-999',
+              consignor: { id: 'c1', name: 'C1' },
+              consignee: { id: 'c2', name: 'C2' },
+              originSpotId: 'spot-1',
+              destinationSpotId: 'spot-2',
+            },
+          ])
+      ).rejects.toThrow(ShipmentSaveException);
+    });
+  });
+
+  describe('getShipments', () => {
+    it('指定した組織のshipmentを取得できる', async () => {
+      const results = await shipmentDAO.getShipments('test-org-1', 10, 0);
+
+      expect(results).toHaveLength(5);
+      expect(results[0].organizationId).toBe('test-org-1');
+      expect(results[0].slipId).toBe('SLIP-ORG1-005'); // 最新のものが最初
+    });
+
+    it('limitとoffsetで正しくページネーションできる', async () => {
+      const firstPage = await shipmentDAO.getShipments('test-org-1', 2, 0);
+      const secondPage = await shipmentDAO.getShipments('test-org-1', 2, 2);
+
+      expect(firstPage).toHaveLength(2);
+      expect(secondPage).toHaveLength(2);
+      expect(firstPage[0].slipId).toBe('SLIP-ORG1-005');
+      expect(firstPage[1].slipId).toBe('SLIP-ORG1-004');
+      expect(secondPage[0].slipId).toBe('SLIP-ORG1-003');
+      expect(secondPage[1].slipId).toBe('SLIP-ORG1-002');
+    });
+
+    it('created_atの降順でソートされる', async () => {
+      const results = await shipmentDAO.getShipments('test-org-1', 10, 0);
+
+      for (let i = 0; i < results.length - 1; i++) {
+        const current = results[i].slipId;
+        const next = results[i + 1].slipId;
+        // SLIP-ORG1-005, SLIP-ORG1-004, ... の順
+        expect(parseInt(current.split('-')[2])).toBeGreaterThan(
+          parseInt(next.split('-')[2])
+        );
+      }
+    });
+
+    it('組織IDでフィルタリングされる', async () => {
+      const org1Results = await shipmentDAO.getShipments('test-org-1', 10, 0);
+      const org2Results = await shipmentDAO.getShipments('test-org-2', 10, 0);
+
+      expect(org1Results).toHaveLength(5);
+      expect(org2Results).toHaveLength(3);
+      org1Results.forEach((r) => expect(r.organizationId).toBe('test-org-1'));
+      org2Results.forEach((r) => expect(r.organizationId).toBe('test-org-2'));
+    });
+
+    it('データが存在しない場合は空配列を返す', async () => {
+      const results = await shipmentDAO.getShipments('non-existent-org', 10, 0);
+
+      expect(results).toEqual([]);
+    });
+
+    it('offsetが全件数を超えた場合は空配列を返す', async () => {
+      const results = await shipmentDAO.getShipments('test-org-1', 10, 100);
+
+      expect(results).toEqual([]);
+    });
+
+    it('metaがnullの場合も正しく取得できる', async () => {
+      const results = await shipmentDAO.getShipments('test-org-1', 10, 0);
+      const withoutMeta = results.find((r) => r.slipId === 'SLIP-ORG1-002');
+
+      expect(withoutMeta).toBeDefined();
+      expect(withoutMeta?.meta).toBeNull();
+    });
+
+    it('metaが存在する場合はオブジェクトとして取得できる', async () => {
+      const results = await shipmentDAO.getShipments('test-org-1', 10, 0);
+      const withMeta = results.find((r) => r.slipId === 'SLIP-ORG1-001');
+
+      expect(withMeta).toBeDefined();
+      expect(withMeta?.meta).toHaveProperty('weight');
+      expect(withMeta?.meta).toHaveProperty('volume');
+    });
+  });
+
+  afterEach(() => {
+    rdb.destroy();
+  });
+});

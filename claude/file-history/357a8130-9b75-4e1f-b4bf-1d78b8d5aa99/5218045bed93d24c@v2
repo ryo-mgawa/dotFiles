@@ -1,0 +1,19 @@
+import { ErrorCode } from '@app/errors';
+import { ShipmentSaveException } from '../shipmentSaveException';
+
+describe('ShipmentSaveException', () => {
+  it('正しいメッセージとエラーコードで例外を作成できる', () => {
+    const message = 'シップメント情報の保存に失敗しました。';
+    const exception = new ShipmentSaveException(message);
+
+    expect(exception.message).toBe(message);
+    expect(exception.errorCode).toBe(ErrorCode.SHIPMENT_SAVE_FAILED);
+  });
+
+  it('カスタムメッセージを設定できる', () => {
+    const customMessage = 'カスタムエラーメッセージ';
+    const exception = new ShipmentSaveException(customMessage);
+
+    expect(exception.message).toBe(customMessage);
+  });
+});

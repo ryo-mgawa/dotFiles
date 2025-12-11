@@ -1,0 +1,157 @@
+import { describe, it, expect, vi } from 'vitest';
+import { VideoSessionSubject } from './VideoSessionSubject';
+import type { VideoSessionObserver } from './VideoSessionObserver';
+import type { VideoSessionEvent } from '../types';
+import type { Participant } from '@/entities';
+
+describe('VideoSessionSubject', () => {
+  const mockParticipant: Participant = {
+    id: 'participant-1',
+    siteId: 'site-1',
+    siteName: '東京',
+    isAudioOn: true,
+    isVideoOn: true,
+  };
+
+  const mockEvent: VideoSessionEvent = {
+    type: 'PARTICIPANT_JOIN',
+    participant: mockParticipant,
+  };
+
+  it('オブザーバーを登録できること', () => {
+    const subject = new VideoSessionSubject();
+    const observer: VideoSessionObserver = {
+      onSessionEvent: vi.fn(),
+    };
+
+    subject.subscribe(observer);
+
+    expect(subject.observerCount).toBe(1);
+  });
+
+  it('複数のオブザーバーを登録できること', () => {
+    const subject = new VideoSessionSubject();
+    const observer1: VideoSessionObserver = { onSessionEvent: vi.fn() };
+    const observer2: VideoSessionObserver = { onSessionEvent: vi.fn() };
+
+    subject.subscribe(observer1);
+    subject.subscribe(observer2);
+
+    expect(subject.observerCount).toBe(2);
+  });
+
+  it('オブザーバーの登録を解除できること', () => {
+    const subject = new VideoSessionSubject();
+    const observer: VideoSessionObserver = { onSessionEvent: vi.fn() };
+
+    subject.subscribe(observer);
+    subject.unsubscribe(observer);
+
+    expect(subject.observerCount).toBe(0);
+  });
+
+  it('subscribe戻り値の関数で登録解除できること', () => {
+    const subject = new VideoSessionSubject();
+    const observer: VideoSessionObserver = { onSessionEvent: vi.fn() };
+
+    const unsubscribe = subject.subscribe(observer);
+    unsubscribe();
+
+    expect(subject.observerCount).toBe(0);
+  });
+
+  it('全オブザーバーにイベントを通知できること', () => {
+    const subject = new VideoSessionSubject();
+    const observer1: VideoSessionObserver = { onSessionEvent: vi.fn() };
+    const observer2: VideoSessionObserver = { onSessionEvent: vi.fn() };
+
+    subject.subscribe(observer1);
+    subject.subscribe(observer2);
+    subject.notify(mockEvent);
+
+    expect(observer1.onSessionEvent).toHaveBeenCalledWith(mockEvent);
+    expect(observer2.onSessionEvent).toHaveBeenCalledWith(mockEvent);
+  });
+
+  it('登録解除したオブザーバーには通知されないこと', () => {
+    const subject = new VideoSessionSubject();
+    const observer: VideoSessionObserver = { onSessionEvent: vi.fn() };
+
+    const unsubscribe = subject.subscribe(observer);
+    unsubscribe();
+    subject.notify(mockEvent);
+
+    expect(observer.onSessionEvent).not.toHaveBeenCalled();
+  });
+
+  it('オブザーバーでエラーが発生しても他のオブザーバーに通知されること', () => {
+    const subject = new VideoSessionSubject();
+    const errorObserver: VideoSessionObserver = {
+      onSessionEvent: vi.fn().mockImplementation(() => {
+        throw new Error('Test error');
+      }),
+    };
+    const normalObserver: VideoSessionObserver = { onSessionEvent: vi.fn() };
+
+    const consoleSpy = vi.spyOn(console, 'error').mockImplementation(() => {});
+
+    subject.subscribe(errorObserver);
+    subject.subscribe(normalObserver);
+    subject.notify(mockEvent);
+
+    expect(normalObserver.onSessionEvent).toHaveBeenCalledWith(mockEvent);
+    expect(consoleSpy).toHaveBeenCalled();
+
+    consoleSpy.mockRestore();
+  });
+
+  it('clearで全オブザーバーの登録を解除できること', () => {
+    const subject = new VideoSessionSubject();
+    const observer1: VideoSessionObserver = { onSessionEvent: vi.fn() };
+    const observer2: VideoSessionObserver = { onSessionEvent: vi.fn() };
+
+    subject.subscribe(observer1);
+    subject.subscribe(observer2);
+    subject.clear();
+
+    expect(subject.observerCount).toBe(0);
+  });
+
+  it('同じオブザーバーを複数回登録しても1回のみカウントされること', () => {
+    const subject = new VideoSessionSubject();
+    const observer: VideoSessionObserver = { onSessionEvent: vi.fn() };
+
+    subject.subscribe(observer);
+    subject.subscribe(observer);
+
+    expect(subject.observerCount).toBe(1);
+  });
+
+  it('PARTICIPANT_LEAVEイベントを正しく通知できること', () => {
+    const subject = new VideoSessionSubject();
+    const observer: VideoSessionObserver = { onSessionEvent: vi.fn() };
+    const leaveEvent: VideoSessionEvent = {
+      type: 'PARTICIPANT_LEAVE',
+      participant: mockParticipant,
+    };
+
+    subject.subscribe(observer);
+    subject.notify(leaveEvent);
+
+    expect(observer.onSessionEvent).toHaveBeenCalledWith(leaveEvent);
+  });
+
+  it('PARTICIPANT_UPDATEイベントを正しく通知できること', () => {
+    const subject = new VideoSessionSubject();
+    const observer: VideoSessionObserver = { onSessionEvent: vi.fn() };
+    const updateEvent: VideoSessionEvent = {
+      type: 'PARTICIPANT_UPDATE',
+      participant: { ...mockParticipant, isAudioOn: false },
+    };
+
+    subject.subscribe(observer);
+    subject.notify(updateEvent);
+
+    expect(observer.onSessionEvent).toHaveBeenCalledWith(updateEvent);
+  });
+});

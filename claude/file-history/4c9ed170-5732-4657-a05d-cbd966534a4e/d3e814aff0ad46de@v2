@@ -1,0 +1,71 @@
+import { useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useAuth } from '@/features/auth';
+import { LoadingSpinner } from '@/shared/components';
+import './SiteAuthPage.scss';
+
+export const SiteAuthPage = () => {
+  const navigate = useNavigate();
+  const { siteToken } = useParams<{ siteToken: string }>();
+  const { isAuthenticated, authenticateBySiteToken, loading, error } = useAuth();
+
+  useEffect(() => {
+    if (!siteToken) {
+      navigate('/login', { replace: true });
+      return;
+    }
+
+    if (isAuthenticated) {
+      navigate('/call', { replace: true });
+      return;
+    }
+
+    if (!loading) {
+      authenticateBySiteToken(siteToken).catch(() => {
+        // エラーは state.error に設定される
+      });
+    }
+  }, [siteToken, isAuthenticated, loading, authenticateBySiteToken, navigate]);
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/call', { replace: true });
+    }
+  }, [isAuthenticated, navigate]);
+
+  if (error) {
+    return (
+      <div className="site-auth-page">
+        <div className="site-auth-page__container">
+          <div className="site-auth-page__icon site-auth-page__icon--error">
+            <svg
+              width="64"
+              height="64"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+          </div>
+          <h1 className="site-auth-page__title">認証エラー</h1>
+          <p className="site-auth-page__description">{error}</p>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="site-auth-page">
+      <div className="site-auth-page__container">
+        <LoadingSpinner size="large" />
+        <p className="site-auth-page__message">拠点を認証しています...</p>
+      </div>
+    </div>
+  );
+};

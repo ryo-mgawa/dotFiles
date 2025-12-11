@@ -1,0 +1,9 @@
+import type { Site, CreateSiteInput } from '@/entities/index.js';
+
+export interface ISiteRepository {
+  findById(id: string): Promise<Site | null>;
+  findByCompanyId(companyId: string): Promise<Site[]>;
+  create(input: CreateSiteInput): Promise<Site>;
+  update(id: string, data: Partial<Site>): Promise<Site>;
+  softDelete(id: string): Promise<void>;
+}

@@ -1,0 +1,334 @@
+# 開発環境セットアップ & デバッグガイド
+
+## 前提条件
+
+- Node.js 20+
+- PostgreSQL（ローカル or Supabase）
+- npm
+
+---
+
+## 1. 初期セットアップ
+
+### 1.1 依存関係のインストール
+
+```bash
+# フロントエンド
+cd front
+npm install
+
+# バックエンド
+cd ../server
+npm install
+```
+
+### 1.2 環境変数の設定
+
+```bash
+# フロントエンド
+cp front/.env.example front/.env
+
+# バックエンド
+cp server/.env.example server/.env
+```
+
+**server/.env** を編集:
+
+```env
+# 必須: データベース接続
+DATABASE_URL="postgresql://user:password@localhost:5432/inter_site_monitor"
+
+# 必須: JWT認証
+JWT_SECRET="your-secret-key-here"
+JWT_EXPIRES_IN="24h"
+
+# 必須: Zoom Video SDK（実際の通話に必要）
+ZOOM_SDK_KEY="your-zoom-sdk-key"
+ZOOM_SDK_SECRET="your-zoom-sdk-secret"
+
+# サーバー設定
+PORT="3001"
+NODE_ENV="development"
+CORS_ORIGIN="http://localhost:5173"
+```
+
+### 1.3 データベースセットアップ
+
+```bash
+cd server
+
+# Prisma Clientを生成
+npm run db:generate
+
+# マイグレーション実行（テーブル作成）
+npm run db:migrate
+
+# シードデータ投入（テスト用データ）
+npm run db:seed
+```
+
+---
+
+## 2. 開発サーバーの起動
+
+### 2.1 バックエンド起動（ターミナル1）
+
+```bash
+cd server
+npm run dev
+```
+
+- URL: http://localhost:3065
+- API: http://localhost:3065/api
+- ホットリロード有効（tsx watch）
+
+**起動確認:**
+```bash
+curl http://localhost:3065/api/health
+# または
+curl http://localhost:3065/api/auth/me
+```
+
+### 2.2 フロントエンド起動（ターミナル2）
+
+```bash
+cd front
+npm run dev
+```
+
+- URL: http://localhost:5173
+- ホットリロード有効（Vite HMR）
+
+---
+
+## 3. 毎回やること
+
+```
+1. PostgreSQL が起動していることを確認
+2. バックエンド起動 (npm run dev in server/)
+3. フロントエンド起動 (npm run dev in front/)
+4. ブラウザで http://localhost:5173 を開く
+```
+
+### やらなくていいこと
+
+| 項目 | 理由 |
+|------|------|
+| PostgreSQL起動 | Mac起動時に自動起動（Homebrew） |
+| `npm install` | 依存関係変更時のみ |
+| `db:push` / `db:migrate` | スキーマ変更時のみ |
+| `db:seed` | データリセットしたい時のみ |
+
+### PostgreSQL起動確認
+
+```bash
+# 起動確認
+pg_isready
+
+# 結果: "accepting connections" → OK
+# 結果: "no response" → 停止中
+```
+
+### PostgreSQL起動・停止
+
+```bash
+# 起動
+brew services start postgresql
+
+# 停止
+brew services stop postgresql
+
+# 状態確認
+brew services list | grep postgres
+```
+
+---
+
+## 4. デバッグ方法
+
+### 4.1 バックエンドのデバッグ
+
+**ログ出力:**
+```typescript
+// server内のコードで
+console.log('Debug:', variable);
+```
+
+**VSCode デバッガー使用:**
+
+`.vscode/launch.json` を作成:
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug Server",
+      "type": "node",
+      "request": "launch",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["tsx", "src/app/server.ts"],
+      "cwd": "${workspaceFolder}/server",
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  ]
+}
+```
+
+**API テスト（curl）:**
+```bash
+# ログイン
+curl -X POST http://localhost:3001/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email": "admin@example.com", "password": "password123"}'
+
+# 認証付きリクエスト
+curl http://localhost:3001/api/sites \
+  -H "Authorization: Bearer <token>"
+```
+
+### 4.2 フロントエンドのデバッグ
+
+**ブラウザDevTools:**
+- `F12` でDevToolsを開く
+- Console タブでエラー確認
+- Network タブでAPI通信確認
+- React DevTools拡張機能を推奨
+
+**コード内デバッグ:**
+```typescript
+// 変数確認
+console.log('State:', state);
+
+// ブレークポイント
+debugger;
+```
+
+### 4.3 データベースのデバッグ
+
+**Prisma Studio（GUI・おすすめ）:**
+```bash
+cd server
+npm run db:studio
+```
+- URL: http://localhost:5555
+- テーブル内容をブラウザで確認・編集可能
+
+**psql（コマンドライン）:**
+```bash
+# 接続
+psql inter_site_monitor
+
+# テーブル一覧
+\dt
+
+# データ確認
+SELECT * FROM users;
+SELECT * FROM sites;
+
+# 終了
+\q
+```
+
+**SQLクエリ確認:**
+
+`server/src/infrastructure/database/prisma/client.ts` でログ有効化:
+```typescript
+export const prisma = new PrismaClient({
+  log: ['query', 'info', 'warn', 'error'],
+});
+```
+
+---
+
+## 5. テスト実行
+
+### 5.1 全テスト
+
+```bash
+# フロントエンド
+cd front && npm run test
+
+# バックエンド
+cd server && npm run test
+```
+
+### 5.2 単一ファイル
+
+```bash
+# 特定のテストファイル
+cd front && npx vitest run src/features/auth/components/LoginForm.test.tsx
+cd server && npx vitest run src/features/auth/usecases/LoginUseCase.test.ts
+
+# ウォッチモード（ファイル変更時に自動再実行）
+cd front && npx vitest src/features/auth/
+```
+
+### 5.3 カバレッジ
+
+```bash
+cd front && npm run test:coverage
+cd server && npm run test:coverage
+```
+
+---
+
+## 6. よくある問題と解決策
+
+### 6.1 「Cannot connect to database」
+
+```bash
+# PostgreSQLが起動しているか確認
+pg_isready -h localhost -p 5432
+
+# 接続テスト
+psql -h localhost -U user -d inter_site_monitor
+```
+
+### 6.2 「CORS error」
+
+`server/.env` の `CORS_ORIGIN` がフロントエンドURLと一致しているか確認:
+```env
+CORS_ORIGIN="http://localhost:5173"
+```
+
+### 6.3 「Prisma Client not generated」
+
+```bash
+cd server
+npm run db:generate
+```
+
+### 6.4 「Port already in use」
+
+```bash
+# 使用中のポートを確認
+lsof -i :3001
+lsof -i :5173
+
+# プロセスを終了
+kill -9 <PID>
+```
+
+### 6.5 フロントエンドでAPIが404
+
+- バックエンドが起動しているか確認
+- `front/.env` の `VITE_API_BASE_URL` を確認:
+  ```env
+  VITE_API_BASE_URL=http://localhost:3001/api
+  ```
+
+---
+
+## 7. 便利なコマンド一覧
+
+| 操作 | コマンド |
+|------|---------|
+| フロント起動 | `cd front && npm run dev` |
+| サーバー起動 | `cd server && npm run dev` |
+| DB GUI | `cd server && npm run db:studio` |
+| DB リセット | `cd server && npm run db:push --force-reset && npm run db:seed` |
+| Lint | `cd front && npm run lint` / `cd server && npm run lint` |
+| ビルド確認 | `cd front && npm run build` / `cd server && npm run build` |

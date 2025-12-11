@@ -1,0 +1,45 @@
+get:
+  tags:
+    - joint
+  summary: Joint Application情報一覧を取得
+  description: Joint連携のApplication情報一覧を取得します。
+  operationId: getJointApplications
+  responses:
+    "200":
+      description: successful operation
+      content:
+        application/json:
+          schema:
+            required:
+              - status
+              - applications
+            type: object
+            properties:
+              status:
+                type: string
+                default: success
+                enum:
+                  - success
+                  - error
+                description: 正常に取得に成功した場合はsuccess、失敗した場合はerrorが入ります。
+              applications:
+                type: array
+                description: Joint Application情報のリスト
+                items:
+                  type: object
+                  required:
+                    - id
+                    - name
+                  properties:
+                    id:
+                      type: string
+                      description: Application ID
+                    name:
+                      type: string
+                      description: Application名
+    "400":
+      $ref: ../../globalComponents/Errors/400.yml
+    "401":
+      $ref: ../../globalComponents/Errors/401.yml
+    "500":
+      $ref: ../../globalComponents/Errors/500.yml

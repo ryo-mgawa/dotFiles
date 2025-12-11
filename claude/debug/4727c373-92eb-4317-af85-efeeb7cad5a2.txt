@@ -1,0 +1,1762 @@
+2025-12-06T08:17:41.410Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2025-12-06T08:17:41.410Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:17:41.410Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-12-06T08:17:41.417Z [DEBUG] Cleared all session hooks for session 331f8f53-37fb-4901-9282-162bceb340c1
+2025-12-06T08:17:41.442Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2025-12-06T08:17:41.442Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:17:41.442Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-12-06T08:17:41.457Z [DEBUG] FileHistory: Added snapshot for c706b9b7-faa6-4938-9406-58f1ef67df53, tracking 0 files
+2025-12-06T08:17:41.466Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-12-06T08:17:41.466Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-06T08:17:41.859Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-12-06T08:17:42.422Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-12-06T08:17:42.422Z [DEBUG] AutoUpdater: Using global update method
+2025-12-06T08:17:43.277Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51676.1765009063277
+2025-12-06T08:17:43.277Z [DEBUG] Preserving file permissions: 100644
+2025-12-06T08:17:43.283Z [DEBUG] Temp file written successfully, size: 74129 bytes
+2025-12-06T08:17:43.283Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:17:43.283Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51676.1765009063277 to /Users/miyagawaryouta/.claude.json
+2025-12-06T08:17:43.283Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-12-06T08:18:41.759Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-12-06T08:18:41.761Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:18:41.761Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-12-06T08:20:27.449Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:20:27.450Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:20:27.450Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:20:27.451Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:20:27.459Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:20:27.459Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:20:27.481Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-06T08:20:27.481Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:27.481Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-06T08:20:27.482Z [DEBUG] FileHistory: Making snapshot for message 409229b2-cdae-495c-b221-6987c34ea03a
+2025-12-06T08:20:27.483Z [DEBUG] FileHistory: Added snapshot for 409229b2-cdae-495c-b221-6987c34ea03a, tracking 0 files
+2025-12-06T08:20:28.350Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:20:31.953Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:20:48.385Z [DEBUG] executePreToolHooks called for tool: mcp__serena__list_dir
+2025-12-06T08:20:48.389Z [DEBUG] Getting matching hook commands for PreToolUse with query: mcp__serena__list_dir
+2025-12-06T08:20:48.389Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:48.389Z [DEBUG] Matched 0 unique hooks for query "mcp__serena__list_dir" (0 before deduplication)
+2025-12-06T08:20:48.399Z [DEBUG] MCP server "serena": Calling MCP tool: list_dir
+2025-12-06T08:20:48.496Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,492 [MainThread] mcp.server.lowlevel.server:_handle_request:625 - Processing request of type CallToolRequest
+2025-12-06T08:20:48.504Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,504 [MainThread] serena.task_executor:issue_task:192 - Scheduling Task-1:ListDirTool
+2025-12-06T08:20:48.558Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,558 [SerenaAgentTaskExecutor] serena.task_executor:_process_task_queue:123 - Starting execution of Task-1:ListDirTool
+2025-12-06T08:20:48.559Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,559 [Task-1:ListDirTool] serena.task_executor:start:360 - Task-1:ListDirTool starting ...
+2025-12-06T08:20:48.562Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,562 [Task-1:ListDirTool] serena.tools.tools_base:_log_tool_application:206 - list_dir: relative_path='front/src/features/video-call', recursive=True, skip_ignored_files=False, max_answer_chars=-1
+2025-12-06T08:20:48.564Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,564 [Task-1:ListDirTool] serena.task_executor:stop:367 - Task-1:ListDirTool completed in 0.004 seconds
+2025-12-06T08:20:48.585Z [DEBUG] MCP server "serena": Tool 'list_dir' completed successfully in 186ms
+2025-12-06T08:20:48.589Z [DEBUG] Getting matching hook commands for PostToolUse with query: mcp__serena__list_dir
+2025-12-06T08:20:48.589Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:48.589Z [DEBUG] Matched 0 unique hooks for query "mcp__serena__list_dir" (0 before deduplication)
+2025-12-06T08:20:48.604Z [DEBUG] executePreToolHooks called for tool: mcp__serena__list_dir
+2025-12-06T08:20:48.608Z [DEBUG] Getting matching hook commands for PreToolUse with query: mcp__serena__list_dir
+2025-12-06T08:20:48.608Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:48.608Z [DEBUG] Matched 0 unique hooks for query "mcp__serena__list_dir" (0 before deduplication)
+2025-12-06T08:20:48.617Z [DEBUG] MCP server "serena": Calling MCP tool: list_dir
+2025-12-06T08:20:48.624Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,620 [MainThread] mcp.server.lowlevel.server:_handle_request:625 - Processing request of type CallToolRequest
+INFO  2025-12-06 17:20:48,620 [MainThread] serena.task_executor:issue_task:192 - Scheduling Task-2:ListDirTool
+2025-12-06T08:20:48.675Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,675 [SerenaAgentTaskExecutor] serena.task_executor:_process_task_queue:123 - Starting execution of Task-2:ListDirTool
+2025-12-06T08:20:48.675Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,675 [Task-2:ListDirTool] serena.task_executor:start:360 - Task-2:ListDirTool starting ...
+INFO  2025-12-06 17:20:48,675 [Task-2:ListDirTool] serena.tools.tools_base:_log_tool_application:206 - list_dir: relative_path='front/src/pages', recursive=True, skip_ignored_files=False, max_answer_chars=-1
+INFO  2025-12-06 17:20:48,675 [Task-2:ListDirTool] serena.task_executor:stop:367 - Task-2:ListDirTool completed in 0.000 seconds
+2025-12-06T08:20:48.677Z [DEBUG] MCP server "serena": Tool 'list_dir' completed successfully in 60ms
+2025-12-06T08:20:48.682Z [DEBUG] Getting matching hook commands for PostToolUse with query: mcp__serena__list_dir
+2025-12-06T08:20:48.682Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:48.682Z [DEBUG] Matched 0 unique hooks for query "mcp__serena__list_dir" (0 before deduplication)
+2025-12-06T08:20:48.693Z [DEBUG] executePreToolHooks called for tool: mcp__serena__list_dir
+2025-12-06T08:20:48.696Z [DEBUG] Getting matching hook commands for PreToolUse with query: mcp__serena__list_dir
+2025-12-06T08:20:48.696Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:48.696Z [DEBUG] Matched 0 unique hooks for query "mcp__serena__list_dir" (0 before deduplication)
+2025-12-06T08:20:48.701Z [DEBUG] MCP server "serena": Calling MCP tool: list_dir
+2025-12-06T08:20:48.704Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,701 [MainThread] mcp.server.lowlevel.server:_handle_request:625 - Processing request of type CallToolRequest
+INFO  2025-12-06 17:20:48,702 [MainThread] serena.task_executor:issue_task:192 - Scheduling Task-3:ListDirTool
+2025-12-06T08:20:48.780Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,780 [SerenaAgentTaskExecutor] serena.task_executor:_process_task_queue:123 - Starting execution of Task-3:ListDirTool
+2025-12-06T08:20:48.781Z [ERROR] MCP server "serena" Server stderr: INFO  2025-12-06 17:20:48,781 [Task-3:ListDirTool] serena.task_executor:start:360 - Task-3:ListDirTool starting ...
+INFO  2025-12-06 17:20:48,781 [Task-3:ListDirTool] serena.tools.tools_base:_log_tool_application:206 - list_dir: relative_path='front/src/entities', recursive=True, skip_ignored_files=False, max_answer_chars=-1
+INFO  2025-12-06 17:20:48,781 [Task-3:ListDirTool] serena.task_executor:stop:367 - Task-3:ListDirTool completed in 0.000 seconds
+2025-12-06T08:20:48.782Z [DEBUG] MCP server "serena": Tool 'list_dir' completed successfully in 81ms
+2025-12-06T08:20:48.787Z [DEBUG] Getting matching hook commands for PostToolUse with query: mcp__serena__list_dir
+2025-12-06T08:20:48.787Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:48.787Z [DEBUG] Matched 0 unique hooks for query "mcp__serena__list_dir" (0 before deduplication)
+2025-12-06T08:20:48.804Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:20:48.805Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:20:48.805Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:20:48.805Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:20:48.807Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:20:48.807Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:20:50.715Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:20:53.596Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-12-06T08:20:53.599Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-12-06T08:20:53.605Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-12-06T08:20:53.610Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-12-06T08:20:53.610Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:53.610Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-06T08:20:53.610Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-12-06T08:20:53.610Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:53.610Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-06T08:20:53.610Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-12-06T08:20:53.610Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:53.610Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-06T08:20:53.975Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-12-06T08:20:53.975Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:53.975Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-06T08:20:53.985Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-12-06T08:20:53.985Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:53.985Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-06T08:20:53.995Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-12-06T08:20:53.995Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:20:53.995Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-06T08:20:54.006Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:20:54.007Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:20:54.007Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:20:54.007Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:20:54.009Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:20:54.009Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:20:58.336Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:21:03.986Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:21:03.989Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:21:03.992Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:21:03.994Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:21:03.999Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:21:03.999Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:03.999Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:21:03.999Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:21:03.999Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:03.999Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:21:03.999Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:21:03.999Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:03.999Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:21:03.999Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:21:03.999Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:03.999Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:21:04.040Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:21:04.040Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:04.040Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:21:04.041Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:21:04.041Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:04.041Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:21:04.041Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:21:04.041Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:04.041Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:21:04.041Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:21:04.041Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:04.041Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:21:04.081Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:21:04.081Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:21:04.081Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:21:04.081Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:21:04.083Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:21:04.083Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:21:06.736Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:21:18.651Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:21:18.655Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:21:18.655Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:18.655Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:21:18.661Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009278661
+2025-12-06T08:21:18.666Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:21:18.666Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009278661 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:21:18.666Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:21:18.667Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009278667
+2025-12-06T08:21:18.671Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:21:18.671Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009278667 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:21:18.671Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:21:18.671Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009278671
+2025-12-06T08:21:18.675Z [DEBUG] Temp file written successfully, size: 1233 bytes
+2025-12-06T08:21:18.675Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009278671 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:21:18.676Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:21:18.686Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:21:18.686Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:18.686Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:21:18.707Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:21:18.707Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:21:18.707Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:21:18.707Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:21:18.714Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:21:18.714Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:21:20.881Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:21:28.250Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-12-06T08:21:28.254Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-12-06T08:21:28.254Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:28.254Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-06T08:21:28.314Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-12-06T08:21:28.314Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:28.314Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-12-06T08:21:28.330Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:21:28.330Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:21:28.330Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:21:28.330Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:21:28.333Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:21:28.333Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:21:30.553Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:21:49.830Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:21:49.833Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:21:49.833Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:49.833Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:21:49.846Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009309846
+2025-12-06T08:21:49.846Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:21:49.850Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:21:49.851Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:21:49.851Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009309846 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:21:49.851Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:21:49.851Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009309851
+2025-12-06T08:21:49.851Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:21:49.856Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:21:49.856Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:21:49.856Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009309851 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:21:49.857Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:21:49.857Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009309857
+2025-12-06T08:21:49.857Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:21:49.861Z [DEBUG] Temp file written successfully, size: 1237 bytes
+2025-12-06T08:21:49.861Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:21:49.861Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009309857 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:21:49.862Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:21:49.870Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:21:49.870Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:21:49.870Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:21:49.888Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:21:49.888Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:21:49.888Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:21:49.888Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:21:49.893Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:21:49.893Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:21:51.916Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:22:01.211Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:22:01.214Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:22:01.214Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:01.214Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:22:01.225Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/VerticalLayout.tsx
+2025-12-06T08:22:01.227Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/VerticalLayout.tsx.tmp.51676.1765009321227
+2025-12-06T08:22:01.231Z [DEBUG] Temp file written successfully, size: 966 bytes
+2025-12-06T08:22:01.231Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/VerticalLayout.tsx.tmp.51676.1765009321227 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/VerticalLayout.tsx
+2025-12-06T08:22:01.231Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/VerticalLayout.tsx written atomically
+2025-12-06T08:22:01.240Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:22:01.240Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:01.240Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:22:01.262Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:22:01.262Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:22:01.262Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:22:01.262Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:22:01.265Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:22:01.265Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:22:04.404Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:22:10.089Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:22:10.092Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:22:10.092Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:10.092Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:22:10.102Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/VerticalLayout.scss
+2025-12-06T08:22:10.104Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/VerticalLayout.scss.tmp.51676.1765009330104
+2025-12-06T08:22:10.109Z [DEBUG] Temp file written successfully, size: 689 bytes
+2025-12-06T08:22:10.109Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/VerticalLayout.scss.tmp.51676.1765009330104 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/VerticalLayout.scss
+2025-12-06T08:22:10.109Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/VerticalLayout.scss written atomically
+2025-12-06T08:22:10.117Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:22:10.117Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:10.117Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:22:10.147Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:22:10.147Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:22:10.147Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:22:10.147Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:22:10.151Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:22:10.151Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:22:12.394Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:22:13.917Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:22:13.919Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:22:13.919Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:13.919Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:22:13.931Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/index.ts
+2025-12-06T08:22:13.933Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/index.ts.tmp.51676.1765009333933
+2025-12-06T08:22:13.937Z [DEBUG] Temp file written successfully, size: 51 bytes
+2025-12-06T08:22:13.937Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/index.ts.tmp.51676.1765009333933 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/index.ts
+2025-12-06T08:22:13.937Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VerticalLayout/index.ts written atomically
+2025-12-06T08:22:13.944Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:22:13.944Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:13.944Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:22:13.965Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:22:13.965Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:22:13.965Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:22:13.965Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:22:13.969Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:22:13.969Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:22:17.823Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:22:19.912Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:22:19.915Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:22:19.915Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:19.915Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:22:19.930Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:22:19.930Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:19.930Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:22:19.947Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:22:19.947Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:22:19.947Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:22:19.947Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:22:19.951Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:22:19.951Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:22:21.958Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:22:24.384Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:22:24.389Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:22:24.389Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:24.389Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:22:24.404Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:22:24.404Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:24.404Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:22:24.421Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:22:24.421Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:22:24.421Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:22:24.421Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:22:24.425Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:22:24.425Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:22:26.525Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:22:41.202Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:22:41.205Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:22:41.205Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:41.205Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:22:41.221Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/IVideoService.ts
+2025-12-06T08:22:41.224Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/IVideoService.ts.tmp.51676.1765009361224
+2025-12-06T08:22:41.224Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:22:41.228Z [DEBUG] Temp file written successfully, size: 1371 bytes
+2025-12-06T08:22:41.228Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:22:41.228Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/IVideoService.ts.tmp.51676.1765009361224 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/IVideoService.ts
+2025-12-06T08:22:41.228Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/IVideoService.ts written atomically
+2025-12-06T08:22:41.237Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:22:41.237Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:41.237Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:22:41.263Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:22:41.263Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:22:41.263Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:22:41.263Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:22:41.266Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:22:41.266Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:22:43.722Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:22:50.047Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:22:50.050Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:22:50.050Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:50.050Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:22:50.063Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/IVideoService.ts.tmp.51676.1765009370063
+2025-12-06T08:22:50.063Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:22:50.068Z [DEBUG] Temp file written successfully, size: 1952 bytes
+2025-12-06T08:22:50.068Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:22:50.068Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/IVideoService.ts.tmp.51676.1765009370063 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/IVideoService.ts
+2025-12-06T08:22:50.068Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/IVideoService.ts written atomically
+2025-12-06T08:22:50.074Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:22:50.074Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:50.074Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:22:50.106Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:22:50.106Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:22:50.106Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:22:50.106Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:22:50.109Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:22:50.109Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:22:52.123Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:22:53.712Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:22:53.716Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:22:53.716Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:53.716Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:22:53.731Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:22:53.731Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:22:53.731Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:22:53.749Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:22:53.749Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:22:53.749Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:22:53.749Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:22:53.753Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:22:53.753Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:22:56.014Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:23:09.955Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:23:09.959Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:23:09.959Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:09.959Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:23:09.970Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/facade/ZoomVideoFacade.ts
+2025-12-06T08:23:09.972Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/facade/ZoomVideoFacade.ts.tmp.51676.1765009389972
+2025-12-06T08:23:09.972Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:23:09.976Z [DEBUG] Temp file written successfully, size: 7512 bytes
+2025-12-06T08:23:09.976Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:23:09.976Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/facade/ZoomVideoFacade.ts.tmp.51676.1765009389972 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/facade/ZoomVideoFacade.ts
+2025-12-06T08:23:09.976Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/facade/ZoomVideoFacade.ts written atomically
+2025-12-06T08:23:09.986Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:23:09.986Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:09.986Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:23:10.034Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:23:10.034Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:23:10.034Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:23:10.034Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:23:10.040Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:23:10.040Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:23:12.269Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:23:18.842Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:23:18.845Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:23:18.845Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:18.845Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:23:18.861Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/ZoomVideoAdapter.ts
+2025-12-06T08:23:18.863Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/ZoomVideoAdapter.ts.tmp.51676.1765009398863
+2025-12-06T08:23:18.863Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:23:18.867Z [DEBUG] Temp file written successfully, size: 2028 bytes
+2025-12-06T08:23:18.867Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:23:18.867Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/ZoomVideoAdapter.ts.tmp.51676.1765009398863 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/ZoomVideoAdapter.ts
+2025-12-06T08:23:18.870Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/ZoomVideoAdapter.ts written atomically
+2025-12-06T08:23:18.878Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:23:18.878Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:18.878Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:23:18.904Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:23:18.904Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:23:18.904Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:23:18.904Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:23:18.908Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:23:18.908Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:23:20.912Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:23:27.987Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:23:27.989Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:23:27.989Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:27.989Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:23:27.999Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/ZoomVideoAdapter.ts.tmp.51676.1765009407999
+2025-12-06T08:23:27.999Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:23:28.002Z [DEBUG] Temp file written successfully, size: 2671 bytes
+2025-12-06T08:23:28.002Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:23:28.002Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/ZoomVideoAdapter.ts.tmp.51676.1765009407999 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/ZoomVideoAdapter.ts
+2025-12-06T08:23:28.003Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/ZoomVideoAdapter.ts written atomically
+2025-12-06T08:23:28.010Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:23:28.010Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:28.010Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:23:28.037Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:23:28.037Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:23:28.037Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:23:28.037Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:23:28.040Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:23:28.040Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:23:30.751Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:23:32.605Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:23:32.609Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:23:32.609Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:32.609Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:23:32.628Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:23:32.628Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:32.628Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:23:32.645Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:23:32.645Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:23:32.645Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:23:32.645Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:23:32.649Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:23:32.649Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:23:34.833Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:23:40.287Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:23:40.290Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:23:40.290Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:40.290Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:23:40.307Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/MockVideoAdapter.ts
+2025-12-06T08:23:40.310Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/MockVideoAdapter.ts.tmp.51676.1765009420310
+2025-12-06T08:23:40.310Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:23:40.314Z [DEBUG] Temp file written successfully, size: 2852 bytes
+2025-12-06T08:23:40.314Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:23:40.314Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/MockVideoAdapter.ts.tmp.51676.1765009420310 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/MockVideoAdapter.ts
+2025-12-06T08:23:40.315Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/MockVideoAdapter.ts written atomically
+2025-12-06T08:23:40.322Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:23:40.322Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:40.322Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:23:40.347Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:23:40.347Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:23:40.347Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:23:40.347Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:23:40.351Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:23:40.351Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:23:42.647Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:23:51.665Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:23:51.670Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:23:51.670Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:51.670Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:23:51.686Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/MockVideoAdapter.ts.tmp.51676.1765009431686
+2025-12-06T08:23:51.686Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:23:51.689Z [DEBUG] Temp file written successfully, size: 4011 bytes
+2025-12-06T08:23:51.689Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:23:51.689Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/MockVideoAdapter.ts.tmp.51676.1765009431686 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/MockVideoAdapter.ts
+2025-12-06T08:23:51.689Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/MockVideoAdapter.ts written atomically
+2025-12-06T08:23:51.696Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:23:51.696Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:51.696Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:23:51.731Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:23:51.731Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:23:51.731Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:23:51.731Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:23:51.735Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:23:51.735Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:23:53.960Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:23:56.016Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:23:56.019Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:23:56.019Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:56.019Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:23:56.036Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:23:56.036Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:23:56.036Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:23:56.052Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:23:56.052Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:23:56.052Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:23:56.052Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:23:56.057Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:23:56.057Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:23:58.271Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:24:01.115Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:24:01.118Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:24:01.118Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:24:01.118Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:24:01.134Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/index.ts
+2025-12-06T08:24:01.137Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/index.ts.tmp.51676.1765009441137
+2025-12-06T08:24:01.137Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:24:01.140Z [DEBUG] Temp file written successfully, size: 184 bytes
+2025-12-06T08:24:01.140Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:24:01.140Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/index.ts.tmp.51676.1765009441137 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/index.ts
+2025-12-06T08:24:01.140Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/services/index.ts written atomically
+2025-12-06T08:24:01.148Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:24:01.148Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:24:01.148Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:24:01.171Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:24:01.171Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:24:01.171Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:24:01.171Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:24:01.174Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:24:01.174Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:24:03.293Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:24:18.408Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:24:18.412Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:24:18.412Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:24:18.412Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:24:18.420Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009458420
+2025-12-06T08:24:18.420Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:24:18.425Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:24:18.425Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:24:18.425Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009458420 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:24:18.425Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:24:18.425Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009458425
+2025-12-06T08:24:18.425Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:24:18.429Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:24:18.429Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:24:18.429Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009458425 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:24:18.430Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:24:18.430Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009458430
+2025-12-06T08:24:18.430Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:24:18.434Z [DEBUG] Temp file written successfully, size: 1239 bytes
+2025-12-06T08:24:18.434Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:24:18.434Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009458430 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:24:18.435Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:24:18.445Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:24:18.445Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:24:18.445Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:24:18.463Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:24:18.463Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:24:18.463Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:24:18.463Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:24:18.468Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:24:18.468Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:24:20.553Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:24:36.654Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:24:36.658Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:24:36.658Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:24:36.658Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:24:36.667Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/MainVideoDisplay.tsx
+2025-12-06T08:24:36.669Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/MainVideoDisplay.tsx.tmp.51676.1765009476669
+2025-12-06T08:24:36.673Z [DEBUG] Temp file written successfully, size: 2949 bytes
+2025-12-06T08:24:36.673Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/MainVideoDisplay.tsx.tmp.51676.1765009476669 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/MainVideoDisplay.tsx
+2025-12-06T08:24:36.673Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/MainVideoDisplay.tsx written atomically
+2025-12-06T08:24:36.680Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:24:36.680Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:24:36.680Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:24:36.701Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:24:36.701Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:24:36.702Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:24:36.702Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:24:36.706Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:24:36.706Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:24:39.407Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:24:48.980Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:24:48.984Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:24:48.984Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:24:48.984Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:24:48.993Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/MainVideoDisplay.scss
+2025-12-06T08:24:48.996Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/MainVideoDisplay.scss.tmp.51676.1765009488996
+2025-12-06T08:24:49.000Z [DEBUG] Temp file written successfully, size: 1395 bytes
+2025-12-06T08:24:49.000Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/MainVideoDisplay.scss.tmp.51676.1765009488996 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/MainVideoDisplay.scss
+2025-12-06T08:24:49.000Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/MainVideoDisplay.scss written atomically
+2025-12-06T08:24:49.008Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:24:49.008Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:24:49.008Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:24:49.029Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:24:49.029Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:24:49.029Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:24:49.029Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:24:49.032Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:24:49.032Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:24:51.217Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:24:52.880Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:24:52.883Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:24:52.883Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:24:52.883Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:24:52.899Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/index.ts
+2025-12-06T08:24:52.901Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/index.ts.tmp.51676.1765009492901
+2025-12-06T08:24:52.907Z [DEBUG] Temp file written successfully, size: 55 bytes
+2025-12-06T08:24:52.907Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/index.ts.tmp.51676.1765009492901 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/index.ts
+2025-12-06T08:24:52.908Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/MainVideoDisplay/index.ts written atomically
+2025-12-06T08:24:52.917Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:24:52.917Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:24:52.917Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:24:52.951Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:24:52.951Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:24:52.951Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:24:52.951Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:24:52.956Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:24:52.956Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:24:55.083Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:25:10.955Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:25:10.960Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:25:10.960Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:25:10.960Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:25:10.967Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009510967
+2025-12-06T08:25:10.967Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:25:10.971Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:25:10.971Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:25:10.971Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009510967 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:25:10.971Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:25:10.971Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009510971
+2025-12-06T08:25:10.971Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:25:10.976Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:25:10.976Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:25:10.976Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009510971 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:25:10.976Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:25:10.976Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009510976
+2025-12-06T08:25:10.976Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:25:10.980Z [DEBUG] Temp file written successfully, size: 1241 bytes
+2025-12-06T08:25:10.980Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:25:10.980Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009510976 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:25:10.980Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:25:10.990Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:25:10.990Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:25:10.990Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:25:11.011Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:25:11.011Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:25:11.011Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:25:11.011Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:25:11.015Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:25:11.015Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:25:13.134Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:25:25.571Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:25:25.574Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:25:25.574Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:25:25.574Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:25:25.584Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/SelfVideoDisplay.tsx
+2025-12-06T08:25:25.585Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/SelfVideoDisplay.tsx.tmp.51676.1765009525585
+2025-12-06T08:25:25.589Z [DEBUG] Temp file written successfully, size: 1792 bytes
+2025-12-06T08:25:25.589Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/SelfVideoDisplay.tsx.tmp.51676.1765009525585 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/SelfVideoDisplay.tsx
+2025-12-06T08:25:25.589Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/SelfVideoDisplay.tsx written atomically
+2025-12-06T08:25:25.597Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:25:25.597Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:25:25.597Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:25:25.616Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:25:25.616Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:25:25.616Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:25:25.616Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:25:25.620Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:25:25.620Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:25:27.697Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:25:34.252Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:25:34.255Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:25:34.255Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:25:34.255Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:25:34.265Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/SelfVideoDisplay.scss
+2025-12-06T08:25:34.267Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/SelfVideoDisplay.scss.tmp.51676.1765009534267
+2025-12-06T08:25:34.272Z [DEBUG] Temp file written successfully, size: 769 bytes
+2025-12-06T08:25:34.272Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/SelfVideoDisplay.scss.tmp.51676.1765009534267 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/SelfVideoDisplay.scss
+2025-12-06T08:25:34.272Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/SelfVideoDisplay.scss written atomically
+2025-12-06T08:25:34.279Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:25:34.279Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:25:34.279Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:25:34.304Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:25:34.304Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:25:34.304Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:25:34.304Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:25:34.307Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:25:34.307Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:25:37.402Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:25:39.214Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:25:39.218Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:25:39.218Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:25:39.218Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:25:39.231Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/index.ts
+2025-12-06T08:25:39.234Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/index.ts.tmp.51676.1765009539234
+2025-12-06T08:25:39.238Z [DEBUG] Temp file written successfully, size: 55 bytes
+2025-12-06T08:25:39.238Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/index.ts.tmp.51676.1765009539234 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/index.ts
+2025-12-06T08:25:39.238Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SelfVideoDisplay/index.ts written atomically
+2025-12-06T08:25:39.248Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:25:39.248Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:25:39.248Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:25:39.274Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:25:39.274Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:25:39.274Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:25:39.274Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:25:39.281Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:25:39.281Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:25:41.318Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:25:57.567Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:25:57.571Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:25:57.571Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:25:57.571Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:25:57.579Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009557579
+2025-12-06T08:25:57.579Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:25:57.583Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:25:57.583Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:25:57.583Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009557579 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:25:57.584Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:25:57.584Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009557584
+2025-12-06T08:25:57.584Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:25:57.587Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:25:57.587Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:25:57.587Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009557584 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:25:57.588Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:25:57.588Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009557588
+2025-12-06T08:25:57.588Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:25:57.592Z [DEBUG] Temp file written successfully, size: 1243 bytes
+2025-12-06T08:25:57.592Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:25:57.592Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009557588 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:25:57.592Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:25:57.604Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:25:57.604Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:25:57.604Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:25:57.622Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:25:57.622Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:25:57.622Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:25:57.622Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:25:57.627Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:25:57.627Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:25:59.968Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:26:17.303Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:26:17.306Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:26:17.306Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:26:17.306Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:26:17.315Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoThumbnail.tsx
+2025-12-06T08:26:17.316Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoThumbnail.tsx.tmp.51676.1765009577316
+2025-12-06T08:26:17.321Z [DEBUG] Temp file written successfully, size: 2581 bytes
+2025-12-06T08:26:17.321Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoThumbnail.tsx.tmp.51676.1765009577316 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoThumbnail.tsx
+2025-12-06T08:26:17.321Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoThumbnail.tsx written atomically
+2025-12-06T08:26:17.330Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:26:17.330Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:26:17.330Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:26:17.350Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:26:17.350Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:26:17.350Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:26:17.350Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:26:17.353Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:26:17.353Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:26:19.569Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:26:32.326Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:26:32.329Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:26:32.329Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:26:32.329Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:26:32.342Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoThumbnail.scss
+2025-12-06T08:26:32.349Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoThumbnail.scss.tmp.51676.1765009592349
+2025-12-06T08:26:32.353Z [DEBUG] Temp file written successfully, size: 1959 bytes
+2025-12-06T08:26:32.353Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoThumbnail.scss.tmp.51676.1765009592349 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoThumbnail.scss
+2025-12-06T08:26:32.353Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoThumbnail.scss written atomically
+2025-12-06T08:26:32.360Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:26:32.360Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:26:32.360Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:26:32.380Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:26:32.380Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:26:32.380Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:26:32.380Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:26:32.384Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:26:32.384Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:26:34.663Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:26:45.634Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:26:45.640Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:26:45.640Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:26:45.643Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:26:45.656Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoGrid.tsx
+2025-12-06T08:26:45.657Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoGrid.tsx.tmp.51676.1765009605657
+2025-12-06T08:26:45.662Z [DEBUG] Temp file written successfully, size: 1767 bytes
+2025-12-06T08:26:45.662Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoGrid.tsx.tmp.51676.1765009605657 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoGrid.tsx
+2025-12-06T08:26:45.662Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoGrid.tsx written atomically
+2025-12-06T08:26:45.670Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:26:45.670Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:26:45.670Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:26:45.696Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:26:45.696Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:26:45.696Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:26:45.696Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:26:45.700Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:26:45.700Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:26:48.778Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:26:53.713Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:26:53.716Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:26:53.716Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:26:53.716Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:26:53.728Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoGrid.scss
+2025-12-06T08:26:53.732Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoGrid.scss.tmp.51676.1765009613732
+2025-12-06T08:26:53.736Z [DEBUG] Temp file written successfully, size: 479 bytes
+2025-12-06T08:26:53.736Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoGrid.scss.tmp.51676.1765009613732 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoGrid.scss
+2025-12-06T08:26:53.736Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/VideoGrid.scss written atomically
+2025-12-06T08:26:53.744Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:26:53.744Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:26:53.744Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:26:53.771Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:26:53.771Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:26:53.771Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:26:53.771Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:26:53.776Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:26:53.776Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:26:56.252Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:27:02.786Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:27:02.789Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:27:02.789Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:02.789Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:27:02.805Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/SubVideoDisplay.tsx
+2025-12-06T08:27:02.808Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/SubVideoDisplay.tsx.tmp.51676.1765009622808
+2025-12-06T08:27:02.811Z [DEBUG] Temp file written successfully, size: 1135 bytes
+2025-12-06T08:27:02.811Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/SubVideoDisplay.tsx.tmp.51676.1765009622808 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/SubVideoDisplay.tsx
+2025-12-06T08:27:02.811Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/SubVideoDisplay.tsx written atomically
+2025-12-06T08:27:02.821Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:27:02.821Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:02.821Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:27:02.847Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:27:02.847Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:27:02.847Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:27:02.847Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:27:02.853Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:27:02.853Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:27:05.181Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:27:07.735Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:27:07.740Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:27:07.740Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:07.740Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:27:07.752Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/SubVideoDisplay.scss
+2025-12-06T08:27:07.755Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/SubVideoDisplay.scss.tmp.51676.1765009627755
+2025-12-06T08:27:07.759Z [DEBUG] Temp file written successfully, size: 103 bytes
+2025-12-06T08:27:07.759Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/SubVideoDisplay.scss.tmp.51676.1765009627755 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/SubVideoDisplay.scss
+2025-12-06T08:27:07.759Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/SubVideoDisplay.scss written atomically
+2025-12-06T08:27:07.777Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:27:07.777Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:07.777Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:27:07.821Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:27:07.821Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:27:07.821Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:27:07.821Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:27:07.832Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:27:07.832Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:27:10.243Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:27:12.328Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:27:12.331Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:27:12.331Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:12.331Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:27:12.343Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/index.ts
+2025-12-06T08:27:12.345Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/index.ts.tmp.51676.1765009632345
+2025-12-06T08:27:12.350Z [DEBUG] Temp file written successfully, size: 145 bytes
+2025-12-06T08:27:12.350Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/index.ts.tmp.51676.1765009632345 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/index.ts
+2025-12-06T08:27:12.350Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/SubVideoDisplay/index.ts written atomically
+2025-12-06T08:27:12.362Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:27:12.362Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:12.362Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:27:12.389Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:27:12.389Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:27:12.389Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:27:12.389Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:27:12.393Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:27:12.393Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:27:14.683Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:27:29.678Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:27:29.682Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:27:29.682Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:29.682Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:27:29.691Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009649691
+2025-12-06T08:27:29.691Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:27:29.695Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:27:29.695Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:27:29.695Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009649691 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:27:29.696Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:27:29.696Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009649696
+2025-12-06T08:27:29.696Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:27:29.701Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:27:29.701Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:27:29.701Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009649696 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:27:29.701Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:27:29.701Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009649701
+2025-12-06T08:27:29.701Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:27:29.706Z [DEBUG] Temp file written successfully, size: 1245 bytes
+2025-12-06T08:27:29.706Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:27:29.706Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009649701 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:27:29.706Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:27:29.714Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:27:29.714Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:29.714Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:27:29.731Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:27:29.731Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:27:29.732Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:27:29.732Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:27:29.735Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:27:29.735Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:27:32.712Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:27:41.149Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:27:41.154Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:27:41.154Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:41.154Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:27:41.170Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/MicrophoneButton.tsx
+2025-12-06T08:27:41.172Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/MicrophoneButton.tsx.tmp.51676.1765009661172
+2025-12-06T08:27:41.177Z [DEBUG] Temp file written successfully, size: 852 bytes
+2025-12-06T08:27:41.177Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/MicrophoneButton.tsx.tmp.51676.1765009661172 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/MicrophoneButton.tsx
+2025-12-06T08:27:41.177Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/MicrophoneButton.tsx written atomically
+2025-12-06T08:27:41.186Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:27:41.186Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:41.186Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:27:41.215Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:27:41.215Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:27:41.215Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:27:41.215Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:27:41.220Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:27:41.220Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:27:43.549Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:27:49.099Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:27:49.101Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:27:49.101Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:49.101Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:27:49.113Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/CameraButton.tsx
+2025-12-06T08:27:49.115Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/CameraButton.tsx.tmp.51676.1765009669115
+2025-12-06T08:27:49.119Z [DEBUG] Temp file written successfully, size: 815 bytes
+2025-12-06T08:27:49.119Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/CameraButton.tsx.tmp.51676.1765009669115 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/CameraButton.tsx
+2025-12-06T08:27:49.119Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/CameraButton.tsx written atomically
+2025-12-06T08:27:49.128Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:27:49.128Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:27:49.128Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:27:49.151Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:27:49.151Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:27:49.151Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:27:49.151Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:27:49.156Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:27:49.156Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:27:52.623Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:28:00.803Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:28:00.807Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:28:00.807Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:00.807Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:00.816Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/ControlButton.scss
+2025-12-06T08:28:00.819Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/ControlButton.scss.tmp.51676.1765009680819
+2025-12-06T08:28:00.823Z [DEBUG] Temp file written successfully, size: 1056 bytes
+2025-12-06T08:28:00.823Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/ControlButton.scss.tmp.51676.1765009680819 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/ControlButton.scss
+2025-12-06T08:28:00.823Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/ControlButton.scss written atomically
+2025-12-06T08:28:00.831Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:28:00.831Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:00.831Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:00.853Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:28:00.853Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:28:00.853Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:28:00.853Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:28:00.857Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:28:00.857Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:28:03.133Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:28:08.292Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:28:08.294Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:28:08.294Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:08.294Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:08.305Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/VideoControls.tsx
+2025-12-06T08:28:08.307Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/VideoControls.tsx.tmp.51676.1765009688307
+2025-12-06T08:28:08.311Z [DEBUG] Temp file written successfully, size: 806 bytes
+2025-12-06T08:28:08.311Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/VideoControls.tsx.tmp.51676.1765009688307 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/VideoControls.tsx
+2025-12-06T08:28:08.311Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/VideoControls.tsx written atomically
+2025-12-06T08:28:08.318Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:28:08.318Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:08.318Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:08.341Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:28:08.341Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:28:08.341Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:28:08.341Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:28:08.345Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:28:08.345Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:28:10.506Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:28:13.399Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:28:13.402Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:28:13.402Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:13.402Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:13.414Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/VideoControls.scss
+2025-12-06T08:28:13.416Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/VideoControls.scss.tmp.51676.1765009693416
+2025-12-06T08:28:13.420Z [DEBUG] Temp file written successfully, size: 221 bytes
+2025-12-06T08:28:13.420Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/VideoControls.scss.tmp.51676.1765009693416 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/VideoControls.scss
+2025-12-06T08:28:13.420Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/VideoControls.scss written atomically
+2025-12-06T08:28:13.429Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:28:13.429Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:13.429Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:13.454Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:28:13.454Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:28:13.454Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:28:13.454Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:28:13.458Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:28:13.458Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:28:15.610Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:28:17.566Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:28:17.569Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:28:17.569Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:17.569Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:17.579Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/index.ts
+2025-12-06T08:28:17.582Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/index.ts.tmp.51676.1765009697582
+2025-12-06T08:28:17.586Z [DEBUG] Temp file written successfully, size: 151 bytes
+2025-12-06T08:28:17.586Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/index.ts.tmp.51676.1765009697582 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/index.ts
+2025-12-06T08:28:17.587Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/VideoControls/index.ts written atomically
+2025-12-06T08:28:17.595Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:28:17.595Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:17.595Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:17.623Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:28:17.623Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:28:17.623Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:28:17.623Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:28:17.627Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:28:17.627Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:28:19.911Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:28:22.432Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:28:22.435Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:28:22.435Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:22.435Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:22.446Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/index.ts
+2025-12-06T08:28:22.448Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/index.ts.tmp.51676.1765009702448
+2025-12-06T08:28:22.452Z [DEBUG] Temp file written successfully, size: 322 bytes
+2025-12-06T08:28:22.452Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/index.ts.tmp.51676.1765009702448 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/index.ts
+2025-12-06T08:28:22.452Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/components/index.ts written atomically
+2025-12-06T08:28:22.460Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:28:22.460Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:22.460Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:22.494Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:28:22.494Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:28:22.494Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:28:22.494Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:28:22.500Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:28:22.500Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:28:25.047Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:28:39.971Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:28:39.974Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:28:39.974Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:39.974Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:28:39.982Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009719982
+2025-12-06T08:28:39.982Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:28:39.987Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:28:39.988Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:28:39.988Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009719982 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:28:39.988Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:28:39.988Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009719988
+2025-12-06T08:28:39.988Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:28:39.992Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:28:39.992Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:28:39.992Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009719988 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:28:39.993Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:28:39.993Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009719993
+2025-12-06T08:28:39.993Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:28:39.997Z [DEBUG] Temp file written successfully, size: 1247 bytes
+2025-12-06T08:28:39.997Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:28:39.997Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009719993 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:28:39.998Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:28:40.007Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:28:40.007Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:40.007Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:28:40.026Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:28:40.026Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:28:40.026Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:28:40.026Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:28:40.030Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:28:40.030Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:28:42.320Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:28:58.259Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:28:58.262Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:28:58.262Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:58.262Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:58.272Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/useKeyboardShortcut.ts
+2025-12-06T08:28:58.272Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/useKeyboardShortcut.ts.tmp.51676.1765009738272
+2025-12-06T08:28:58.277Z [DEBUG] Temp file written successfully, size: 1977 bytes
+2025-12-06T08:28:58.277Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/useKeyboardShortcut.ts.tmp.51676.1765009738272 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/useKeyboardShortcut.ts
+2025-12-06T08:28:58.277Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/useKeyboardShortcut.ts written atomically
+2025-12-06T08:28:58.286Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:28:58.286Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:28:58.286Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:28:58.313Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:28:58.313Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:28:58.313Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:28:58.313Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:28:58.316Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:28:58.316Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:29:00.611Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:29:16.558Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:29:16.564Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:29:16.564Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:16.564Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:29:16.578Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009756578
+2025-12-06T08:29:16.578Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:29:16.582Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:29:16.582Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:29:16.582Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009756578 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:29:16.583Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:29:16.583Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009756583
+2025-12-06T08:29:16.583Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:29:16.588Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:29:16.588Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:29:16.588Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009756583 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:29:16.588Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:29:16.588Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009756588
+2025-12-06T08:29:16.588Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:29:16.593Z [DEBUG] Temp file written successfully, size: 1249 bytes
+2025-12-06T08:29:16.593Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:29:16.593Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009756588 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:29:16.593Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:29:16.610Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:29:16.610Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:16.610Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:29:16.671Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:29:16.671Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:29:16.671Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:29:16.671Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:29:16.678Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:29:16.678Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:29:18.899Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:29:37.920Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:29:37.923Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:29:37.923Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:37.923Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:29:37.935Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/useVolumeControl.ts
+2025-12-06T08:29:37.937Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/useVolumeControl.ts.tmp.51676.1765009777937
+2025-12-06T08:29:37.940Z [DEBUG] Temp file written successfully, size: 2900 bytes
+2025-12-06T08:29:37.940Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/useVolumeControl.ts.tmp.51676.1765009777937 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/useVolumeControl.ts
+2025-12-06T08:29:37.940Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/useVolumeControl.ts written atomically
+2025-12-06T08:29:37.947Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:29:37.947Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:37.947Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:29:37.970Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:29:37.970Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:29:37.970Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:29:37.971Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:29:37.975Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:29:37.975Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:29:40.309Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:29:42.074Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:29:42.077Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:29:42.077Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:42.077Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:29:42.095Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:29:42.095Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:42.095Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:29:42.120Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:29:42.120Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:29:42.120Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:29:42.120Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:29:42.125Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:29:42.125Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:29:44.814Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:29:47.843Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:29:47.847Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:29:47.847Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:47.847Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:29:47.862Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/index.ts
+2025-12-06T08:29:47.866Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/index.ts.tmp.51676.1765009787866
+2025-12-06T08:29:47.866Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:29:47.870Z [DEBUG] Temp file written successfully, size: 198 bytes
+2025-12-06T08:29:47.871Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:29:47.871Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/index.ts.tmp.51676.1765009787866 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/index.ts
+2025-12-06T08:29:47.871Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/hooks/index.ts written atomically
+2025-12-06T08:29:47.879Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:29:47.879Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:47.879Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:29:47.905Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:29:47.905Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:29:47.905Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:29:47.905Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:29:47.908Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:29:47.908Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:29:50.234Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:29:52.019Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:29:52.023Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:29:52.023Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:52.023Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:29:52.040Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:29:52.040Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:52.040Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:29:52.058Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:29:52.058Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:29:52.058Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:29:52.058Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:29:52.062Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:29:52.062Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:29:54.086Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:29:59.127Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:29:59.129Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:29:59.129Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:59.129Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:29:59.144Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/index.ts
+2025-12-06T08:29:59.146Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/index.ts.tmp.51676.1765009799146
+2025-12-06T08:29:59.146Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:29:59.150Z [DEBUG] Temp file written successfully, size: 1131 bytes
+2025-12-06T08:29:59.150Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:29:59.150Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/index.ts.tmp.51676.1765009799146 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/index.ts
+2025-12-06T08:29:59.151Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/index.ts written atomically
+2025-12-06T08:29:59.159Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:29:59.159Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:29:59.159Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:29:59.187Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:29:59.187Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:29:59.187Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:29:59.187Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:29:59.191Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:29:59.191Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:30:01.693Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:30:17.497Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:30:17.502Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:30:17.502Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:30:17.502Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:30:17.515Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009817515
+2025-12-06T08:30:17.515Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:30:17.519Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:30:17.519Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:30:17.519Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009817515 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:30:17.519Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:30:17.519Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009817519
+2025-12-06T08:30:17.519Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:30:17.524Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:30:17.524Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:30:17.524Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009817519 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:30:17.524Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:30:17.524Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009817524
+2025-12-06T08:30:17.524Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:30:17.529Z [DEBUG] Temp file written successfully, size: 1251 bytes
+2025-12-06T08:30:17.529Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:30:17.529Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009817524 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:30:17.530Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:30:17.544Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:30:17.544Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:30:17.544Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:30:17.564Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:30:17.564Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:30:17.564Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:30:17.564Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:30:17.568Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:30:17.568Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:30:19.673Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:30:48.096Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:30:48.101Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:30:48.101Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:30:48.101Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:30:48.115Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/pages/VideoCallPage/VideoCallPage.tsx
+2025-12-06T08:30:48.119Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/pages/VideoCallPage/VideoCallPage.tsx.tmp.51676.1765009848119
+2025-12-06T08:30:48.119Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:30:48.125Z [DEBUG] Temp file written successfully, size: 4981 bytes
+2025-12-06T08:30:48.125Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:30:48.125Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/pages/VideoCallPage/VideoCallPage.tsx.tmp.51676.1765009848119 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/pages/VideoCallPage/VideoCallPage.tsx
+2025-12-06T08:30:48.126Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/pages/VideoCallPage/VideoCallPage.tsx written atomically
+2025-12-06T08:30:48.137Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:30:48.137Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:30:48.137Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:30:48.237Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:30:48.238Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:30:48.238Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:30:48.238Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:30:48.241Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:30:48.241Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:30:50.458Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:31:01.518Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:31:01.518Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:31:01.518Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:31:01.518Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:31:01.522Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:31:01.522Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:31:03.778Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:31:05.211Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:31:05.216Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:31:05.216Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:31:05.216Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:31:05.234Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:31:05.234Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:31:05.234Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:31:05.258Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:31:05.258Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:31:05.258Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:31:05.258Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:31:05.265Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:31:05.265Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:31:07.751Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:31:17.198Z [DEBUG] executePreToolHooks called for tool: Write
+2025-12-06T08:31:17.202Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-12-06T08:31:17.202Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:31:17.202Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:31:17.216Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/pages/VideoCallPage/VideoCallPage.scss
+2025-12-06T08:31:17.219Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/pages/VideoCallPage/VideoCallPage.scss.tmp.51676.1765009877219
+2025-12-06T08:31:17.219Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:31:17.223Z [DEBUG] Temp file written successfully, size: 1551 bytes
+2025-12-06T08:31:17.223Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:31:17.223Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/pages/VideoCallPage/VideoCallPage.scss.tmp.51676.1765009877219 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/pages/VideoCallPage/VideoCallPage.scss
+2025-12-06T08:31:17.223Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/pages/VideoCallPage/VideoCallPage.scss written atomically
+2025-12-06T08:31:17.233Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-12-06T08:31:17.233Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:31:17.233Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-12-06T08:31:17.309Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:31:17.309Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:31:17.309Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:31:17.309Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:31:17.314Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:31:17.314Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:31:20.030Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:31:23.224Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:31:23.230Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:31:23.230Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:31:23.230Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:31:23.266Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:31:23.266Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:31:23.266Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:31:23.290Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:31:23.290Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:31:23.290Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:31:23.290Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:31:23.297Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:31:23.297Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:31:23.317Z [DEBUG] Getting matching hook commands for PreCompact with query: auto
+2025-12-06T08:31:23.317Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:31:23.317Z [DEBUG] Matched 0 unique hooks for query "auto" (0 before deduplication)
+2025-12-06T08:31:28.427Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:04.946Z [DEBUG] Getting matching hook commands for SessionStart with query: compact
+2025-12-06T08:32:04.946Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:04.946Z [DEBUG] Matched 0 unique hooks for query "compact" (0 before deduplication)
+2025-12-06T08:32:04.974Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51676.1765009924974
+2025-12-06T08:32:04.974Z [DEBUG] Preserving file permissions: 100644
+2025-12-06T08:32:04.978Z [DEBUG] Temp file written successfully, size: 74024 bytes
+2025-12-06T08:32:04.978Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:32:04.978Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51676.1765009924974 to /Users/miyagawaryouta/.claude.json
+2025-12-06T08:32:04.978Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-12-06T08:32:04.982Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51676.1765009924982
+2025-12-06T08:32:04.982Z [DEBUG] Preserving file permissions: 100644
+2025-12-06T08:32:04.987Z [DEBUG] Temp file written successfully, size: 74129 bytes
+2025-12-06T08:32:04.987Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:32:04.987Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51676.1765009924982 to /Users/miyagawaryouta/.claude.json
+2025-12-06T08:32:04.987Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-12-06T08:32:07.311Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:16.284Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:32:16.288Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:32:16.288Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:16.288Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:32:16.296Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009936296
+2025-12-06T08:32:16.296Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:32:16.301Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:32:16.301Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:32:16.301Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765009936296 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:32:16.302Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:32:16.302Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009936302
+2025-12-06T08:32:16.302Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:32:16.306Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:32:16.306Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:32:16.306Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765009936302 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:32:16.307Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:32:16.307Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009936307
+2025-12-06T08:32:16.307Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:32:16.311Z [DEBUG] Temp file written successfully, size: 1253 bytes
+2025-12-06T08:32:16.311Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:32:16.311Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765009936307 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:32:16.312Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:32:16.323Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:32:16.323Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:16.323Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:32:16.339Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:32:16.339Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:32:16.339Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:32:16.339Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:32:16.343Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:32:16.343Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:32:17.874Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:21.028Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:32:21.034Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:32:21.034Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:21.034Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:32:26.949Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-06T08:32:26.949Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:26.949Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:32:26.973Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:32:26.973Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:32:26.973Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:32:26.973Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:32:26.977Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:32:26.977Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:32:28.035Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:29.590Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:32.042Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:32:32.047Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:32:32.047Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:32.047Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:32:32.851Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:32.933Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:34.152Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-06T08:32:34.152Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:34.152Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:32:34.172Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:32:34.172Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:32:34.172Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:32:34.172Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:32:34.175Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:32:34.175Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:32:35.682Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:35.999Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:40.411Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:32:40.413Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:32:40.418Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:32:40.418Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:40.418Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:32:40.418Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:32:40.418Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:40.418Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:32:40.446Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:32:40.446Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:40.446Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:32:40.446Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:32:40.446Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:40.446Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:32:40.474Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:32:40.474Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:32:40.474Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:32:40.474Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:32:40.479Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:32:40.479Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:32:42.903Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:46.194Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-12-06T08:32:46.199Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-12-06T08:32:46.199Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:46.199Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-12-06T08:32:46.236Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-12-06T08:32:46.236Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:46.236Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-12-06T08:32:46.254Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:32:46.254Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:32:46.254Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:32:46.254Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:32:46.258Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:32:46.258Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:32:48.404Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:50.443Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:32:50.443Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:32:50.444Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:32:50.444Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:32:50.448Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:32:50.448Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:32:52.290Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:32:54.130Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-12-06T08:32:54.135Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-12-06T08:32:54.135Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:54.135Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-12-06T08:32:54.167Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-12-06T08:32:54.167Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:32:54.167Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-12-06T08:32:54.185Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:32:54.185Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:32:54.185Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:32:54.185Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:32:54.191Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:32:54.191Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:32:55.940Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:33:02.157Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-06T08:33:02.161Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-06T08:33:02.161Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:02.161Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:33:02.179Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-06T08:33:02.179Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:02.179Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-06T08:33:02.198Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:33:02.198Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:33:02.198Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:33:02.198Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:33:02.201Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:33:02.201Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:33:03.938Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:33:12.250Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:33:12.254Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:33:12.254Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:12.254Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:33:12.267Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/context/VideoContext.tsx
+2025-12-06T08:33:12.270Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/context/VideoContext.tsx.tmp.51676.1765009992270
+2025-12-06T08:33:12.270Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:33:12.274Z [DEBUG] Temp file written successfully, size: 8385 bytes
+2025-12-06T08:33:12.274Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:33:12.274Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/context/VideoContext.tsx.tmp.51676.1765009992270 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/context/VideoContext.tsx
+2025-12-06T08:33:12.275Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/context/VideoContext.tsx written atomically
+2025-12-06T08:33:12.283Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:33:12.283Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:12.283Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:33:12.304Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:33:12.307Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:33:12.307Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:12.307Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:33:12.319Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/facade/ZoomVideoFacade.ts.tmp.51676.1765009992319
+2025-12-06T08:33:12.319Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:33:12.324Z [DEBUG] Temp file written successfully, size: 7457 bytes
+2025-12-06T08:33:12.324Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:33:12.324Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/facade/ZoomVideoFacade.ts.tmp.51676.1765009992319 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/facade/ZoomVideoFacade.ts
+2025-12-06T08:33:12.325Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/front/src/features/video-call/facade/ZoomVideoFacade.ts written atomically
+2025-12-06T08:33:12.333Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:33:12.333Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:12.333Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:33:12.360Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:33:12.360Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:33:12.360Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:33:12.360Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:33:12.364Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:33:12.364Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:33:14.324Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:33:17.061Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:33:17.066Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:33:17.066Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:17.066Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:33:17.848Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:33:19.059Z [DEBUG] Getting matching hook commands for PostToolUseFailure with query: Bash
+2025-12-06T08:33:19.060Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:19.060Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:33:19.085Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:33:19.085Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:33:19.085Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:33:19.085Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:33:19.088Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:33:19.088Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:33:20.692Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:33:27.241Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:33:27.247Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:33:27.247Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:27.247Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:33:32.498Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-06T08:33:32.498Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:32.498Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:33:32.525Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:33:32.525Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:33:32.525Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:33:32.525Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:33:32.529Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:33:32.529Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:33:33.430Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:33:34.599Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:33:50.838Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:33:50.841Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:33:50.841Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:50.841Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:33:50.851Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765010030851
+2025-12-06T08:33:50.851Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:33:50.855Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:33:50.855Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:33:50.855Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765010030851 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:33:50.856Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:33:50.856Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765010030856
+2025-12-06T08:33:50.856Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:33:50.860Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:33:50.860Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:33:50.860Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765010030856 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:33:50.861Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:33:50.861Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765010030861
+2025-12-06T08:33:50.861Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:33:50.865Z [DEBUG] Temp file written successfully, size: 1255 bytes
+2025-12-06T08:33:50.866Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:33:50.866Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765010030861 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:33:50.866Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:33:50.875Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:33:50.875Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:50.875Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:33:50.893Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:33:50.893Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:33:50.893Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:33:50.893Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:33:50.898Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:33:50.898Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:33:52.682Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:33:55.905Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:33:55.908Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:33:55.912Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:33:55.912Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:55.912Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:33:55.912Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:33:55.912Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:55.912Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:33:55.999Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-06T08:33:55.999Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:55.999Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:33:56.026Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-06T08:33:56.026Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:33:56.026Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:33:56.047Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:33:56.047Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:33:56.047Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:33:56.047Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:33:56.051Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:33:56.051Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:33:56.629Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:33:56.949Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:33:58.534Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:03.661Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:34:03.667Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:34:03.667Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:03.667Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:34:03.757Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-06T08:34:03.757Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:03.757Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:34:03.778Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:34:03.778Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:34:03.778Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:34:03.778Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:34:03.783Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:34:03.783Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:34:04.891Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:05.631Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:07.290Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:34:07.294Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:34:07.294Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:07.294Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:34:07.369Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-06T08:34:07.369Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:07.369Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:34:07.389Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:34:07.390Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:34:07.390Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:34:07.390Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:34:07.394Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:34:07.394Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:34:08.016Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:09.260Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:18.040Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:34:18.045Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:34:18.045Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:18.045Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:34:18.921Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:19.174Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:19.365Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-06T08:34:19.365Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:19.365Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:34:19.400Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:34:19.400Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:34:19.400Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:34:19.400Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:34:19.406Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:34:19.406Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:34:20.155Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:21.475Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:23.452Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:34:23.456Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:34:23.456Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:23.456Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:34:24.118Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:24.302Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:25.461Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-06T08:34:25.461Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:25.461Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:34:25.485Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:34:25.485Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:34:25.485Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:34:25.485Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:34:25.492Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:34:25.492Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:34:26.480Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:27.304Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:42.431Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-12-06T08:34:42.439Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-12-06T08:34:42.439Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:42.439Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:34:42.447Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765010082447
+2025-12-06T08:34:42.447Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:34:42.452Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:34:42.452Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:34:42.452Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json.tmp.51676.1765010082447 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json
+2025-12-06T08:34:42.453Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4c9ed170-5732-4657-a05d-cbd966534a4e.json written atomically
+2025-12-06T08:34:42.453Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765010082453
+2025-12-06T08:34:42.453Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:34:42.456Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:34:42.456Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:34:42.456Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json.tmp.51676.1765010082453 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json
+2025-12-06T08:34:42.457Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-331f8f53-37fb-4901-9282-162bceb340c1.json written atomically
+2025-12-06T08:34:42.457Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765010082457
+2025-12-06T08:34:42.457Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:34:42.460Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-06T08:34:42.460Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:34:42.460Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json.tmp.51676.1765010082457 to /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json
+2025-12-06T08:34:42.460Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/4727c373-92eb-4317-af85-efeeb7cad5a2-agent-4727c373-92eb-4317-af85-efeeb7cad5a2.json written atomically
+2025-12-06T08:34:42.470Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-12-06T08:34:42.470Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:42.470Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-12-06T08:34:42.480Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:34:42.480Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:34:42.480Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:34:42.480Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:34:42.482Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:34:42.482Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:34:45.276Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:34:57.688Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-12-06T08:34:57.732Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-06T08:34:57.732Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:34:57.732Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-06T08:35:57.901Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-12-06T08:35:57.902Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:35:57.902Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-12-06T08:47:42.559Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-12-06T08:47:42.560Z [DEBUG] AutoUpdater: Using global update method
+2025-12-06T08:47:43.403Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51676.1765010863403
+2025-12-06T08:47:43.403Z [DEBUG] Preserving file permissions: 100644
+2025-12-06T08:47:43.409Z [DEBUG] Temp file written successfully, size: 74129 bytes
+2025-12-06T08:47:43.409Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:47:43.409Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51676.1765010863403 to /Users/miyagawaryouta/.claude.json
+2025-12-06T08:47:43.410Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-12-06T08:50:28.333Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-12-06T08:50:29.135Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-12-06T08:50:30.244Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-12-06T08:50:31.214Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-12-06T08:50:31.780Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-12-06T08:50:31.780Z [DEBUG] AutoUpdater: Using global update method
+2025-12-06T08:50:32.390Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51676.1765011032390
+2025-12-06T08:50:32.390Z [DEBUG] Preserving file permissions: 100644
+2025-12-06T08:50:32.397Z [DEBUG] Temp file written successfully, size: 74129 bytes
+2025-12-06T08:50:32.397Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:50:32.397Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51676.1765011032390 to /Users/miyagawaryouta/.claude.json
+2025-12-06T08:50:32.397Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-12-06T08:50:54.670Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:50:54.670Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:50:54.670Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:50:54.670Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:50:54.675Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:50:54.675Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:50:54.694Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-06T08:50:54.694Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:50:54.694Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-06T08:50:54.696Z [DEBUG] FileHistory: Making snapshot for message 190bd658-617d-439b-b0f9-f65cc4ac0cc6
+2025-12-06T08:50:54.850Z [DEBUG] FileHistory: Added snapshot for 190bd658-617d-439b-b0f9-f65cc4ac0cc6, tracking 35 files
+2025-12-06T08:50:56.369Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:50:58.071Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:51:16.888Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-12-06T08:51:16.891Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-12-06T08:51:16.891Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:51:16.891Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:51:16.910Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/IMPLEMENTATION_PLAN.md
+2025-12-06T08:51:16.913Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/IMPLEMENTATION_PLAN.md.tmp.51676.1765011076913
+2025-12-06T08:51:16.913Z [DEBUG] Preserving file permissions: 100600
+2025-12-06T08:51:16.917Z [DEBUG] Temp file written successfully, size: 10563 bytes
+2025-12-06T08:51:16.917Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:51:16.917Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/IMPLEMENTATION_PLAN.md.tmp.51676.1765011076913 to /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/IMPLEMENTATION_PLAN.md
+2025-12-06T08:51:16.917Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/Inter-siteMonitor/IMPLEMENTATION_PLAN.md written atomically
+2025-12-06T08:51:16.926Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-12-06T08:51:16.926Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:51:16.926Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-12-06T08:51:16.980Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:51:16.980Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:51:16.980Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:51:16.980Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:51:16.982Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:51:16.982Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:51:19.093Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:51:23.406Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-06T08:51:23.410Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-06T08:51:23.410Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:51:23.410Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:51:24.110Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:51:24.203Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:51:24.372Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:51:25.822Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-06T08:51:25.822Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:51:25.822Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-06T08:51:25.844Z [DEBUG] [TeammateMailbox] Checking mailbox for teammate=4727c373-92eb-4317-af85-efeeb7cad5a2 session=4727c373-92eb-4317-af85-efeeb7cad5a2
+2025-12-06T08:51:25.844Z [DEBUG] [TeammateMailbox] Found 0 message(s) in mailbox
+2025-12-06T08:51:25.844Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-06T08:51:25.844Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-06T08:51:25.849Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-06T08:51:25.849Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-06T08:51:26.491Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:51:27.554Z [DEBUG] Stream started - received first chunk
+2025-12-06T08:51:28.983Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-06T08:51:28.983Z [DEBUG] Found 0 hook matchers in settings
+2025-12-06T08:51:28.983Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-06T08:51:52.792Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-12-06T08:51:53.309Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-12-06T08:51:53.309Z [DEBUG] AutoUpdater: Using global update method
+2025-12-06T08:51:53.956Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51676.1765011113956
+2025-12-06T08:51:53.956Z [DEBUG] Preserving file permissions: 100644
+2025-12-06T08:51:53.961Z [DEBUG] Temp file written successfully, size: 74129 bytes
+2025-12-06T08:51:53.961Z [DEBUG] Applied original permissions to temp file
+2025-12-06T08:51:53.961Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51676.1765011113956 to /Users/miyagawaryouta/.claude.json
+2025-12-06T08:51:53.963Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically

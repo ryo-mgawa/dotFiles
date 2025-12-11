@@ -1,0 +1,126 @@
+import {plainToInstance} from 'class-transformer';
+import {validate} from 'class-validator';
+import 'reflect-metadata';
+import {DestinationSpot, OriginSpot} from '../spot';
+
+describe('OriginSpot', () => {
+  describe('プロパティ設定', () => {
+    it('idが設定できる', () => {
+      const originSpot = new OriginSpot();
+      originSpot.id = 'spot-001';
+
+      expect(originSpot.id).toBe('spot-001');
+    });
+  });
+
+  describe('バリデーション', () => {
+    it('正常なデータの場合、バリデーションエラーが発生しない', async () => {
+      const data = {
+        id: 'spot-001',
+      };
+
+      const originSpot = plainToInstance(OriginSpot, data);
+      const errors = await validate(originSpot);
+
+      expect(errors).toHaveLength(0);
+    });
+
+    it('idが未定義の場合、バリデーションエラーが発生する', async () => {
+      const data = {};
+
+      const originSpot = plainToInstance(OriginSpot, data);
+      const errors = await validate(originSpot);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const idError = errors.find(e => e.property === 'id');
+      expect(idError).toBeDefined();
+    });
+
+    it('idが最大長を超える場合、バリデーションエラーが発生する', async () => {
+      const data = {
+        id: 'x'.repeat(257),
+      };
+
+      const originSpot = plainToInstance(OriginSpot, data);
+      const errors = await validate(originSpot);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const idError = errors.find(e => e.property === 'id');
+      expect(idError).toBeDefined();
+    });
+
+    it('idが数値の場合、バリデーションエラーが発生する', async () => {
+      const data = {
+        id: 123,
+      };
+
+      const originSpot = plainToInstance(OriginSpot, data);
+      const errors = await validate(originSpot);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const idError = errors.find(e => e.property === 'id');
+      expect(idError).toBeDefined();
+    });
+  });
+});
+
+describe('DestinationSpot', () => {
+  describe('プロパティ設定', () => {
+    it('idが設定できる', () => {
+      const destinationSpot = new DestinationSpot();
+      destinationSpot.id = 'spot-002';
+
+      expect(destinationSpot.id).toBe('spot-002');
+    });
+  });
+
+  describe('バリデーション', () => {
+    it('正常なデータの場合、バリデーションエラーが発生しない', async () => {
+      const data = {
+        id: 'spot-002',
+      };
+
+      const destinationSpot = plainToInstance(DestinationSpot, data);
+      const errors = await validate(destinationSpot);
+
+      expect(errors).toHaveLength(0);
+    });
+
+    it('idが未定義の場合、バリデーションエラーが発生する', async () => {
+      const data = {};
+
+      const destinationSpot = plainToInstance(DestinationSpot, data);
+      const errors = await validate(destinationSpot);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const idError = errors.find(e => e.property === 'id');
+      expect(idError).toBeDefined();
+    });
+
+    it('idが最大長を超える場合、バリデーションエラーが発生する', async () => {
+      const data = {
+        id: 'x'.repeat(257),
+      };
+
+      const destinationSpot = plainToInstance(DestinationSpot, data);
+      const errors = await validate(destinationSpot);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const idError = errors.find(e => e.property === 'id');
+      expect(idError).toBeDefined();
+    });
+
+    it('idが数値の場合、バリデーションエラーが発生する', async () => {
+      const data = {
+        id: 123,
+      };
+
+      const destinationSpot = plainToInstance(DestinationSpot, data);
+      const errors = await validate(destinationSpot);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const idError = errors.find(e => e.property === 'id');
+      expect(idError).toBeDefined();
+    });
+  });
+});

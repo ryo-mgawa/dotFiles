@@ -1,0 +1,16 @@
+import {Type} from 'class-transformer';
+import {ArrayNotEmpty, IsDefined, ValidateNested} from 'class-validator';
+import {AddShipmentItem} from './addShipmentItem';
+
+export {Consignor} from './consignor';
+export {Consignee} from './consignee';
+export {OriginSpot, DestinationSpot} from './spot';
+export {AddShipmentItem} from './addShipmentItem';
+
+export class AddShipmentsInput {
+  @IsDefined()
+  @ArrayNotEmpty()
+  @ValidateNested({each: true})
+  @Type(() => AddShipmentItem)
+  public shipments: AddShipmentItem[];
+}

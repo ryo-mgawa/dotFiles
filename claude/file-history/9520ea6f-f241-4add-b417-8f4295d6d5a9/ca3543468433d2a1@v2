@@ -1,0 +1,16 @@
+import apiClient from './apiClient';
+import { Competition } from '@/types/models/Competition';
+
+interface ApiResponse<T> {
+  success: boolean;
+  data: T;
+}
+
+/**
+ * 大会一覧を取得
+ */
+export const getCompetitions = async (year?: number): Promise<Competition[]> => {
+  const params = year ? { year } : {};
+  const response = await apiClient.get<ApiResponse<Competition[]>>('/competitions', { params });
+  return response.data.data;
+};

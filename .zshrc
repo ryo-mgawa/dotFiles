@@ -32,8 +32,8 @@ totalUsage() {
     local cost=$(npx ccusage@latest --json | jq -r '(.totals.totalCost * 100 | round) / 100 | tostring')
     npx oh-my-logo "\$${cost}" fire --filled
 }
-alias c='claude --mcp-config ~/.claude/mcp_settings.json'
-alias cdang='claude --dangerously-skip-permissions --mcp-config ~/.claude/mcp_settings.json'
+alias c='claude'
+alias cdang='claude --dangerously-skip-permissions'
 # alias 'tmux loogia'='tmux a -t loogia-web'
 tmux() {
     if [[ $# -eq 1 && $1 == "loogia" ]]; then
@@ -73,4 +73,9 @@ unset __conda_setup
 # lazygit用の言語設定
 export LANG=ja_JP.UTF-8
 export LC_ALL=ja_JP.UTF-8
+
+# AndroidStudio用の設定
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/tools
 

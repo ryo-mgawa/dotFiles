@@ -1,0 +1,567 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+"""
+日本郵便用CSVと納品書作成スクリプト
+Shopifyの注文データから日本郵便用のCSVファイルと納品書を自動生成します。
+"""
+
+import csv
+import pandas as pd
+import numpy as np
+import openpyxl
+import os
+from datetime import datetime
+import pytz
+from copy import copy
+import shutil
+from pathlib import Path
+import win32com.client
+
+
+# ===== 設定 =====
+
+# クライアント情報
+CLIENT_INFO = {
+    'name': 'にゃんつぶマーケット',
+    'postal_code': '4510042',
+    'prefecture': '愛知県',
+    'city': '名古屋市西区',
+    'street_number': '那古野2-14-1',
+    'building': 'なごのキャンパス3-4',
+    'phone': '090-8631-0515',
+    'corporate_name': '株式会社finn',
+    'email': 'ip-nyantsubu-shop@finn.co.jp'
+}
+
+# 商品設定
+PRODUCT_NAME = 'キャラクターグッズ'
+BIG_LUGGAGE_LIST = ['にゃんつぶ　ぬいぐるみキーホルダー', 'トートバッグ（全2種・ナチュラル/ブラック）']  # ゆうパックで発送するグッズ名
+
+# ファイルパス設定（スクリプトの場所を基準に設定）
+SCRIPT_DIR = Path(__file__).parent
+PARENT_DIR = SCRIPT_DIR
+TEMPLATE_PATH = PARENT_DIR / 'template' / '納品書テンプレート.xlsx'
+CSV_PATH = PARENT_DIR / 'orders_export.csv'
+
+
+# ===== 関数定義 =====
+
+def format_phone_number(phone) -> str:
+    """
+    国番号付きの電話番号を日本の標準形式にフォーマットする
+
+    Args:
+        phone: 819030972418.0 のような形式の電話番号（主にfloat型）
+
+    Returns:
+        '090-3097-2418' のような形式の電話番号
+        NaNや空文字の場合は空文字を返す
+    """
+    import math
+
+    # 空文字・Noneチェック
+    if phone is None or phone == '':
+        return ''
+
+    # floatの場合のみNaNチェック
+    if isinstance(phone, float) and math.isnan(phone):
+        return ''
+
+    # floatをintに変換してから文字列化
+    if isinstance(phone, float):
+        phone = str(int(phone))
+    else:
+        phone = str(phone)
+
+    # 空文字チェック（変換後）
+    if not phone:
+        return ''
+
+    # '+81' を削除（文字列として81で始まる場合）
+    if phone.startswith('81') and len(phone) == 12:
+        phone = '0' + phone[2:]
+    # そのまま11桁の場合
+    elif len(phone) == 11 and phone.startswith('0'):
+        pass
+    # 10桁の場合（先頭の0が欠けている）
+    elif len(phone) == 10:
+        phone = '0' + phone
+
+    # 携帯電話番号の場合（090, 080, 070 など）
+    if phone.startswith(('090', '080', '070', '050')):
+        return f"{phone[:3]}-{phone[3:7]}-{phone[7:]}"
+
+    # その他の場合も同じフォーマット
+    return f"{phone[:3]}-{phone[3:7]}-{phone[7:]}"
+
+
+def consolidate_order(group):
+    """
+    注文グループを1行に統合する
+
+    Args:
+        group: 同一注文番号でグループ化されたDataFrame
+
+    Returns:
+        統合された注文情報のSeries
+    """
+    result = group.iloc[0].to_dict()
+    lineitem_info = []
+
+    for _, row in group.iterrows():
+        if pd.notna(row['Lineitem name']) and row['Lineitem name'] != '':
+            name = str(row['Lineitem name'])
+            quantity = str(int(row['Lineitem quantity'])) if pd.notna(row['Lineitem quantity']) else '0'
+            price = str(int(float(row['Lineitem price']))) if pd.notna(row['Lineitem price']) else '0'
+            item_str = f"{name}：{quantity}×{price}"
+            lineitem_info.append(item_str)
+
+    if lineitem_info:
+        result['Lineitem name'] = ', '.join(lineitem_info)
+
+    return pd.Series(result)
+
+
+def load_and_merge_orders(csv_path):
+    """
+    ShopifyのCSVを読み込み、注文番号ごとに統合する
+
+    Args:
+        csv_path: ShopifyエクスポートCSVのパス
+
+    Returns:
+        統合された注文データのDataFrame
+    """
+    df = pd.read_csv(csv_path)
+
+    # 注文番号でグループ化して統合
+    merged_df = df.groupby('Name', sort=False, as_index=False).apply(
+        consolidate_order, include_groups=False
+    )
+
+    # Financial Statusが'paid'の行のみフィルタリング
+    merged_df = merged_df[merged_df['Financial Status'] == 'paid']
+
+    # NaNを空白に置換
+    merged_df = merged_df.fillna('')
+
+    return merged_df.values.tolist()
+
+
+def create_japan_post_row(row, client_info, product_name, notification=1):
+    """
+    日本郵便CSV用の行データを作成
+
+    Args:
+        row: 注文データの1行
+        client_info: クライアント情報の辞書
+        product_name: 商品名
+        notification: 通知設定（1=通知あり、0=通知なし）
+
+    Returns:
+        日本郵便CSVフォーマットの行データ（リスト）
+    """
+    data_row = [''] * 74  # 74列分の空リストを初期化
+
+    # お届け先情報（8-18列）
+    data_row[7] = row[34]  # name
+    data_row[8] = '様'
+    data_row[10] = row[30]  # address (postal code)
+    data_row[11] = row[74]  # prefecture
+    data_row[12] = row[39]  # city
+    data_row[13] = row[36]  # street number
+    data_row[14] = row[37]  # building
+    data_row[15] = format_phone_number(row[43])  # phone number
+    data_row[18] = row[1]   # email
+
+    # ご依頼主情報（23-34列）
+    data_row[22] = client_info['name']
+    data_row[25] = client_info['postal_code']
+    data_row[26] = client_info['prefecture']
+    data_row[27] = client_info['city']
+    data_row[28] = client_info['street_number']
+    data_row[29] = client_info['building']
+    data_row[30] = client_info['phone']
+    data_row[31] = client_info['corporate_name']
+    data_row[33] = client_info['email']
+    data_row[34] = product_name
+
+    # その他設定（61-72列）
+    data_row[60] = '1'  # 個数
+    data_row[63] = '0'  # 代金引換額
+    data_row[64] = '0'  # 消費税
+    data_row[67] = notification
+    data_row[68] = notification
+    data_row[69] = notification
+    data_row[70] = notification
+    data_row[71] = notification
+
+    # 追加情報（納品書用）
+    data_row[72] = row[17]  # product name (Lineitem name)
+    data_row[73] = row[0]   # order number
+
+    return data_row
+
+
+def classify_orders(order_array, big_luggage_list):
+    """
+    注文を配送方法（ゆうパック/ゆうパケット）で分類
+
+    Args:
+        order_array: 注文データの配列
+        big_luggage_list: 段ボール配送が必要な商品のリスト
+
+    Returns:
+        yupack: ゆうパック（段ボール）の注文リスト
+        yupacket: ゆうパケットの注文リスト
+    """
+    yupack = []
+    yupacket = []
+
+    for row in order_array:
+        product_name = row[17]
+        data_row = create_japan_post_row(row, CLIENT_INFO, PRODUCT_NAME)
+
+        # 商品名に大型商品が含まれるかチェック
+        if any(big_item in product_name for big_item in big_luggage_list):
+            # ゆうパック（段ボール）
+            data_row[0] = '1'   # description
+            data_row[62] = '060'  # size
+            yupack.append(data_row)
+        else:
+            # ゆうパケット
+            data_row[0] = '6'   # description
+            data_row[40] = '1000'  # weight
+            data_row[62] = '1'  # size
+            yupacket.append(data_row)
+
+    return yupack, yupacket
+
+
+def save_japan_post_csv(yupack, yupacket, folder_path):
+    """
+    日本郵便用CSVを保存
+
+    Args:
+        yupack: ゆうパックの注文リスト
+        yupacket: ゆうパケットの注文リスト
+        folder_path: 保存先フォルダパス
+    """
+    # 出力ファイルパスを生成
+    yupack_path = folder_path / 'ゆうパック送信リスト.csv'
+    yupacket_path = folder_path / 'ゆうパケット送信リスト.csv'
+
+    # ゆうパックCSV保存
+    if yupack:
+        with open(yupack_path, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.writer(csvfile)
+            for row in yupack:
+                writer.writerow(row[:72])
+
+    # ゆうパケットCSV保存
+    if yupacket:
+        with open(yupacket_path, 'w', newline='', encoding='utf-8') as csvfile:
+            writer = csv.writer(csvfile)
+            for row in yupacket:
+                writer.writerow(row[:72])
+
+
+# ===== 納品書関連の関数 =====
+
+def generate_unique_sheet_name(base_name, used_names):
+    """
+    ユニークなシート名を生成
+
+    Args:
+        base_name: ベースとなるシート名
+        used_names: 既に使用されているシート名のセット
+
+    Returns:
+        ユニークなシート名
+    """
+    # 使用不可文字を置換、31文字制限
+    clean_name = base_name[:31].replace('/', '_').replace('\\', '_').replace('*', '_').replace('[', '_').replace(']', '_').replace(':', '_').replace('?', '_')
+
+    # 同名シート対策
+    if clean_name not in used_names:
+        return clean_name
+
+    counter = 1
+    truncated_base = clean_name[:28]  # 番号を付ける余地を残す
+    while f"{truncated_base}_{counter}" in used_names:
+        counter += 1
+
+    return f"{truncated_base}_{counter}"
+
+
+def parse_product_items(product_list_str):
+    """
+    商品リスト文字列を解析してリストに変換
+
+    Args:
+        product_list_str: 商品リスト文字列（"商品名：数量×単価, ..."形式）
+
+    Returns:
+        解析された商品情報のリスト [(商品名, 数量, 単価), ...]
+    """
+    if not product_list_str:
+        return []
+
+    items = str(product_list_str).split(', ')
+    parsed_items = []
+
+    for item in items:
+        if '：' in item and '×' in item:
+            try:
+                product_name, quantity_price = item.split('：')
+                quantity, price = quantity_price.split('×')
+                parsed_items.append((
+                    product_name.strip(),
+                    int(quantity.strip()),
+                    int(price.strip())
+                ))
+            except Exception as e:
+                print(f"商品情報の解析エラー: {item} - {e}")
+
+    return parsed_items
+
+
+def fill_invoice_sheet(sheet, row, order_number, product_items):
+    """
+    納品書シートに情報を記入
+
+    Args:
+        sheet: openpyxlのワークシート
+        row: 注文データの1行
+        order_number: 注文番号
+        product_items: 商品情報のリスト [(商品名, 数量, 単価), ...]
+    """
+    # 住所情報を記載
+    sheet['A5'] = f'〒{row[10]}'
+    sheet['A6'] = f'{row[11]} {row[12]} {row[13]} {row[14]}'
+    sheet['A7'] = row[7]  # 名前
+    sheet['B4'] = order_number
+
+    # 商品情報を記載
+    start_row = 20
+    for i, (product_name, quantity, price) in enumerate(product_items):
+        current_row = start_row + i
+        sheet[f'A{current_row}'] = product_name
+        sheet[f'F{current_row}'] = quantity
+        sheet[f'H{current_row}'] = price
+
+
+def create_invoice_sheet(workbook, template_sheet, row, used_names):
+    """
+    1注文分の納品書シートを作成
+
+    Args:
+        workbook: openpyxlのワークブック
+        template_sheet: テンプレートシート
+        row: 注文データの1行
+        used_names: 既に使用されているシート名のセット
+
+    Returns:
+        作成したシート名
+    """
+    customer_name = row[7]
+    order_number = row[73]
+    product_list = row[72]
+
+    # ユニークなシート名を生成
+    sheet_name = generate_unique_sheet_name(customer_name, used_names)
+    used_names.add(sheet_name)
+
+    # シートをコピー
+    copied_sheet = workbook.copy_worksheet(template_sheet)
+    copied_sheet.title = sheet_name
+
+    # 商品情報を解析
+    product_items = parse_product_items(product_list)
+
+    # シートに情報を記入
+    fill_invoice_sheet(copied_sheet, row, order_number, product_items)
+
+    return sheet_name
+
+
+def create_invoice_excel(orders, sheet_name, folder_path, template_path):
+    """
+    納品書ExcelファイルとPDFを作成
+
+    Args:
+        orders: 注文リスト（ゆうパックまたはゆうパケット）
+        sheet_name: シート名（'ゆうパック'または'ゆうパケット'）
+        folder_path: 保存先フォルダパス
+        template_path: テンプレートファイルのパス
+    """
+    if not orders:
+        return
+
+    # 出力ファイルパスを生成
+    jst = pytz.timezone('Asia/Tokyo')
+    date = datetime.now(jst).strftime('%Y%m%d%H%M%S')
+    output_path = folder_path / f'納品書({sheet_name}).xlsx'
+    pdf_output_path = folder_path / f'納品書({sheet_name}).pdf'
+
+    # テンプレートをコピー
+    shutil.copy2(template_path, output_path)
+
+    # Excelファイルを開く
+    wb = openpyxl.load_workbook(output_path)
+    template_sheet = wb['納品書']
+    used_names = {'納品書'}
+
+    # 各注文ごとにシートを作成
+    for row in orders:
+        create_invoice_sheet(wb, template_sheet, row, used_names)
+
+    # テンプレートシートを削除
+    wb.remove(template_sheet)
+
+    # ファイルを保存
+    wb.save(output_path)
+    wb.close()
+
+    print(f"納品書を作成しました: {output_path}")
+    print(f"作成されたシート数: {len(used_names) - 1}")
+
+    # ExcelをPDFに変換
+    try:
+        print(f"PDFに変換中: {pdf_output_path}")
+        excel_to_pdf(output_path, pdf_output_path)
+        print(f"PDFを作成しました: {pdf_output_path}")
+    except Exception as e:
+        print(f"PDF変換に失敗しました: {e}")
+        print("Excelファイルは正常に作成されています")
+
+
+def create_folder(exist_folder_path, new_folder_name):
+    """
+    フォルダを作成
+
+    Args:
+        exist_folder_path: 既に存在するフォルダパス
+        new_folder_name: 作成するフォルダの名前
+
+    Returns:
+        作成されたフォルダのパス
+    """
+    folder_path = exist_folder_path / new_folder_name
+    if not folder_path.exists():
+        folder_path.mkdir(parents=True, exist_ok=True)
+    return folder_path
+
+
+def excel_to_pdf(excel_path, pdf_path):
+    """
+    ExcelファイルをPDFに変換
+
+    win32com.clientを使用してExcelファイルをPDF形式でエクスポートします。
+    ExportAsFixedFormatメソッドを使用し、全シートを含むPDFを生成します。
+
+    Args:
+        excel_path: 変換元のExcelファイルパス（Path or str）
+        pdf_path: 変換先のPDFファイルパス（Path or str）
+
+    Raises:
+        Exception: PDF変換に失敗した場合
+
+    Note:
+        - Microsoft Excelがインストールされている必要があります
+        - エラーが発生してもExcel.exeプロセスが残らないようfinallyでQuitします
+    """
+    excel = None
+
+    try:
+        # Excelアプリケーションを起動
+        excel = win32com.client.Dispatch("Excel.Application")
+        excel.Visible = False  # Excelウィンドウを非表示
+        excel.DisplayAlerts = False  # 警告ダイアログを非表示
+
+        # Excelファイルを開く（絶対パスに変換）
+        wb = excel.Workbooks.Open(str(Path(excel_path).resolve()))
+
+        # PDFとしてエクスポート
+        # Type: 0 = xlTypePDF
+        # Filename: PDF出力先パス
+        # Quality: 0 = xlQualityStandard（標準品質）
+        # IncludeDocProperties: False = ドキュメントプロパティを含めない
+        # IgnorePrintAreas: False = 印刷範囲を考慮する
+        # OpenAfterPublish: False = 変換後にPDFを開かない
+        wb.ExportAsFixedFormat(
+            Type=0,  # xlTypePDF
+            Filename=str(Path(pdf_path).resolve()),
+            Quality=0,  # xlQualityStandard
+            IncludeDocProperties=False,
+            IgnorePrintAreas=False,
+            OpenAfterPublish=False
+        )
+
+        # ワークブックを閉じる（保存しない）
+        wb.Close(False)
+
+    except Exception as e:
+        print(f"PDF変換エラー: {excel_path} -> {pdf_path}")
+        print(f"エラー詳細: {e}")
+        raise
+
+    finally:
+        # Excelアプリケーションを終了（プロセスが残らないように）
+        if excel is not None:
+            excel.Quit()
+
+
+# ===== メイン処理 =====
+
+def main():
+    """メイン処理"""
+    print("=" * 60)
+    print("日本郵便用CSVと納品書作成スクリプト")
+    print("=" * 60)
+
+    # 1. ファイルの存在確認
+    if not CSV_PATH.exists():
+        print(f"エラー: orders_export.csv が見つかりません")
+        print(f"期待されるパス: {CSV_PATH}")
+        return
+
+    if not TEMPLATE_PATH.exists():
+        print(f"エラー: 納品書テンプレート.xlsx が見つかりません")
+        print(f"期待されるパス: {TEMPLATE_PATH}")
+        return
+
+    # 2. Shopify注文データを読み込んで統合
+    print(f"\n注文データを読み込み中...")
+    order_array = load_and_merge_orders(CSV_PATH)
+    print(f"注文データを読み込みました: {len(order_array)}件")
+
+    # 3. 注文を配送方法で分類
+    print(f"\n注文を配送方法で分類中...")
+    yupack, yupacket = classify_orders(order_array, BIG_LUGGAGE_LIST)
+    print(f"ゆうパック: {len(yupack)}件")
+    print(f"ゆうパケット: {len(yupacket)}件")
+
+    # 4. CSVと納品書を保存する用のフォルダ作成
+    jst = pytz.timezone('Asia/Tokyo')
+    date = datetime.now(jst).strftime('%Y年%m月%d日_%H-%M-%S')
+    doc_folder = create_folder(PARENT_DIR, f"日本郵便用csvあんど納品書/{date}")
+    print(f"\n出力フォルダ: {doc_folder}")
+
+    # 5. 日本郵便用CSVを保存
+    print(f"\n日本郵便用CSVを保存中...")
+    save_japan_post_csv(yupack, yupacket, doc_folder)
+    print("日本郵便用CSVを保存しました")
+
+    # 6. 納品書を作成
+    print(f"\n納品書を作成中...")
+    create_invoice_excel(yupack, 'ゆうパック', doc_folder, TEMPLATE_PATH)
+    create_invoice_excel(yupacket, 'ゆうパケット', doc_folder, TEMPLATE_PATH)
+
+    print("\n" + "=" * 60)
+    print("処理が完了しました")
+    print("=" * 60)
+
+
+if __name__ == '__main__':
+    main()

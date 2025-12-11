@@ -1,0 +1,34 @@
+import { ShipmentDAO } from '@app/rdb';
+import { Inject, Injectable } from '@nestjs/common';
+import { v7 } from 'uuid';
+import { ShipmentConverter } from '../converter/shipmentConverter';
+import { ShipmentInput } from '../model/shipment';
+import { ShipmentRepositoryInput } from './types/shipmentRepositoryTypes';
+
+@Injectable()
+export class ShipmentRepository {
+  constructor(
+    private readonly shipmentDAO: ShipmentDAO,
+    private readonly shipmentConverter: ShipmentConverter,
+    @Inject('uuid') private readonly uuid: typeof v7
+  ) { }
+
+  public async save(
+    organizationId: string,
+    shipments: ShipmentInput[]
+  ): Promise<string[]> {
+    const shipmentsWithId: ShipmentRepositoryInput[] = shipments.map((shipment) => ({
+      ...shipment,
+      id: this.uuid(),
+    }));
+
+    const shipmentInserts = this.shipmentConverter.convertToInsert(
+      organizationId,
+      shipmentsWithId
+    );
+
+    await this.shipmentDAO.save(shipmentInserts);
+
+    return shipmentsWithId.map((shipment) => shipment.id);
+  }
+}

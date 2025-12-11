@@ -1,0 +1,55 @@
+import type { IUserRepository } from '@/infrastructure/database/repositories/index.js';
+import type { ICompanyRepository } from '@/infrastructure/database/repositories/index.js';
+import type { LoginRequestDto, LoginResponseDto } from '../dto/AuthDto.js';
+import { AuthenticationError } from '@/shared/errors/index.js';
+import { comparePassword } from '@/shared/lib/index.js';
+import { generateAppToken } from '@/shared/lib/index.js';
+
+export class LoginUseCase {
+  constructor(
+    private userRepository: IUserRepository,
+    private companyRepository: ICompanyRepository
+  ) {}
+
+  async execute(input: LoginRequestDto): Promise<LoginResponseDto> {
+    const user = await this.userRepository.findByEmail(input.email);
+
+    if (!user) {
+      throw new AuthenticationError('メールアドレスまたはパスワードが正しくありません');
+    }
+
+    const isPasswordValid = await comparePassword(input.password, user.passwordHash);
+
+    if (!isPasswordValid) {
+      throw new AuthenticationError('メールアドレスまたはパスワードが正しくありません');
+    }
+
+    const company = await this.companyRepository.findById(user.companyId);
+
+    if (!company) {
+      throw new AuthenticationError('会社情報が見つかりません');
+    }
+
+    const accessToken = generateAppToken({
+      id: user.id,
+      companyId: user.companyId,
+      siteId: user.siteId,
+      role: user.role,
+    });
+
+    return {
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email,
+        siteId: user.siteId,
+        role: user.role,
+      },
+      company: {
+        id: company.id,
+        name: company.name,
+      },
+      accessToken,
+    };
+  }
+}

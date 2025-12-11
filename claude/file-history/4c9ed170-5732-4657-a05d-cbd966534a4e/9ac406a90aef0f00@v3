@@ -1,0 +1,15 @@
+import { z } from 'zod';
+
+export const loginSchema = z.object({
+  email: z.string().email('有効なメールアドレスを入力してください'),
+  password: z.string().min(1, 'パスワードを入力してください'),
+});
+
+export const siteAuthSchema = z.object({
+  siteToken: z.string().uuid('有効な拠点トークンを入力してください'),
+  deviceId: z.string().uuid('有効なデバイスIDを入力してください').nullable().optional(),
+  deviceName: z.string().max(255).nullable().optional(),
+});
+
+export type LoginInput = z.infer<typeof loginSchema>;
+export type SiteAuthInput = z.infer<typeof siteAuthSchema>;

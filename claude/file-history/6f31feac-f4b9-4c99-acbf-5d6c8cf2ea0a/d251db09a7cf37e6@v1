@@ -1,0 +1,20 @@
+import { Inject, Injectable } from '@nestjs/common';
+import { Response } from 'express';
+import {
+  Application,
+  ApplicationsPresenterInterface,
+} from '../../../interface/presenter/applicationsPresenter';
+import { GetApplicationsOutput } from '../../../interface/presenter/types/getApplicationsOutput';
+
+@Injectable()
+export class ApplicationsPresenter implements ApplicationsPresenterInterface {
+  constructor(@Inject('RESPONSE') private readonly response: Response) {}
+
+  public output(applications: Application[]): void {
+    const output: GetApplicationsOutput = {
+      status: 'success',
+      applications,
+    };
+    this.response.status(200).json(output);
+  }
+}

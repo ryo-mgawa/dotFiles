@@ -1,0 +1,99 @@
+import {plainToInstance} from 'class-transformer';
+import {validate} from 'class-validator';
+import 'reflect-metadata';
+import {Consignor} from '../consignor';
+
+describe('Consignor', () => {
+  describe('プロパティ設定', () => {
+    it('idとnameが設定できる', () => {
+      const consignor = new Consignor();
+      consignor.id = 'consignor-001';
+      consignor.name = '荷主A';
+
+      expect(consignor.id).toBe('consignor-001');
+      expect(consignor.name).toBe('荷主A');
+    });
+  });
+
+  describe('バリデーション', () => {
+    it('正常なデータの場合、バリデーションエラーが発生しない', async () => {
+      const data = {
+        id: 'consignor-001',
+        name: '荷主A',
+      };
+
+      const consignor = plainToInstance(Consignor, data);
+      const errors = await validate(consignor);
+
+      expect(errors).toHaveLength(0);
+    });
+
+    it('idが未定義の場合、バリデーションエラーが発生する', async () => {
+      const data = {
+        name: '荷主A',
+      };
+
+      const consignor = plainToInstance(Consignor, data);
+      const errors = await validate(consignor);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const idError = errors.find(e => e.property === 'id');
+      expect(idError).toBeDefined();
+    });
+
+    it('nameが未定義の場合、バリデーションエラーが発生する', async () => {
+      const data = {
+        id: 'consignor-001',
+      };
+
+      const consignor = plainToInstance(Consignor, data);
+      const errors = await validate(consignor);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const nameError = errors.find(e => e.property === 'name');
+      expect(nameError).toBeDefined();
+    });
+
+    it('idが最大長を超える場合、バリデーションエラーが発生する', async () => {
+      const data = {
+        id: 'x'.repeat(257),
+        name: '荷主A',
+      };
+
+      const consignor = plainToInstance(Consignor, data);
+      const errors = await validate(consignor);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const idError = errors.find(e => e.property === 'id');
+      expect(idError).toBeDefined();
+    });
+
+    it('nameが最大長を超える場合、バリデーションエラーが発生する', async () => {
+      const data = {
+        id: 'consignor-001',
+        name: 'x'.repeat(257),
+      };
+
+      const consignor = plainToInstance(Consignor, data);
+      const errors = await validate(consignor);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const nameError = errors.find(e => e.property === 'name');
+      expect(nameError).toBeDefined();
+    });
+
+    it('idが数値の場合、バリデーションエラーが発生する', async () => {
+      const data = {
+        id: 123,
+        name: '荷主A',
+      };
+
+      const consignor = plainToInstance(Consignor, data);
+      const errors = await validate(consignor);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const idError = errors.find(e => e.property === 'id');
+      expect(idError).toBeDefined();
+    });
+  });
+});

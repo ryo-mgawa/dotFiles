@@ -1,0 +1,33 @@
+import { Table } from 'react-bootstrap';
+import { Activity } from '@/types/models/Activity';
+
+interface ActivityScheduleProps {
+  activities: Activity[];
+}
+
+/**
+ * 活動時間表
+ * requirements.md 2.1.4節を参照
+ */
+export const ActivitySchedule = ({ activities }: ActivityScheduleProps) => {
+  return (
+    <Table striped bordered>
+      <thead>
+        <tr>
+          <th>曜日</th>
+          <th>練習時間</th>
+        </tr>
+      </thead>
+      <tbody>
+        {activities.map((activity) => (
+          <tr key={activity.id}>
+            <td>{activity.dayOfWeekName}</td>
+            <td>
+              {activity.startTime} 〜 {activity.endTime}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </Table>
+  );
+};

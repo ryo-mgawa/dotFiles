@@ -1,0 +1,132 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { LoginUseCase } from './LoginUseCase.js';
+import type { IUserRepository } from '@/infrastructure/database/repositories/index.js';
+import type { ICompanyRepository } from '@/infrastructure/database/repositories/index.js';
+import { comparePassword } from '@/shared/lib/password.js';
+import { generateAccessToken } from '@/shared/lib/jwt.js';
+
+vi.mock('@/shared/lib/password.js', () => ({
+  comparePassword: vi.fn(),
+}));
+
+vi.mock('@/shared/lib/jwt.js', () => ({
+  generateAccessToken: vi.fn(),
+}));
+
+describe('LoginUseCase', () => {
+  let loginUseCase: LoginUseCase;
+  let mockUserRepository: IUserRepository;
+  let mockCompanyRepository: ICompanyRepository;
+
+  const mockUser = {
+    id: 'user-1',
+    email: 'test@example.com',
+    name: 'Test User',
+    passwordHash: 'hashed-password',
+    companyId: 'company-1',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  };
+
+  const mockCompany = {
+    id: 'company-1',
+    name: 'Test Company',
+    zoomAccountId: 'zoom-123',
+    zoomClientId: 'client-123',
+    zoomClientSecret: 'secret-123',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  };
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+
+    mockUserRepository = {
+      findById: vi.fn(),
+      findByEmail: vi.fn(),
+      findByCompanyId: vi.fn(),
+      create: vi.fn(),
+      update: vi.fn(),
+      delete: vi.fn(),
+    };
+
+    mockCompanyRepository = {
+      findById: vi.fn(),
+      findAll: vi.fn(),
+      create: vi.fn(),
+      update: vi.fn(),
+      delete: vi.fn(),
+    };
+
+    loginUseCase = new LoginUseCase(mockUserRepository, mockCompanyRepository);
+  });
+
+  it('ログイン成功時にユーザー情報とトークンを返す', async () => {
+    vi.mocked(mockUserRepository.findByEmail).mockResolvedValue(mockUser);
+    vi.mocked(mockCompanyRepository.findById).mockResolvedValue(mockCompany);
+    vi.mocked(comparePassword).mockResolvedValue(true);
+    vi.mocked(generateAccessToken).mockReturnValue('mock-token');
+
+    const result = await loginUseCase.execute({
+      email: 'test@example.com',
+      password: 'password123',
+    });
+
+    expect(result).toEqual({
+      user: {
+        id: 'user-1',
+        email: 'test@example.com',
+        name: 'Test User',
+        companyId: 'company-1',
+      },
+      company: {
+        id: 'company-1',
+        name: 'Test Company',
+      },
+      accessToken: 'mock-token',
+    });
+
+    expect(mockUserRepository.findByEmail).toHaveBeenCalledWith('test@example.com');
+    expect(comparePassword).toHaveBeenCalledWith('password123', 'hashed-password');
+    expect(generateAccessToken).toHaveBeenCalledWith({
+      userId: 'user-1',
+      companyId: 'company-1',
+    });
+  });
+
+  it('存在しないメールアドレスの場合エラーをスローする', async () => {
+    vi.mocked(mockUserRepository.findByEmail).mockResolvedValue(null);
+
+    await expect(
+      loginUseCase.execute({
+        email: 'notfound@example.com',
+        password: 'password123',
+      })
+    ).rejects.toThrow('メールアドレスまたはパスワードが正しくありません');
+  });
+
+  it('パスワードが一致しない場合エラーをスローする', async () => {
+    vi.mocked(mockUserRepository.findByEmail).mockResolvedValue(mockUser);
+    vi.mocked(comparePassword).mockResolvedValue(false);
+
+    await expect(
+      loginUseCase.execute({
+        email: 'test@example.com',
+        password: 'wrongpassword',
+      })
+    ).rejects.toThrow('メールアドレスまたはパスワードが正しくありません');
+  });
+
+  it('企業が見つからない場合エラーをスローする', async () => {
+    vi.mocked(mockUserRepository.findByEmail).mockResolvedValue(mockUser);
+    vi.mocked(comparePassword).mockResolvedValue(true);
+    vi.mocked(mockCompanyRepository.findById).mockResolvedValue(null);
+
+    await expect(
+      loginUseCase.execute({
+        email: 'test@example.com',
+        password: 'password123',
+      })
+    ).rejects.toThrow('企業情報が見つかりません');
+  });
+});

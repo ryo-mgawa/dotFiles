@@ -1,0 +1,124 @@
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { LoginForm } from './LoginForm';
+import { AuthProvider } from '../../context/AuthContext';
+import { authApi } from '../../api/authApi';
+
+vi.mock('../../api/authApi', () => ({
+  authApi: {
+    login: vi.fn(),
+    getCurrentUser: vi.fn(),
+  },
+}));
+
+const mockAuthApi = vi.mocked(authApi);
+
+const renderLoginForm = (onSuccess?: () => void) => {
+  return render(
+    <AuthProvider>
+      <LoginForm onSuccess={onSuccess} />
+    </AuthProvider>
+  );
+};
+
+describe('LoginForm', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    localStorage.clear();
+    mockAuthApi.getCurrentUser.mockRejectedValue(new Error('Not authenticated'));
+  });
+
+  describe('レンダリング', () => {
+    it('メールアドレスとパスワードの入力フィールドが表示されること', async () => {
+      renderLoginForm();
+
+      await waitFor(() => {
+        expect(screen.getByLabelText('メールアドレス')).toBeInTheDocument();
+      });
+      expect(screen.getByLabelText('パスワード')).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: 'ログイン' })).toBeInTheDocument();
+    });
+
+    it('初期状態ではログインボタンが無効であること', async () => {
+      renderLoginForm();
+
+      await waitFor(() => {
+        expect(screen.getByRole('button', { name: 'ログイン' })).toBeDisabled();
+      });
+    });
+  });
+
+  describe('入力バリデーション', () => {
+    it('メールアドレスとパスワードを入力するとログインボタンが有効になること', async () => {
+      const user = userEvent.setup();
+      renderLoginForm();
+
+      await waitFor(() => {
+        expect(screen.getByLabelText('メールアドレス')).toBeInTheDocument();
+      });
+
+      await user.type(screen.getByLabelText('メールアドレス'), 'test@example.com');
+      await user.type(screen.getByLabelText('パスワード'), 'password123');
+
+      expect(screen.getByRole('button', { name: 'ログイン' })).toBeEnabled();
+    });
+  });
+
+  describe('ログイン処理', () => {
+    it('ログイン成功時にonSuccessが呼ばれること', async () => {
+      const user = userEvent.setup();
+      const onSuccess = vi.fn();
+
+      mockAuthApi.login.mockResolvedValue({
+        user: {
+          id: 'user-1',
+          name: 'Test User',
+          email: 'test@example.com',
+          siteId: 'site-1',
+          role: 'user',
+        },
+        company: {
+          id: 'company-1',
+          name: 'Test Company',
+          timezone: 'Asia/Tokyo',
+        },
+        accessToken: 'test-token',
+      });
+
+      renderLoginForm(onSuccess);
+
+      await waitFor(() => {
+        expect(screen.getByLabelText('メールアドレス')).toBeInTheDocument();
+      });
+
+      await user.type(screen.getByLabelText('メールアドレス'), 'test@example.com');
+      await user.type(screen.getByLabelText('パスワード'), 'password123');
+      await user.click(screen.getByRole('button', { name: 'ログイン' }));
+
+      await waitFor(() => {
+        expect(onSuccess).toHaveBeenCalled();
+      });
+    });
+
+    it('ログイン失敗時にエラーメッセージが表示されること', async () => {
+      const user = userEvent.setup();
+
+      mockAuthApi.login.mockRejectedValue(new Error('認証に失敗しました'));
+
+      renderLoginForm();
+
+      await waitFor(() => {
+        expect(screen.getByLabelText('メールアドレス')).toBeInTheDocument();
+      });
+
+      await user.type(screen.getByLabelText('メールアドレス'), 'test@example.com');
+      await user.type(screen.getByLabelText('パスワード'), 'wrongpassword');
+      await user.click(screen.getByRole('button', { name: 'ログイン' }));
+
+      await waitFor(() => {
+        expect(screen.getByRole('alert')).toHaveTextContent('認証に失敗しました');
+      });
+    });
+  });
+});

@@ -1,0 +1,344 @@
+import { resolve } from 'path';
+import { ProviderIdentity, RDBModule, ShipmentDAO } from '@app/rdb';
+import { INestApplication } from '@nestjs/common';
+import { Test } from '@nestjs/testing';
+import { Knex } from 'knex';
+import { v7 as uuidv7 } from 'uuid';
+import { ShipmentCreator } from '../../../application/service/creator/shipmentCreator';
+import { ShipmentRepository } from '../shipmentRepository';
+
+jest.mock('@app/requestContext/requestContext', () => {
+  return {
+    RequestContext: class DummyRequestContext {
+      public static get() {
+        return {
+          user: {
+            organizationId: 'test-org-1',
+            userId: 'test-user-1',
+            role: 'manager',
+          },
+        };
+      }
+      public static start(_, next) {
+        next();
+      }
+    },
+  };
+});
+
+describe('ShipmentRepository', () => {
+  let shipmentRepository: ShipmentRepository;
+  let shipmentCreator: ShipmentCreator;
+  let app: INestApplication;
+  let rdb: Knex;
+
+  beforeEach(async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [RDBModule],
+      providers: [
+        ShipmentDAO,
+        ShipmentCreator,
+        ShipmentRepository,
+        {
+          provide: 'uuid',
+          useValue: uuidv7,
+        },
+      ],
+    }).compile();
+
+    rdb = await moduleRef.get<Knex>(ProviderIdentity);
+    app = moduleRef.createNestApplication();
+
+    await Promise.all([
+      app.init(),
+      rdb.transaction(async (trx) => {
+        await trx.raw('SET CONSTRAINTS ALL DEFERRED');
+        await trx.seed.run({
+          directory: resolve(__dirname, './fixtures/seeds'),
+          specific: 'shipment.ts',
+        });
+        await trx.raw('SET CONSTRAINTS ALL IMMEDIATE');
+      }),
+    ]);
+
+    shipmentRepository = await moduleRef.get<ShipmentRepository>(
+      ShipmentRepository
+    );
+    shipmentCreator = await moduleRef.get<ShipmentCreator>(ShipmentCreator);
+  });
+
+  describe('save', () => {
+    it('複数のshipmentを保存できる', async () => {
+      const beforeCount = await rdb
+        .from('shipment')
+        .where('organization_id', 'test-org-1')
+        .count('* as count');
+
+      const shipments = [
+        {
+          slipId: 'slip-001',
+          consignor: { id: 'consignor-1', name: '発荷主A' },
+          consignee: { id: 'consignee-1', name: '着荷主A' },
+          originSpotId: 'spot-origin-1',
+          destinationSpotId: 'spot-dest-1',
+          meta: { note: 'テスト' },
+        },
+        {
+          slipId: 'slip-002',
+          consignor: { id: 'consignor-2', name: '発荷主B' },
+          consignee: { id: 'consignee-2', name: '着荷主B' },
+          originSpotId: 'spot-origin-2',
+          destinationSpotId: 'spot-dest-2',
+        },
+      ];
+
+      const shipmentInserts = shipmentCreator.execute('test-org-1', shipments);
+      const savedIds = await shipmentRepository.save(shipmentInserts);
+
+      expect(savedIds).toHaveLength(2);
+      expect(savedIds[0]).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i);
+      expect(savedIds[1]).toMatch(/^[0-9a-f]{8}-[0-9a-f]{4}-7[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i);
+
+      const results = await rdb
+        .from('shipment')
+        .where('organization_id', 'test-org-1')
+        .where('slip_id', 'in', ['slip-001', 'slip-002'])
+        .orderBy('slip_id', 'asc');
+
+      expect(results).toHaveLength(2);
+      expect(results[0].id).toBe(savedIds[0]);
+      expect(results[0].organization_id).toBe('test-org-1');
+      expect(results[0].slip_id).toBe('slip-001');
+      expect(results[0].consignor).toEqual({
+        id: 'consignor-1',
+        name: '発荷主A',
+      });
+      expect(results[1].id).toBe(savedIds[1]);
+      expect(results[1].slip_id).toBe('slip-002');
+      expect(results[1].meta).toBeNull();
+
+      const afterCount = await rdb
+        .from('shipment')
+        .where('organization_id', 'test-org-1')
+        .count('* as count');
+      expect(Number(afterCount[0].count)).toBe(Number(beforeCount[0].count) + 2);
+    });
+
+    it('空配列の場合は何もしない', async () => {
+      const beforeCount = await rdb.from('shipment').count('* as count');
+
+      await shipmentRepository.save([]);
+
+      const afterCount = await rdb.from('shipment').count('* as count');
+      expect(afterCount[0].count).toBe(beforeCount[0].count);
+    });
+  });
+
+  describe('getShipments', () => {
+    it('指定した組織のshipmentを取得できる', async () => {
+      const results = await shipmentRepository.getShipments({
+        organizationId: 'test-org-1',
+        count: 10,
+      });
+
+      expect(results).toHaveLength(5);
+      expect(results[0].organizationId).toBe('test-org-1');
+      expect(results[0].slipId).toBe('SLIP-ORG1-001');
+    });
+
+    it('countとsinceIdで正しくページネーションできる', async () => {
+      const firstPage = await shipmentRepository.getShipments({
+        organizationId: 'test-org-1',
+        count: 2,
+      });
+
+      expect(firstPage).toHaveLength(2);
+      expect(firstPage[0].slipId).toBe('SLIP-ORG1-001');
+      expect(firstPage[1].slipId).toBe('SLIP-ORG1-002');
+
+      // 次のページは最後のIDの次から取得
+      const secondPage = await shipmentRepository.getShipments({
+        organizationId: 'test-org-1',
+        sinceId: firstPage[1].id,
+        count: 2,
+      });
+
+      expect(secondPage).toHaveLength(2);
+      expect(secondPage[0].slipId).toBe('SLIP-ORG1-002');
+      expect(secondPage[1].slipId).toBe('SLIP-ORG1-003');
+    });
+
+    it('組織IDでフィルタリングされる', async () => {
+      const org1Results = await shipmentRepository.getShipments({
+        organizationId: 'test-org-1',
+        count: 10,
+      });
+      const org2Results = await shipmentRepository.getShipments({
+        organizationId: 'test-org-2',
+        count: 10,
+      });
+
+      expect(org1Results).toHaveLength(5);
+      expect(org2Results).toHaveLength(3);
+      org1Results.forEach((r) => expect(r.organizationId).toBe('test-org-1'));
+      org2Results.forEach((r) => expect(r.organizationId).toBe('test-org-2'));
+    });
+
+    it('データが存在しない場合は空配列を返す', async () => {
+      const results = await shipmentRepository.getShipments({
+        organizationId: 'non-existent-org',
+        count: 10,
+      });
+
+      expect(results).toEqual([]);
+    });
+
+    it('同じslip_idで再度保存した場合は無視される', async () => {
+      // 最初の保存
+      const shipmentInserts1 = shipmentCreator.execute('test-org-1', [
+        {
+          slipId: 'slip-001',
+          consignor: { id: 'consignor-1', name: '発荷主A' },
+          consignee: { id: 'consignee-1', name: '着荷主A' },
+          originSpotId: 'spot-origin-1',
+          destinationSpotId: 'spot-dest-1',
+        },
+      ]);
+      const savedIds1 = await shipmentRepository.save(shipmentInserts1);
+
+      // 同じslip_idで再度保存しようとする（エラーにならず無視される）
+      const shipmentInserts2 = shipmentCreator.execute('test-org-1', [
+        {
+          slipId: 'slip-001',
+          consignor: { id: 'consignor-2', name: '発荷主B' },
+          consignee: { id: 'consignee-2', name: '着荷主B' },
+          originSpotId: 'spot-origin-2',
+          destinationSpotId: 'spot-dest-2',
+        },
+      ]);
+      await shipmentRepository.save(shipmentInserts2);
+
+      // 最初のデータが保持されている
+      const result = await rdb
+        .from('shipment')
+        .where('slip_id', 'slip-001')
+        .where('organization_id', 'test-org-1')
+        .first();
+
+      expect(result.id).toBe(savedIds1[0]);
+      expect(result.slip_id).toBe('slip-001');
+      expect(result.consignor).toEqual({ id: 'consignor-1', name: '発荷主A' });
+    });
+
+    it('返却されるIDの配列が正しい順序である', async () => {
+      const shipmentInserts = shipmentCreator.execute('test-org-1', [
+        {
+          slipId: 'slip-order-001',
+          consignor: { id: 'consignor-1', name: '発荷主A' },
+          consignee: { id: 'consignee-1', name: '着荷主A' },
+          originSpotId: 'spot-origin-1',
+          destinationSpotId: 'spot-dest-1',
+        },
+        {
+          slipId: 'slip-order-002',
+          consignor: { id: 'consignor-2', name: '発荷主B' },
+          consignee: { id: 'consignee-2', name: '着荷主B' },
+          originSpotId: 'spot-origin-2',
+          destinationSpotId: 'spot-dest-2',
+        },
+      ]);
+      const savedIds = await shipmentRepository.save(shipmentInserts);
+
+      const results = await rdb
+        .from('shipment')
+        .where('organization_id', 'test-org-1')
+        .whereIn('slip_id', ['slip-order-001', 'slip-order-002'])
+        .orderBy('slip_id', 'asc');
+
+      // 返却されたIDの順序が、入力した順序と一致する
+      expect(results[0].id).toBe(savedIds[0]);
+      expect(results[0].slip_id).toBe('slip-order-001');
+      expect(results[1].id).toBe(savedIds[1]);
+      expect(results[1].slip_id).toBe('slip-order-002');
+    });
+  });
+
+  afterEach(() => {
+    rdb.destroy();
+  });
+});
+
+describe('ShipmentRepository - エラーハンドリング', () => {
+  let shipmentRepository: ShipmentRepository;
+  let mockShipmentDAO: jest.Mocked<ShipmentDAO>;
+
+  beforeEach(() => {
+    mockShipmentDAO = {
+      save: jest.fn(),
+    } as any;
+
+    shipmentRepository = new ShipmentRepository(mockShipmentDAO);
+  });
+
+  afterEach(() => {
+    jest.restoreAllMocks();
+  });
+
+  describe('save', () => {
+    it('shipmentDAO.save()がエラーをスローした場合、ShipmentSaveExceptionをスローする', async () => {
+      const testError = new Error('Database connection failed');
+      mockShipmentDAO.save.mockRejectedValue(testError);
+
+      const shipments = [
+        {
+          id: 'test-id-1',
+          organization_id: 'test-org-1',
+          slip_id: 'slip-001',
+          consignor: JSON.stringify({ id: 'consignor-1', name: '発荷主A' }),
+          consignee: JSON.stringify({ id: 'consignee-1', name: '着荷主A' }),
+          origin_spot_id: 'spot-origin-1',
+          destination_spot_id: 'spot-dest-1',
+          meta: null,
+        },
+      ];
+
+      await expect(shipmentRepository.save(shipments)).rejects.toThrow(
+        'シップメント情報の保存に失敗しました。'
+      );
+    });
+
+    it('shipmentDAO.save()がエラーをスローした場合、Logger.errorが呼ばれる', async () => {
+      const testError = new Error('Database connection failed');
+      mockShipmentDAO.save.mockRejectedValue(testError);
+
+      const loggerErrorSpy = jest.spyOn(
+        require('@app/logger').Logger,
+        'error'
+      );
+
+      const shipments = [
+        {
+          id: 'test-id-1',
+          organization_id: 'test-org-1',
+          slip_id: 'slip-001',
+          consignor: JSON.stringify({ id: 'consignor-1', name: '発荷主A' }),
+          consignee: JSON.stringify({ id: 'consignee-1', name: '着荷主A' }),
+          origin_spot_id: 'spot-origin-1',
+          destination_spot_id: 'spot-dest-1',
+          meta: null,
+        },
+      ];
+
+      try {
+        await shipmentRepository.save(shipments);
+      } catch {
+        // エラーは期待通り
+      }
+
+      expect(loggerErrorSpy).toHaveBeenCalledWith(
+        'シップメント保存時にエラーが発生',
+        { error: 'Database connection failed' }
+      );
+    });
+  });
+});

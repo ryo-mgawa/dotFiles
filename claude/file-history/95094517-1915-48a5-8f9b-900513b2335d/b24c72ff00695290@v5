@@ -1,0 +1,12 @@
+import { Geocode } from '@app/rdb/db/models/shipmentEvent/shipmentEvent';
+import { Type } from '@app/rdb/db/models/shipmentEvent/type';
+
+export type SaveShipmentEvent = {
+  id: string;
+  shipmentId: string;
+  type: Type;
+  originalSpotId: string;
+  geocode: Geocode | null;
+  updateBy: string;
+  executedAt: Date;
+};

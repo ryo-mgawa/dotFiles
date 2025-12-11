@@ -1,0 +1,147 @@
+import { v7 } from 'uuid';
+import { ShipmentInput } from '../../../../data/model/shipment';
+import { ShipmentCreator } from '../shipmentCreator';
+
+describe('ShipmentCreator', () => {
+  let creator: ShipmentCreator;
+  const mockUuid = jest.fn(() => 'mock-uuid');
+  const organizationId = 'org-1';
+
+  beforeEach(() => {
+    creator = new ShipmentCreator(mockUuid as unknown as typeof v7);
+    mockUuid.mockClear();
+  });
+
+  describe('execute', () => {
+    describe('正常系', () => {
+      it('空のshipment配列の場合、空の配列を返す', () => {
+        const shipments: ShipmentInput[] = [];
+
+        const result = creator.execute(organizationId, shipments);
+
+        expect(result).toEqual([]);
+      });
+
+      it('正しいShipmentInputの場合、ShipmentInsertを返す', () => {
+        const shipments: ShipmentInput[] = [
+          {
+            slipId: 'slip-001',
+            consignor: { id: 'consignor-1', name: '発荷主A' },
+            consignee: { id: 'consignee-1', name: '着荷主A' },
+            originSpotId: 'spot-origin-1',
+            destinationSpotId: 'spot-dest-1',
+          },
+        ];
+
+        const result = creator.execute(organizationId, shipments);
+
+        expect(result).toHaveLength(1);
+        expect(result[0]).toMatchObject({
+          id: 'mock-uuid',
+          organization_id: organizationId,
+          slip_id: 'slip-001',
+          consignor: JSON.stringify({ id: 'consignor-1', name: '発荷主A' }),
+          consignee: JSON.stringify({ id: 'consignee-1', name: '着荷主A' }),
+          origin_spot_id: 'spot-origin-1',
+          destination_spot_id: 'spot-dest-1',
+        });
+        expect(result[0].meta).toBeNull();
+      });
+
+      it('metaがある場合、JSON文字列として保存される', () => {
+        const shipments: ShipmentInput[] = [
+          {
+            slipId: 'slip-001',
+            consignor: { id: 'consignor-1', name: '発荷主A' },
+            consignee: { id: 'consignee-1', name: '着荷主A' },
+            originSpotId: 'spot-origin-1',
+            destinationSpotId: 'spot-dest-1',
+            meta: { note: 'テストメモ', priority: 'high' },
+          },
+        ];
+
+        const result = creator.execute(organizationId, shipments);
+
+        expect(result[0].meta).toEqual(JSON.stringify({ note: 'テストメモ', priority: 'high' }));
+      });
+
+      it('metaがない場合、nullになる', () => {
+        const shipments: ShipmentInput[] = [
+          {
+            slipId: 'slip-001',
+            consignor: { id: 'consignor-1', name: '発荷主A' },
+            consignee: { id: 'consignee-1', name: '着荷主A' },
+            originSpotId: 'spot-origin-1',
+            destinationSpotId: 'spot-dest-1',
+          },
+        ];
+
+        const result = creator.execute(organizationId, shipments);
+
+        expect(result[0].meta).toBeNull();
+      });
+
+      it('複数のshipmentを正しく変換できる', () => {
+        mockUuid
+          .mockReturnValueOnce('uuid-1')
+          .mockReturnValueOnce('uuid-2')
+          .mockReturnValueOnce('uuid-3');
+
+        const shipments: ShipmentInput[] = [
+          {
+            slipId: 'slip-001',
+            consignor: { id: 'consignor-1', name: '発荷主A' },
+            consignee: { id: 'consignee-1', name: '着荷主A' },
+            originSpotId: 'spot-origin-1',
+            destinationSpotId: 'spot-dest-1',
+          },
+          {
+            slipId: 'slip-002',
+            consignor: { id: 'consignor-2', name: '発荷主B' },
+            consignee: { id: 'consignee-2', name: '着荷主B' },
+            originSpotId: 'spot-origin-2',
+            destinationSpotId: 'spot-dest-2',
+            meta: { note: 'メモ' },
+          },
+          {
+            slipId: 'slip-003',
+            consignor: { id: 'consignor-3', name: '発荷主C' },
+            consignee: { id: 'consignee-3', name: '着荷主C' },
+            originSpotId: 'spot-origin-3',
+            destinationSpotId: 'spot-dest-3',
+          },
+        ];
+
+        const result = creator.execute(organizationId, shipments);
+
+        expect(result).toHaveLength(3);
+        expect(result[0].id).toBe('uuid-1');
+        expect(result[0].slip_id).toBe('slip-001');
+        expect(result[0].meta).toBeNull();
+        expect(result[1].id).toBe('uuid-2');
+        expect(result[1].slip_id).toBe('slip-002');
+        expect(result[1].meta).toEqual(JSON.stringify({ note: 'メモ' }));
+        expect(result[2].id).toBe('uuid-3');
+        expect(result[2].slip_id).toBe('slip-003');
+        expect(result[2].meta).toBeNull();
+      });
+
+      it('consignor/consigneeがJSON文字列として保存される', () => {
+        const shipments: ShipmentInput[] = [
+          {
+            slipId: 'slip-001',
+            consignor: { id: 'consignor-1', name: '発荷主A' },
+            consignee: { id: 'consignee-1', name: '着荷主A' },
+            originSpotId: 'spot-origin-1',
+            destinationSpotId: 'spot-dest-1',
+          },
+        ];
+
+        const result = creator.execute(organizationId, shipments);
+
+        expect(result[0].consignor).toEqual(JSON.stringify({ id: 'consignor-1', name: '発荷主A' }));
+        expect(result[0].consignee).toEqual(JSON.stringify({ id: 'consignee-1', name: '着荷主A' }));
+      });
+    });
+  });
+});

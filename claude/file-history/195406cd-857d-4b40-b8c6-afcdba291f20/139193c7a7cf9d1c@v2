@@ -1,0 +1,36 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9fafb;
+  padding: 1rem;
+
+  &--loading {
+    background-color: #fff;
+  }
+
+  &__container {
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  &__title {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #111827;
+  }
+
+  &__subtitle {
+    margin: 0 0 2rem;
+    font-size: 0.875rem;
+    text-align: center;
+    color: #6b7280;
+  }
+}

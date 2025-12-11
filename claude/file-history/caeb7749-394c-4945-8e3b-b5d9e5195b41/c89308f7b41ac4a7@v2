@@ -1,0 +1,379 @@
+import { RolesGuard } from '@app/auth';
+import {
+  ErrorPresenter,
+  ExceptionPresenter,
+  HTTPExceptionPresenter,
+  NotFoundExceptionPresenter,
+  RuntimeExceptionPresenter,
+} from '@app/errors';
+import { AutomationFirestoreProviderIdentity } from '@app/firebase';
+import { RequestContext } from '@app/requestContext';
+import { RequestId } from '@app/requestContext/requestId';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
+import { Test, TestingModule } from '@nestjs/testing';
+import request from 'supertest';
+import { JointModule } from '../src/module';
+
+describe('Applications E2E', () => {
+  let app: INestApplication;
+  let moduleRef: TestingModule;
+  let mockFirestore: any;
+  let mockOrganizationsCollection: any;
+  let mockApplicationsCollection: any;
+
+  beforeEach(async () => {
+    // Firestoreのモックを作成
+    mockOrganizationsCollection = {};
+    mockApplicationsCollection = {};
+
+    mockFirestore = {
+      collection: jest.fn((name: string) => {
+        if (name === 'organizations') {
+          return {
+            doc: jest.fn((docId: string) => ({
+              get: jest.fn().mockResolvedValue(mockOrganizationsCollection[docId] || { exists: false }),
+            })),
+          };
+        }
+        if (name === 'applications') {
+          return {
+            where: jest.fn((field: any, op: string, value: any) => ({
+              get: jest.fn().mockResolvedValue(mockApplicationsCollection[JSON.stringify(value)] || { docs: [] }),
+            })),
+          };
+        }
+        return {};
+      }),
+    };
+
+    moduleRef = await Test.createTestingModule({
+      imports: [JointModule],
+    })
+      .overrideProvider(RolesGuard)
+      .useValue({
+        canActivate: () => true,
+      })
+      .overrideProvider(AutomationFirestoreProviderIdentity)
+      .useValue(mockFirestore)
+      .compile();
+
+    app = moduleRef.createNestApplication();
+    app.useGlobalFilters(
+      new ErrorPresenter(),
+      new ExceptionPresenter(),
+      new HTTPExceptionPresenter(),
+      new NotFoundExceptionPresenter(),
+      new RuntimeExceptionPresenter(),
+    );
+    app.useGlobalPipes(
+      new ValidationPipe({
+        whitelist: true,
+        forbidNonWhitelisted: false,
+      }),
+    );
+
+    await app.init();
+  });
+
+  afterEach(async () => {
+    await app.close();
+    await moduleRef.close();
+    jest.clearAllMocks();
+  });
+
+  describe('GET /private/automation/applications', () => {
+
+    describe('status = "success"のテスト', () => {
+      it('firestoreのapplicationsにアプリが存在しない場合、status = "success"', async () => {
+        const organizationId = 'test-org-001';
+
+        jest.spyOn(RequestContext, 'get').mockReturnValue({
+          requestURL: '',
+          requestId: new RequestId('test-request-id'),
+          user: {
+            organizationId,
+            userId: 'test-user-id',
+            role: 'manager',
+            email: 'test@example.com',
+          },
+        });
+
+        // 組織は存在するがapplicationsが空
+        mockOrganizationsCollection[organizationId] = {
+          exists: true,
+          data: () => ({ applications: [] }),
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.body).toHaveProperty('status', 'success');
+      });
+
+      it('firestoreのorganizationsに組織がない場合、status = "success"', async () => {
+        const organizationId = 'test-org-002';
+
+        jest.spyOn(RequestContext, 'get').mockReturnValue({
+          requestURL: '',
+          requestId: new RequestId('test-request-id'),
+          user: {
+            organizationId,
+            userId: 'test-user-id',
+            role: 'manager',
+            email: 'test@example.com',
+          },
+        });
+
+        // 組織が存在しない
+        mockOrganizationsCollection[organizationId] = {
+          exists: false,
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.body).toHaveProperty('status', 'success');
+      });
+
+      it('firestoreのorganizationsに組織があり、applicationsに存在するアプリが１つ以上ある場合、status = "success"', async () => {
+        const organizationId = 'test-org-003';
+
+        jest.spyOn(RequestContext, 'get').mockReturnValue({
+          requestURL: '',
+          requestId: new RequestId('test-request-id'),
+          user: {
+            organizationId,
+            userId: 'test-user-id',
+            role: 'manager',
+            email: 'test@example.com',
+          },
+        });
+
+        const appIds = ['app-001'];
+        mockOrganizationsCollection[organizationId] = {
+          exists: true,
+          data: () => ({ applications: appIds }),
+        };
+        mockApplicationsCollection[JSON.stringify(appIds)] = {
+          docs: [
+            {
+              id: 'app-001',
+              data: () => ({ name: 'アプリ1' }),
+            },
+          ],
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.body).toHaveProperty('status', 'success');
+      });
+    });
+
+    describe('applicationsの内容テスト', () => {
+      it('firestoreのapplicationsにアプリが存在しない場合、applicationsに空の配列が渡される', async () => {
+        mockOrganizationsCollection[organizationId] = {
+          exists: true,
+          data: () => ({ applications: [] }),
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.body).toHaveProperty('applications');
+        expect(response.body.applications).toEqual([]);
+        expect(Array.isArray(response.body.applications)).toBe(true);
+      });
+
+      it('firestoreのorganizationsに組織がない場合、applicationsに空の配列が渡される', async () => {
+        mockOrganizationsCollection[organizationId] = {
+          exists: false,
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.body).toHaveProperty('applications');
+        expect(response.body.applications).toEqual([]);
+        expect(Array.isArray(response.body.applications)).toBe(true);
+      });
+
+      it('firestoreのorganizationsに組織があり、applicationsに存在するアプリが１つ以上ある場合、applicationsにnameとidが含まれたobjectが配列で返される', async () => {
+        const appIds = ['app-001', 'app-002'];
+        mockOrganizationsCollection[organizationId] = {
+          exists: true,
+          data: () => ({ applications: appIds }),
+        };
+        mockApplicationsCollection[JSON.stringify(appIds)] = {
+          docs: [
+            {
+              id: 'app-001',
+              data: () => ({ name: 'アプリケーション1' }),
+            },
+            {
+              id: 'app-002',
+              data: () => ({ name: 'アプリケーション2' }),
+            },
+          ],
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.body).toHaveProperty('applications');
+        expect(Array.isArray(response.body.applications)).toBe(true);
+        expect(response.body.applications).toHaveLength(2);
+        expect(response.body.applications[0]).toHaveProperty('id', 'app-001');
+        expect(response.body.applications[0]).toHaveProperty('name', 'アプリケーション1');
+        expect(response.body.applications[1]).toHaveProperty('id', 'app-002');
+        expect(response.body.applications[1]).toHaveProperty('name', 'アプリケーション2');
+      });
+
+      it('firestoreのorganizationsに組織があり、applicationsに存在しないアプリしかない場合、applicationsに空の配列が渡される', async () => {
+        const appIds = ['app-non-existent-001', 'app-non-existent-002'];
+        mockOrganizationsCollection[organizationId] = {
+          exists: true,
+          data: () => ({ applications: appIds }),
+        };
+        // Firestoreのwhereクエリで存在しないIDは空のdocsを返す
+        mockApplicationsCollection[JSON.stringify(appIds)] = {
+          docs: [],
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.body).toHaveProperty('applications');
+        expect(response.body.applications).toEqual([]);
+        expect(Array.isArray(response.body.applications)).toBe(true);
+      });
+
+      it('firestoreのorganizationsに組織があり、applicationsが2つ以上で存在するアプリと存在しないアプリが混在する場合、firestoreのapplicationsに存在するnameとidが含まれたobjectの配列がapplicationsとして返される', async () => {
+        const appIds = ['app-001', 'app-non-existent', 'app-002', 'app-non-existent-2'];
+        mockOrganizationsCollection[organizationId] = {
+          exists: true,
+          data: () => ({ applications: appIds }),
+        };
+        // 実際のFirestoreでは存在するドキュメントのみ返される
+        mockApplicationsCollection[JSON.stringify(appIds)] = {
+          docs: [
+            {
+              id: 'app-001',
+              data: () => ({ name: '存在するアプリ1' }),
+            },
+            {
+              id: 'app-002',
+              data: () => ({ name: '存在するアプリ2' }),
+            },
+          ],
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.body).toHaveProperty('applications');
+        expect(Array.isArray(response.body.applications)).toBe(true);
+        expect(response.body.applications).toHaveLength(2);
+        expect(response.body.applications[0]).toHaveProperty('id', 'app-001');
+        expect(response.body.applications[0]).toHaveProperty('name', '存在するアプリ1');
+        expect(response.body.applications[1]).toHaveProperty('id', 'app-002');
+        expect(response.body.applications[1]).toHaveProperty('name', '存在するアプリ2');
+        // 存在しないアプリは含まれない
+        expect(response.body.applications.find((app: any) => app.id === 'app-non-existent')).toBeUndefined();
+        expect(response.body.applications.find((app: any) => app.id === 'app-non-existent-2')).toBeUndefined();
+      });
+    });
+
+    describe('追加のエッジケース', () => {
+      it('日本語名を含むアプリケーション名が正しく返される', async () => {
+        const appIds = ['app-jp-001'];
+        mockOrganizationsCollection[organizationId] = {
+          exists: true,
+          data: () => ({ applications: appIds }),
+        };
+        mockApplicationsCollection[JSON.stringify(appIds)] = {
+          docs: [
+            {
+              id: 'app-jp-001',
+              data: () => ({ name: '配送管理アプリケーション' }),
+            },
+          ],
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.body.applications[0]).toHaveProperty('name', '配送管理アプリケーション');
+      });
+
+      it('特殊文字を含むアプリケーション名が正しく返される', async () => {
+        const appIds = ['app-special-001'];
+        mockOrganizationsCollection[organizationId] = {
+          exists: true,
+          data: () => ({ applications: appIds }),
+        };
+        mockApplicationsCollection[JSON.stringify(appIds)] = {
+          docs: [
+            {
+              id: 'app-special-001',
+              data: () => ({ name: 'アプリ&<テスト>' }),
+            },
+          ],
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.body.applications[0]).toHaveProperty('name', 'アプリ&<テスト>');
+      });
+
+      it('Content-Typeが正しく設定されている', async () => {
+        mockOrganizationsCollection[organizationId] = {
+          exists: true,
+          data: () => ({ applications: [] }),
+        };
+
+        const response = await request(app.getHttpServer())
+          .get('/private/automation/applications')
+          .expect(200);
+
+        expect(response.headers['content-type']).toMatch(/application\/json/);
+      });
+
+      it('複数回リクエストしても正常に動作する', async () => {
+        const appIds = ['app-001'];
+        mockOrganizationsCollection[organizationId] = {
+          exists: true,
+          data: () => ({ applications: appIds }),
+        };
+        mockApplicationsCollection[JSON.stringify(appIds)] = {
+          docs: [
+            {
+              id: 'app-001',
+              data: () => ({ name: 'テストアプリ' }),
+            },
+          ],
+        };
+
+        for (let i = 0; i < 3; i++) {
+          const response = await request(app.getHttpServer())
+            .get('/private/automation/applications')
+            .expect(200);
+
+          expect(response.body.status).toBe('success');
+          expect(response.body.applications).toHaveLength(1);
+        }
+      });
+    });
+  });
+});

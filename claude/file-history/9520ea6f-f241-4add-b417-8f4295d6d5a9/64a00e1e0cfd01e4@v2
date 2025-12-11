@@ -1,0 +1,10 @@
+/**
+ * 活動情報型定義
+ */
+export interface Activity {
+  id: string;
+  dayOfWeek: number;
+  dayOfWeekName: string;
+  startTime: string;
+  endTime: string;
+}

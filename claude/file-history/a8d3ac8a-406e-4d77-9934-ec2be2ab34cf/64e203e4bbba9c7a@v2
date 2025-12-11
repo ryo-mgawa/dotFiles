@@ -1,0 +1,1389 @@
+// Supabase Edge Function for Slack Purchase Request
+// Deno環境で動作します
+
+import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { getCommonSlackCredentials, verifySlackSignature, checkChannelAndRespond } from "../_shared/slack-common.ts";
+
+// 共通のSlack認証情報を取得
+const { SLACK_BOT_TOKEN, SLACK_SIGNING_SECRET } = getCommonSlackCredentials();
+
+// アプリ固有の環境変数の取得
+const FIRST_APPROVER_NAGOYA = Deno.env.get("PURCHASE_REQUEST_FIRST_APPROVER_NAGOYA");
+const FIRST_APPROVER_TOKYO = Deno.env.get("PURCHASE_REQUEST_FIRST_APPROVER_TOKYO");
+const SECOND_APPROVER = Deno.env.get("PURCHASE_REQUEST_SECOND_APPROVER");
+const NOTION_TOKEN = Deno.env.get("NOTION_TOKEN"); // 共通化
+const NOTION_DATABASE_ID = Deno.env.get("PURCHASE_REQUEST_NOTION_DATABASE_ID");
+
+// 必須環境変数のチェック
+if (!FIRST_APPROVER_NAGOYA || !FIRST_APPROVER_TOKYO) {
+  throw new Error("必須の環境変数が設定されていません");
+}
+
+// Notion連携が有効かどうか
+const NOTION_ENABLED = !!(NOTION_TOKEN && NOTION_DATABASE_ID);
+
+/**
+ * モーダルフォームを開く
+ */
+async function openModal(triggerId: string, channelId: string): Promise<{ success: boolean; error?: string }> {
+  try {
+    const modal = {
+      type: "modal",
+      callback_id: "purchase_request_modal",
+      private_metadata: JSON.stringify({ channel: channelId }),
+      title: {
+        type: "plain_text",
+        text: "購買申請",
+      },
+      submit: {
+        type: "plain_text",
+        text: "申請する",
+      },
+      close: {
+        type: "plain_text",
+        text: "キャンセル",
+      },
+      blocks: [
+        {
+          type: "input",
+          block_id: "item_name_block",
+          element: {
+            type: "plain_text_input",
+            action_id: "item_name",
+            placeholder: {
+              type: "plain_text",
+              text: "例: ノートパソコン",
+            },
+          },
+          label: {
+            type: "plain_text",
+            text: "購入物品名",
+          },
+        },
+        {
+          type: "input",
+          block_id: "amount_block",
+          element: {
+            type: "plain_text_input",
+            action_id: "amount",
+            placeholder: {
+              type: "plain_text",
+              text: "例: 150000",
+            },
+          },
+          label: {
+            type: "plain_text",
+            text: "金額（円）",
+          },
+        },
+        {
+          type: "input",
+          block_id: "url_block",
+          element: {
+            type: "plain_text_input",
+            action_id: "url",
+            placeholder: {
+              type: "plain_text",
+              text: "例: https://example.com/product",
+            },
+          },
+          label: {
+            type: "plain_text",
+            text: "URL",
+          },
+        },
+        {
+          type: "input",
+          block_id: "purpose_block",
+          optional: true,
+          element: {
+            type: "plain_text_input",
+            action_id: "purpose",
+            multiline: true,
+            placeholder: {
+              type: "plain_text",
+              text: "例: 開発作業用",
+            },
+          },
+          label: {
+            type: "plain_text",
+            text: "物品の用途",
+          },
+        },
+      ],
+    };
+
+    const response = await fetch("https://slack.com/api/views.open", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+      },
+      body: JSON.stringify({
+        trigger_id: triggerId,
+        view: modal,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!result.ok) {
+      console.error("モーダル表示エラー:", result.error);
+      return { success: false, error: result.error };
+    }
+
+    return { success: true };
+  } catch (error) {
+    console.error("モーダル表示例外:", error);
+    return { success: false, error: "例外が発生しました" };
+  }
+}
+
+/**
+ * チャンネルにメッセージを投稿
+ */
+async function postMessage(
+  channel: string,
+  itemName: string,
+  amount: string,
+  url: string,
+  purpose: string,
+  userId: string
+): Promise<{ success: boolean; ts?: string }> {
+  try {
+    const purposeText = purpose ? `\n*物品の用途:* ${purpose}` : "";
+    const timestamp = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
+
+    // カンマを除去してから数値に変換
+    const cleanedAmount = amount.replace(/,/g, "");
+    const numAmount = parseInt(cleanedAmount);
+
+    const text = `📝 *購買申請*\n\n` +
+      `*申請者:* <@${userId}>\n` +
+      `*購入物品名:* ${itemName}\n` +
+      `*金額:* ¥${numAmount.toLocaleString()}\n` +
+      `*URL:* ${url}${purposeText}\n` +
+      `*申請日時:* ${timestamp}`;
+
+    const response = await fetch("https://slack.com/api/chat.postMessage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+      },
+      body: JSON.stringify({
+        channel: channel,
+        text: text,
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!result.ok) {
+      console.error("メッセージ投稿エラー:", result.error);
+      return { success: false };
+    }
+
+    return { success: true, ts: result.ts };
+  } catch (error) {
+    console.error("メッセージ投稿例外:", error);
+    return { success: false };
+  }
+}
+
+/**
+ * スレッドに承認依頼メッセージを投稿
+ */
+async function postApprovalRequest(
+  channel: string,
+  threadTs: string,
+  applicantId: string
+): Promise<boolean> {
+  try {
+    const text = `申請者が名古屋オフィスメンバーなら <@${FIRST_APPROVER_NAGOYA}> が承認して\n` +
+      `申請者が東京オフィスメンバーなら <@${FIRST_APPROVER_TOKYO}> が承認して`;
+
+    const response = await fetch("https://slack.com/api/chat.postMessage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+      },
+      body: JSON.stringify({
+        channel: channel,
+        thread_ts: threadTs,
+        text: text,
+        blocks: [
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: text,
+            },
+          },
+          {
+            type: "actions",
+            elements: [
+              {
+                type: "button",
+                text: {
+                  type: "plain_text",
+                  text: "一次承認",
+                },
+                style: "primary",
+                action_id: "approve_first",
+                value: JSON.stringify({
+                  approvers: [FIRST_APPROVER_NAGOYA, FIRST_APPROVER_TOKYO],
+                  applicant_id: applicantId,
+                }),
+              },
+            ],
+          },
+        ],
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!result.ok) {
+      console.error("承認依頼投稿エラー:", result.error);
+    }
+
+    return result.ok;
+  } catch (error) {
+    console.error("承認依頼投稿例外:", error);
+    return false;
+  }
+}
+
+/**
+ * スレッドに二次承認依頼メッセージを投稿
+ */
+async function postSecondApprovalRequest(
+  channel: string,
+  threadTs: string,
+  applicantId: string
+): Promise<boolean> {
+  try {
+    const text = `最終承認をお願いします: <@${SECOND_APPROVER}>`;
+
+    const response = await fetch("https://slack.com/api/chat.postMessage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+      },
+      body: JSON.stringify({
+        channel: channel,
+        thread_ts: threadTs,
+        text: text,
+        blocks: [
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: text,
+            },
+          },
+          {
+            type: "actions",
+            elements: [
+              {
+                type: "button",
+                text: {
+                  type: "plain_text",
+                  text: "最終承認",
+                },
+                style: "primary",
+                action_id: "approve_second",
+                value: JSON.stringify({
+                  approver: SECOND_APPROVER,
+                  applicant_id: applicantId,
+                }),
+              },
+            ],
+          },
+        ],
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!result.ok) {
+      console.error("二次承認依頼投稿エラー:", result.error);
+    }
+
+    return result.ok;
+  } catch (error) {
+    console.error("二次承認依頼投稿例外:", error);
+    return false;
+  }
+}
+
+/**
+ * ユーザー名を取得（SlackユーザーIDから）
+ */
+async function getSlackUserName(userId: string): Promise<string> {
+  try {
+    const response = await fetch(`https://slack.com/api/users.info?user=${userId}`, {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+      },
+    });
+
+    const result = await response.json();
+
+    if (result.ok && result.user) {
+      // 表示名を優先、次に本名、ユーザー名の順
+      let name = result.user.profile?.display_name || result.user.real_name || result.user.name || userId;
+      // 先頭の@を除去
+      if (name.startsWith('@')) {
+        name = name.substring(1);
+      }
+      return name;
+    }
+
+    return userId;
+  } catch (error) {
+    console.error("ユーザー名取得エラー:", error);
+    return userId;
+  }
+}
+
+/**
+ * Notionデータベースにレコードを追加
+ */
+async function addToNotionDatabase(
+  applicantName: string,
+  applicationDate: Date,
+  itemName: string,
+  amount: number,
+  url: string,
+  purpose: string,
+  channel: string,
+  threadTs: string
+): Promise<string | null> {
+  if (!NOTION_ENABLED) {
+    return null;
+  }
+
+  try {
+    // 申請スレッドリンクを生成（Slack URL形式）
+    const threadLink = `https://slack.com/archives/${channel}/${threadTs.replace('.', '')}`;
+
+    const response = await fetch("https://api.notion.com/v1/pages", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${NOTION_TOKEN}`,
+        "Content-Type": "application/json",
+        "Notion-Version": "2022-06-28",
+      },
+      body: JSON.stringify({
+        parent: { database_id: NOTION_DATABASE_ID },
+        properties: {
+          "購入物品名": {
+            title: [
+              {
+                text: {
+                  content: itemName,
+                },
+              },
+            ],
+          },
+          "申請者名": {
+            rich_text: [
+              {
+                text: {
+                  content: applicantName,
+                },
+              },
+            ],
+          },
+          "申請日": {
+            date: {
+              start: applicationDate.toISOString(),
+            },
+          },
+          "金額": {
+            number: amount,
+          },
+          "購入品URL": {
+            rich_text: [
+              {
+                text: {
+                  content: url,
+                },
+              },
+            ],
+          },
+          "物品の用途": {
+            rich_text: [
+              {
+                text: {
+                  content: purpose,
+                },
+              },
+            ],
+          },
+          "第一承認": {
+            checkbox: false,
+          },
+          "第一承認日": {
+            date: null,
+          },
+          "第一承認者名": {
+            rich_text: [],
+          },
+          "最終承認": {
+            checkbox: false,
+          },
+          "最終承認者名": {
+            rich_text: [],
+          },
+          "最終承認日": {
+            date: null,
+          },
+          "ステータス": {
+            status: {
+              name: "未承認",
+            },
+          },
+          "購入者名": {
+            rich_text: [],
+          },
+          "購入日": {
+            date: null,
+          },
+          "申請スレッドリンク": {
+            url: threadLink,
+          },
+        },
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error("Notionレコード作成エラー:", JSON.stringify(result, null, 2));
+      return null;
+    }
+
+    console.log("Notionレコード作成成功:", result.id);
+    return result.id;
+  } catch (error) {
+    console.error("Notionレコード作成例外:", error);
+    return null;
+  }
+}
+
+/**
+ * Notionデータベースのレコードを検索（申請スレッドリンクで検索）
+ */
+async function findNotionRecordByThreadTs(channel: string, threadTs: string): Promise<string | null> {
+  if (!NOTION_ENABLED) {
+    return null;
+  }
+
+  try {
+    // 申請スレッドリンクを生成
+    const threadLink = `https://slack.com/archives/${channel}/${threadTs.replace('.', '')}`;
+
+    const response = await fetch(`https://api.notion.com/v1/databases/${NOTION_DATABASE_ID}/query`, {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${NOTION_TOKEN}`,
+        "Content-Type": "application/json",
+        "Notion-Version": "2022-06-28",
+      },
+      body: JSON.stringify({
+        filter: {
+          property: "申請スレッドリンク",
+          url: {
+            equals: threadLink,
+          },
+        },
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error("Notionレコード検索エラー:", JSON.stringify(result, null, 2));
+      return null;
+    }
+
+    if (result.results && result.results.length > 0) {
+      return result.results[0].id;
+    }
+
+    return null;
+  } catch (error) {
+    console.error("Notionレコード検索例外:", error);
+    return null;
+  }
+}
+
+/**
+ * Notionデータベースのレコードを更新（一次承認）
+ */
+async function updateNotionRecordFirstApproval(
+  pageId: string,
+  approverName: string,
+  approvalDate: Date
+): Promise<boolean> {
+  if (!NOTION_ENABLED) {
+    return false;
+  }
+
+  try {
+    const response = await fetch(`https://api.notion.com/v1/pages/${pageId}`, {
+      method: "PATCH",
+      headers: {
+        "Authorization": `Bearer ${NOTION_TOKEN}`,
+        "Content-Type": "application/json",
+        "Notion-Version": "2022-06-28",
+      },
+      body: JSON.stringify({
+        properties: {
+          "第一承認": {
+            checkbox: true,
+          },
+          "第一承認日": {
+            date: {
+              start: approvalDate.toISOString(),
+            },
+          },
+          "第一承認者名": {
+            rich_text: [
+              {
+                text: {
+                  content: approverName,
+                },
+              },
+            ],
+          },
+          "ステータス": {
+            status: {
+              name: "一次承認済み",
+            },
+          },
+        },
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error("Notionレコード更新エラー（一次承認）:", JSON.stringify(result, null, 2));
+      return false;
+    }
+
+    console.log("Notionレコード更新成功（一次承認）:", pageId);
+    return true;
+  } catch (error) {
+    console.error("Notionレコード更新例外（一次承認）:", error);
+    return false;
+  }
+}
+
+/**
+ * Notionデータベースのレコードを更新（最終承認）
+ */
+async function updateNotionRecordFinalApproval(
+  pageId: string,
+  approverName: string,
+  approvalDate: Date
+): Promise<boolean> {
+  if (!NOTION_ENABLED) {
+    return false;
+  }
+
+  try {
+    const response = await fetch(`https://api.notion.com/v1/pages/${pageId}`, {
+      method: "PATCH",
+      headers: {
+        "Authorization": `Bearer ${NOTION_TOKEN}`,
+        "Content-Type": "application/json",
+        "Notion-Version": "2022-06-28",
+      },
+      body: JSON.stringify({
+        properties: {
+          "最終承認": {
+            checkbox: true,
+          },
+          "最終承認者名": {
+            rich_text: [
+              {
+                text: {
+                  content: approverName,
+                },
+              },
+            ],
+          },
+          "最終承認日": {
+            date: {
+              start: approvalDate.toISOString(),
+            },
+          },
+          "ステータス": {
+            status: {
+              name: "最終承認済み",
+            },
+          },
+        },
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error("Notionレコード更新エラー（最終承認）:", JSON.stringify(result, null, 2));
+      return false;
+    }
+
+    console.log("Notionレコード更新成功（最終承認）:", pageId);
+    return true;
+  } catch (error) {
+    console.error("Notionレコード更新例外（最終承認）:", error);
+    return false;
+  }
+}
+
+/**
+ * Notionデータベースのレコードを更新（購入完了）
+ */
+async function updateNotionRecordPurchaseComplete(
+  pageId: string,
+  purchaserName: string,
+  purchaseDate: Date
+): Promise<boolean> {
+  if (!NOTION_ENABLED) {
+    return false;
+  }
+
+  try {
+    const response = await fetch(`https://api.notion.com/v1/pages/${pageId}`, {
+      method: "PATCH",
+      headers: {
+        "Authorization": `Bearer ${NOTION_TOKEN}`,
+        "Content-Type": "application/json",
+        "Notion-Version": "2022-06-28",
+      },
+      body: JSON.stringify({
+        properties: {
+          "購入者名": {
+            rich_text: [
+              {
+                text: {
+                  content: purchaserName,
+                },
+              },
+            ],
+          },
+          "購入日": {
+            date: {
+              start: purchaseDate.toISOString(),
+            },
+          },
+          "ステータス": {
+            status: {
+              name: "購入完了",
+            },
+          },
+        },
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!response.ok) {
+      console.error("Notionレコード更新エラー（購入完了）:", JSON.stringify(result, null, 2));
+      return false;
+    }
+
+    console.log("Notionレコード更新成功（購入完了）:", pageId);
+    return true;
+  } catch (error) {
+    console.error("Notionレコード更新例外（購入完了）:", error);
+    return false;
+  }
+}
+
+/**
+ * スレッドに購入完了依頼メッセージを投稿
+ */
+async function postPurchaseCompleteRequest(
+  channel: string,
+  threadTs: string,
+  applicantId: string
+): Promise<boolean> {
+  try {
+    const text = `購入したら購入完了ボタンを押してください。`;
+
+    const response = await fetch("https://slack.com/api/chat.postMessage", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+      },
+      body: JSON.stringify({
+        channel: channel,
+        thread_ts: threadTs,
+        text: text,
+        blocks: [
+          {
+            type: "section",
+            text: {
+              type: "mrkdwn",
+              text: text,
+            },
+          },
+          {
+            type: "actions",
+            elements: [
+              {
+                type: "button",
+                text: {
+                  type: "plain_text",
+                  text: "購入完了",
+                },
+                style: "primary",
+                action_id: "purchase_complete",
+                value: JSON.stringify({
+                  applicant_id: applicantId,
+                }),
+              },
+            ],
+          },
+        ],
+      }),
+    });
+
+    const result = await response.json();
+
+    if (!result.ok) {
+      console.error("購入完了依頼投稿エラー:", result.error);
+    }
+
+    return result.ok;
+  } catch (error) {
+    console.error("購入完了依頼投稿例外:", error);
+    return false;
+  }
+}
+
+/**
+ * 金額のバリデーション
+ */
+function validateAmount(amount: string): { valid: boolean; error?: string } {
+  // 空文字チェック
+  if (!amount || amount.trim() === "") {
+    return { valid: false, error: "金額を入力してください" };
+  }
+
+  // カンマを除去
+  const cleanedAmount = amount.replace(/,/g, "");
+
+  // 数値チェック
+  if (!/^\d+$/.test(cleanedAmount)) {
+    return { valid: false, error: "金額は整数で入力してください" };
+  }
+
+  // 整数変換チェック
+  const numAmount = parseInt(cleanedAmount);
+  if (isNaN(numAmount)) {
+    return { valid: false, error: "金額の形式が正しくありません" };
+  }
+
+  // 範囲チェック（オプション）
+  if (numAmount <= 0) {
+    return { valid: false, error: "金額は0より大きい値を入力してください" };
+  }
+
+  return { valid: true };
+}
+
+/**
+ * スラッシュコマンドの処理
+ */
+async function handleSlashCommand(formData: URLSearchParams): Promise<Response> {
+  const channelId = formData.get("channel_id");
+  const userId = formData.get("user_id");
+  const userName = formData.get("user_name");
+  const command = formData.get("command");
+  const triggerId = formData.get("trigger_id");
+
+  // チャンネル制限のチェック
+  const channelCheckResponse = checkChannelAndRespond(channelId || "", "購買申請");
+  if (channelCheckResponse) {
+    return channelCheckResponse;
+  }
+
+  // モーダルを開く
+  if (!triggerId) {
+    return new Response(
+      JSON.stringify({
+        response_type: "ephemeral",
+        text: "❌ trigger_idが見つかりません。",
+      }),
+      {
+        headers: { "Content-Type": "application/json" },
+        status: 200,
+      }
+    );
+  }
+
+  const result = await openModal(triggerId, channelId || "");
+
+  if (result.success) {
+    return new Response(null, { status: 200 });
+  } else {
+    const errorMessage = result.error === "invalid_trigger"
+      ? "❌ コマンドの有効期限が切れました。もう一度 `/購買申請` を実行してください。"
+      : result.error === "not_authed" || result.error === "invalid_auth"
+        ? "❌ Bot Tokenの認証に失敗しました。管理者にお問い合わせください。"
+        : `❌ フォームの表示に失敗しました。エラー: ${result.error || "不明"}`;
+
+    return new Response(
+      JSON.stringify({
+        response_type: "ephemeral",
+        text: errorMessage,
+      }),
+      {
+        headers: { "Content-Type": "application/json" },
+        status: 200,
+      }
+    );
+  }
+}
+
+/**
+ * インタラクティビティペイロードの処理
+ */
+async function handleInteractivity(payload: any): Promise<Response> {
+  const type = payload.type;
+
+  if (type === "view_submission") {
+    // モーダル送信処理
+    const values = payload.view.state.values;
+
+    const itemName = values.item_name_block.item_name.value;
+    const amount = values.amount_block.amount.value;
+    const url = values.url_block.url.value;
+    const purpose = values.purpose_block.purpose.value || "";
+
+    // 金額のバリデーション
+    const validation = validateAmount(amount);
+    if (!validation.valid) {
+      return new Response(
+        JSON.stringify({
+          response_action: "errors",
+          errors: {
+            amount_block: validation.error,
+          },
+        }),
+        {
+          headers: { "Content-Type": "application/json" },
+          status: 200,
+        }
+      );
+    }
+
+    // private_metadataからチャンネル情報を取得
+    const metadata = payload.view.private_metadata
+      ? JSON.parse(payload.view.private_metadata)
+      : null;
+
+    // 先にレスポンスを返す（Slackは3秒以内にレスポンスが必要）
+    // メッセージ投稿は非同期で実行
+    if (metadata && metadata.channel) {
+      // 非同期でメッセージを投稿（awaitしない）
+      postMessage(
+        metadata.channel,
+        itemName,
+        amount,
+        url,
+        purpose,
+        payload.user.id
+      ).then(async result => {
+        if (result.success && result.ts) {
+          // Notionにレコードを追加（エラーが発生してもSlack投稿は継続）
+          if (NOTION_ENABLED) {
+            const applicantName = await getSlackUserName(payload.user.id);
+            const applicationDate = new Date();
+            const cleanedAmount = amount.replace(/,/g, "");
+            const numAmount = parseInt(cleanedAmount);
+
+            addToNotionDatabase(
+              applicantName,
+              applicationDate,
+              itemName,
+              numAmount,
+              url,
+              purpose,
+              metadata.channel,
+              result.ts
+            ).catch(error => {
+              console.error("Notionレコード作成エラー（非同期）:", error);
+            });
+          }
+
+          // 承認依頼メッセージを送信
+          return postApprovalRequest(metadata.channel, result.ts, payload.user.id);
+        }
+      }).catch(error => {
+        console.error("メッセージ投稿エラー:", error);
+      });
+    } else {
+      console.error("チャンネル情報が見つかりません");
+    }
+
+    // 即座にレスポンスを返す
+    return new Response(null, { status: 200 });
+  }
+
+  if (type === "block_actions") {
+    // ボタンクリック処理
+    const action = payload.actions[0];
+    const userId = payload.user.id;
+
+    if (action.action_id === "approve_first") {
+      // 承認ボタンがクリックされた
+      const value = JSON.parse(action.value);
+      const approvers = value.approvers;
+      const approved = value.approved || false;
+      const approvedBy = value.approvedBy || null;
+      const applicantId = value.applicant_id;
+
+      const channel = payload.channel.id;
+      const threadTs = payload.message.thread_ts || payload.message.ts;
+
+      // 既に承認済みかチェック
+      if (approved) {
+        // 既に承認済みの場合、スレッドにメッセージを投稿
+        fetch("https://slack.com/api/chat.postMessage", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+          },
+          body: JSON.stringify({
+            channel: channel,
+            thread_ts: threadTs,
+            text: `❌ <@${userId}> さん、既に <@${approvedBy}> が承認済みです。`,
+          }),
+        }).catch(error => {
+          console.error("エラーメッセージ投稿エラー:", error);
+        });
+
+        // 変更なし
+        return new Response(null, { status: 200 });
+      }
+
+      // クリックしたユーザーが承認者かチェック
+      if (!approvers.includes(userId)) {
+        // 承認者以外がクリックした場合、スレッドにメッセージを投稿
+        fetch("https://slack.com/api/chat.postMessage", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+          },
+          body: JSON.stringify({
+            channel: channel,
+            thread_ts: threadTs,
+            text: "❌ 権限を持つ人だけが承認ボタンを押してください。",
+          }),
+        }).catch(error => {
+          console.error("エラーメッセージ投稿エラー:", error);
+        });
+
+        // 変更なし
+        return new Response(null, { status: 200 });
+      }
+
+      // 承認者がクリックした場合、まずボタンを削除してからスレッドに記録
+      const messageTs = payload.message.ts;
+
+      // 即座にボタンを削除（chat.update APIを使用）
+      await fetch("https://slack.com/api/chat.update", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+        },
+        body: JSON.stringify({
+          channel: channel,
+          ts: messageTs,
+          text: `申請者が名古屋オフィスメンバーなら <@${FIRST_APPROVER_NAGOYA}> が承認して\n申請者が東京オフィスメンバーなら <@${FIRST_APPROVER_TOKYO}> が承認して`,
+          blocks: [
+            {
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text: `申請者が名古屋オフィスメンバーなら <@${FIRST_APPROVER_NAGOYA}> が承認して\n` +
+                  `申請者が東京オフィスメンバーなら <@${FIRST_APPROVER_TOKYO}> が承認して`,
+              },
+            },
+          ],
+        }),
+      });
+
+      // スレッドに承認メッセージを投稿
+      Promise.all([
+        fetch("https://slack.com/api/chat.postMessage", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+          },
+          body: JSON.stringify({
+            channel: channel,
+            thread_ts: threadTs,
+            text: `✅ <@${userId}> が一次承認しました`,
+          }),
+        }),
+      ]).then(async () => {
+        // Notionレコードを更新（エラーが発生してもフロー継続）
+        if (NOTION_ENABLED) {
+          const pageId = await findNotionRecordByThreadTs(channel, threadTs);
+          if (pageId) {
+            const approverName = await getSlackUserName(userId);
+            const approvalDate = new Date();
+            await updateNotionRecordFirstApproval(pageId, approverName, approvalDate).catch(error => {
+              console.error("Notionレコード更新エラー（一次承認、非同期）:", error);
+            });
+          }
+        }
+
+        // 二次承認依頼を投稿
+        return postSecondApprovalRequest(channel, threadTs, applicantId);
+      }).catch(error => {
+        console.error("承認記録投稿エラー:", error);
+      });
+
+      // 即座にレスポンスを返す
+      return new Response(null, { status: 200 });
+    }
+
+    if (action.action_id === "approve_second") {
+      // 二次承認ボタンがクリックされた
+      const value = JSON.parse(action.value);
+      const approver = value.approver;
+      const approved = value.approved || false;
+      const approvedBy = value.approvedBy || null;
+      const applicantId = value.applicant_id;
+
+      const channel = payload.channel.id;
+      const threadTs = payload.message.thread_ts || payload.message.ts;
+
+      // 既に承認済みかチェック
+      if (approved) {
+        // 既に承認済みの場合、スレッドにメッセージを投稿
+        fetch("https://slack.com/api/chat.postMessage", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+          },
+          body: JSON.stringify({
+            channel: channel,
+            thread_ts: threadTs,
+            text: `❌ <@${userId}> さん、既に <@${approvedBy}> が最終承認済みです。`,
+          }),
+        }).catch(error => {
+          console.error("エラーメッセージ投稿エラー:", error);
+        });
+
+        // 変更なし
+        return new Response(null, { status: 200 });
+      }
+
+      // クリックしたユーザーが二次承認者かチェック
+      if (userId !== approver) {
+        // 承認者以外がクリックした場合、スレッドにメッセージを投稿
+        fetch("https://slack.com/api/chat.postMessage", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+          },
+          body: JSON.stringify({
+            channel: channel,
+            thread_ts: threadTs,
+            text: "❌ 権限を持つ人だけが承認ボタンを押してください。",
+          }),
+        }).catch(error => {
+          console.error("エラーメッセージ投稿エラー:", error);
+        });
+
+        // 変更なし
+        return new Response(null, { status: 200 });
+      }
+
+      // 承認者がクリックした場合、まずボタンを削除してからスレッドに記録
+      const messageTs2 = payload.message.ts;
+
+      // 即座にボタンを削除（chat.update APIを使用）
+      await fetch("https://slack.com/api/chat.update", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+        },
+        body: JSON.stringify({
+          channel: channel,
+          ts: messageTs2,
+          text: `最終承認をお願いします: <@${SECOND_APPROVER}>`,
+          blocks: [
+            {
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text: `最終承認をお願いします: <@${SECOND_APPROVER}>`,
+              },
+            },
+          ],
+        }),
+      });
+
+      // スレッドに承認メッセージを投稿
+      fetch("https://slack.com/api/chat.postMessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+        },
+        body: JSON.stringify({
+          channel: channel,
+          thread_ts: threadTs,
+          text: `✅ <@${userId}> が最終承認しました。`,
+        }),
+      }).then(async () => {
+        // Notionレコードを更新（エラーが発生してもフロー継続）
+        if (NOTION_ENABLED) {
+          const pageId = await findNotionRecordByThreadTs(channel, threadTs);
+          if (pageId) {
+            const approverName = await getSlackUserName(userId);
+            const approvalDate = new Date();
+            await updateNotionRecordFinalApproval(pageId, approverName, approvalDate).catch(error => {
+              console.error("Notionレコード更新エラー（最終承認、非同期）:", error);
+            });
+          }
+        }
+
+        // 購入完了依頼を投稿
+        return postPurchaseCompleteRequest(channel, threadTs, applicantId);
+      }).catch(error => {
+        console.error("承認記録投稿エラー:", error);
+      });
+
+      // 即座にレスポンスを返す
+      return new Response(null, { status: 200 });
+    }
+
+    if (action.action_id === "purchase_complete") {
+      // 購入完了ボタンがクリックされた
+      const value = JSON.parse(action.value);
+      const completed = value.completed || false;
+      const completedBy = value.completedBy || null;
+      const applicantId = value.applicant_id;
+
+      const channel = payload.channel.id;
+      const threadTs = payload.message.thread_ts || payload.message.ts;
+
+      // 既に購入完了済みかチェック
+      if (completed) {
+        // 既に購入完了済みの場合、スレッドにメッセージを投稿
+        fetch("https://slack.com/api/chat.postMessage", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+          },
+          body: JSON.stringify({
+            channel: channel,
+            thread_ts: threadTs,
+            text: `❌ <@${userId}> さん、既に <@${completedBy}> が購入完了済みです。`,
+          }),
+        }).catch(error => {
+          console.error("エラーメッセージ投稿エラー:", error);
+        });
+
+        // 変更なし
+        return new Response(null, { status: 200 });
+      }
+
+      // クリックしたユーザーが申請者かチェック
+      if (userId !== applicantId) {
+        // 申請者以外がクリックした場合、スレッドにメッセージを投稿
+        fetch("https://slack.com/api/chat.postMessage", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+          },
+          body: JSON.stringify({
+            channel: channel,
+            thread_ts: threadTs,
+            text: "❌ 申請者のみが購入完了ボタンを押せます。",
+          }),
+        }).catch(error => {
+          console.error("エラーメッセージ投稿エラー:", error);
+        });
+
+        // 変更なし
+        return new Response(null, { status: 200 });
+      }
+
+      // 申請者がクリックした場合、まずボタンを削除してからスレッドに記録
+      const messageTs3 = payload.message.ts;
+
+      // 即座にボタンを削除（chat.update APIを使用）
+      await fetch("https://slack.com/api/chat.update", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+        },
+        body: JSON.stringify({
+          channel: channel,
+          ts: messageTs3,
+          text: `購入したら購入完了ボタンを押してください。`,
+          blocks: [
+            {
+              type: "section",
+              text: {
+                type: "mrkdwn",
+                text: `購入したら購入完了ボタンを押してください。`,
+              },
+            },
+          ],
+        }),
+      });
+
+      // スレッドに購入完了メッセージを投稿
+      fetch("https://slack.com/api/chat.postMessage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${SLACK_BOT_TOKEN}`,
+        },
+        body: JSON.stringify({
+          channel: channel,
+          thread_ts: threadTs,
+          text: `✅ <@${userId}> が購入完了しました。`,
+        }),
+      }).then(async () => {
+        // Notionレコードを更新（エラーが発生してもフロー継続）
+        if (NOTION_ENABLED) {
+          const pageId = await findNotionRecordByThreadTs(channel, threadTs);
+          if (pageId) {
+            const purchaserName = await getSlackUserName(userId);
+            const purchaseDate = new Date();
+            await updateNotionRecordPurchaseComplete(pageId, purchaserName, purchaseDate).catch(error => {
+              console.error("Notionレコード更新エラー（購入完了、非同期）:", error);
+            });
+          }
+        }
+      }).catch(error => {
+        console.error("購入完了記録投稿エラー:", error);
+      });
+
+      // 即座にレスポンスを返す
+      return new Response(null, { status: 200 });
+    }
+  }
+
+  return new Response(null, { status: 200 });
+}
+
+/**
+ * メインハンドラー
+ */
+serve(async (req: Request) => {
+  // CORS対応
+  if (req.method === "OPTIONS") {
+    return new Response(null, {
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "POST, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, X-Slack-Request-Timestamp, X-Slack-Signature",
+      },
+    });
+  }
+
+  // ヘルスチェック
+  if (req.method === "GET") {
+    return new Response(JSON.stringify({ status: "ok" }), {
+      headers: { "Content-Type": "application/json" },
+      status: 200,
+    });
+  }
+
+  // POST以外は拒否
+  if (req.method !== "POST") {
+    return new Response(JSON.stringify({ error: "Method not allowed" }), {
+      headers: { "Content-Type": "application/json" },
+      status: 405,
+    });
+  }
+
+  try {
+    // リクエストの検証
+    const timestamp = req.headers.get("X-Slack-Request-Timestamp");
+    const signature = req.headers.get("X-Slack-Signature");
+
+    if (!timestamp || !signature) {
+      return new Response(JSON.stringify({ error: "不正なリクエスト" }), {
+        headers: { "Content-Type": "application/json" },
+        status: 400,
+      });
+    }
+
+    const body = await req.text();
+
+    // 署名検証
+    const isValid = await verifySlackSignature(body, timestamp, signature, SLACK_SIGNING_SECRET);
+    if (!isValid) {
+      return new Response(JSON.stringify({ error: "署名検証に失敗しました" }), {
+        headers: { "Content-Type": "application/json" },
+        status: 401,
+      });
+    }
+
+    // Content-Typeを確認してリクエストタイプを判別
+    const contentType = req.headers.get("Content-Type");
+
+    if (contentType?.includes("application/x-www-form-urlencoded")) {
+      const formData = new URLSearchParams(body);
+
+      // payloadパラメータがある場合はインタラクティビティ
+      if (formData.has("payload")) {
+        const payload = JSON.parse(formData.get("payload")!);
+        return await handleInteractivity(payload);
+      }
+
+      // それ以外はスラッシュコマンド
+      return await handleSlashCommand(formData);
+    }
+
+    return new Response(JSON.stringify({ error: "不正なリクエスト形式" }), {
+      headers: { "Content-Type": "application/json" },
+      status: 400,
+    });
+  } catch (error) {
+    console.error("エラー発生:", error);
+    return new Response(
+      JSON.stringify({
+        response_type: "ephemeral",
+        text: "❌ エラーが発生しました。管理者にお問い合わせください。",
+      }),
+      {
+        headers: { "Content-Type": "application/json" },
+        status: 500,
+      }
+    );
+  }
+});

@@ -1,0 +1,7 @@
+export const SessionEndedPage = () => {
+  return (
+    <div>
+      <h1>Session Ended</h1>
+    </div>
+  );
+};

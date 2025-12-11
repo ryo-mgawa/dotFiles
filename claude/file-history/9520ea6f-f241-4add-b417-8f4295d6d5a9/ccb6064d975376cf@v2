@@ -1,0 +1,6 @@
+# API Base URL
+VITE_API_BASE_URL=http://localhost:3000/api
+
+# microCMS Configuration (将来的に使用)
+# VITE_MICROCMS_SERVICE_DOMAIN=your-service
+# VITE_MICROCMS_API_KEY=your-api-key

@@ -1,0 +1,31 @@
+import { Knex } from 'knex';
+import { Type } from './type';
+
+export interface Geocode {
+  x: number;
+  y: number;
+}
+
+export interface ShipmentEvent {
+  id: string;
+  shipment_id: string;
+  type: Type;
+  original_spot_id: string;
+  geocode: Geocode | null;
+  update_by: string;
+  executed_at: Date;
+}
+
+export interface ShipmentEventInsert {
+  id: string;
+  shipment_id: string;
+  type: Type;
+  original_spot_id: string;
+  geocode: Knex.Raw<any> | string | null;
+  update_by: string;
+  executed_at: Date;
+}
+
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface ShipmentEventUpdate {
+}

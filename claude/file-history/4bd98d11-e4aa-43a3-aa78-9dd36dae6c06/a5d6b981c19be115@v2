@@ -1,0 +1,5 @@
+import { publicAPIOperations } from '@app/schema';
+
+export type Output = publicAPIOperations['createShipments']['responses']['200']['content']['application/json'] & {
+  ids: string[];
+};

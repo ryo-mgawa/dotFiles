@@ -1,0 +1,33 @@
+import { useAuth } from '@/features/auth';
+import { Button } from '@/shared/components';
+import './VideoCallPage.scss';
+
+export const VideoCallPage = () => {
+  const { user, company, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+  };
+
+  return (
+    <div className="video-call-page">
+      <header className="video-call-page__header">
+        <div className="video-call-page__user-info">
+          <span className="video-call-page__company">{company?.name}</span>
+          <span className="video-call-page__user">{user?.name}</span>
+        </div>
+        <Button variant="secondary" onClick={handleLogout}>
+          ログアウト
+        </Button>
+      </header>
+      <main className="video-call-page__main">
+        <div className="video-call-page__placeholder">
+          <p>ビデオ通話画面</p>
+          <p className="video-call-page__placeholder-note">
+            Phase 3以降で実装予定
+          </p>
+        </div>
+      </main>
+    </div>
+  );
+};

@@ -1,0 +1,232 @@
+import {plainToInstance} from 'class-transformer';
+import {validate} from 'class-validator';
+import 'reflect-metadata';
+import {AddShipmentItem, AddShipmentsInput, Consignee, Consignor, DestinationSpot, OriginSpot} from '../input';
+import {MetaSizeValidator} from '../metaSizeValidator';
+
+describe('MetaSizeValidator', () => {
+  let validator: MetaSizeValidator;
+
+  beforeEach(() => {
+    validator = new MetaSizeValidator();
+  });
+
+  it('metaがundefinedの場合はtrueを返す', () => {
+    const result = validator.validate(undefined);
+
+    expect(result).toBe(true);
+  });
+
+  it('metaがnullの場合はtrueを返す', () => {
+    const result = validator.validate(null);
+
+    expect(result).toBe(true);
+  });
+
+  it('metaが1kb未満の場合はtrueを返す', () => {
+    const smallMeta = {key: 'value'};
+    const result = validator.validate(smallMeta);
+
+    expect(result).toBe(true);
+  });
+
+  it('metaが1kb以上の場合はfalseを返す', () => {
+    const largeMeta = {data: 'x'.repeat(1024)};
+    const result = validator.validate(largeMeta);
+
+    expect(result).toBe(false);
+  });
+
+  it('defaultMessageが正しいメッセージを返す', () => {
+    const message = validator.defaultMessage();
+
+    expect(message).toBe('metaのデータ量は1kb未満にする必要があります');
+  });
+});
+
+describe('AddShipmentsInput', () => {
+  describe('プロパティ設定', () => {
+    it('shipmentsが設定できる', () => {
+      const input = new AddShipmentsInput();
+      input.shipments = [
+        {
+          slipId: 'slip-001',
+          consignor: {
+            id: 'consignor-001',
+            name: '荷主A',
+          } as Consignor,
+          consignee: {
+            id: 'consignee-001',
+            name: '荷受人A',
+          } as Consignee,
+          originSpot: {
+            id: 'spot-001',
+          } as OriginSpot,
+          destinationSpot: {
+            id: 'spot-002',
+          } as DestinationSpot,
+        } as AddShipmentItem,
+      ];
+
+      expect(input.shipments).toHaveLength(1);
+      expect(input.shipments[0].slipId).toBe('slip-001');
+    });
+  });
+
+  describe('バリデーション', () => {
+    it('正常なデータの場合、バリデーションエラーが発生しない', async () => {
+      const data = {
+        shipments: [
+          {
+            slipId: 'slip-001',
+            consignor: {
+              id: 'consignor-001',
+              name: '荷主A',
+            },
+            consignee: {
+              id: 'consignee-001',
+              name: '荷受人A',
+            },
+            originSpot: {
+              id: 'spot-001',
+            },
+            destinationSpot: {
+              id: 'spot-002',
+            },
+          },
+        ],
+      };
+
+      const input = plainToInstance(AddShipmentsInput, data);
+      const errors = await validate(input);
+
+      expect(errors).toHaveLength(0);
+    });
+
+    it('shipmentsの要素がAddShipmentItemとして正しく変換される', async () => {
+      const data = {
+        shipments: [
+          {
+            slipId: 'slip-001',
+            consignor: {
+              id: 'consignor-001',
+              name: '荷主A',
+            },
+            consignee: {
+              id: 'consignee-001',
+              name: '荷受人A',
+            },
+            originSpot: {
+              id: 'spot-001',
+            },
+            destinationSpot: {
+              id: 'spot-002',
+            },
+          },
+        ],
+      };
+
+      const input = plainToInstance(AddShipmentsInput, data);
+
+      expect(input.shipments[0]).toBeInstanceOf(AddShipmentItem);
+      expect(input.shipments[0].slipId).toBe('slip-001');
+    });
+
+    it('shipmentsが空配列の場合、バリデーションエラーが発生する', async () => {
+      const data = {
+        shipments: [],
+      };
+
+      const input = plainToInstance(AddShipmentsInput, data);
+      const errors = await validate(input);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const shipmentsError = errors.find(e => e.property === 'shipments');
+      expect(shipmentsError).toBeDefined();
+    });
+
+    it('shipmentsが未定義の場合、バリデーションエラーが発生する', async () => {
+      const data = {};
+
+      const input = plainToInstance(AddShipmentsInput, data);
+      const errors = await validate(input);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const shipmentsError = errors.find(e => e.property === 'shipments');
+      expect(shipmentsError).toBeDefined();
+    });
+
+    it('複数のshipmentsがある場合、各要素が正しく変換される', async () => {
+      const data = {
+        shipments: [
+          {
+            slipId: 'slip-001',
+            consignor: {
+              id: 'consignor-001',
+              name: '荷主A',
+            },
+            consignee: {
+              id: 'consignee-001',
+              name: '荷受人A',
+            },
+            originSpot: {
+              id: 'spot-001',
+            },
+            destinationSpot: {
+              id: 'spot-002',
+            },
+            meta: {key: 'value1'},
+          },
+          {
+            slipId: 'slip-002',
+            consignor: {
+              id: 'consignor-002',
+              name: '荷主B',
+            },
+            consignee: {
+              id: 'consignee-002',
+              name: '荷受人B',
+            },
+            originSpot: {
+              id: 'spot-003',
+            },
+            destinationSpot: {
+              id: 'spot-004',
+            },
+          },
+          {
+            slipId: 'slip-003',
+            consignor: {
+              id: 'consignor-003',
+              name: '荷主C',
+            },
+            consignee: {
+              id: 'consignee-003',
+              name: '荷受人C',
+            },
+            originSpot: {
+              id: 'spot-005',
+            },
+            destinationSpot: {
+              id: 'spot-006',
+            },
+            meta: {key: 'value2', nested: {data: 'test'}},
+          },
+        ],
+      };
+
+      const input = plainToInstance(AddShipmentsInput, data);
+      const errors = await validate(input);
+
+      expect(errors).toHaveLength(0);
+      expect(input.shipments).toHaveLength(3);
+      expect(input.shipments[0]).toBeInstanceOf(AddShipmentItem);
+      expect(input.shipments[0].consignor).toBeInstanceOf(Consignor);
+      expect(input.shipments[0].consignee).toBeInstanceOf(Consignee);
+      expect(input.shipments[0].originSpot).toBeInstanceOf(OriginSpot);
+      expect(input.shipments[0].destinationSpot).toBeInstanceOf(DestinationSpot);
+      expect(input.shipments[1]).toBeInstanceOf(AddShipmentItem);
+      expect(input.shipments[2]).toBeInstanceOf(AddShipmentItem);
+    });
+  });
+});

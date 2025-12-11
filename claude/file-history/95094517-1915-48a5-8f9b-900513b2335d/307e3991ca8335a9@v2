@@ -1,0 +1,118 @@
+import { Logger } from '@app/logger';
+import { ProviderIdentity } from '@app/rdb';
+import { Inject, Injectable } from '@nestjs/common';
+import { Knex } from 'knex';
+import { ShipmentSaveException } from '../../exception/shipmentSaveException';
+import { Shipment } from '../model/shipment';
+import { SaveShipment, SaveShipmentEvent, SaveShipmentStatus } from './types';
+
+@Injectable()
+export class ShipmentDAO {
+  constructor(@Inject(ProviderIdentity) private rdb: Knex) {}
+
+  public async saveShipments(shipments: SaveShipment[]): Promise<void> {
+    if (shipments.length === 0) {
+      return;
+    }
+
+    const records = shipments.map((s) => ({
+      id: s.id,
+      organization_id: s.organizationId,
+      slip_id: s.slipId,
+      consignor: JSON.stringify(s.consignor),
+      consignee: JSON.stringify(s.consignee),
+      origin_spot_id: s.originSpotId,
+      destination_spot_id: s.destinationSpotId,
+      meta: s.meta ? JSON.stringify(s.meta) : null,
+    }));
+
+    return this.rdb
+      .transaction(async (trx) => {
+        await trx('shipment').insert(records);
+      })
+      .catch((error: Error) => {
+        Logger.error(error);
+        throw new ShipmentSaveException('シップメント情報の保存に失敗しました。');
+      });
+  }
+
+  public async getShipments(
+    organizationId: string,
+    limit: number,
+    offset: number
+  ): Promise<Shipment[]> {
+    const records = await this.rdb
+      .from('shipment')
+      .where('organization_id', organizationId)
+      .orderBy('created_at', 'desc')
+      .limit(limit)
+      .offset(offset)
+      .select(
+        'id',
+        'organization_id',
+        'slip_id',
+        'consignor',
+        'consignee',
+        'origin_spot_id',
+        'destination_spot_id',
+        'meta'
+      );
+
+    return records.map((record) => ({
+      id: record.id,
+      organizationId: record.organization_id,
+      slipId: record.slip_id,
+      consignor: record.consignor,
+      consignee: record.consignee,
+      originSpotId: record.origin_spot_id,
+      destinationSpotId: record.destination_spot_id,
+      meta: record.meta,
+    }));
+  }
+
+  public async saveShipmentEvents(
+    events: SaveShipmentEvent[],
+    statuses: SaveShipmentStatus[]
+  ): Promise<void> {
+    if (events.length === 0) {
+      return;
+    }
+
+    const eventRecords = events.map((e) => ({
+      id: e.id,
+      shipment_id: e.shipmentId,
+      type: e.type,
+      original_spot_id: e.originalSpotId,
+      geocode: e.geocode ? this.rdb.raw(`point(${e.geocode.x},${e.geocode.y})`) : null,
+      update_by: e.updateBy,
+      executed_at: e.executedAt,
+    }));
+
+    const statusRecords = statuses.map((s) => ({
+      shipment_id: s.shipmentId,
+      status: s.status,
+      executed_at: s.executedAt,
+    }));
+
+    return this.rdb
+      .transaction(async (trx) => {
+        await trx('shipment_event').insert(eventRecords);
+
+        if (statusRecords.length > 0) {
+          await Promise.all(
+            statusRecords.map((record) =>
+              trx('shipment_status')
+                .insert(record)
+                .onConflict('shipment_id')
+                .merge(['status', 'executed_at'])
+            )
+          );
+        }
+      })
+      .catch((error: Error) => {
+        Logger.error('ShipmentEvents save error:', error);
+        console.error('ShipmentEvents save error:', error);
+        throw new ShipmentSaveException('シップメントイベント情報の保存に失敗しました。');
+      });
+  }
+}

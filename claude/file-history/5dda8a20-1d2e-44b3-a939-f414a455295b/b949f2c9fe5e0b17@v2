@@ -1,0 +1,31 @@
+import { Role, Roles, User } from '@app/auth';
+import { UserContextTypes } from '@app/requestContext';
+import { Controller, Get, Query, Res } from '@nestjs/common';
+import { Response } from 'express';
+import { GetShipmentsUseCase } from '../../../application/useCase/getShipmentsUseCase';
+import { GetShipmentsInput } from '../dto/getShipments/input';
+
+@Roles(Role.PAAS)
+@Controller('/public/shipments')
+export class GetShipmentsController {
+  constructor(
+    private readonly getShipmentsUseCase: GetShipmentsUseCase,
+  ) {}
+
+  @Get('/')
+  public async getShipments(
+    @User() user: UserContextTypes,
+    @Query() input: GetShipmentsInput,
+    @Res() _: Response,
+  ): Promise<void> {
+    const useCaseInput = {
+      sinceId: input.sinceId,
+      count: input.count,
+    };
+
+    await this.getShipmentsUseCase.execute(
+      useCaseInput,
+      user.organizationId,
+    );
+  }
+}

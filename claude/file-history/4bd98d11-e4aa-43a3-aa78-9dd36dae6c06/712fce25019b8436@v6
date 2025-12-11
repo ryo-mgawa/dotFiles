@@ -1,0 +1,19 @@
+import { Logger } from '@app/logger';
+import { Injectable } from '@nestjs/common';
+import { ShipmentDAO } from '../dao/shipmentDAO';
+import { ShipmentSaveException } from '../../exception/shipmentSaveException';
+import { SaveShipment } from '../dao/types/saveShipment';
+
+@Injectable()
+export class ShipmentRepository {
+  constructor(private readonly shipmentDAO: ShipmentDAO) {}
+
+  public async save(shipments: SaveShipment[]): Promise<string[]> {
+    await this.shipmentDAO.save(shipments);
+
+    await this.shipmentDAO.save(shipmentInserts).catch((error) => {
+      Logger.error('シップメント保存時にエラーが発生', { error: error.message });
+      throw new ShipmentSaveException('シップメント情報の保存に失敗しました。');
+    });
+  }
+}

@@ -1,0 +1,409 @@
+[DEBUG] Executing hooks for SessionStart:clear
+[DEBUG] Getting matching hook commands for SessionStart with query: clear
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] FileHistory: Added snapshot for b31974d6-a38f-4248-8608-aa366f9eaac9, tracking 0 files
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.21399.1759994759301
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 731239 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.21399.1759994759301 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.21399.1759994759950
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 731239 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.21399.1759994759950 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Executing hooks for UserPromptSubmit
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] FileHistory: Making snapshot for message 34a5b89e-b7da-4281-98d8-cdc77af964c4
+[DEBUG] FileHistory: Added snapshot for 34a5b89e-b7da-4281-98d8-cdc77af964c4, tracking 0 files
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.21399.1759994812554
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 731421 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.21399.1759994812554 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Executing hooks for PreToolUse:Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Bash tool invoked with command: gh pr view 2842 --json title,body,url,author,state,headRefName,baseRefName
+[DEBUG] Bash tool description: PR#2842の基本情報を取得
+[DEBUG] Executing hooks for PostToolUse:Bash
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Executing hooks for PreToolUse:Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Bash tool invoked with command: gh pr diff 2842
+[DEBUG] Bash tool description: PR#2842の差分を取得
+[DEBUG] Executing hooks for PostToolUse:Bash
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Executing hooks for PreToolUse:Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Executing hooks for PreToolUse:Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Executing hooks for PostToolUse:Read
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Executing hooks for PostToolUse:Read
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Executing hooks for PreToolUse:Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Bash tool invoked with command: gh pr diff 2842 --name-only
+[DEBUG] Bash tool description: PR#2842の変更ファイル一覧を取得
+[DEBUG] Executing hooks for PostToolUse:Bash
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Executing hooks for PreToolUse:Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Executing hooks for PreToolUse:Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Executing hooks for PostToolUse:Read
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Executing hooks for PostToolUse:Read
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.21399.1759994873556
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 731421 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.21399.1759994873556 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Executing hooks for Stop
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.21399.1759994873664
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 731421 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.21399.1759994873664 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Notification with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Executing hooks for UserPromptSubmit
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] FileHistory: Making snapshot for message c9bc8fd0-7637-4ed8-af7e-1856d8c38c5a
+[DEBUG] FileHistory: Added snapshot for c9bc8fd0-7637-4ed8-af7e-1856d8c38c5a, tracking 0 files
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.21399.1759995582073
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 731303 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.21399.1759995582073 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Executing hooks for PreToolUse:TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-cd53ccf6-2856-4f84-9e20-87c361453857.json.tmp.21399.1759995587159
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-cd53ccf6-2856-4f84-9e20-87c361453857.json.tmp.21399.1759995587159 to /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-cd53ccf6-2856-4f84-9e20-87c361453857.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-cd53ccf6-2856-4f84-9e20-87c361453857.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-22596d77-eb97-4d81-9d3d-246aa7f61b39.json.tmp.21399.1759995587169
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-22596d77-eb97-4d81-9d3d-246aa7f61b39.json.tmp.21399.1759995587169 to /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-22596d77-eb97-4d81-9d3d-246aa7f61b39.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-22596d77-eb97-4d81-9d3d-246aa7f61b39.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-18cd8419-35f7-48d7-8a35-54f021d65c7a.json.tmp.21399.1759995587176
+[DEBUG] Temp file written successfully, size: 113 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-18cd8419-35f7-48d7-8a35-54f021d65c7a.json.tmp.21399.1759995587176 to /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-18cd8419-35f7-48d7-8a35-54f021d65c7a.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-18cd8419-35f7-48d7-8a35-54f021d65c7a.json written atomically
+[DEBUG] Executing hooks for PostToolUse:TodoWrite
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Executing hooks for PreToolUse:TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-cd53ccf6-2856-4f84-9e20-87c361453857.json.tmp.21399.1759995624077
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-cd53ccf6-2856-4f84-9e20-87c361453857.json.tmp.21399.1759995624077 to /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-cd53ccf6-2856-4f84-9e20-87c361453857.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-cd53ccf6-2856-4f84-9e20-87c361453857.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-22596d77-eb97-4d81-9d3d-246aa7f61b39.json.tmp.21399.1759995624084
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-22596d77-eb97-4d81-9d3d-246aa7f61b39.json.tmp.21399.1759995624084 to /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-22596d77-eb97-4d81-9d3d-246aa7f61b39.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-22596d77-eb97-4d81-9d3d-246aa7f61b39.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-18cd8419-35f7-48d7-8a35-54f021d65c7a.json.tmp.21399.1759995624090
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-18cd8419-35f7-48d7-8a35-54f021d65c7a.json.tmp.21399.1759995624090 to /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-18cd8419-35f7-48d7-8a35-54f021d65c7a.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/18cd8419-35f7-48d7-8a35-54f021d65c7a-agent-18cd8419-35f7-48d7-8a35-54f021d65c7a.json written atomically
+[DEBUG] Executing hooks for PostToolUse:TodoWrite
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Slash commands included in SlashCommand tool: /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.21399.1759995632176
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 731303 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.21399.1759995632176 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Executing hooks for Stop
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Found 0 hook commands to execute
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.21399.1759995632211
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 731303 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.21399.1759995632211 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Failed to install new version of claude:  npm error code EEXIST
+npm error syscall symlink
+npm error path ../lib/node_modules/@anthropic-ai/claude-code/cli.js
+npm error dest /Users/miyagawaryouta/.nodenv/versions/20.18.1/bin/claude
+npm error errno -17
+npm error EEXIST: file already exists, symlink '../lib/node_modules/@anthropic-ai/claude-code/cli.js' -> '/Users/miyagawaryouta/.nodenv/versions/20.18.1/bin/claude'
+npm error File exists: /Users/miyagawaryouta/.nodenv/versions/20.18.1/bin/claude
+npm error Remove the existing file and try again, or run npm
+npm error with --force to overwrite files recklessly.
+npm error A complete log of this run can be found in: /Users/miyagawaryouta/.npm/_logs/2025-10-09T20_05_07_828Z-debug-0.log
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1982:389)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8314)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Failed to install new version of claude:  npm error code ENOTEMPTY
+npm error syscall rename
+npm error path /Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code
+npm error dest /Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/.claude-code-ibcJ0Bd6
+npm error errno -66
+npm error ENOTEMPTY: directory not empty, rename '/Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code' -> '/Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/.claude-code-ibcJ0Bd6'
+npm error A complete log of this run can be found in: /Users/miyagawaryouta/.npm/_logs/2025-10-09T21_11_53_648Z-debug-0.log
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1982:389)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8314)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.21399.1760046462862
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 731303 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.21399.1760046462862 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.21399.1760050354988
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 731303 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.21399.1760050354988 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[ERROR] bk1: bk1: Another process is currently installing an update
+    at cG1 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1972:1779)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2664:8320)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global, using native: false
+[DEBUG] Getting matching hook commands for SessionEnd with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)

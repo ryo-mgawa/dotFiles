@@ -1,0 +1,73 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { GetSitesUseCase } from './GetSitesUseCase.js';
+import type { ISiteRepository } from '@/infrastructure/database/repositories/index.js';
+
+describe('GetSitesUseCase', () => {
+  let getSitesUseCase: GetSitesUseCase;
+  let mockSiteRepository: ISiteRepository;
+
+  const mockSites = [
+    {
+      id: 'site-1',
+      name: '東京本社',
+      companyId: 'company-1',
+      displayOrder: 1,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      id: 'site-2',
+      name: '大阪支社',
+      companyId: 'company-1',
+      displayOrder: 2,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+    {
+      id: 'site-3',
+      name: '名古屋支社',
+      companyId: 'company-1',
+      displayOrder: 3,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  ];
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+
+    mockSiteRepository = {
+      findById: vi.fn(),
+      findByCompanyId: vi.fn(),
+      create: vi.fn(),
+      update: vi.fn(),
+      delete: vi.fn(),
+    };
+
+    getSitesUseCase = new GetSitesUseCase(mockSiteRepository);
+  });
+
+  it('企業IDに紐づく拠点一覧を返す', async () => {
+    vi.mocked(mockSiteRepository.findByCompanyId).mockResolvedValue(mockSites);
+
+    const result = await getSitesUseCase.execute('company-1');
+
+    expect(result).toEqual({
+      sites: [
+        { id: 'site-1', name: '東京本社', displayOrder: 1 },
+        { id: 'site-2', name: '大阪支社', displayOrder: 2 },
+        { id: 'site-3', name: '名古屋支社', displayOrder: 3 },
+      ],
+    });
+
+    expect(mockSiteRepository.findByCompanyId).toHaveBeenCalledWith('company-1');
+  });
+
+  it('拠点がない場合は空配列を返す', async () => {
+    vi.mocked(mockSiteRepository.findByCompanyId).mockResolvedValue([]);
+
+    const result = await getSitesUseCase.execute('company-1');
+
+    expect(result).toEqual({ sites: [] });
+  });
+});

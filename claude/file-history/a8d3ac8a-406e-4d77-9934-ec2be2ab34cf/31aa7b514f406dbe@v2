@@ -1,0 +1,42 @@
+name: Deploy IT Request to Supabase
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'slack-it-request/**'
+      - 'shared/**'
+  workflow_dispatch:  # 手動実行も可能にする
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Prepare shared code
+        run: bash scripts/prepare-deploy.sh
+
+      - name: Deploy to Supabase
+        working-directory: ./slack-it-request
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_ID: mywajnlbkbhrnmgpmuuv
+        run: |
+          supabase functions deploy it-request \
+            --project-ref $SUPABASE_PROJECT_ID
+
+      - name: Deployment Success
+        env:
+          SUPABASE_PROJECT_ID: mywajnlbkbhrnmgpmuuv
+        run: |
+          echo "✅ IT Request function deployed successfully!"
+          echo "URL: https://$SUPABASE_PROJECT_ID.supabase.co/functions/v1/it-request"

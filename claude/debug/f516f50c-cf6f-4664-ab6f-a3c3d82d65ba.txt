@@ -1,0 +1,1272 @@
+2025-11-26T03:58:29.545Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2025-11-26T03:58:29.547Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T03:58:29.547Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-11-26T03:58:29.558Z [DEBUG] FileHistory: Added snapshot for 12b03d01-4713-46cd-999e-3e123479e34c, tracking 0 files
+2025-11-26T03:58:29.568Z [DEBUG] Rendering user message with 1 content blocks
+2025-11-26T03:58:29.568Z [DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+2025-11-26T03:58:29.569Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-11-26T03:58:29.569Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-11-26T03:58:29.592Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764129509592
+2025-11-26T03:58:29.592Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T03:58:29.597Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T03:58:29.597Z [DEBUG] Applied original permissions to temp file
+2025-11-26T03:58:29.597Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764129509592 to /Users/miyagawaryouta/.claude.json
+2025-11-26T03:58:29.597Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T03:58:29.768Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-26T03:58:30.314Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-26T03:58:30.314Z [DEBUG] AutoUpdater: Using global update method
+2025-11-26T03:58:31.169Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764129511169
+2025-11-26T03:58:31.169Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T03:58:31.178Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T03:58:31.178Z [DEBUG] Applied original permissions to temp file
+2025-11-26T03:58:31.178Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764129511169 to /Users/miyagawaryouta/.claude.json
+2025-11-26T03:58:31.179Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T03:58:32.576Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-26T03:58:32.866Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-26T03:58:33.457Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-26T03:58:34.145Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-26T03:58:35.503Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-26T03:58:35.937Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-26T03:58:35.937Z [DEBUG] AutoUpdater: Using global update method
+2025-11-26T03:58:36.628Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764129516628
+2025-11-26T03:58:36.628Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T03:58:36.639Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T03:58:36.639Z [DEBUG] Applied original permissions to temp file
+2025-11-26T03:58:36.639Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764129516628 to /Users/miyagawaryouta/.claude.json
+2025-11-26T03:58:36.639Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T04:00:29.448Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:00:29.448Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:00:29.455Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:00:29.455Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:00:29.480Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-26T04:00:29.480Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:29.480Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T04:00:29.480Z [DEBUG] FileHistory: Making snapshot for message 942802e3-4972-4291-abdc-7e5f39b0e9bb
+2025-11-26T04:00:29.481Z [DEBUG] FileHistory: Added snapshot for 942802e3-4972-4291-abdc-7e5f39b0e9bb, tracking 0 files
+2025-11-26T04:00:29.567Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:00:29.567Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:00:30.275Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:00:30.426Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:00:31.842Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:00:43.745Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-26T04:00:43.748Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-26T04:00:43.750Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:00:43.752Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-26T04:00:43.752Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:43.752Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:00:43.752Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-26T04:00:43.752Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:43.752Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:00:43.752Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:00:43.752Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:43.752Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:00:43.783Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:00:43.783Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:43.783Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:00:43.991Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-26T04:00:43.991Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:43.991Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:00:44.009Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-26T04:00:44.010Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:44.010Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:00:44.024Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:00:44.024Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:00:44.028Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:00:44.028Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:00:44.045Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:00:44.045Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:00:45.652Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:00:56.521Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-26T04:00:56.524Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:00:56.527Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-26T04:00:56.527Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:56.527Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:00:56.529Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:00:56.529Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:56.529Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:00:56.553Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:00:56.553Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:56.553Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:00:56.575Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-26T04:00:56.575Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:00:56.575Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:00:56.589Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:00:56.590Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:00:56.593Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:00:56.593Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:00:56.604Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:00:56.604Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:00:58.408Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:05.864Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-26T04:01:05.867Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-26T04:01:05.867Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:05.867Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:01:05.908Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-26T04:01:05.908Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:05.908Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:01:05.923Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:01:05.923Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:01:05.927Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:01:05.927Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:01:05.947Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:01:05.947Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:01:07.616Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:10.699Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-26T04:01:10.703Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-26T04:01:10.706Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-26T04:01:10.706Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:10.706Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:01:10.706Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-26T04:01:10.706Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:10.706Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-26T04:01:10.756Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-26T04:01:10.757Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:10.757Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-26T04:01:10.778Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-26T04:01:10.778Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:10.778Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:01:10.799Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:01:10.799Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:01:10.803Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:01:10.803Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:01:10.820Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:01:10.820Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:01:12.707Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:15.557Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-26T04:01:15.560Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:01:15.562Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-26T04:01:15.562Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:15.562Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:01:15.562Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:01:15.562Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:15.562Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:01:15.583Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:01:15.583Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:15.584Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:01:15.606Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-26T04:01:15.606Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:15.606Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:01:15.621Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:01:15.621Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:01:15.626Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:01:15.626Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:01:15.644Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:01:15.644Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:01:17.295Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:21.718Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-26T04:01:21.720Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-26T04:01:21.723Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-26T04:01:21.724Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:21.724Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-26T04:01:21.724Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-26T04:01:21.724Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:21.724Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-26T04:01:21.753Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-26T04:01:21.753Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:21.753Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-26T04:01:21.795Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-26T04:01:21.795Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:21.795Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-26T04:01:21.812Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:01:21.812Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:01:21.818Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:01:21.818Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:01:21.847Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:01:21.848Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:01:23.575Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:27.418Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T04:01:27.421Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T04:01:27.424Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T04:01:27.424Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:27.424Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:01:27.425Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T04:01:27.425Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:27.425Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:01:27.555Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T04:01:27.555Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:27.555Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:01:28.382Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T04:01:28.382Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:28.382Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:01:28.400Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:01:28.400Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:01:28.404Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:01:28.404Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:01:28.424Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:01:28.424Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:01:28.435Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:29.506Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:30.625Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:34.756Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T04:01:34.759Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:01:34.761Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T04:01:34.761Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:34.761Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:01:34.762Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:01:34.762Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:34.762Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:01:34.792Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:01:34.792Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:34.792Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:01:34.853Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T04:01:34.853Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:34.853Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:01:34.871Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:01:34.871Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:01:34.877Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:01:34.877Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:01:34.892Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:01:34.892Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:01:35.745Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:37.291Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:49.091Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T04:01:49.094Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-26T04:01:49.096Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T04:01:49.096Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:49.096Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:01:49.096Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-26T04:01:49.096Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:49.096Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:01:49.172Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-26T04:01:49.172Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:49.172Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T04:01:49.431Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T04:01:49.431Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:49.431Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:01:49.449Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:01:49.449Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:01:49.453Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:01:49.453Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:01:49.472Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:01:49.472Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:01:50.300Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:51.802Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:01:53.252Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:01:53.255Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:01:53.255Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:53.255Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:01:53.270Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:01:53.270Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:01:53.270Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:01:53.287Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:01:53.287Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:01:53.291Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:01:53.291Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:01:53.305Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:01:53.306Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:01:55.180Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:09.978Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T04:02:09.986Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T04:02:09.987Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:09.987Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:02:09.987Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:02:09.991Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:02:09.991Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:09.991Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:10.018Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:02:10.018Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:10.018Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:10.325Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T04:02:10.325Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:10.325Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:02:10.345Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:02:10.345Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:02:10.349Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:02:10.349Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:02:10.371Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:02:10.371Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:02:11.017Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:12.232Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:14.562Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:02:14.565Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:02:14.565Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:14.565Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:14.578Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:02:14.578Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:14.578Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:14.594Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:02:14.594Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:02:14.598Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:02:14.598Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:02:14.611Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:02:14.611Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:02:16.110Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:21.714Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T04:02:21.718Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T04:02:21.720Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T04:02:21.720Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:21.721Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:02:21.721Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T04:02:21.721Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:21.721Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:02:21.805Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T04:02:21.806Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:21.806Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:02:21.835Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T04:02:21.835Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:21.835Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:02:21.859Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:02:21.859Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:02:21.863Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:02:21.863Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:02:21.892Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:02:21.893Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:02:22.500Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:22.715Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:23.986Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:25.774Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:02:25.777Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:02:25.777Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:25.777Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:25.790Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:02:25.790Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:25.790Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:25.809Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:02:25.809Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:02:25.813Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:02:25.813Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:02:25.828Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:02:25.828Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:02:27.960Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:29.996Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:02:30.000Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:02:30.000Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:30.000Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:30.018Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:02:30.018Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:30.018Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:30.035Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:02:30.035Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:02:30.039Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:02:30.039Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:02:30.055Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:02:30.055Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:02:31.666Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:32.780Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:02:32.783Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:02:32.783Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:32.783Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:32.798Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:02:32.798Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:32.798Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:32.814Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:02:32.814Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:02:32.818Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:02:32.818Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:02:32.837Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:02:32.838Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:02:34.586Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:36.076Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:02:36.079Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:02:36.080Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:36.080Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:36.101Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:02:36.101Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:36.101Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:02:36.121Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:02:36.121Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:02:36.125Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:02:36.125Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:02:36.140Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:02:36.140Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:02:38.393Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:02:47.472Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-26T04:02:47.476Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-26T04:02:47.476Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:47.476Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:02:47.487Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764129767487
+2025-11-26T04:02:47.491Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:02:47.492Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764129767487 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json
+2025-11-26T04:02:47.492Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json written atomically
+2025-11-26T04:02:47.492Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764129767492
+2025-11-26T04:02:47.497Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:02:47.497Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764129767492 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json
+2025-11-26T04:02:47.497Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json written atomically
+2025-11-26T04:02:47.497Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764129767497
+2025-11-26T04:02:47.506Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:02:47.506Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764129767497 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json
+2025-11-26T04:02:47.506Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json written atomically
+2025-11-26T04:02:47.506Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764129767506
+2025-11-26T04:02:47.512Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:02:47.512Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764129767506 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json
+2025-11-26T04:02:47.512Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json written atomically
+2025-11-26T04:02:47.512Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764129767512
+2025-11-26T04:02:47.518Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:02:47.518Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764129767512 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json
+2025-11-26T04:02:47.518Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json written atomically
+2025-11-26T04:02:47.518Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764129767518
+2025-11-26T04:02:47.522Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:02:47.522Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764129767518 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json
+2025-11-26T04:02:47.522Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json written atomically
+2025-11-26T04:02:47.523Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764129767523
+2025-11-26T04:02:47.529Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:02:47.529Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764129767523 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json
+2025-11-26T04:02:47.529Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json written atomically
+2025-11-26T04:02:47.529Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764129767529
+2025-11-26T04:02:47.534Z [DEBUG] Temp file written successfully, size: 346 bytes
+2025-11-26T04:02:47.534Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764129767529 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json
+2025-11-26T04:02:47.534Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json written atomically
+2025-11-26T04:02:47.547Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-26T04:02:47.547Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:02:47.547Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:02:47.565Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:02:47.565Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:02:47.570Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:02:47.570Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:02:47.585Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:02:47.586Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:02:49.299Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:03:07.256Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-26T04:03:07.260Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-26T04:03:07.260Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:03:07.260Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:03:07.276Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/shipmentDAO.ts
+2025-11-26T04:03:07.281Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/shipmentDAO.ts.tmp.51540.1764129787281
+2025-11-26T04:03:07.281Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:03:07.286Z [DEBUG] Temp file written successfully, size: 3938 bytes
+2025-11-26T04:03:07.286Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:07.287Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/shipmentDAO.ts.tmp.51540.1764129787281 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/shipmentDAO.ts
+2025-11-26T04:03:07.287Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/shipmentDAO.ts written atomically
+2025-11-26T04:03:07.295Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-26T04:03:07.295Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:03:07.295Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:03:07.353Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:03:07.354Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:03:07.358Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:03:07.358Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:03:07.379Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:03:07.379Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:03:09.135Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:03:23.402Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-26T04:03:23.407Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-26T04:03:23.408Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:03:23.408Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:03:23.425Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/application/useCase/addShipmentEventsUseCase/addShipmentEventsUseCase.ts
+2025-11-26T04:03:23.429Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/application/useCase/addShipmentEventsUseCase/addShipmentEventsUseCase.ts.tmp.51540.1764129803429
+2025-11-26T04:03:23.429Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:03:23.438Z [DEBUG] Temp file written successfully, size: 2478 bytes
+2025-11-26T04:03:23.438Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:23.438Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/application/useCase/addShipmentEventsUseCase/addShipmentEventsUseCase.ts.tmp.51540.1764129803429 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/application/useCase/addShipmentEventsUseCase/addShipmentEventsUseCase.ts
+2025-11-26T04:03:23.441Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/application/useCase/addShipmentEventsUseCase/addShipmentEventsUseCase.ts written atomically
+2025-11-26T04:03:23.450Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-26T04:03:23.450Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:03:23.450Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:03:23.501Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:03:23.501Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:03:23.512Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:03:23.513Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:03:23.536Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:03:23.536Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:03:25.860Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:03:38.284Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-26T04:03:38.290Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-26T04:03:38.290Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:03:38.290Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:03:38.316Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/public/controller/addShipmentEventsController.ts
+2025-11-26T04:03:38.320Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/public/controller/addShipmentEventsController.ts.tmp.51540.1764129818320
+2025-11-26T04:03:38.320Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:03:38.325Z [DEBUG] Temp file written successfully, size: 1813 bytes
+2025-11-26T04:03:38.325Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:38.325Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/public/controller/addShipmentEventsController.ts.tmp.51540.1764129818320 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/public/controller/addShipmentEventsController.ts
+2025-11-26T04:03:38.326Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/public/controller/addShipmentEventsController.ts written atomically
+2025-11-26T04:03:38.332Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-26T04:03:38.332Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:03:38.332Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:03:38.375Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:03:38.375Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:03:38.382Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:03:38.382Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:03:38.424Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:03:38.424Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:03:40.318Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:03:48.933Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-26T04:03:48.936Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-26T04:03:48.937Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:03:48.937Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:03:48.950Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764129828950
+2025-11-26T04:03:48.950Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:03:48.954Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:03:48.954Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:48.954Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764129828950 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json
+2025-11-26T04:03:48.955Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json written atomically
+2025-11-26T04:03:48.956Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764129828956
+2025-11-26T04:03:48.958Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:03:48.964Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:03:48.964Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:48.964Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764129828956 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json
+2025-11-26T04:03:48.966Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json written atomically
+2025-11-26T04:03:48.966Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764129828966
+2025-11-26T04:03:48.966Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:03:48.971Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:03:48.971Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:48.971Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764129828966 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json
+2025-11-26T04:03:48.973Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json written atomically
+2025-11-26T04:03:48.973Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764129828973
+2025-11-26T04:03:48.973Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:03:48.978Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:03:48.978Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:48.978Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764129828973 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json
+2025-11-26T04:03:48.979Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json written atomically
+2025-11-26T04:03:48.979Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764129828979
+2025-11-26T04:03:48.979Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:03:48.984Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:03:48.984Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:48.984Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764129828979 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json
+2025-11-26T04:03:48.985Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json written atomically
+2025-11-26T04:03:48.985Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764129828985
+2025-11-26T04:03:48.985Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:03:48.989Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:03:48.989Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:48.989Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764129828985 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json
+2025-11-26T04:03:48.991Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json written atomically
+2025-11-26T04:03:48.991Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764129828991
+2025-11-26T04:03:48.991Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:03:48.996Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:03:48.996Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:48.996Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764129828991 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json
+2025-11-26T04:03:48.997Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json written atomically
+2025-11-26T04:03:48.997Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764129828997
+2025-11-26T04:03:48.997Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:03:49.002Z [DEBUG] Temp file written successfully, size: 344 bytes
+2025-11-26T04:03:49.002Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:03:49.002Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764129828997 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json
+2025-11-26T04:03:49.003Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json written atomically
+2025-11-26T04:03:49.016Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-26T04:03:49.016Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:03:49.016Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:03:49.035Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:03:49.036Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:03:49.041Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:03:49.041Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:03:49.056Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:03:49.056Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:03:51.050Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:04:02.975Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-26T04:04:02.976Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:04:02.976Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T04:04:02.994Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764129842994
+2025-11-26T04:04:02.994Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:04:03.004Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T04:04:03.004Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:04:03.004Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764129842994 to /Users/miyagawaryouta/.claude.json
+2025-11-26T04:04:03.005Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T04:04:03.008Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764129843008
+2025-11-26T04:04:03.008Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:04:03.013Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T04:04:03.013Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:04:03.013Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764129843008 to /Users/miyagawaryouta/.claude.json
+2025-11-26T04:04:03.014Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T04:05:45.673Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:05:45.673Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:05:45.705Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:05:45.705Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:05:45.834Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-26T04:05:45.834Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:05:45.834Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T04:05:45.836Z [DEBUG] FileHistory: Making snapshot for message 208a5ced-e109-49e5-9cca-10fb96894c00
+2025-11-26T04:05:45.852Z [DEBUG] FileHistory: Added snapshot for 208a5ced-e109-49e5-9cca-10fb96894c00, tracking 3 files
+2025-11-26T04:05:45.960Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:05:45.960Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:05:46.798Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:05:47.502Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:06:10.574Z [ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at IE (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1105:4489)
+    at file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1105:4217
+    at Array.map (<anonymous>)
+    at QD (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1105:4208)
+    at X32 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1828:3681)
+    at lq (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:105:19416)
+    at hQA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:107:42839)
+    at p9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:107:38371)
+    at Na (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:107:38299)
+    at BN (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:107:38153)
+2025-11-26T04:06:10.607Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-26T04:06:10.610Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-26T04:06:10.610Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:06:10.610Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:06:10.621Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764129970621
+2025-11-26T04:06:10.621Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:06:10.626Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:06:10.626Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:06:10.626Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764129970621 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json
+2025-11-26T04:06:10.626Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json written atomically
+2025-11-26T04:06:10.626Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764129970626
+2025-11-26T04:06:10.626Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:06:10.631Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:06:10.631Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:06:10.631Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764129970626 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json
+2025-11-26T04:06:10.633Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json written atomically
+2025-11-26T04:06:10.633Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764129970633
+2025-11-26T04:06:10.633Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:06:10.637Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:06:10.637Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:06:10.637Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764129970633 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json
+2025-11-26T04:06:10.638Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json written atomically
+2025-11-26T04:06:10.638Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764129970638
+2025-11-26T04:06:10.638Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:06:10.643Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:06:10.643Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:06:10.643Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764129970638 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json
+2025-11-26T04:06:10.644Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json written atomically
+2025-11-26T04:06:10.644Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764129970644
+2025-11-26T04:06:10.644Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:06:10.650Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:06:10.650Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:06:10.650Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764129970644 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json
+2025-11-26T04:06:10.650Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json written atomically
+2025-11-26T04:06:10.651Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764129970651
+2025-11-26T04:06:10.651Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:06:10.653Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:06:10.653Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:06:10.653Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764129970651 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json
+2025-11-26T04:06:10.654Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json written atomically
+2025-11-26T04:06:10.654Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764129970654
+2025-11-26T04:06:10.654Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:06:10.657Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:06:10.657Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:06:10.657Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764129970654 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json
+2025-11-26T04:06:10.658Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json written atomically
+2025-11-26T04:06:10.658Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764129970658
+2025-11-26T04:06:10.658Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:06:10.663Z [DEBUG] Temp file written successfully, size: 475 bytes
+2025-11-26T04:06:10.663Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:06:10.663Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764129970658 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json
+2025-11-26T04:06:10.663Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json written atomically
+2025-11-26T04:06:10.687Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-26T04:06:10.687Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:06:10.687Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:06:10.706Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:06:10.707Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:06:10.711Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:06:10.712Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:06:10.729Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:06:10.729Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:06:12.570Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:06:17.570Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T04:06:17.574Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T04:06:17.574Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:06:17.574Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:06:18.393Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:06:18.504Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:06:39.964Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T04:06:39.964Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:06:39.964Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:06:39.988Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T04:06:39.992Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T04:06:39.992Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:06:39.992Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:06:40.361Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T04:06:40.361Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:06:40.361Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:06:40.384Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:06:40.384Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:06:40.390Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:06:40.390Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:06:40.408Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:06:40.408Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:06:40.754Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:06:41.259Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:06:42.470Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:06:43.743Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T04:06:43.747Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T04:06:43.747Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:06:43.747Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:06:43.763Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T04:06:43.763Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:06:43.763Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T04:06:43.780Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:06:43.781Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:06:43.785Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:06:43.785Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:06:43.802Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:06:43.802Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:06:45.446Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:07:06.396Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-26T04:07:06.400Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-26T04:07:06.400Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:07:06.400Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:07:06.411Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130026411
+2025-11-26T04:07:06.411Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:06.415Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:06.415Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:06.415Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130026411 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json
+2025-11-26T04:07:06.418Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json written atomically
+2025-11-26T04:07:06.418Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130026418
+2025-11-26T04:07:06.418Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:06.422Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:06.422Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:06.422Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130026418 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json
+2025-11-26T04:07:06.423Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json written atomically
+2025-11-26T04:07:06.423Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130026423
+2025-11-26T04:07:06.423Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:06.429Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:06.429Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:06.429Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130026423 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json
+2025-11-26T04:07:06.429Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json written atomically
+2025-11-26T04:07:06.430Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130026430
+2025-11-26T04:07:06.430Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:06.434Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:06.434Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:06.434Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130026430 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json
+2025-11-26T04:07:06.435Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json written atomically
+2025-11-26T04:07:06.435Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130026435
+2025-11-26T04:07:06.435Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:06.439Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:06.439Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:06.439Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130026435 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json
+2025-11-26T04:07:06.440Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json written atomically
+2025-11-26T04:07:06.440Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130026440
+2025-11-26T04:07:06.440Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:06.446Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:06.446Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:06.446Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130026440 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json
+2025-11-26T04:07:06.446Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json written atomically
+2025-11-26T04:07:06.446Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130026446
+2025-11-26T04:07:06.447Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:06.451Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:06.451Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:06.451Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130026446 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json
+2025-11-26T04:07:06.452Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json written atomically
+2025-11-26T04:07:06.452Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130026452
+2025-11-26T04:07:06.452Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:06.457Z [DEBUG] Temp file written successfully, size: 477 bytes
+2025-11-26T04:07:06.457Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:06.457Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130026452 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json
+2025-11-26T04:07:06.457Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json written atomically
+2025-11-26T04:07:06.468Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-26T04:07:06.468Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:07:06.468Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:07:06.484Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:07:06.484Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:07:06.489Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:07:06.489Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:07:06.507Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:07:06.507Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:07:08.706Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:07:12.579Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T04:07:12.583Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T04:07:12.583Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:07:12.583Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:07:12.941Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T04:07:12.941Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:07:12.941Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T04:07:12.963Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:07:12.963Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:07:12.968Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:07:12.968Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:07:12.986Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:07:12.987Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:07:13.806Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:07:15.161Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:07:18.232Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-26T04:07:18.237Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-26T04:07:18.237Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:07:18.237Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:07:18.257Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/models/shipmentEvent/type.ts
+2025-11-26T04:07:18.264Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/models/shipmentEvent/type.ts.tmp.51540.1764130038264
+2025-11-26T04:07:18.264Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:07:18.268Z [DEBUG] Temp file written successfully, size: 243 bytes
+2025-11-26T04:07:18.269Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:18.269Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/models/shipmentEvent/type.ts.tmp.51540.1764130038264 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/models/shipmentEvent/type.ts
+2025-11-26T04:07:18.269Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/db/models/shipmentEvent/type.ts written atomically
+2025-11-26T04:07:18.276Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-26T04:07:18.276Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:07:18.276Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:07:18.312Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:07:18.312Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:07:18.319Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:07:18.320Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:07:18.347Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:07:18.347Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:07:20.046Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:07:30.314Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-26T04:07:30.324Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-26T04:07:30.324Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:07:30.324Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:07:30.334Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130050334
+2025-11-26T04:07:30.334Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:30.367Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:30.367Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:30.368Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130050334 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json
+2025-11-26T04:07:30.368Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json written atomically
+2025-11-26T04:07:30.368Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130050368
+2025-11-26T04:07:30.368Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:30.386Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:30.386Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:30.387Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130050368 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json
+2025-11-26T04:07:30.387Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json written atomically
+2025-11-26T04:07:30.387Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130050387
+2025-11-26T04:07:30.387Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:30.399Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:30.399Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:30.399Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130050387 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json
+2025-11-26T04:07:30.399Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json written atomically
+2025-11-26T04:07:30.399Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130050399
+2025-11-26T04:07:30.399Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:30.418Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:30.418Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:30.418Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130050399 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json
+2025-11-26T04:07:30.419Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json written atomically
+2025-11-26T04:07:30.419Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130050419
+2025-11-26T04:07:30.419Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:30.443Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:30.443Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:30.443Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130050419 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json
+2025-11-26T04:07:30.444Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json written atomically
+2025-11-26T04:07:30.444Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130050444
+2025-11-26T04:07:30.444Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:30.467Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:30.467Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:30.467Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130050444 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json
+2025-11-26T04:07:30.467Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json written atomically
+2025-11-26T04:07:30.467Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130050467
+2025-11-26T04:07:30.468Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:30.481Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:30.481Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:30.481Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130050467 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json
+2025-11-26T04:07:30.481Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json written atomically
+2025-11-26T04:07:30.481Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130050481
+2025-11-26T04:07:30.481Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:07:30.491Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:07:30.492Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:30.492Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130050481 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json
+2025-11-26T04:07:30.492Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json written atomically
+2025-11-26T04:07:30.505Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-26T04:07:30.506Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:07:30.506Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:07:30.525Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:07:30.525Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:07:30.530Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:07:30.530Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:07:30.554Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:07:30.554Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:07:32.367Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:07:47.876Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-26T04:07:47.876Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:07:47.876Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T04:07:47.893Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764130067893
+2025-11-26T04:07:47.893Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:07:47.897Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T04:07:47.898Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:47.898Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764130067893 to /Users/miyagawaryouta/.claude.json
+2025-11-26T04:07:47.898Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T04:07:47.903Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764130067903
+2025-11-26T04:07:47.903Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:07:47.909Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T04:07:47.909Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:07:47.909Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764130067903 to /Users/miyagawaryouta/.claude.json
+2025-11-26T04:07:47.909Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T04:08:47.896Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-26T04:08:47.897Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:08:47.897Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-26T04:11:28.896Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:11:28.898Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:11:28.909Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:11:28.909Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:11:29.094Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-26T04:11:29.094Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:11:29.094Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T04:11:29.097Z [DEBUG] FileHistory: Making snapshot for message e190055c-cad3-42fc-a9a1-db65d43f157d
+2025-11-26T04:11:29.134Z [DEBUG] FileHistory: Added snapshot for e190055c-cad3-42fc-a9a1-db65d43f157d, tracking 4 files
+2025-11-26T04:11:29.217Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:11:29.217Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:11:30.152Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:11:31.138Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:11:36.189Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-26T04:11:36.192Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-26T04:11:36.192Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:11:36.192Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:11:36.200Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130296200
+2025-11-26T04:11:36.200Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:11:36.205Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:11:36.206Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:11:36.206Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130296200 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json
+2025-11-26T04:11:36.207Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json written atomically
+2025-11-26T04:11:36.207Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130296207
+2025-11-26T04:11:36.207Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:11:36.211Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:11:36.211Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:11:36.212Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130296207 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json
+2025-11-26T04:11:36.213Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json written atomically
+2025-11-26T04:11:36.213Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130296213
+2025-11-26T04:11:36.213Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:11:36.218Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:11:36.218Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:11:36.218Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130296213 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json
+2025-11-26T04:11:36.219Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json written atomically
+2025-11-26T04:11:36.219Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130296219
+2025-11-26T04:11:36.219Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:11:36.224Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:11:36.224Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:11:36.224Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130296219 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json
+2025-11-26T04:11:36.224Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json written atomically
+2025-11-26T04:11:36.224Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130296224
+2025-11-26T04:11:36.224Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:11:36.228Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:11:36.228Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:11:36.228Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130296224 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json
+2025-11-26T04:11:36.230Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json written atomically
+2025-11-26T04:11:36.230Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130296230
+2025-11-26T04:11:36.230Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:11:36.234Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:11:36.234Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:11:36.234Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130296230 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json
+2025-11-26T04:11:36.235Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json written atomically
+2025-11-26T04:11:36.235Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130296235
+2025-11-26T04:11:36.235Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:11:36.241Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:11:36.241Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:11:36.241Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130296235 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json
+2025-11-26T04:11:36.241Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json written atomically
+2025-11-26T04:11:36.241Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130296241
+2025-11-26T04:11:36.241Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:11:36.245Z [DEBUG] Temp file written successfully, size: 439 bytes
+2025-11-26T04:11:36.245Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:11:36.246Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130296241 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json
+2025-11-26T04:11:36.246Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json written atomically
+2025-11-26T04:11:36.257Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-26T04:11:36.257Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:11:36.257Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:11:36.274Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:11:36.274Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:11:36.280Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:11:36.280Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:11:36.297Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:11:36.297Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:11:38.517Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:11:52.666Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-26T04:11:52.671Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-26T04:11:52.671Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:11:52.671Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:11:52.696Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/public/controller/addShipmentEventsController.ts.tmp.51540.1764130312696
+2025-11-26T04:11:52.696Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:11:52.703Z [DEBUG] Temp file written successfully, size: 1235 bytes
+2025-11-26T04:11:52.704Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:11:52.704Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/public/controller/addShipmentEventsController.ts.tmp.51540.1764130312696 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/public/controller/addShipmentEventsController.ts
+2025-11-26T04:11:52.705Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/public/controller/addShipmentEventsController.ts written atomically
+2025-11-26T04:11:52.714Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-26T04:11:52.715Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:11:52.715Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:11:52.758Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:11:52.759Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:11:52.765Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:11:52.765Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:11:52.798Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:11:52.799Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:11:54.569Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:12:00.472Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-26T04:12:00.476Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-26T04:12:00.476Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:12:00.476Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:12:00.490Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130320490
+2025-11-26T04:12:00.490Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:00.495Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:00.495Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:00.495Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130320490 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json
+2025-11-26T04:12:00.496Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json written atomically
+2025-11-26T04:12:00.496Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130320496
+2025-11-26T04:12:00.496Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:00.500Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:00.500Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:00.500Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130320496 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json
+2025-11-26T04:12:00.501Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json written atomically
+2025-11-26T04:12:00.501Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130320501
+2025-11-26T04:12:00.501Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:00.505Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:00.505Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:00.505Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130320501 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json
+2025-11-26T04:12:00.507Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json written atomically
+2025-11-26T04:12:00.508Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130320508
+2025-11-26T04:12:00.508Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:00.512Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:00.513Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:00.513Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130320508 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json
+2025-11-26T04:12:00.513Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json written atomically
+2025-11-26T04:12:00.513Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130320513
+2025-11-26T04:12:00.513Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:00.526Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:00.526Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:00.526Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130320513 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json
+2025-11-26T04:12:00.527Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json written atomically
+2025-11-26T04:12:00.527Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130320527
+2025-11-26T04:12:00.527Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:00.531Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:00.532Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:00.532Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130320527 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json
+2025-11-26T04:12:00.533Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json written atomically
+2025-11-26T04:12:00.533Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130320533
+2025-11-26T04:12:00.533Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:00.540Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:00.540Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:00.541Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130320533 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json
+2025-11-26T04:12:00.541Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json written atomically
+2025-11-26T04:12:00.541Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130320541
+2025-11-26T04:12:00.541Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:00.546Z [DEBUG] Temp file written successfully, size: 441 bytes
+2025-11-26T04:12:00.547Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:00.547Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130320541 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json
+2025-11-26T04:12:00.547Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json written atomically
+2025-11-26T04:12:00.559Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-26T04:12:00.560Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:12:00.560Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:12:00.584Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:12:00.584Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:12:00.589Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:12:00.589Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:12:00.608Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:12:00.608Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:12:02.872Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:12:16.678Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-26T04:12:16.685Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-26T04:12:16.685Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:12:16.685Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:12:16.707Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/application/useCase/addShipmentEventsUseCase/addShipmentEventsUseCase.ts.tmp.51540.1764130336707
+2025-11-26T04:12:16.707Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:12:16.713Z [DEBUG] Temp file written successfully, size: 1860 bytes
+2025-11-26T04:12:16.714Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:16.714Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/application/useCase/addShipmentEventsUseCase/addShipmentEventsUseCase.ts.tmp.51540.1764130336707 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/application/useCase/addShipmentEventsUseCase/addShipmentEventsUseCase.ts
+2025-11-26T04:12:16.714Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/application/useCase/addShipmentEventsUseCase/addShipmentEventsUseCase.ts written atomically
+2025-11-26T04:12:16.721Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-26T04:12:16.721Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:12:16.722Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:12:16.764Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:12:16.765Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:12:16.774Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:12:16.774Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:12:16.805Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:12:16.805Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:12:18.700Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:12:24.627Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-26T04:12:24.641Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-26T04:12:24.641Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:12:24.641Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:12:24.658Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130344658
+2025-11-26T04:12:24.658Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:24.686Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:24.686Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:24.686Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130344658 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json
+2025-11-26T04:12:24.687Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json written atomically
+2025-11-26T04:12:24.687Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130344687
+2025-11-26T04:12:24.687Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:24.710Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:24.711Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:24.711Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130344687 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json
+2025-11-26T04:12:24.711Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json written atomically
+2025-11-26T04:12:24.712Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130344712
+2025-11-26T04:12:24.712Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:24.722Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:24.722Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:24.722Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130344712 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json
+2025-11-26T04:12:24.728Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json written atomically
+2025-11-26T04:12:24.729Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130344729
+2025-11-26T04:12:24.729Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:24.742Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:24.742Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:24.743Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130344729 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json
+2025-11-26T04:12:24.744Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json written atomically
+2025-11-26T04:12:24.744Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130344744
+2025-11-26T04:12:24.744Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:24.750Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:24.750Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:24.750Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130344744 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json
+2025-11-26T04:12:24.752Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json written atomically
+2025-11-26T04:12:24.752Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130344752
+2025-11-26T04:12:24.752Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:24.759Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:24.760Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:24.760Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130344752 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json
+2025-11-26T04:12:24.761Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json written atomically
+2025-11-26T04:12:24.761Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130344761
+2025-11-26T04:12:24.761Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:24.768Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:24.768Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:24.768Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130344761 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json
+2025-11-26T04:12:24.769Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json written atomically
+2025-11-26T04:12:24.769Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130344769
+2025-11-26T04:12:24.769Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:24.774Z [DEBUG] Temp file written successfully, size: 443 bytes
+2025-11-26T04:12:24.774Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:24.774Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130344769 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json
+2025-11-26T04:12:24.774Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json written atomically
+2025-11-26T04:12:24.796Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-26T04:12:24.796Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:12:24.796Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:12:24.844Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:12:24.844Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:12:24.860Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:12:24.860Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:12:24.909Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:12:24.909Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:12:27.119Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:12:44.226Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-26T04:12:44.231Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-26T04:12:44.231Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:12:44.231Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:12:44.253Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/shipmentDAO.ts.tmp.51540.1764130364253
+2025-11-26T04:12:44.253Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:12:44.258Z [DEBUG] Temp file written successfully, size: 2647 bytes
+2025-11-26T04:12:44.258Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:44.258Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/shipmentDAO.ts.tmp.51540.1764130364253 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/shipmentDAO.ts
+2025-11-26T04:12:44.258Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/libs/rdb/src/dao/shipmentDAO.ts written atomically
+2025-11-26T04:12:44.272Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-26T04:12:44.273Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:12:44.273Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-26T04:12:44.388Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:12:44.389Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:12:44.403Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:12:44.403Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:12:44.451Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:12:44.452Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:12:46.738Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:12:52.917Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-26T04:12:52.923Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-26T04:12:52.923Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:12:52.923Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:12:52.935Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130372935
+2025-11-26T04:12:52.935Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:52.955Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:52.955Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:52.955Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json.tmp.51540.1764130372935 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json
+2025-11-26T04:12:52.957Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-4310569a-2fec-45f8-a9d3-28833b766fe0.json written atomically
+2025-11-26T04:12:52.957Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130372957
+2025-11-26T04:12:52.957Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:52.982Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:52.982Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:52.982Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json.tmp.51540.1764130372957 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json
+2025-11-26T04:12:52.984Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-5dda8a20-1d2e-44b3-a939-f414a455295b.json written atomically
+2025-11-26T04:12:52.984Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130372984
+2025-11-26T04:12:52.984Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:52.998Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:52.998Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:52.998Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json.tmp.51540.1764130372984 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json
+2025-11-26T04:12:53.000Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-e978dba1-4868-4477-b5d1-bde9d466c2d3.json written atomically
+2025-11-26T04:12:53.000Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130373000
+2025-11-26T04:12:53.000Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:53.011Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:53.011Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:53.011Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json.tmp.51540.1764130373000 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json
+2025-11-26T04:12:53.017Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-37fa42e6-0d27-418e-be75-4fa10d64d16e.json written atomically
+2025-11-26T04:12:53.017Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130373017
+2025-11-26T04:12:53.017Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:53.027Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:53.028Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:53.028Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json.tmp.51540.1764130373017 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json
+2025-11-26T04:12:53.029Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-708b841e-407c-47e9-bc98-8b37c6246cc4.json written atomically
+2025-11-26T04:12:53.029Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130373029
+2025-11-26T04:12:53.029Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:53.038Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:53.038Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:53.038Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json.tmp.51540.1764130373029 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json
+2025-11-26T04:12:53.039Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-df41571c-5992-4b36-aa3f-0984833d3f0f.json written atomically
+2025-11-26T04:12:53.040Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130373040
+2025-11-26T04:12:53.040Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:53.048Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:53.049Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:53.049Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json.tmp.51540.1764130373040 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json
+2025-11-26T04:12:53.050Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-0a61aaeb-dcd8-4f6a-a2b0-306b3bfd0b4e.json written atomically
+2025-11-26T04:12:53.051Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130373051
+2025-11-26T04:12:53.051Z [DEBUG] Preserving file permissions: 100600
+2025-11-26T04:12:53.061Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-26T04:12:53.062Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:12:53.062Z [DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json.tmp.51540.1764130373051 to /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json
+2025-11-26T04:12:53.063Z [DEBUG] File /Users/miyagawaryouta/.claude/todos/f516f50c-cf6f-4664-ab6f-a3c3d82d65ba-agent-f516f50c-cf6f-4664-ab6f-a3c3d82d65ba.json written atomically
+2025-11-26T04:12:53.073Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-26T04:12:53.073Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:12:53.073Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-26T04:12:53.090Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T04:12:53.090Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T04:12:53.096Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T04:12:53.143Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T04:12:53.168Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-26T04:12:53.168Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-26T04:12:54.969Z [DEBUG] Stream started - received first chunk
+2025-11-26T04:13:01.035Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-26T04:13:01.035Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:13:01.035Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T04:13:01.053Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764130381053
+2025-11-26T04:13:01.054Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:13:01.060Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T04:13:01.060Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:13:01.060Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764130381053 to /Users/miyagawaryouta/.claude.json
+2025-11-26T04:13:01.061Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T04:13:01.064Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764130381064
+2025-11-26T04:13:01.064Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:13:01.070Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T04:13:01.070Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:13:01.070Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764130381064 to /Users/miyagawaryouta/.claude.json
+2025-11-26T04:13:01.071Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T04:14:01.055Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-26T04:14:01.057Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T04:14:01.057Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-26T04:28:36.525Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-26T04:28:36.525Z [DEBUG] AutoUpdater: Using global update method
+2025-11-26T04:28:37.885Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764131317885
+2025-11-26T04:28:37.885Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:28:37.897Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T04:28:37.897Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:28:37.897Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764131317885 to /Users/miyagawaryouta/.claude.json
+2025-11-26T04:28:37.897Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T04:58:36.578Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-26T04:58:36.579Z [DEBUG] AutoUpdater: Using global update method
+2025-11-26T04:58:37.458Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764133117458
+2025-11-26T04:58:37.458Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T04:58:37.467Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T04:58:37.468Z [DEBUG] Applied original permissions to temp file
+2025-11-26T04:58:37.468Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764133117458 to /Users/miyagawaryouta/.claude.json
+2025-11-26T04:58:37.470Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T05:28:36.849Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-26T05:28:36.850Z [DEBUG] AutoUpdater: Using global update method
+2025-11-26T05:28:37.775Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764134917775
+2025-11-26T05:28:37.775Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T05:28:37.782Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T05:28:37.783Z [DEBUG] Applied original permissions to temp file
+2025-11-26T05:28:37.783Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764134917775 to /Users/miyagawaryouta/.claude.json
+2025-11-26T05:28:37.783Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T05:58:36.562Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-26T05:58:36.563Z [DEBUG] AutoUpdater: Using global update method
+2025-11-26T05:58:37.449Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764136717449
+2025-11-26T05:58:37.449Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T05:58:37.460Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T05:58:37.460Z [DEBUG] Applied original permissions to temp file
+2025-11-26T05:58:37.461Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764136717449 to /Users/miyagawaryouta/.claude.json
+2025-11-26T05:58:37.461Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T06:28:36.713Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-26T06:28:36.714Z [DEBUG] AutoUpdater: Using global update method
+2025-11-26T06:28:37.581Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764138517581
+2025-11-26T06:28:37.581Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T06:28:37.594Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T06:28:37.594Z [DEBUG] Applied original permissions to temp file
+2025-11-26T06:28:37.595Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764138517581 to /Users/miyagawaryouta/.claude.json
+2025-11-26T06:28:37.595Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T06:59:22.857Z [DEBUG] npm view failed with code 1
+2025-11-26T06:59:22.880Z [DEBUG] npm stderr: (empty)
+2025-11-26T07:29:15.094Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-26T07:29:15.096Z [DEBUG] AutoUpdater: Using global update method
+2025-11-26T07:29:16.027Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764142156027
+2025-11-26T07:29:16.028Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T07:29:16.042Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T07:29:16.042Z [DEBUG] Applied original permissions to temp file
+2025-11-26T07:29:16.042Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764142156027 to /Users/miyagawaryouta/.claude.json
+2025-11-26T07:29:16.042Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T07:59:15.028Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-26T07:59:15.029Z [DEBUG] AutoUpdater: Using global update method
+2025-11-26T07:59:15.930Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764143955929
+2025-11-26T07:59:15.930Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T07:59:15.939Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T07:59:15.939Z [DEBUG] Applied original permissions to temp file
+2025-11-26T07:59:15.939Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764143955929 to /Users/miyagawaryouta/.claude.json
+2025-11-26T07:59:15.940Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T08:29:15.228Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-26T08:29:15.229Z [DEBUG] AutoUpdater: Using global update method
+2025-11-26T08:29:16.297Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1764145756297
+2025-11-26T08:29:16.297Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T08:29:16.304Z [DEBUG] Temp file written successfully, size: 69227 bytes
+2025-11-26T08:29:16.305Z [DEBUG] Applied original permissions to temp file
+2025-11-26T08:29:16.305Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1764145756297 to /Users/miyagawaryouta/.claude.json
+2025-11-26T08:29:16.305Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-26T08:40:07.479Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2025-11-26T08:40:07.480Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T08:40:07.480Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-11-26T08:40:07.489Z [DEBUG] Cleared all session hooks for session f516f50c-cf6f-4664-ab6f-a3c3d82d65ba

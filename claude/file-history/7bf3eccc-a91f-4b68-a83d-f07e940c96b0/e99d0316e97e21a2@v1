@@ -1,0 +1,34 @@
+import { Role, Roles, User } from '@app/auth';
+import { UserContextTypes } from '@app/requestContext';
+import { Body, Controller, Post, Res } from '@nestjs/common';
+import { AddShipmentsUseCase } from '../../../application/useCase/addShipmentsUseCase';
+import { AddShipmentsInput } from '../dto/addShipments/input';
+
+@Roles(Role.PAAS)
+@Controller('/public/shipments')
+export class AddShipmentsController {
+  constructor(private readonly addShipmentsUseCase: AddShipmentsUseCase) { }
+
+  @Post('/')
+  public async addShipments(
+    @User() user: UserContextTypes,
+    @Body() input: AddShipmentsInput,
+    @Res() _: Response,
+  ): Promise<void> {
+    const useCaseInput = {
+      shipments: input.shipments.map((shipment) => ({
+        slipId: shipment.slipId,
+        consignor: shipment.consignor,
+        consignee: shipment.consignee,
+        originSpotId: shipment.originSpot.id,
+        destinationSpotId: shipment.destinationSpot.id,
+        meta: shipment.meta,
+      })),
+    };
+
+    await this.addShipmentsUseCase.execute(
+      useCaseInput,
+      user.organizationId,
+    );
+  }
+}

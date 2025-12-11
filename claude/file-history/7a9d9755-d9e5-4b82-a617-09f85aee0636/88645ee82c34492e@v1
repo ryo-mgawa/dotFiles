@@ -1,0 +1,76 @@
+import { Logger } from '@app/logger';
+import { ShipmentDAO } from '@app/rdb';
+import { ShipmentInsert } from '@app/rdb/db/model';
+import { Inject, Injectable } from '@nestjs/common';
+import { ShipmentSaveException } from '../../../exception/shipmentSaveException';
+import { Shipment, ShipmentRow } from './types/shipment';
+import {
+  ShipmentEventInput,
+  ShipmentStatusInput,
+} from './types/shipmentRepositoryTypes';
+
+@Injectable()
+export class ShipmentRepository {
+  constructor(
+    private readonly shipmentDAO: ShipmentDAO,
+    @Inject('uuid') private readonly uuid: () => string
+  ) { }
+
+  public async save(shipments: ShipmentInsert[]): Promise<string[]> {
+    await this.shipmentDAO.save(shipments).catch((error) => {
+      Logger.error('シップメント保存時にエラーが発生', { error: error.message });
+      throw new ShipmentSaveException('シップメント情報の保存に失敗しました。');
+    });
+
+    return shipments.map((shipment) => shipment.id);
+  }
+
+  public async get(queries: {
+    organizationId: string;
+    sinceId?: string;
+    count?: number;
+  }): Promise<Shipment[]> {
+    const count = queries.count ?? 10;
+
+    const rows = await this.shipmentDAO.get({
+      organizationId: queries.organizationId,
+      sinceId: queries.sinceId,
+      count,
+    });
+
+    return rows.map((row) => {
+      const shipmentRow = row as unknown as ShipmentRow;
+      return {
+        id: shipmentRow.id,
+        organizationId: shipmentRow.organizationId,
+        slipId: shipmentRow.slipId,
+        consignor: {
+          id: shipmentRow.consignor.id,
+          name: shipmentRow.consignor.name ?? null,
+        },
+        consignee: {
+          id: shipmentRow.consignee.id,
+          name: shipmentRow.consignee.name ?? null,
+        },
+        originSpotId: shipmentRow.originSpotId,
+        destinationSpotId: shipmentRow.destinationSpotId,
+        meta: shipmentRow.meta ?? null,
+      };
+    });
+  }
+
+  public async saveEvents(
+    events: ShipmentEventInput[],
+    statuses: ShipmentStatusInput[],
+    updateBy: string
+  ): Promise<void> {
+    const eventsWithId = events.map((e) => ({
+      id: this.uuid(),
+      ...e,
+      geocode: e.geocode ?? null,
+      updateBy,
+    }));
+
+    await this.shipmentDAO.saveEvents(eventsWithId, statuses);
+  }
+}

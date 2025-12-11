@@ -1,0 +1,8 @@
+export type Application = {
+  id: string;
+  name: string;
+};
+
+export interface ApplicationsPresenterInterface {
+  output(applications: Application[]): void;
+}

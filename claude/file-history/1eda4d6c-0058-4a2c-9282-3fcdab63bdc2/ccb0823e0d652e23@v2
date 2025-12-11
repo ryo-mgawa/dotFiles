@@ -1,0 +1,87 @@
+import { useRef, useEffect, type ReactNode } from 'react';
+import type { Participant } from '@/entities';
+import './MainVideoDisplay.scss';
+
+/**
+ * ビデオレンダリング関数の型
+ */
+interface VideoRenderer {
+  attachVideo: (
+    participantId: string,
+    container: HTMLElement
+  ) => Promise<void>;
+  detachVideo: (participantId: string, container: HTMLElement) => Promise<void>;
+}
+
+/**
+ * MainVideoDisplay Props
+ */
+interface MainVideoDisplayProps {
+  participant: Participant | null;
+  siteName?: string;
+  videoRenderer?: VideoRenderer;
+  children?: ReactNode;
+}
+
+/**
+ * MainVideoDisplay
+ * メイン映像表示コンポーネント（画面80%占有）
+ */
+export const MainVideoDisplay = ({
+  participant,
+  siteName,
+  videoRenderer,
+  children,
+}: MainVideoDisplayProps) => {
+  const videoContainerRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  // ビデオレンダリング
+  useEffect(() => {
+    const videoContainer = videoContainerRef.current;
+    if (!videoContainer || !participant || !videoRenderer) return;
+
+    const attachVideo = async () => {
+      try {
+        await videoRenderer.attachVideo(participant.id, videoContainer);
+      } catch (error) {
+        console.error('Failed to attach main video:', error);
+      }
+    };
+
+    if (participant.isVideoOn) {
+      attachVideo();
+    }
+
+    return () => {
+      if (participant) {
+        videoRenderer.detachVideo(participant.id, videoContainer).catch(console.error);
+      }
+    };
+  }, [participant, videoRenderer]);
+
+  return (
+    <div className="main-video-display" ref={containerRef}>
+      <div ref={videoContainerRef} className="main-video-display__video-container" />
+
+      {!participant?.isVideoOn && (
+        <div className="main-video-display__placeholder">
+          <div className="main-video-display__avatar">
+            {siteName?.[0] || '?'}
+          </div>
+          <span className="main-video-display__name">
+            {siteName || '接続待ち...'}
+          </span>
+        </div>
+      )}
+
+      {siteName && (
+        <div className="main-video-display__label">
+          <span>{siteName}</span>
+        </div>
+      )}
+
+      {children}
+    </div>
+  );
+};

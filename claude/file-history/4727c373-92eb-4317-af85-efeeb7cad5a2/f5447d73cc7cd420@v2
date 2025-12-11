@@ -1,0 +1,88 @@
+import { useEffect, useCallback, useRef } from 'react';
+
+/**
+ * キーボードショートカット設定
+ */
+export interface KeyboardShortcutConfig {
+  /** マイクトグル (Opt+A) */
+  onToggleMic?: () => void;
+  /** カメラトグル (Opt+V) */
+  onToggleCamera?: () => void;
+  /** 拠点切り替え (Ctrl+Opt+Cmd+M) */
+  onSwitchSite?: () => void;
+  /** ショートカット有効フラグ */
+  enabled?: boolean;
+}
+
+/**
+ * キーコード定数
+ */
+const KEY_CODES = {
+  A: 'KeyA',
+  V: 'KeyV',
+  M: 'KeyM',
+} as const;
+
+/**
+ * useKeyboardShortcut
+ * キーボードショートカットを管理するフック
+ *
+ * ショートカット:
+ * - Opt+A: マイクミュート切り替え
+ * - Opt+V: カメラ切り替え
+ * - Ctrl+Opt+Cmd+M: 拠点切り替え
+ */
+export const useKeyboardShortcut = ({
+  onToggleMic,
+  onToggleCamera,
+  onSwitchSite,
+  enabled = true,
+}: KeyboardShortcutConfig): void => {
+  // 最新のコールバックを参照として保持
+  const callbacksRef = useRef({ onToggleMic, onToggleCamera, onSwitchSite });
+
+  // コールバックを更新
+  useEffect(() => {
+    callbacksRef.current = { onToggleMic, onToggleCamera, onSwitchSite };
+  }, [onToggleMic, onToggleCamera, onSwitchSite]);
+
+  const handleKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (!enabled) return;
+
+      const { code, altKey, ctrlKey, metaKey } = event;
+
+      // Opt+A: マイクトグル
+      if (altKey && !ctrlKey && !metaKey && code === KEY_CODES.A) {
+        event.preventDefault();
+        callbacksRef.current.onToggleMic?.();
+        return;
+      }
+
+      // Opt+V: カメラトグル
+      if (altKey && !ctrlKey && !metaKey && code === KEY_CODES.V) {
+        event.preventDefault();
+        callbacksRef.current.onToggleCamera?.();
+        return;
+      }
+
+      // Ctrl+Opt+Cmd+M: 拠点切り替え
+      if (altKey && ctrlKey && metaKey && code === KEY_CODES.M) {
+        event.preventDefault();
+        callbacksRef.current.onSwitchSite?.();
+        return;
+      }
+    },
+    [enabled]
+  );
+
+  useEffect(() => {
+    if (!enabled) return;
+
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [enabled, handleKeyDown]);
+};

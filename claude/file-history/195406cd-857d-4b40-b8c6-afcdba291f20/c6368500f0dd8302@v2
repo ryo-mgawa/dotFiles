@@ -1,0 +1,21 @@
+import { Router } from 'express';
+import { AuthController } from '../controller/AuthController.js';
+import { validateBody, authMiddleware } from '@/shared/middleware/index.js';
+import { loginSchema, siteAuthSchema } from '../validators/authValidator.js';
+
+const router = Router();
+const authController = new AuthController();
+
+router.post('/login', validateBody(loginSchema), (req, res, next) => {
+  authController.login(req, res, next);
+});
+
+router.post('/site', validateBody(siteAuthSchema), (req, res, next) => {
+  authController.authenticateBySiteToken(req, res, next);
+});
+
+router.get('/me', authMiddleware, (req, res, next) => {
+  authController.getCurrentUser(req, res, next);
+});
+
+export { router as authRoutes };

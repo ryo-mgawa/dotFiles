@@ -1,0 +1,38 @@
+import './ControlButton.scss';
+
+/**
+ * CameraButton Props
+ */
+interface CameraButtonProps {
+  isOff: boolean;
+  onClick: () => void;
+  disabled?: boolean;
+}
+
+/**
+ * CameraButton
+ * カメラオン/オフ切り替えボタン
+ */
+export const CameraButton = ({
+  isOff,
+  onClick,
+  disabled = false,
+}: CameraButtonProps) => {
+  return (
+    <button
+      type="button"
+      className={`control-button ${isOff ? 'control-button--off' : 'control-button--on'}`}
+      onClick={onClick}
+      disabled={disabled}
+      aria-label={isOff ? 'カメラをオンにする' : 'カメラをオフにする'}
+      title={isOff ? 'カメラをオンにする (Opt+V)' : 'カメラをオフにする (Opt+V)'}
+    >
+      <span className="control-button__icon">
+        {isOff ? '📷' : '📹'}
+      </span>
+      <span className="control-button__label">
+        {isOff ? 'カメラオフ' : 'カメラオン'}
+      </span>
+    </button>
+  );
+};

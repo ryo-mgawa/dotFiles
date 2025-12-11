@@ -1,0 +1,97 @@
+import type { ISiteRepository } from '@/infrastructure/database/repositories/index.js';
+import type { ICompanyRepository } from '@/infrastructure/database/repositories/index.js';
+import type { ISiteDeviceRepository } from '@/infrastructure/database/repositories/index.js';
+import type { SiteAuthRequestDto, SiteAuthResponseDto } from '../dto/AuthDto.js';
+import { AuthenticationError } from '@/shared/errors/index.js';
+import { generateSiteToken, generateZoomToken } from '@/shared/lib/index.js';
+import { randomUUID } from 'crypto';
+
+export class SiteAuthUseCase {
+  constructor(
+    private siteRepository: ISiteRepository,
+    private companyRepository: ICompanyRepository,
+    private siteDeviceRepository: ISiteDeviceRepository
+  ) {}
+
+  async execute(input: SiteAuthRequestDto): Promise<SiteAuthResponseDto> {
+    const site = await this.siteRepository.findByAccessToken(input.siteToken);
+
+    if (!site) {
+      throw new AuthenticationError('無効な拠点トークンです');
+    }
+
+    const company = await this.companyRepository.findById(site.companyId);
+
+    if (!company) {
+      throw new AuthenticationError('会社情報が見つかりません');
+    }
+
+    // デバイス認証チェック
+    const { deviceId, isNewDevice } = await this.handleDeviceAuth(
+      site.id,
+      input.deviceId,
+      input.deviceName
+    );
+
+    const accessToken = generateSiteToken({
+      id: site.id,
+      companyId: site.companyId,
+    });
+
+    // Zoom セッション名は会社ID + 日付で一意にする
+    const today = new Date().toISOString().slice(0, 10);
+    const zoomSessionName = `${company.id}-${today}`;
+    const zoomToken = generateZoomToken(zoomSessionName);
+
+    return {
+      site: {
+        id: site.id,
+        name: site.name,
+        displayOrder: site.displayOrder,
+        companyId: site.companyId,
+      },
+      company: {
+        id: company.id,
+        name: company.name,
+      },
+      accessToken,
+      zoomSessionName,
+      zoomToken,
+      deviceId,
+      isNewDevice,
+    };
+  }
+
+  private async handleDeviceAuth(
+    siteId: string,
+    clientDeviceId: string | null,
+    deviceName: string | null
+  ): Promise<{ deviceId: string; isNewDevice: boolean }> {
+    const existingDevice = await this.siteDeviceRepository.findBySiteId(siteId);
+
+    // デバイスが未登録の場合: 新規登録
+    if (!existingDevice) {
+      const newDeviceId = clientDeviceId || randomUUID();
+      await this.siteDeviceRepository.create({
+        siteId,
+        deviceId: newDeviceId,
+        deviceName,
+      });
+      return { deviceId: newDeviceId, isNewDevice: true };
+    }
+
+    // クライアントからのデバイスIDがない場合: 別デバイスからのアクセス
+    if (!clientDeviceId) {
+      throw new AuthenticationError('この拠点には既に別のデバイスが登録されています');
+    }
+
+    // デバイスIDが一致する場合: 認証成功
+    if (existingDevice.deviceId === clientDeviceId) {
+      await this.siteDeviceRepository.updateLastAccessedAt(existingDevice.id);
+      return { deviceId: existingDevice.deviceId, isNewDevice: false };
+    }
+
+    // デバイスIDが異なる場合: 別デバイスからのアクセス
+    throw new AuthenticationError('この拠点には既に別のデバイスが登録されています');
+  }
+}

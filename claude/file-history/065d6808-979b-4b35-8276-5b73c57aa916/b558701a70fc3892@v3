@@ -1,0 +1,76 @@
+# Firestore API が有効化されていることを確認
+resource "google_project_service" "firestore" {
+  project = data.google_project.default.project_id
+  service = "firestore.googleapis.com"
+
+  disable_on_destroy = false
+}
+
+# Firestoreデータベース
+resource "google_firestore_database" "automation" {
+  provider    = google-beta
+  project     = data.google_project.default.project_id
+  name        = "automation"
+  location_id = "asia-northeast1"
+
+  type = "FIRESTORE_NATIVE"
+
+  concurrency_mode            = "OPTIMISTIC"
+  app_engine_integration_mode = "DISABLED"
+
+  depends_on = [
+    google_project_service.firestore,
+  ]
+}
+
+# Firestoreデータベースのスケジュールバックアップ
+resource "google_firestore_backup_schedule" "automation_daily_backup" {
+  provider = google-beta
+  project  = data.google_project.default.project_id
+  database = google_firestore_database.automation.name
+
+  # 保持期間: 7日間 (604800秒)
+  retention = "604800s"
+
+  # 毎日バックアップを実行
+  daily_recurrence {}
+
+  depends_on = [
+    google_firestore_database.automation,
+  ]
+}
+
+# Firestoreセキュリティルールセット
+resource "google_firebaserules_ruleset" "automation" {
+  provider = google-beta
+  project  = data.google_project.default.project_id
+
+  source {
+    files {
+      name    = "firestore.rules"
+      content = local.firestore_rules
+    }
+  }
+
+  depends_on = [
+    google_firestore_database.automation,
+  ]
+}
+
+# Firestoreセキュリティルールのリリース
+resource "google_firebaserules_release" "automation" {
+  provider     = google-beta
+  project      = data.google_project.default.project_id
+  name         = "cloud.firestore/automation"
+  ruleset_name = "projects/${data.google_project.default.project_id}/rulesets/${google_firebaserules_ruleset.automation.name}"
+
+  lifecycle {
+    replace_triggered_by = [
+      google_firebaserules_ruleset.automation
+    ]
+  }
+
+  depends_on = [
+    google_firebaserules_ruleset.automation,
+  ]
+}

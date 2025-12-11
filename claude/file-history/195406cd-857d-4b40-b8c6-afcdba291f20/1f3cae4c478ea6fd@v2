@@ -1,0 +1,23 @@
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { ProtectedRoute } from '@/features/auth';
+import { LoginPage } from '@/pages/LoginPage';
+import { VideoCallPage } from '@/pages/VideoCallPage';
+import { SessionEndedPage } from '@/pages/SessionEndedPage';
+
+export const AppRoutes = () => {
+  return (
+    <Routes>
+      <Route path="/login" element={<LoginPage />} />
+      <Route
+        path="/call"
+        element={
+          <ProtectedRoute>
+            <VideoCallPage />
+          </ProtectedRoute>
+        }
+      />
+      <Route path="/session-ended" element={<SessionEndedPage />} />
+      <Route path="/" element={<Navigate to="/login" replace />} />
+    </Routes>
+  );
+};

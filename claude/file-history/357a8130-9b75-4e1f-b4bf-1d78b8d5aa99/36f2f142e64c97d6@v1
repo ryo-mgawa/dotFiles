@@ -1,0 +1,3 @@
+import { ShipmentInput } from '../../model/shipment';
+
+export type ShipmentRepositoryInput = ShipmentInput;

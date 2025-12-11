@@ -1,0 +1,438 @@
+# Issue #2964: シップメントの状態を変更するEventAPI - Application層実装
+
+## 概要
+Issue 2879で定義されたシップメントの状態を変更するEventAPIのApplication層を実装する。
+Issue 2963でData層が完了しており、PR2937（shipment追加APIのApplication層）とPR2951（shipment取得APIのApplication層）を参考に、同様のアーキテクチャで実装する。
+
+## API仕様（Issue 2879より）
+
+### エンドポイント
+- **メソッド**: POST
+- **パス**: `/public/shipmentEvents`
+- **認証**: M2M or Loogia API Key (PaaS)
+
+### リクエストボディ
+```typescript
+{
+  events: {
+    shipmentId: string;
+    type: 'Store' | 'Transfer' | 'Deliver' | 'Complete' | 'Cancel';
+    originalSpotId: string;
+    geocode?: { x: number; y: number };
+    executedAt: string; // ISO 8601 format
+  }[]
+}
+```
+
+### レスポンスボディ
+```typescript
+{
+  status: 'success'
+}
+```
+
+## ビジネスルール
+
+### 状態遷移ルール
+1. `Requested` → `InStorage` → `InTransit` → `Completed` が基本的な流れ
+2. `Requested` → `InTransit` → `Completed` でも問題ない
+3. `Requested` → `Cancel`: shipmentが無かったことになる
+4. `Requested` → `InStorage/InTransit` → `Cancel`: shipmentが無かったことになる
+5. `Completed` → `Cancel`: エラー（完了状態からのキャンセルは不可）
+
+### イベントタイプと状態の対応
+- `Store`: `InStorage`状態に変更
+- `Transfer`: `InTransit`状態に変更
+- `Deliver`: `Completed`状態に変更
+- `Complete`: `Completed`状態に変更
+- `Cancel`: `Canceled`状態に変更
+
+## 実装ファイル
+
+### 1. Application Types層
+
+#### 1-1. addShipmentEventsTypes.ts (新規作成)
+`server/apps/shipment/src/application/types/addShipmentEventsTypes.ts`
+
+```typescript
+import { Type } from '@app/rdb/db/models/shipmentEvent/type';
+import { Geocode } from '@app/rdb/db/models/shipmentEvent/shipmentEvent';
+
+export type AddShipmentEventItem = {
+  shipmentId: string;
+  type: Type;
+  originalSpotId: string;
+  geocode?: Geocode;
+  executedAt: Date;
+};
+
+export type Input = {
+  events: AddShipmentEventItem[];
+};
+```
+
+**責務**:
+- UseCaseの入力型を定義
+- DTOからの変換後の型
+
+### 2. UseCase層
+
+#### 2-1. addShipmentEventsUseCase.ts (新規作成)
+`server/apps/shipment/src/application/useCase/addShipmentEventsUseCase.ts`
+
+```typescript
+import { Inject, Injectable } from '@nestjs/common';
+import { ShipmentRepository } from '../../data/repository/shipmentRepository';
+import { AddShipmentEventsPresenterInterface } from '../../interface/presenter/addShipmentEventsPresenterInterface';
+import { Input } from '../types/addShipmentEventsTypes';
+import { SHIPMENT_EVENT_TYPE } from '@app/rdb/db/models/shipmentEvent/type';
+import { SHIPMENT_STATUS } from '@app/rdb/db/models/shipmentStatus/status';
+import { ShipmentEventInput, ShipmentStatusInput } from '../../data/repository/types/shipmentRepositoryTypes';
+
+@Injectable()
+export class AddShipmentEventsUseCase {
+  constructor(
+    @Inject('AddShipmentEventsPresenter')
+    private readonly presenter: AddShipmentEventsPresenterInterface,
+    private readonly shipmentRepository: ShipmentRepository,
+  ) { }
+
+  public async execute(input: Input, userId: string): Promise<void> {
+    // イベントをRepository形式に変換
+    const events: ShipmentEventInput[] = input.events.map((event) => ({
+      shipmentId: event.shipmentId,
+      type: event.type,
+      originalSpotId: event.originalSpotId,
+      geocode: event.geocode,
+      executedAt: event.executedAt,
+    }));
+
+    // イベントタイプから状態を決定
+    const statuses: ShipmentStatusInput[] = input.events.map((event) => ({
+      shipmentId: event.shipmentId,
+      status: this.mapEventTypeToStatus(event.type),
+      executedAt: event.executedAt,
+    }));
+
+    // Repositoryを呼び出してイベントと状態を保存
+    await this.shipmentRepository.saveShipmentEvents(events, statuses, userId);
+
+    // Presenterを呼び出してレスポンスを返却
+    this.presenter.output();
+  }
+
+  private mapEventTypeToStatus(type: string): string {
+    switch (type) {
+      case SHIPMENT_EVENT_TYPE.STORE:
+        return SHIPMENT_STATUS.IN_STORAGE;
+      case SHIPMENT_EVENT_TYPE.TRANSFER:
+        return SHIPMENT_STATUS.IN_TRANSIT;
+      case SHIPMENT_EVENT_TYPE.DELIVER:
+      case SHIPMENT_EVENT_TYPE.COMPLETE:
+        return SHIPMENT_STATUS.COMPLETED;
+      case SHIPMENT_EVENT_TYPE.CANCEL:
+        return SHIPMENT_STATUS.CANCELED;
+      default:
+        throw new Error(`Unknown event type: ${type}`);
+    }
+  }
+}
+```
+
+**責務**:
+- イベント配列をRepository入力形式に変換
+- イベントタイプから状態を決定
+- Repositoryを呼び出してデータを保存
+- ビジネスロジックの実装（イベントタイプ→状態のマッピング）
+
+### 3. Presenter Interface層
+
+#### 3-1. addShipmentEventsPresenterInterface.ts (新規作成)
+`server/apps/shipment/src/interface/presenter/addShipmentEventsPresenterInterface.ts`
+
+```typescript
+export interface AddShipmentEventsPresenterInterface {
+  output(): void;
+}
+```
+
+**責務**:
+- UseCaseとPresenterの疎結合を実現
+- Clean Architectureの依存性逆転の原則を守る
+
+### 4. テスト層
+
+#### 4-1. addShipmentEventsUseCase.test.ts (新規作成)
+`server/apps/shipment/src/application/useCase/__tests__/addShipmentEventsUseCase.test.ts`
+
+テストケース:
+1. 単一のイベントが正しく保存される
+2. 複数のイベントが一括保存される
+3. Storeイベント → InStorage状態に変換
+4. Transferイベント → InTransit状態に変換
+5. Deliverイベント → Completed状態に変換
+6. Completeイベント → Completed状態に変換
+7. Cancelイベント → Canceled状態に変換
+8. geocodeがundefinedの場合も正しく処理される
+9. executedAtが正しく伝搬される
+10. userIdが正しくupdateByとして設定される
+
+```typescript
+import { INestApplication } from '@nestjs/common';
+import { Test, TestingModule } from '@nestjs/testing';
+import { ShipmentRepository } from '../../../data/repository/shipmentRepository';
+import { AddShipmentEventsPresenterInterface } from '../../../interface/presenter/addShipmentEventsPresenterInterface';
+import { AddShipmentEventsUseCase } from '../addShipmentEventsUseCase';
+import { Input } from '../../types/addShipmentEventsTypes';
+import { SHIPMENT_EVENT_TYPE } from '@app/rdb/db/models/shipmentEvent/type';
+import { SHIPMENT_STATUS } from '@app/rdb/db/models/shipmentStatus/status';
+
+describe('AddShipmentEventsUseCase', () => {
+  let addShipmentEventsUseCase: AddShipmentEventsUseCase;
+  let moduleRef: TestingModule;
+  let app: INestApplication;
+  let mockRepository: { saveShipmentEvents: jest.Mock };
+  let mockPresenter: { output: jest.Mock };
+
+  describe('execute', () => {
+    it('単一のイベントが正しく保存される', async () => {
+      await createTestingModule();
+
+      const executedAt = new Date('2025-11-10T10:00:00Z');
+      const input: Input = {
+        events: [
+          {
+            shipmentId: 'shipment-1',
+            type: SHIPMENT_EVENT_TYPE.STORE,
+            originalSpotId: 'spot-1',
+            geocode: { x: 139.7671, y: 35.6812 },
+            executedAt,
+          },
+        ],
+      };
+
+      await addShipmentEventsUseCase.execute(input, 'user-1');
+
+      expect(mockRepository.saveShipmentEvents).toHaveBeenCalledWith(
+        [
+          {
+            shipmentId: 'shipment-1',
+            type: SHIPMENT_EVENT_TYPE.STORE,
+            originalSpotId: 'spot-1',
+            geocode: { x: 139.7671, y: 35.6812 },
+            executedAt,
+          },
+        ],
+        [
+          {
+            shipmentId: 'shipment-1',
+            status: SHIPMENT_STATUS.IN_STORAGE,
+            executedAt,
+          },
+        ],
+        'user-1'
+      );
+      expect(mockPresenter.output).toHaveBeenCalled();
+    });
+
+    it('複数のイベントが一括保存される', async () => {
+      await createTestingModule();
+
+      const executedAt1 = new Date('2025-11-10T10:00:00Z');
+      const executedAt2 = new Date('2025-11-10T11:00:00Z');
+
+      const input: Input = {
+        events: [
+          {
+            shipmentId: 'shipment-1',
+            type: SHIPMENT_EVENT_TYPE.STORE,
+            originalSpotId: 'spot-1',
+            executedAt: executedAt1,
+          },
+          {
+            shipmentId: 'shipment-2',
+            type: SHIPMENT_EVENT_TYPE.DELIVER,
+            originalSpotId: 'spot-2',
+            executedAt: executedAt2,
+          },
+        ],
+      };
+
+      await addShipmentEventsUseCase.execute(input, 'user-1');
+
+      expect(mockRepository.saveShipmentEvents).toHaveBeenCalledWith(
+        expect.arrayContaining([
+          expect.objectContaining({
+            shipmentId: 'shipment-1',
+            type: SHIPMENT_EVENT_TYPE.STORE,
+          }),
+          expect.objectContaining({
+            shipmentId: 'shipment-2',
+            type: SHIPMENT_EVENT_TYPE.DELIVER,
+          }),
+        ]),
+        expect.arrayContaining([
+          expect.objectContaining({
+            shipmentId: 'shipment-1',
+            status: SHIPMENT_STATUS.IN_STORAGE,
+          }),
+          expect.objectContaining({
+            shipmentId: 'shipment-2',
+            status: SHIPMENT_STATUS.COMPLETED,
+          }),
+        ]),
+        'user-1'
+      );
+    });
+
+    // 以下、各イベントタイプのテストケース...
+  });
+
+  const createTestingModule = async () => {
+    mockRepository = {
+      saveShipmentEvents: jest.fn().mockResolvedValue(undefined),
+    };
+
+    mockPresenter = {
+      output: jest.fn(),
+    };
+
+    moduleRef = await Test.createTestingModule({
+      imports: [],
+      providers: [
+        AddShipmentEventsUseCase,
+        {
+          provide: ShipmentRepository,
+          useValue: mockRepository,
+        },
+        {
+          provide: 'AddShipmentEventsPresenter',
+          useValue: mockPresenter,
+        },
+      ],
+    }).compile();
+
+    app = moduleRef.createNestApplication();
+    await app.init();
+
+    addShipmentEventsUseCase = moduleRef.get<AddShipmentEventsUseCase>(
+      AddShipmentEventsUseCase,
+    );
+  };
+
+  afterEach(async () => {
+    if (app) {
+      await app.close();
+    }
+    if (moduleRef) {
+      await moduleRef.close();
+    }
+  });
+});
+```
+
+## 実装順序
+
+1. **Application Types層の作成**
+   - addShipmentEventsTypes.ts
+   - Input型とAddShipmentEventItem型の定義
+
+2. **Presenter Interface層の作成**
+   - addShipmentEventsPresenterInterface.ts
+
+3. **UseCase層の実装**
+   - addShipmentEventsUseCase.ts
+   - イベントタイプ→状態のマッピングロジック
+
+4. **テストの実装**
+   - addShipmentEventsUseCase.test.ts
+   - 各イベントタイプのテスト
+   - 複数イベントの一括処理テスト
+
+## 注意事項
+
+### 1. PR2937/PR2951との整合性
+- ディレクトリ構造を統一
+- 命名規則を統一（Add〜UseCase）
+- テストファイルの構造を統一
+
+### 2. Clean Architectureの原則
+- UseCase: ビジネスロジックのみ担当
+- Presenter Interface: 依存性逆転の原則
+- 型変換はUseCase層で実施
+
+### 3. イベントタイプと状態のマッピング
+- Store → InStorage
+- Transfer → InTransit
+- Deliver/Complete → Completed
+- Cancel → Canceled
+
+### 4. データフロー
+- Input → イベント配列と状態配列に分離
+- イベント: shipment_eventテーブルに保存
+- 状態: shipment_statusテーブルにUPSERT
+
+### 5. userIdの扱い
+- executedAtは各イベントで指定
+- updateBy（userId）は全イベント共通
+
+### 6. エラーハンドリング
+- 未知のイベントタイプはエラー
+- Repository層でのDB制約エラーは上位に伝搬
+
+### 7. テスト戦略
+- 単体テスト: UseCase層のロジックを検証
+- モック使用: RepositoryとPresenterをモック化
+- 境界値テスト: 空配列、単一、複数イベント
+
+## ディレクトリ構造
+
+```
+server/apps/shipment/src/
+├── application/
+│   ├── types/
+│   │   ├── addShipmentsTypes.ts (既存)
+│   │   ├── getShipmentsTypes.ts (既存)
+│   │   └── addShipmentEventsTypes.ts (新規)
+│   └── useCase/
+│       ├── __tests__/
+│       │   ├── addShipmentsUseCase.test.ts (既存)
+│       │   ├── getShipmentsUseCase.test.ts (既存)
+│       │   └── addShipmentEventsUseCase.test.ts (新規)
+│       ├── addShipmentsUseCase.ts (既存)
+│       ├── getShipmentsUseCase.ts (既存)
+│       └── addShipmentEventsUseCase.ts (新規)
+└── interface/
+    └── presenter/
+        ├── addShipmentsPresenterInterface.ts (既存)
+        ├── getShipmentsPresenterInterface.ts (既存)
+        └── addShipmentEventsPresenterInterface.ts (新規)
+```
+
+## データフロー
+
+```
+Controller (Presentation層)
+    ↓ POST /public/shipmentEvents
+    ↓ { events: [...] }
+AddShipmentEventsUseCase
+    ↓ イベントタイプ→状態マッピング
+    ↓ events[], statuses[], userId
+ShipmentRepository (Data層)
+    ↓ saveShipmentEvents()
+    ↓ shipment_event, shipment_status
+Database
+```
+
+## 参考情報
+
+- Issue 2879: APIドキュメント（ビジネスルール）
+- Issue 2963: Data層実装（完了済み）
+- PR2937: shipment追加APIのApplication層実装
+- PR2951: shipment取得APIのApplication層実装
+
+## 次のステップ（このissue外）
+
+- Presentation層の実装（Controller/Presenter/DTO）
+- E2Eテストの実装
+- APIテスト（Bruno）

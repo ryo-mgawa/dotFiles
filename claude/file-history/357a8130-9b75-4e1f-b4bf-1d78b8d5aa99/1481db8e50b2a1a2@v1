@@ -1,0 +1,39 @@
+export interface Consignor {
+  id: string;
+  name?: string | null;
+}
+
+export interface Consignee {
+  id: string;
+  name?: string | null;
+}
+
+export interface Shipment {
+  id: string;
+  organization_id: string;
+  slip_id: string;
+  consignor: Consignor;
+  consignee: Consignee;
+  origin_spot_id: string;
+  destination_spot_id: string;
+  meta: Record<string, unknown> | null;
+}
+
+export interface ShipmentInsert {
+  id: string;
+  organization_id: string;
+  slip_id: string;
+  consignor: string;
+  consignee: string;
+  origin_spot_id: string;
+  destination_spot_id: string;
+  meta: string;
+}
+
+export interface ShipmentUpdate {
+  consignor?: string;
+  consignee?: string;
+  origin_spot_id?: string;
+  destination_spot_id?: string;
+  meta?: string;
+}

@@ -1,0 +1,718 @@
+import { M2MAuthService, RolesGuard } from '@app/auth';
+import { RuntimeExceptionPresenter } from '@app/errors';
+import { Fetcher } from '@app/loogiaAPIFetcher';
+import { RequestContext, RequestId } from '@app/requestContext';
+import { INestApplication, ValidationPipe } from '@nestjs/common';
+import { Test, TestingModule } from '@nestjs/testing';
+import request from 'supertest';
+import { ShipmentModule } from '../src/module';
+import { ShipmentRepository } from '../src/data/repository/shipmentRepository';
+
+describe('Shipment', () => {
+  let app: INestApplication;
+  let moduleRef: TestingModule;
+
+  beforeEach(async () => {
+    jest.setTimeout(100000);
+
+    moduleRef = await Test.createTestingModule({
+      imports: [ShipmentModule],
+      providers: [],
+    })
+      .overrideProvider(M2MAuthService)
+      .useValue({
+        generateM2MToken: () => 'mockToken',
+      })
+      .overrideProvider(Fetcher)
+      .useValue({
+        fetch: () => jest.fn(),
+      })
+      .overrideProvider(RolesGuard)
+      .useValue({
+        canActivate: () => true,
+      })
+      .overrideProvider(ShipmentRepository)
+      .useValue({
+        save: jest.fn().mockResolvedValue([]),
+        getShipments: jest.fn().mockResolvedValue([]),
+      })
+      .compile();
+
+    app = moduleRef.createNestApplication();
+    app.useGlobalFilters(new RuntimeExceptionPresenter());
+    app.useGlobalPipes(
+      new ValidationPipe({
+        whitelist: true,
+        forbidNonWhitelisted: true,
+        transform: true,
+      }),
+    );
+
+    await app.init();
+
+    jest.spyOn(RequestContext, 'get').mockReturnValue({
+      requestURL: '',
+      requestId: new RequestId('test-request-id'),
+      user: {
+        userId: 'test-user-id',
+        organizationId: 'test-org-id',
+        role: 'PAAS',
+      },
+    });
+  });
+
+  afterEach(async () => {
+    jest.clearAllMocks();
+    await app.close();
+    await moduleRef.close();
+  });
+
+  describe('Public API', () => {
+    describe('POST /public/shipments', () => {
+      it('荷物が登録される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+              meta: {
+                weight: 100,
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(200);
+      });
+
+      it('複数の荷物が一度に登録される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+            {
+              slipId: 'SLIP-002',
+              consignor: {
+                id: 'consignor-2',
+                name: '送り主2',
+              },
+              consignee: {
+                id: 'consignee-2',
+                name: '受取人2',
+              },
+              originSpot: {
+                id: 'spot-origin-2',
+              },
+              destinationSpot: {
+                id: 'spot-dest-2',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(200);
+      });
+
+      it('metaなしで荷物が登録される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(200);
+      });
+
+      it('shipmentsが空配列の場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('slipIdが未定義の場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('consignorが未定義の場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('consigneeが未定義の場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('originSpotが未定義の場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('destinationSpotが未定義の場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('slipIdが256文字を超える場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'a'.repeat(257),
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('consignor.nameが256文字を超える場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: 'あ'.repeat(257),
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('metaのサイズが1KBを超える場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+              meta: {
+                data: 'x'.repeat(1025),
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('consignor.idが未定義の場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('consignee.idが未定義の場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('originSpot.idが未定義の場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {},
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('destinationSpot.idが未定義の場合400エラーが返される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {},
+            },
+          ],
+        });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('metaが空オブジェクトの場合、正常に登録される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+              meta: {},
+            },
+          ],
+        });
+
+        expect(result.status).toBe(200);
+      });
+
+      it('複雑なネストされたmetaでも正常に登録される', async () => {
+        const result = await apiRequest({
+          shipments: [
+            {
+              slipId: 'SLIP-001',
+              consignor: {
+                id: 'consignor-1',
+                name: '送り主1',
+              },
+              consignee: {
+                id: 'consignee-1',
+                name: '受取人1',
+              },
+              originSpot: {
+                id: 'spot-origin-1',
+              },
+              destinationSpot: {
+                id: 'spot-dest-1',
+              },
+              meta: {
+                weight: 100,
+                dimensions: {
+                  width: 10,
+                  height: 20,
+                  depth: 30,
+                },
+                tags: ['fragile', 'urgent'],
+              },
+            },
+          ],
+        });
+
+        expect(result.status).toBe(200);
+      });
+
+      const apiRequest = async (source: any) => {
+        return request(app.getHttpServer())
+          .post('/public/shipments')
+          .set({
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer jwt',
+          })
+          .send(source);
+      };
+    });
+
+    describe('GET /public/shipments', () => {
+      let mockShipmentRepository: any;
+
+      beforeEach(() => {
+        mockShipmentRepository = moduleRef.get(ShipmentRepository);
+      });
+
+      it('limit/offsetを指定してシップメント一覧を取得できる', async () => {
+        const mockShipments = [
+          {
+            id: 'shipment-1',
+            organizationId: 'test-org-id',
+            slipId: 'slip-1',
+            consignor: { id: 'consignor-1', name: '発荷主1' },
+            consignee: { id: 'consignee-1', name: '着荷主1' },
+            originSpotId: 'spot-1',
+            destinationSpotId: 'spot-2',
+            meta: { key: 'value' },
+          },
+        ];
+
+        mockShipmentRepository.getShipments.mockResolvedValue(mockShipments);
+
+        const result = await apiRequest({ limit: 10, offset: 5 });
+
+        expect(result.status).toBe(200);
+        expect(result.body.status).toBe('success');
+        expect(result.body.shipments).toHaveLength(1);
+        expect(result.body.shipments[0]).toEqual({
+          id: 'shipment-1',
+          slipId: 'slip-1',
+          consignor: { id: 'consignor-1', name: '発荷主1' },
+          consignee: { id: 'consignee-1', name: '着荷主1' },
+          originSpot: { id: 'spot-1' },
+          destinationSpot: { id: 'spot-2' },
+          meta: { key: 'value' },
+        });
+        expect(mockShipmentRepository.getShipments).toHaveBeenCalledWith(
+          'test-org-id',
+          10,
+          5,
+        );
+      });
+
+      it('デフォルト値（limit=20, offset=0）でシップメント一覧を取得できる', async () => {
+        const mockShipments = [
+          {
+            id: 'shipment-1',
+            organizationId: 'test-org-id',
+            slipId: 'slip-1',
+            consignor: { id: 'consignor-1', name: '発荷主1' },
+            consignee: { id: 'consignee-1', name: '着荷主1' },
+            originSpotId: 'spot-1',
+            destinationSpotId: 'spot-2',
+            meta: null,
+          },
+        ];
+
+        mockShipmentRepository.getShipments.mockResolvedValue(mockShipments);
+
+        const result = await apiRequest({});
+
+        expect(result.status).toBe(200);
+        expect(result.body.status).toBe('success');
+        expect(mockShipmentRepository.getShipments).toHaveBeenCalledWith(
+          'test-org-id',
+          20,
+          0,
+        );
+      });
+
+      it('シップメントが存在しない場合は空配列を返す', async () => {
+        mockShipmentRepository.getShipments.mockResolvedValue([]);
+
+        const result = await apiRequest({ limit: 20, offset: 0 });
+
+        expect(result.status).toBe(200);
+        expect(result.body.status).toBe('success');
+        expect(result.body.shipments).toHaveLength(0);
+      });
+
+      it('境界値テスト: limit=1で取得できる', async () => {
+        const mockShipments = [
+          {
+            id: 'shipment-1',
+            organizationId: 'test-org-id',
+            slipId: 'slip-1',
+            consignor: { id: 'consignor-1', name: '発荷主1' },
+            consignee: { id: 'consignee-1', name: '着荷主1' },
+            originSpotId: 'spot-1',
+            destinationSpotId: 'spot-2',
+          },
+        ];
+
+        mockShipmentRepository.getShipments.mockResolvedValue(mockShipments);
+
+        const result = await apiRequest({ limit: 1, offset: 0 });
+
+        expect(result.status).toBe(200);
+        expect(mockShipmentRepository.getShipments).toHaveBeenCalledWith(
+          'test-org-id',
+          1,
+          0,
+        );
+      });
+
+      it('境界値テスト: limit=100で取得できる', async () => {
+        mockShipmentRepository.getShipments.mockResolvedValue([]);
+
+        const result = await apiRequest({ limit: 100, offset: 0 });
+
+        expect(result.status).toBe(200);
+        expect(mockShipmentRepository.getShipments).toHaveBeenCalledWith(
+          'test-org-id',
+          100,
+          0,
+        );
+      });
+
+      it('バリデーションエラー: limit=0の場合400エラーが返される', async () => {
+        const result = await apiRequest({ limit: 0, offset: 0 });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('バリデーションエラー: limit=101の場合400エラーが返される', async () => {
+        const result = await apiRequest({ limit: 101, offset: 0 });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('バリデーションエラー: offset=-1の場合400エラーが返される', async () => {
+        const result = await apiRequest({ limit: 20, offset: -1 });
+
+        expect(result.status).toBe(400);
+      });
+
+      it('organizationIdによる分離が正しく動作する', async () => {
+        const mockShipments = [
+          {
+            id: 'shipment-1',
+            organizationId: 'test-org-id',
+            slipId: 'slip-1',
+            consignor: { id: 'consignor-1', name: '発荷主1' },
+            consignee: { id: 'consignee-1', name: '着荷主1' },
+            originSpotId: 'spot-1',
+            destinationSpotId: 'spot-2',
+          },
+        ];
+
+        mockShipmentRepository.getShipments.mockResolvedValue(mockShipments);
+
+        const result = await apiRequest({ limit: 20, offset: 0 });
+
+        expect(result.status).toBe(200);
+        expect(mockShipmentRepository.getShipments).toHaveBeenCalledWith(
+          'test-org-id',
+          20,
+          0,
+        );
+      });
+
+      const apiRequest = async (params: any) => {
+        return request(app.getHttpServer())
+          .get('/public/shipments')
+          .query(params)
+          .set({
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer jwt',
+          });
+      };
+    });
+  });
+});

@@ -1,0 +1,877 @@
+# 豊田高専陸上部ホームページ データベース設計書
+
+## 1. データベース概要
+
+### 1.1 DBMS選定
+- **DBMS**: PostgreSQL 15+（Supabase経由）
+- **ORM**: Prisma 6.x
+
+### 1.2 選定理由
+- **PostgreSQL**
+  - オープンソースで実績豊富
+  - 高度なインデックス機能
+  - JSON型のサポート（将来的な拡張に有利）
+  - トランザクション管理が堅牢
+- **Supabase**
+  - PostgreSQLベースのBaaS
+  - 自動バックアップ
+  - リアルタイム機能（将来的に活用可能）
+  - 無料枠から始められる
+
+### 1.3 設計方針
+1. **正規化**: 第3正規形を基本とする
+2. **論理削除**: 重要なデータは物理削除せず論理削除
+3. **タイムスタンプ**: 全テーブルにcreatedAt, updatedAtを付与
+4. **外部キー制約**: データ整合性を保証
+5. **インデックス**: 検索パフォーマンスを最適化
+
+## 2. ER図
+
+```mermaid
+erDiagram
+    Members ||--o{ Records : "has"
+    Competitions ||--o{ Records : "contains"
+    Members {
+        uuid id PK
+        string studentNumber UK
+        string name
+        int enrollmentYear
+        int graduationYear nullable
+        enum department
+        enum block
+        boolean isActive
+        timestamp createdAt
+        timestamp updatedAt
+    }
+    Competitions {
+        uuid id PK
+        string name
+        string location
+        date date
+        int year
+        timestamp createdAt
+        timestamp updatedAt
+    }
+    Records {
+        uuid id PK
+        uuid competitionId FK
+        uuid memberId FK
+        int gradeAtRecord
+        enum departmentAtRecord
+        string event
+        enum gender
+        decimal result
+        decimal wind nullable
+        text note nullable
+        timestamp createdAt
+        timestamp updatedAt
+    }
+    Advisors {
+        uuid id PK
+        string name
+        boolean isActive
+        timestamp createdAt
+        timestamp updatedAt
+    }
+    Activities {
+        uuid id PK
+        enum dayOfWeek
+        time startTime
+        time endTime
+        timestamp createdAt
+        timestamp updatedAt
+    }
+```
+
+## 3. テーブル定義
+
+### 3.1 Members（部員）
+
+#### 概要
+部員の基本情報を管理するテーブル。
+卒業生も含めて全ての部員データを保持する。
+
+#### スキーマ定義
+
+| カラム名 | 型 | NULL | デフォルト | 制約 | 説明 |
+|---------|-----|------|-----------|------|------|
+| id | UUID | NO | gen_random_uuid() | PRIMARY KEY | 部員ID |
+| studentNumber | VARCHAR(20) | NO | - | UNIQUE | 個人番号（学校発行） |
+| name | VARCHAR(100) | NO | - | - | 氏名 |
+| enrollmentYear | INTEGER | NO | - | CHECK (enrollmentYear >= 1900) | 入学年度 |
+| graduationYear | INTEGER | YES | NULL | CHECK (graduationYear IS NULL OR graduationYear >= enrollmentYear) | 卒業年度 |
+| department | VARCHAR(1) | NO | - | CHECK (department IN ('M','E','I','C','A')) | 学科 |
+| block | VARCHAR(10) | NO | - | CHECK (block IN ('短距離','中長距離','跳躍','投擲')) | 所属ブロック |
+| isActive | BOOLEAN | NO | true | - | 在籍フラグ |
+| createdAt | TIMESTAMP | NO | CURRENT_TIMESTAMP | - | 作成日時 |
+| updatedAt | TIMESTAMP | NO | CURRENT_TIMESTAMP | - | 更新日時 |
+
+#### インデックス
+```sql
+CREATE INDEX idx_members_isActive ON Members(isActive);
+CREATE INDEX idx_members_enrollmentYear ON Members(enrollmentYear);
+CREATE INDEX idx_members_department ON Members(department);
+CREATE INDEX idx_members_studentNumber ON Members(studentNumber);
+```
+
+#### 備考
+- `studentNumber`は個人記録閲覧の認証に使用
+- `enrollmentYear`から現在の学年を算出: `現在年度 - enrollmentYear + 1`
+- `isActive=false`かつ`graduationYear`が設定されている場合は卒業生
+
+### 3.2 Competitions（大会）
+
+#### 概要
+陸上競技大会の情報を管理するテーブル。
+
+#### スキーマ定義
+
+| カラム名 | 型 | NULL | デフォルト | 制約 | 説明 |
+|---------|-----|------|-----------|------|------|
+| id | UUID | NO | gen_random_uuid() | PRIMARY KEY | 大会ID |
+| name | VARCHAR(200) | NO | - | - | 大会名 |
+| location | VARCHAR(200) | NO | - | - | 開催場所 |
+| date | DATE | NO | - | - | 開催日 |
+| year | INTEGER | NO | - | CHECK (year >= 1900) | 年度 |
+| createdAt | TIMESTAMP | NO | CURRENT_TIMESTAMP | - | 作成日時 |
+| updatedAt | TIMESTAMP | NO | CURRENT_TIMESTAMP | - | 更新日時 |
+
+#### インデックス
+```sql
+CREATE INDEX idx_competitions_year ON Competitions(year DESC);
+CREATE INDEX idx_competitions_date ON Competitions(date DESC);
+```
+
+#### 備考
+- `year`は年度（4月始まり）を想定
+- 大会一覧は`date`の降順で表示
+
+### 3.3 Records（記録）
+
+#### 概要
+部員の競技記録を管理するテーブル。
+記録時点の学年・学科情報を保存することで、転科や卒業後も正確な情報を保持する。
+
+#### スキーマ定義
+
+| カラム名 | 型 | NULL | デフォルト | 制約 | 説明 |
+|---------|-----|------|-----------|------|------|
+| id | UUID | NO | gen_random_uuid() | PRIMARY KEY | 記録ID |
+| competitionId | UUID | NO | - | FOREIGN KEY (Competitions.id) | 大会ID |
+| memberId | UUID | NO | - | FOREIGN KEY (Members.id) | 部員ID |
+| gradeAtRecord | INTEGER | NO | - | CHECK (gradeAtRecord BETWEEN 1 AND 5) | 記録時の学年 |
+| departmentAtRecord | VARCHAR(1) | NO | - | CHECK (departmentAtRecord IN ('M','E','I','C','A')) | 記録時の学科 |
+| event | VARCHAR(50) | NO | - | - | 種目名 |
+| gender | VARCHAR(1) | NO | - | CHECK (gender IN ('M', 'F')) | 性別 |
+| result | DECIMAL(10, 2) | NO | - | CHECK (result > 0) | 記録（秒・メートル） |
+| wind | DECIMAL(4, 2) | YES | NULL | - | 風速（m/s） |
+| note | TEXT | YES | NULL | - | 備考 |
+| createdAt | TIMESTAMP | NO | CURRENT_TIMESTAMP | - | 作成日時 |
+| updatedAt | TIMESTAMP | NO | CURRENT_TIMESTAMP | - | 更新日時 |
+
+#### インデックス
+```sql
+CREATE INDEX idx_records_competitionId ON Records(competitionId);
+CREATE INDEX idx_records_memberId ON Records(memberId);
+CREATE INDEX idx_records_event_gender_result ON Records(event, gender, result);
+CREATE INDEX idx_records_event_gender ON Records(event, gender);
+```
+
+#### 備考
+- `gradeAtRecord`と`departmentAtRecord`は記録登録時に自動計算・保存
+- `result`は種目により単位が異なる（走: 秒、跳: m、投: m）
+- `wind`は風速が関係する種目（100m、200m、走幅跳等）のみ記録
+- 複合インデックス`idx_records_event_gender_result`は歴代記録取得を高速化
+
+### 3.4 Advisors（顧問）
+
+#### 概要
+陸上部顧問の情報を管理するテーブル。
+
+#### スキーマ定義
+
+| カラム名 | 型 | NULL | デフォルト | 制約 | 説明 |
+|---------|-----|------|-----------|------|------|
+| id | UUID | NO | gen_random_uuid() | PRIMARY KEY | 顧問ID |
+| name | VARCHAR(100) | NO | - | - | 氏名 |
+| isActive | BOOLEAN | NO | true | - | 在職フラグ |
+| createdAt | TIMESTAMP | NO | CURRENT_TIMESTAMP | - | 作成日時 |
+| updatedAt | TIMESTAMP | NO | CURRENT_TIMESTAMP | - | 更新日時 |
+
+#### インデックス
+```sql
+CREATE INDEX idx_advisors_isActive ON Advisors(isActive);
+```
+
+#### 備考
+- シンプルに名前のみ管理
+- 退職した顧問も`isActive=false`で保持
+
+### 3.5 Activities（活動情報）
+
+#### 概要
+曜日別の練習時間を管理するテーブル。
+
+#### スキーマ定義
+
+| カラム名 | 型 | NULL | デフォルト | 制約 | 説明 |
+|---------|-----|------|-----------|------|------|
+| id | UUID | NO | gen_random_uuid() | PRIMARY KEY | 活動情報ID |
+| dayOfWeek | INTEGER | NO | - | CHECK (dayOfWeek BETWEEN 0 AND 6) | 曜日（0:日曜 〜 6:土曜） |
+| startTime | TIME | NO | - | - | 開始時間 |
+| endTime | TIME | NO | - | CHECK (endTime > startTime) | 終了時間 |
+| createdAt | TIMESTAMP | NO | CURRENT_TIMESTAMP | - | 作成日時 |
+| updatedAt | TIMESTAMP | NO | CURRENT_TIMESTAMP | - | 更新日時 |
+
+#### インデックス
+```sql
+CREATE INDEX idx_activities_dayOfWeek ON Activities(dayOfWeek);
+```
+
+#### 備考
+- `dayOfWeek`: 0=日曜、1=月曜、...、6=土曜
+- 同じ曜日に複数の時間帯を設定可能
+
+## 4. Prismaスキーマ定義
+
+```prisma
+// server/src/infrastructure/database/prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Member {
+  id             String    @id @default(uuid()) @db.Uuid
+  studentNumber  String    @unique @db.VarChar(20)
+  name           String    @db.VarChar(100)
+  enrollmentYear Int       @map("enrollment_year")
+  graduationYear Int?      @map("graduation_year")
+  department     String    @db.VarChar(1)
+  block          String    @db.VarChar(10)
+  isActive       Boolean   @default(true) @map("is_active")
+  createdAt      DateTime  @default(now()) @map("created_at")
+  updatedAt      DateTime  @updatedAt @map("updated_at")
+
+  records        Record[]
+
+  @@index([isActive])
+  @@index([enrollmentYear])
+  @@index([department])
+  @@index([studentNumber])
+  @@map("members")
+}
+
+model Competition {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String   @db.VarChar(200)
+  location  String   @db.VarChar(200)
+  date      DateTime @db.Date
+  year      Int
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  records   Record[]
+
+  @@index([year(sort: Desc)])
+  @@index([date(sort: Desc)])
+  @@map("competitions")
+}
+
+model Record {
+  id                   String      @id @default(uuid()) @db.Uuid
+  competitionId        String      @map("competition_id") @db.Uuid
+  memberId             String      @map("member_id") @db.Uuid
+  gradeAtRecord        Int         @map("grade_at_record")
+  departmentAtRecord   String      @map("department_at_record") @db.VarChar(1)
+  event                String      @db.VarChar(50)
+  gender               String      @db.VarChar(1)
+  result               Decimal     @db.Decimal(10, 2)
+  wind                 Decimal?    @db.Decimal(4, 2)
+  note                 String?     @db.Text
+  createdAt            DateTime    @default(now()) @map("created_at")
+  updatedAt            DateTime    @updatedAt @map("updated_at")
+
+  competition          Competition @relation(fields: [competitionId], references: [id], onDelete: Cascade)
+  member               Member      @relation(fields: [memberId], references: [id], onDelete: Cascade)
+
+  @@index([competitionId])
+  @@index([memberId])
+  @@index([event, gender, result])
+  @@index([event, gender])
+  @@map("records")
+}
+
+model Advisor {
+  id        String   @id @default(uuid()) @db.Uuid
+  name      String   @db.VarChar(100)
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([isActive])
+  @@map("advisors")
+}
+
+model Activity {
+  id        String   @id @default(uuid()) @db.Uuid
+  dayOfWeek Int      @map("day_of_week")
+  startTime DateTime @map("start_time") @db.Time
+  endTime   DateTime @map("end_time") @db.Time
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@index([dayOfWeek])
+  @@map("activities")
+}
+```
+
+## 5. データ制約
+
+### 5.1 テーブル制約
+
+#### Members
+```sql
+-- 入学年度は1900年以降
+ALTER TABLE members ADD CONSTRAINT chk_members_enrollmentYear
+  CHECK (enrollment_year >= 1900);
+
+-- 卒業年度は入学年度以降
+ALTER TABLE members ADD CONSTRAINT chk_members_graduationYear
+  CHECK (graduation_year IS NULL OR graduation_year >= enrollment_year);
+
+-- 学科の値制限
+ALTER TABLE members ADD CONSTRAINT chk_members_department
+  CHECK (department IN ('M', 'E', 'I', 'C', 'A'));
+
+-- ブロックの値制限
+ALTER TABLE members ADD CONSTRAINT chk_members_block
+  CHECK (block IN ('短距離', '中長距離', '跳躍', '投擲'));
+```
+
+#### Records
+```sql
+-- 学年は1〜5
+ALTER TABLE records ADD CONSTRAINT chk_records_gradeAtRecord
+  CHECK (grade_at_record BETWEEN 1 AND 5);
+
+-- 記録は正の値
+ALTER TABLE records ADD CONSTRAINT chk_records_result
+  CHECK (result > 0);
+
+-- 性別の値制限
+ALTER TABLE records ADD CONSTRAINT chk_records_gender
+  CHECK (gender IN ('M', 'F'));
+
+-- 学科の値制限
+ALTER TABLE records ADD CONSTRAINT chk_records_departmentAtRecord
+  CHECK (department_at_record IN ('M', 'E', 'I', 'C', 'A'));
+```
+
+#### Activities
+```sql
+-- 曜日は0〜6
+ALTER TABLE activities ADD CONSTRAINT chk_activities_dayOfWeek
+  CHECK (day_of_week BETWEEN 0 AND 6);
+
+-- 終了時間は開始時間より後
+ALTER TABLE activities ADD CONSTRAINT chk_activities_timeRange
+  CHECK (end_time > start_time);
+```
+
+### 5.2 外部キー制約
+
+```sql
+-- Records.competitionId → Competitions.id
+ALTER TABLE records ADD CONSTRAINT fk_records_competition
+  FOREIGN KEY (competition_id) REFERENCES competitions(id) ON DELETE CASCADE;
+
+-- Records.memberId → Members.id
+ALTER TABLE records ADD CONSTRAINT fk_records_member
+  FOREIGN KEY (member_id) REFERENCES members(id) ON DELETE CASCADE;
+```
+
+## 6. インデックス設計
+
+### 6.1 インデックス戦略
+
+#### Members
+```sql
+-- 主キー（自動作成）
+CREATE UNIQUE INDEX pk_members ON members(id);
+
+-- 個人番号での検索（認証用）
+CREATE UNIQUE INDEX uk_members_studentNumber ON members(student_number);
+
+-- 在籍フラグでのフィルタ（頻繁に使用）
+CREATE INDEX idx_members_isActive ON members(is_active);
+
+-- 入学年度での検索・ソート
+CREATE INDEX idx_members_enrollmentYear ON members(enrollment_year);
+
+-- 学科でのフィルタ
+CREATE INDEX idx_members_department ON members(department);
+```
+
+#### Competitions
+```sql
+-- 主キー（自動作成）
+CREATE UNIQUE INDEX pk_competitions ON competitions(id);
+
+-- 年度での検索・ソート（降順）
+CREATE INDEX idx_competitions_year ON competitions(year DESC);
+
+-- 日付でのソート（降順）
+CREATE INDEX idx_competitions_date ON competitions(date DESC);
+```
+
+#### Records
+```sql
+-- 主キー（自動作成）
+CREATE UNIQUE INDEX pk_records ON records(id);
+
+-- 大会IDでの検索（大会詳細表示用）
+CREATE INDEX idx_records_competitionId ON records(competition_id);
+
+-- 部員IDでの検索（個人記録表示用）
+CREATE INDEX idx_records_memberId ON records(member_id);
+
+-- 歴代記録取得用（種目・性別・記録の複合インデックス）
+CREATE INDEX idx_records_event_gender_result ON records(event, gender, result);
+
+-- 種目・性別でのフィルタ
+CREATE INDEX idx_records_event_gender ON records(event, gender);
+```
+
+### 6.2 クエリ最適化例
+
+#### 歴代記録取得クエリ
+```sql
+-- 男子100mの歴代トップ10
+SELECT
+  r.result,
+  r.grade_at_record,
+  r.department_at_record,
+  m.name,
+  c.location,
+  c.date
+FROM records r
+INNER JOIN members m ON r.member_id = m.id
+INNER JOIN competitions c ON r.competition_id = c.id
+WHERE r.event = '100m' AND r.gender = 'M'
+ORDER BY r.result ASC
+LIMIT 10;
+
+-- idx_records_event_gender_result を使用
+```
+
+#### 部員一覧取得クエリ
+```sql
+-- 在籍中の部員を学年・学科・名前順で取得
+SELECT
+  id,
+  name,
+  enrollment_year,
+  department,
+  block
+FROM members
+WHERE is_active = true
+ORDER BY
+  enrollment_year DESC,
+  CASE department
+    WHEN 'M' THEN 1
+    WHEN 'E' THEN 2
+    WHEN 'I' THEN 3
+    WHEN 'C' THEN 4
+    WHEN 'A' THEN 5
+  END,
+  name;
+
+-- idx_members_isActive を使用
+```
+
+## 7. マイグレーション戦略
+
+### 7.1 初期セットアップ
+
+```bash
+# Prismaの初期化
+npx prisma init
+
+# マイグレーションファイルの作成
+npx prisma migrate dev --name init
+
+# Prisma Clientの生成
+npx prisma generate
+```
+
+### 7.2 マイグレーションファイル例
+
+```sql
+-- migrations/20250101000000_init/migration.sql
+
+-- Members table
+CREATE TABLE members (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  student_number VARCHAR(20) UNIQUE NOT NULL,
+  name VARCHAR(100) NOT NULL,
+  enrollment_year INTEGER NOT NULL,
+  graduation_year INTEGER,
+  department VARCHAR(1) NOT NULL,
+  block VARCHAR(10) NOT NULL,
+  is_active BOOLEAN NOT NULL DEFAULT true,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  CONSTRAINT chk_members_enrollmentYear CHECK (enrollment_year >= 1900),
+  CONSTRAINT chk_members_graduationYear CHECK (graduation_year IS NULL OR graduation_year >= enrollment_year),
+  CONSTRAINT chk_members_department CHECK (department IN ('M', 'E', 'I', 'C', 'A')),
+  CONSTRAINT chk_members_block CHECK (block IN ('短距離', '中長距離', '跳躍', '投擲'))
+);
+
+CREATE INDEX idx_members_isActive ON members(is_active);
+CREATE INDEX idx_members_enrollmentYear ON members(enrollment_year);
+CREATE INDEX idx_members_department ON members(department);
+
+-- Competitions table
+CREATE TABLE competitions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name VARCHAR(200) NOT NULL,
+  location VARCHAR(200) NOT NULL,
+  date DATE NOT NULL,
+  year INTEGER NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  CONSTRAINT chk_competitions_year CHECK (year >= 1900)
+);
+
+CREATE INDEX idx_competitions_year ON competitions(year DESC);
+CREATE INDEX idx_competitions_date ON competitions(date DESC);
+
+-- Records table
+CREATE TABLE records (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  competition_id UUID NOT NULL,
+  member_id UUID NOT NULL,
+  grade_at_record INTEGER NOT NULL,
+  department_at_record VARCHAR(1) NOT NULL,
+  event VARCHAR(50) NOT NULL,
+  gender VARCHAR(1) NOT NULL,
+  result DECIMAL(10, 2) NOT NULL,
+  wind DECIMAL(4, 2),
+  note TEXT,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  CONSTRAINT chk_records_gradeAtRecord CHECK (grade_at_record BETWEEN 1 AND 5),
+  CONSTRAINT chk_records_result CHECK (result > 0),
+  CONSTRAINT chk_records_gender CHECK (gender IN ('M', 'F')),
+  CONSTRAINT chk_records_departmentAtRecord CHECK (department_at_record IN ('M', 'E', 'I', 'C', 'A')),
+
+  CONSTRAINT fk_records_competition FOREIGN KEY (competition_id) REFERENCES competitions(id) ON DELETE CASCADE,
+  CONSTRAINT fk_records_member FOREIGN KEY (member_id) REFERENCES members(id) ON DELETE CASCADE
+);
+
+CREATE INDEX idx_records_competitionId ON records(competition_id);
+CREATE INDEX idx_records_memberId ON records(member_id);
+CREATE INDEX idx_records_event_gender_result ON records(event, gender, result);
+CREATE INDEX idx_records_event_gender ON records(event, gender);
+
+-- Advisors table
+CREATE TABLE advisors (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name VARCHAR(100) NOT NULL,
+  is_active BOOLEAN NOT NULL DEFAULT true,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE INDEX idx_advisors_isActive ON advisors(is_active);
+
+-- Activities table
+CREATE TABLE activities (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  day_of_week INTEGER NOT NULL,
+  start_time TIME NOT NULL,
+  end_time TIME NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+
+  CONSTRAINT chk_activities_dayOfWeek CHECK (day_of_week BETWEEN 0 AND 6),
+  CONSTRAINT chk_activities_timeRange CHECK (end_time > start_time)
+);
+
+CREATE INDEX idx_activities_dayOfWeek ON activities(day_of_week);
+```
+
+### 7.3 更新日時の自動更新
+
+```sql
+-- updated_at自動更新トリガー関数
+CREATE OR REPLACE FUNCTION update_updated_at_column()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = CURRENT_TIMESTAMP;
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- 各テーブルにトリガーを設定
+CREATE TRIGGER update_members_updated_at BEFORE UPDATE ON members
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_competitions_updated_at BEFORE UPDATE ON competitions
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_records_updated_at BEFORE UPDATE ON records
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_advisors_updated_at BEFORE UPDATE ON advisors
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+
+CREATE TRIGGER update_activities_updated_at BEFORE UPDATE ON activities
+  FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+```
+
+## 8. シードデータ
+
+### 8.1 開発用シードデータ
+
+```typescript
+// prisma/seed.ts
+import { PrismaClient } from '@prisma/client';
+
+const prisma = new PrismaClient();
+
+async function main() {
+  // 部員データ
+  await prisma.member.createMany({
+    data: [
+      {
+        studentNumber: '23M001',
+        name: '山田太郎',
+        enrollmentYear: 2023,
+        department: 'M',
+        block: '短距離',
+        isActive: true,
+      },
+      {
+        studentNumber: '23E002',
+        name: '佐藤花子',
+        enrollmentYear: 2023,
+        department: 'E',
+        block: '中長距離',
+        isActive: true,
+      },
+      // ... 他の部員データ
+    ],
+  });
+
+  // 顧問データ
+  await prisma.advisor.createMany({
+    data: [
+      { name: '田中先生', isActive: true },
+      { name: '鈴木先生', isActive: true },
+    ],
+  });
+
+  // 活動時間データ
+  await prisma.activity.createMany({
+    data: [
+      { dayOfWeek: 1, startTime: new Date('1970-01-01T16:30:00'), endTime: new Date('1970-01-01T18:30:00') },
+      { dayOfWeek: 2, startTime: new Date('1970-01-01T16:30:00'), endTime: new Date('1970-01-01T18:30:00') },
+      { dayOfWeek: 3, startTime: new Date('1970-01-01T16:30:00'), endTime: new Date('1970-01-01T18:30:00') },
+      { dayOfWeek: 4, startTime: new Date('1970-01-01T16:30:00'), endTime: new Date('1970-01-01T18:30:00') },
+      { dayOfWeek: 5, startTime: new Date('1970-01-01T16:30:00'), endTime: new Date('1970-01-01T18:30:00') },
+    ],
+  });
+
+  console.log('Seed data created successfully!');
+}
+
+main()
+  .catch((e) => {
+    console.error(e);
+    process.exit(1);
+  })
+  .finally(async () => {
+    await prisma.$disconnect();
+  });
+```
+
+```json
+// package.json
+{
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
+  }
+}
+```
+
+## 9. バックアップ・リストア戦略
+
+### 9.1 Supabaseの自動バックアップ
+- Supabaseは自動的に日次バックアップを実行
+- ポイントインタイムリカバリ（PITR）に対応
+
+### 9.2 手動バックアップ
+
+```bash
+# ダンプファイル作成
+pg_dump $DATABASE_URL > backup_$(date +%Y%m%d).sql
+
+# リストア
+psql $DATABASE_URL < backup_20250101.sql
+```
+
+## 10. パフォーマンス最適化
+
+### 10.1 クエリ最適化チェックリスト
+- [ ] 頻繁にアクセスされるカラムにインデックスを作成
+- [ ] N+1問題を回避（Prismaのinclude/selectを活用）
+- [ ] 不要なカラムは取得しない（SELECT *を避ける）
+- [ ] 大量データには必ずLIMIT/OFFSETまたはカーソルベースページネーション
+- [ ] 集計クエリは定期的にキャッシュ
+
+### 10.2 監視すべきメトリクス
+- クエリ実行時間
+- スロークエリログ
+- インデックス使用率
+- テーブルサイズ
+- 接続数
+
+### 10.3 EXPLAINの活用
+
+```sql
+-- クエリプランの確認
+EXPLAIN ANALYZE
+SELECT * FROM records
+WHERE event = '100m' AND gender = 'M'
+ORDER BY result ASC
+LIMIT 10;
+
+-- インデックスが使われているか確認
+```
+
+## 11. データ整合性保証
+
+### 11.1 トランザクション例
+
+```typescript
+// 記録登録時のトランザクション
+async function createRecordWithGradeCalculation(
+  competitionId: string,
+  memberId: string,
+  event: string,
+  result: number
+): Promise<Record> {
+  return await prisma.$transaction(async (tx) => {
+    // 部員情報を取得
+    const member = await tx.member.findUnique({
+      where: { id: memberId },
+    });
+
+    if (!member) {
+      throw new NotFoundError('Member not found');
+    }
+
+    // 大会情報を取得
+    const competition = await tx.competition.findUnique({
+      where: { id: competitionId },
+    });
+
+    if (!competition) {
+      throw new NotFoundError('Competition not found');
+    }
+
+    // 学年を計算
+    const gradeAtRecord = competition.year - member.enrollmentYear + 1;
+
+    if (gradeAtRecord < 1 || gradeAtRecord > 5) {
+      throw new ValidationError('Invalid grade calculation');
+    }
+
+    // 記録を作成
+    return await tx.record.create({
+      data: {
+        competitionId,
+        memberId,
+        gradeAtRecord,
+        departmentAtRecord: member.department,
+        event,
+        result,
+        gender: 'M', // 実際には引数から取得
+      },
+    });
+  });
+}
+```
+
+### 11.2 データ整合性チェック
+
+```sql
+-- 孤立した記録をチェック
+SELECT r.id, r.member_id, r.competition_id
+FROM records r
+LEFT JOIN members m ON r.member_id = m.id
+LEFT JOIN competitions c ON r.competition_id = c.id
+WHERE m.id IS NULL OR c.id IS NULL;
+
+-- 不正な学年データをチェック
+SELECT *
+FROM records
+WHERE grade_at_record NOT BETWEEN 1 AND 5;
+
+-- 不正な卒業年度をチェック
+SELECT *
+FROM members
+WHERE graduation_year IS NOT NULL AND graduation_year < enrollment_year;
+```
+
+## 12. セキュリティ考慮事項
+
+### 12.1 接続セキュリティ
+- SSL/TLS接続の強制
+- 最小権限の原則（アプリケーション用DBユーザーは必要な権限のみ）
+- IPホワイトリスト設定（Supabase）
+
+### 12.2 SQLインジェクション対策
+- Prismaが自動的にパラメータ化クエリを使用
+- 生SQLの使用は最小限に
+
+```typescript
+// Good: Prismaのクエリビルダー
+const members = await prisma.member.findMany({
+  where: { name: userInput },
+});
+
+// Avoid: 生SQL（必要な場合のみ）
+const members = await prisma.$queryRaw`
+  SELECT * FROM members WHERE name = ${userInput}
+`; // Prismaは自動的にエスケープ
+```
+
+### 12.3 個人情報保護
+- `studentNumber`は暗号化を検討（将来的に）
+- アクセスログの記録
+- 個人記録閲覧は認証必須
+
+## 13. 将来的な拡張検討
+
+### 13.1 テーブル追加候補
+- **Users**: 管理者ログイン機能用
+- **TrainingMenus**: 練習メニュー管理
+- **RecordHistory**: 記録の変更履歴（監査用）
+- **Photos**: 活動写真管理（microCMSの代替）
+
+### 13.2 機能拡張案
+- 記録の承認ワークフロー
+- コメント・いいね機能
+- 通知機能（新記録更新時など）
+- データ分析機能（記録の推移グラフなど）

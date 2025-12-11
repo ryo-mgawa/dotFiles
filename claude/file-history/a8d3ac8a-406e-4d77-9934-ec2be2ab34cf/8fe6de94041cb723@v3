@@ -1,0 +1,24 @@
+#!/bin/bash
+# デプロイ前に共有コードを各アプリにコピーするスクリプト
+
+set -e
+
+echo "共有コードをコピー中..."
+
+# slack-purchase-requestにコピー
+echo "  - slack-purchase-request/supabase/functions/_shared/"
+mkdir -p slack-purchase-request/supabase/functions/_shared
+cp -r shared/* slack-purchase-request/supabase/functions/_shared/
+
+# slack-helpにコピー
+echo "  - slack-help/supabase/functions/_shared/"
+mkdir -p slack-help/supabase/functions/_shared
+cp -r shared/* slack-help/supabase/functions/_shared/
+
+# slack-it-requestにコピー
+echo "  - slack-it-request/supabase/functions/_shared/"
+rm -rf slack-it-request/supabase/functions/_shared
+mkdir -p slack-it-request/supabase/functions/_shared
+cp -r shared/* slack-it-request/supabase/functions/_shared/
+
+echo "✅ 共有コードのコピー完了"

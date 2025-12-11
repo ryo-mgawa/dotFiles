@@ -1,0 +1,127 @@
+import { Knex } from "knex";
+
+export async function up(knex: Knex): Promise<void> {
+  // shipmentテーブルの作成
+  await knex.schema.createTable("shipment", (table) => {
+    table.uuid("id").primary().comment("シップメントID");
+    table
+      .text("organization_id")
+      .notNullable()
+      .comment("組織ID")
+      .references("id")
+      .inTable("organization")
+      .onDelete("CASCADE");
+    table.text("slip_id").notNullable().comment("伝票ID");
+    table.index(['organization_id', 'slip_id'], 'idx_shipment_org_slip');
+    table.jsonb("consignor").notNullable().comment("発荷主情報");
+    table.jsonb("consignee").notNullable().comment("着荷主情報");
+    table.text("origin_spot_id").notNullable().comment("発スポットID");
+    table.text("destination_spot_id").notNullable().comment("着スポットID");
+    table.jsonb("meta").nullable().comment("メタデータ");
+    table
+      .timestamp("created_at", { useTz: true })
+      .notNullable()
+      .defaultTo(knex.fn.now())
+      .comment("作成日時");
+    table
+      .timestamp("updated_at", { useTz: true })
+      .notNullable()
+      .defaultTo(knex.fn.now())
+      .comment("更新日時");
+  });
+
+  // shipment_statusテーブルの作成
+  await knex.schema.createTable("shipment_status", (table) => {
+    table
+      .uuid("shipment_id")
+      .primary()
+      .comment("シップメントID")
+      .references("id")
+      .inTable("shipment")
+      .onDelete("CASCADE");
+    table
+      .enum("status", ["Requested", "InStorage", "InTransit", "Completed", "Canceled"], {
+        useNative: true,
+        enumName: "shipment_status_enum",
+      })
+      .notNullable()
+      .comment("ステータス");
+    table
+      .timestamp("executed_at", { useTz: true })
+      .notNullable()
+      .comment("実行日時");
+  });
+
+  // shipment_eventテーブルの作成
+  await knex.schema.createTable("shipment_event", (table) => {
+    table.uuid("id").primary().comment("イベントID");
+    table
+      .uuid("shipment_id")
+      .notNullable()
+      .comment("シップメントID")
+      .references("id")
+      .inTable("shipment")
+      .onDelete("CASCADE");
+    table
+      .enum(
+        "type",
+        ["Store", "Transfer", "Deliver", "Complete", "Cancel"],
+        {
+          useNative: true,
+          enumName: "shipment_event_type_enum",
+        },
+      )
+      .notNullable()
+      .comment("イベントタイプ");
+    table.text("original_spot_id").notNullable().comment("スポットID");
+    table.point("geocode").nullable().comment("座標情報");
+    table.text("update_by").notNullable().comment("更新者");
+    table.timestamp("executed_at", { useTz: true }).notNullable().comment("実行日時");
+  });
+
+  // consignor/consigneeのJSONBバリデーション制約
+  await knex.raw(`
+    ALTER TABLE shipment ADD CONSTRAINT consignor_has_id
+    CHECK (consignor \\? 'id' AND consignor->>'id' IS NOT NULL AND consignor->>'id' != '');
+  `);
+  await knex.raw(`
+    ALTER TABLE shipment ADD CONSTRAINT consignee_has_id
+    CHECK (consignee \\? 'id' AND consignee->>'id' IS NOT NULL AND consignee->>'id' != '');
+  `);
+
+  // updated_at自動更新関数の作成（冪等性を保証）
+  await knex.raw(`
+    CREATE OR REPLACE FUNCTION update_updated_at_column()
+    RETURNS TRIGGER AS $$
+    BEGIN
+        NEW.updated_at = NOW();
+        RETURN NEW;
+    END;
+    $$ language 'plpgsql';
+  `);
+
+  // updated_at自動更新トリガーの設定
+  await knex.raw(`
+    CREATE TRIGGER update_shipment_updated_at BEFORE UPDATE ON shipment
+    FOR EACH ROW EXECUTE FUNCTION update_updated_at_column();
+  `);
+}
+
+export async function down(knex: Knex): Promise<void> {
+  // トリガーの削除
+  await knex.raw("DROP TRIGGER IF EXISTS update_shipment_updated_at ON shipment;");
+
+  // CHECK制約の削除
+  await knex.raw("ALTER TABLE shipment DROP CONSTRAINT IF EXISTS consignor_has_id;");
+  await knex.raw("ALTER TABLE shipment DROP CONSTRAINT IF EXISTS consignee_has_id;");
+
+  // テーブルの削除（外部キー制約があるため逆順）
+  await knex.schema.dropTableIfExists("shipment_event");
+  await knex.schema.dropTableIfExists("shipment_status");
+  await knex.schema.dropTableIfExists("shipment");
+
+  // enumの削除
+  await knex.raw("DROP TYPE IF EXISTS shipment_event_type_enum;");
+  await knex.raw("DROP TYPE IF EXISTS shipment_status_enum;");
+}
+

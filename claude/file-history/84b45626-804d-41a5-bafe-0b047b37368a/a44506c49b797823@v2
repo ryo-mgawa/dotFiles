@@ -1,0 +1,31 @@
+import { ShipmentInsert } from '@app/rdb/db/model';
+import { Inject, Injectable } from '@nestjs/common';
+import { Knex } from 'knex';
+import { ProviderIdentity } from '../providerIdentity';
+
+@Injectable()
+export class ShipmentDAO {
+  constructor(@Inject(ProviderIdentity) private rdb: Knex) { }
+
+  public async save(shipments: ShipmentInsert[]): Promise<void> {
+    try {
+      console.log('[ShipmentDAO] Saving shipments', { count: shipments.length });
+
+      if (shipments.length === 0) {
+        console.log('[ShipmentDAO] No shipments to save');
+        return;
+      }
+
+      console.log('[ShipmentDAO] Inserting into database', { shipments });
+      await this.rdb('shipment')
+        .insert(shipments)
+        .onConflict()
+        .ignore();
+
+      console.log('[ShipmentDAO] Insert completed');
+    } catch (error) {
+      console.error('[ShipmentDAO] Database error:', error);
+      throw error;
+    }
+  }
+}

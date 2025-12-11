@@ -1,0 +1,12 @@
+import type { Session, CreateSessionInput, SessionParticipant } from '@/entities/index.js';
+
+export interface ISessionRepository {
+  findById(id: string): Promise<Session | null>;
+  findActiveByCompanyId(companyId: string): Promise<Session | null>;
+  findByTopic(topic: string): Promise<Session | null>;
+  create(input: CreateSessionInput): Promise<Session>;
+  endSession(id: string): Promise<Session>;
+  addParticipant(sessionId: string, siteId: string, userId?: string): Promise<SessionParticipant>;
+  removeParticipant(sessionId: string, siteId: string): Promise<void>;
+  getParticipants(sessionId: string): Promise<SessionParticipant[]>;
+}

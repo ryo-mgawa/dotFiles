@@ -1,0 +1,256 @@
+import { validate } from 'class-validator';
+import { AddShipmentEventItem, Geocode } from '../addShipmentEventItem';
+
+const createValidEventItem = (): AddShipmentEventItem => {
+  const item = new AddShipmentEventItem();
+  item.shipmentId = 'shipment-001';
+  item.type = 'Store' as any;
+  item.originalSpotId = 'spot-001';
+  item.executedAt = '2024-01-01T00:00:00.000Z';
+  return item;
+};
+
+const createValidGeocode = (): Geocode => {
+  const geocode = new Geocode();
+  geocode.latitude = 35.6812;
+  geocode.longitude = 139.7671;
+  return geocode;
+};
+
+describe('AddShipmentEventItem', () => {
+  describe('shipmentId', () => {
+    it('IsDefined: 必須プロパティが未定義の場合、バリデーションエラー', async () => {
+      const item = createValidEventItem();
+      item.shipmentId = undefined as any;
+
+      const errors = await validate(item);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'shipmentId' && e.constraints?.isDefined)).toBe(true);
+    });
+
+    it('IsString: 文字列でない場合、バリデーションエラー', async () => {
+      const item = createValidEventItem();
+      item.shipmentId = 123 as any;
+
+      const errors = await validate(item);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'shipmentId' && e.constraints?.isString)).toBe(true);
+    });
+
+    it('有効な文字列の場合、バリデーション成功', async () => {
+      const item = createValidEventItem();
+      item.shipmentId = 'valid-shipment-id';
+
+      const errors = await validate(item);
+
+      const shipmentIdErrors = errors.filter(e => e.property === 'shipmentId');
+      expect(shipmentIdErrors.length).toBe(0);
+    });
+  });
+
+  describe('type', () => {
+    it('IsDefined: 必須プロパティが未定義の場合、バリデーションエラー', async () => {
+      const item = createValidEventItem();
+      item.type = undefined as any;
+
+      const errors = await validate(item);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'type' && e.constraints?.isDefined)).toBe(true);
+    });
+
+    it('IsString: 文字列でない場合、バリデーションエラー', async () => {
+      const item = createValidEventItem();
+      item.type = 123 as any;
+
+      const errors = await validate(item);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'type' && e.constraints?.isString)).toBe(true);
+    });
+
+    it('有効な文字列の場合、バリデーション成功', async () => {
+      const item = createValidEventItem();
+      item.type = 'Transfer' as any;
+
+      const errors = await validate(item);
+
+      const typeErrors = errors.filter(e => e.property === 'type');
+      expect(typeErrors.length).toBe(0);
+    });
+  });
+
+  describe('originalSpotId', () => {
+    it('IsDefined: 必須プロパティが未定義の場合、バリデーションエラー', async () => {
+      const item = createValidEventItem();
+      item.originalSpotId = undefined as any;
+
+      const errors = await validate(item);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'originalSpotId' && e.constraints?.isDefined)).toBe(true);
+    });
+
+    it('IsString: 文字列でない場合、バリデーションエラー', async () => {
+      const item = createValidEventItem();
+      item.originalSpotId = 123 as any;
+
+      const errors = await validate(item);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'originalSpotId' && e.constraints?.isString)).toBe(true);
+    });
+
+    it('有効な文字列の場合、バリデーション成功', async () => {
+      const item = createValidEventItem();
+      item.originalSpotId = 'valid-spot-id';
+
+      const errors = await validate(item);
+
+      const originalSpotIdErrors = errors.filter(e => e.property === 'originalSpotId');
+      expect(originalSpotIdErrors.length).toBe(0);
+    });
+  });
+
+  describe('geocode', () => {
+    it('IsOptional: 未定義でもバリデーション成功', async () => {
+      const item = createValidEventItem();
+      item.geocode = undefined;
+
+      const errors = await validate(item);
+
+      const geocodeErrors = errors.filter(e => e.property === 'geocode');
+      expect(geocodeErrors.length).toBe(0);
+    });
+
+    it('ValidateNested: ネストされたオブジェクトが無効な場合、バリデーションエラー', async () => {
+      const item = createValidEventItem();
+      const invalidGeocode = new Geocode();
+      invalidGeocode.latitude = undefined as any;
+      invalidGeocode.longitude = undefined as any;
+      item.geocode = invalidGeocode;
+
+      const errors = await validate(item);
+
+      expect(errors.length).toBeGreaterThan(0);
+      const geocodeError = errors.find(e => e.property === 'geocode');
+      expect(geocodeError).toBeDefined();
+    });
+
+    it('有効なGeocodeオブジェクトの場合、バリデーション成功', async () => {
+      const item = createValidEventItem();
+      item.geocode = createValidGeocode();
+
+      const errors = await validate(item);
+
+      const geocodeErrors = errors.filter(e => e.property === 'geocode');
+      expect(geocodeErrors.length).toBe(0);
+    });
+  });
+
+  describe('executedAt', () => {
+    it('IsDefined: 必須プロパティが未定義の場合、バリデーションエラー', async () => {
+      const item = createValidEventItem();
+      item.executedAt = undefined as any;
+
+      const errors = await validate(item);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'executedAt' && e.constraints?.isDefined)).toBe(true);
+    });
+
+    it('IsISO8601: ISO8601形式でない場合、バリデーションエラー', async () => {
+      const item = createValidEventItem();
+      item.executedAt = 'not-iso-date';
+
+      const errors = await validate(item);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'executedAt' && e.constraints?.isIso8601)).toBe(true);
+    });
+
+    it('有効なISO8601形式の場合、バリデーション成功', async () => {
+      const item = createValidEventItem();
+      item.executedAt = '2024-12-25T12:34:56.789Z';
+
+      const errors = await validate(item);
+
+      const executedAtErrors = errors.filter(e => e.property === 'executedAt');
+      expect(executedAtErrors.length).toBe(0);
+    });
+  });
+});
+
+describe('Geocode', () => {
+  describe('latitude', () => {
+    it('IsDefined: 必須プロパティが未定義の場合、バリデーションエラー', async () => {
+      const geocode = new Geocode();
+      geocode.latitude = undefined as any;
+      geocode.longitude = 139.7671;
+
+      const errors = await validate(geocode);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'latitude' && e.constraints?.isDefined)).toBe(true);
+    });
+
+    it('IsLatitude: 緯度の範囲外の場合、バリデーションエラー', async () => {
+      const geocode = new Geocode();
+      geocode.latitude = 91;
+      geocode.longitude = 139.7671;
+
+      const errors = await validate(geocode);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'latitude' && e.constraints?.isLatitude)).toBe(true);
+    });
+
+    it('有効な緯度の場合、バリデーション成功', async () => {
+      const geocode = new Geocode();
+      geocode.latitude = 35.6812;
+      geocode.longitude = 139.7671;
+
+      const errors = await validate(geocode);
+
+      const latitudeErrors = errors.filter(e => e.property === 'latitude');
+      expect(latitudeErrors.length).toBe(0);
+    });
+  });
+
+  describe('longitude', () => {
+    it('IsDefined: 必須プロパティが未定義の場合、バリデーションエラー', async () => {
+      const geocode = new Geocode();
+      geocode.latitude = 35.6812;
+      geocode.longitude = undefined as any;
+
+      const errors = await validate(geocode);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'longitude' && e.constraints?.isDefined)).toBe(true);
+    });
+
+    it('IsLongitude: 経度の範囲外の場合、バリデーションエラー', async () => {
+      const geocode = new Geocode();
+      geocode.latitude = 35.6812;
+      geocode.longitude = 181;
+
+      const errors = await validate(geocode);
+
+      expect(errors.length).toBeGreaterThan(0);
+      expect(errors.some(e => e.property === 'longitude' && e.constraints?.isLongitude)).toBe(true);
+    });
+
+    it('有効な経度の場合、バリデーション成功', async () => {
+      const geocode = new Geocode();
+      geocode.latitude = 35.6812;
+      geocode.longitude = 139.7671;
+
+      const errors = await validate(geocode);
+
+      const longitudeErrors = errors.filter(e => e.property === 'longitude');
+      expect(longitudeErrors.length).toBe(0);
+    });
+  });
+});

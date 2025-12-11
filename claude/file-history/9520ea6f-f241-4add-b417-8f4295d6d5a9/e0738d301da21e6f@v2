@@ -1,0 +1,28 @@
+import { IAdvisorRepository } from '../../../domain/repositories/IAdvisorRepository';
+import { AdvisorDto } from '../../dto/AdvisorDto';
+import { Advisor } from '../../../shared/types';
+
+/**
+ * 顧問一覧取得ユースケース
+ * requirements.md 2.3節を参照
+ */
+export class GetAdvisorListUseCase {
+  constructor(private readonly advisorRepository: IAdvisorRepository) {}
+
+  async execute(): Promise<AdvisorDto[]> {
+    const advisors = await this.advisorRepository.findAllActive();
+
+    // 五十音順でソート
+    const sortedAdvisors = advisors.sort((a, b) => a.name.localeCompare(b.name, 'ja'));
+
+    return sortedAdvisors.map((advisor) => this.toDto(advisor));
+  }
+
+  private toDto(advisor: Advisor): AdvisorDto {
+    return {
+      id: advisor.id,
+      name: advisor.name,
+      isActive: advisor.isActive,
+    };
+  }
+}

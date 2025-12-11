@@ -1,0 +1,26 @@
+name: Health Check
+
+on:
+  schedule:
+    # 月・木・土の12:00 JST (03:00 UTC)
+    - cron: '0 3 * * 1,4,6'
+  workflow_dispatch:  # 手動実行も可能にする
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Health Check - Help Function
+        env:
+          SUPABASE_PROJECT_ID: mywajnlbkbhrnmgpmuuv
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" \
+            "https://$SUPABASE_PROJECT_ID.supabase.co/functions/v1/help")
+
+          if [ "$response" = "200" ]; then
+            echo "✅ Help function is healthy (HTTP $response)"
+          else
+            echo "❌ Help function health check failed (HTTP $response)"
+            exit 1
+          fi

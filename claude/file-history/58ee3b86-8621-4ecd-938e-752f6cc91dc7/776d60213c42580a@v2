@@ -1,0 +1,72 @@
+import type { Site, CreateSiteInput } from '@/entities/index.js';
+import type { ISiteRepository } from './ISiteRepository.js';
+import { prisma } from '../prisma/client.js';
+
+export class SiteRepository implements ISiteRepository {
+  async findById(id: string): Promise<Site | null> {
+    const site = await prisma.site.findFirst({
+      where: { id, deletedAt: null },
+    });
+
+    if (!site) return null;
+
+    return this.mapToEntity(site);
+  }
+
+  async findByCompanyId(companyId: string): Promise<Site[]> {
+    const sites = await prisma.site.findMany({
+      where: { companyId, deletedAt: null },
+      orderBy: { displayOrder: 'asc' },
+    });
+
+    return sites.map((site) => this.mapToEntity(site));
+  }
+
+  async create(input: CreateSiteInput): Promise<Site> {
+    const site = await prisma.site.create({
+      data: {
+        companyId: input.companyId,
+        name: input.name,
+        displayOrder: input.displayOrder ?? 0,
+      },
+    });
+
+    return this.mapToEntity(site);
+  }
+
+  async update(id: string, data: Partial<Site>): Promise<Site> {
+    const site = await prisma.site.update({
+      where: { id },
+      data,
+    });
+
+    return this.mapToEntity(site);
+  }
+
+  async softDelete(id: string): Promise<void> {
+    await prisma.site.update({
+      where: { id },
+      data: { deletedAt: new Date() },
+    });
+  }
+
+  private mapToEntity(site: {
+    id: string;
+    companyId: string;
+    name: string;
+    displayOrder: number;
+    createdAt: Date;
+    updatedAt: Date;
+    deletedAt: Date | null;
+  }): Site {
+    return {
+      id: site.id,
+      companyId: site.companyId,
+      name: site.name,
+      displayOrder: site.displayOrder,
+      createdAt: site.createdAt,
+      updatedAt: site.updatedAt,
+      deletedAt: site.deletedAt,
+    };
+  }
+}

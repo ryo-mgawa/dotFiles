@@ -1,0 +1,9 @@
+import type { Company, CreateCompanyInput } from '@/entities/index.js';
+
+export interface ICompanyRepository {
+  findById(id: string): Promise<Company | null>;
+  findAll(): Promise<Company[]>;
+  create(input: CreateCompanyInput): Promise<Company>;
+  update(id: string, data: Partial<Company>): Promise<Company>;
+  softDelete(id: string): Promise<void>;
+}

@@ -1,0 +1,198 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { MockVideoAdapter } from './MockVideoAdapter';
+import type { Participant } from '@/entities';
+import type { VideoConnectionConfig } from '../types';
+
+describe('MockVideoAdapter', () => {
+  let adapter: MockVideoAdapter;
+  const mockConfig: VideoConnectionConfig = {
+    sessionTopic: 'test-topic',
+    token: 'test-token',
+    userName: 'テスト拠点',
+  };
+
+  const mockParticipant: Participant = {
+    id: 'participant-1',
+    name: '東京',
+    siteId: 'site-1',
+    isAudioOn: true,
+    isVideoOn: true,
+  };
+
+  beforeEach(() => {
+    adapter = new MockVideoAdapter();
+  });
+
+  describe('connect', () => {
+    it('接続後にisConnectedがtrueになること', async () => {
+      expect(adapter.isConnected()).toBe(false);
+
+      await adapter.connect(mockConfig);
+
+      expect(adapter.isConnected()).toBe(true);
+    });
+
+    it('接続後にaudioとvideoがオンになること', async () => {
+      await adapter.connect(mockConfig);
+
+      expect(adapter.isAudioOn()).toBe(true);
+      expect(adapter.isVideoOn()).toBe(true);
+    });
+  });
+
+  describe('disconnect', () => {
+    it('切断後にisConnectedがfalseになること', async () => {
+      await adapter.connect(mockConfig);
+      await adapter.disconnect();
+
+      expect(adapter.isConnected()).toBe(false);
+    });
+
+    it('切断後にaudioとvideoがオフになること', async () => {
+      await adapter.connect(mockConfig);
+      await adapter.disconnect();
+
+      expect(adapter.isAudioOn()).toBe(false);
+      expect(adapter.isVideoOn()).toBe(false);
+    });
+
+    it('切断後に参加者リストがクリアされること', async () => {
+      await adapter.connect(mockConfig);
+      adapter.simulateParticipantJoin(mockParticipant);
+
+      await adapter.disconnect();
+
+      expect(adapter.getParticipants()).toHaveLength(0);
+    });
+  });
+
+  describe('toggleAudio', () => {
+    it('オーディオの状態をトグルできること', async () => {
+      await adapter.connect(mockConfig);
+      expect(adapter.isAudioOn()).toBe(true);
+
+      const result1 = await adapter.toggleAudio();
+      expect(result1).toBe(false);
+      expect(adapter.isAudioOn()).toBe(false);
+
+      const result2 = await adapter.toggleAudio();
+      expect(result2).toBe(true);
+      expect(adapter.isAudioOn()).toBe(true);
+    });
+  });
+
+  describe('toggleVideo', () => {
+    it('ビデオの状態をトグルできること', async () => {
+      await adapter.connect(mockConfig);
+      expect(adapter.isVideoOn()).toBe(true);
+
+      const result1 = await adapter.toggleVideo();
+      expect(result1).toBe(false);
+      expect(adapter.isVideoOn()).toBe(false);
+
+      const result2 = await adapter.toggleVideo();
+      expect(result2).toBe(true);
+      expect(adapter.isVideoOn()).toBe(true);
+    });
+  });
+
+  describe('getParticipants', () => {
+    it('参加者リストのコピーを返すこと', () => {
+      adapter.simulateParticipantJoin(mockParticipant);
+
+      const participants = adapter.getParticipants();
+
+      expect(participants).toHaveLength(1);
+      expect(participants[0]).toEqual(mockParticipant);
+    });
+  });
+
+  describe('subscribeToEvents', () => {
+    it('イベント購読と解除ができること', () => {
+      const mockObserver = { onSessionEvent: vi.fn() };
+
+      const unsubscribe = adapter.subscribeToEvents(mockObserver);
+      adapter.simulateParticipantJoin(mockParticipant);
+
+      expect(mockObserver.onSessionEvent).toHaveBeenCalledTimes(1);
+
+      unsubscribe();
+      adapter.simulateParticipantJoin({ ...mockParticipant, id: 'participant-2' });
+
+      expect(mockObserver.onSessionEvent).toHaveBeenCalledTimes(1);
+    });
+  });
+
+  describe('simulateParticipantJoin', () => {
+    it('参加者が追加されイベントが通知されること', () => {
+      const mockObserver = { onSessionEvent: vi.fn() };
+      adapter.subscribeToEvents(mockObserver);
+
+      adapter.simulateParticipantJoin(mockParticipant);
+
+      expect(adapter.getParticipants()).toHaveLength(1);
+      expect(mockObserver.onSessionEvent).toHaveBeenCalledWith(
+        expect.objectContaining({
+          type: 'PARTICIPANT_JOIN',
+          participant: mockParticipant,
+        })
+      );
+    });
+  });
+
+  describe('simulateParticipantLeave', () => {
+    it('参加者が削除されイベントが通知されること', () => {
+      const mockObserver = { onSessionEvent: vi.fn() };
+      adapter.subscribeToEvents(mockObserver);
+
+      adapter.simulateParticipantJoin(mockParticipant);
+      adapter.simulateParticipantLeave('participant-1');
+
+      expect(adapter.getParticipants()).toHaveLength(0);
+      expect(mockObserver.onSessionEvent).toHaveBeenLastCalledWith(
+        expect.objectContaining({
+          type: 'PARTICIPANT_LEAVE',
+          participant: mockParticipant,
+        })
+      );
+    });
+
+    it('存在しない参加者IDでは何も起こらないこと', () => {
+      const mockObserver = { onSessionEvent: vi.fn() };
+      adapter.subscribeToEvents(mockObserver);
+
+      adapter.simulateParticipantLeave('non-existent');
+
+      expect(mockObserver.onSessionEvent).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('simulateParticipantUpdate', () => {
+    it('参加者が更新されイベントが通知されること', () => {
+      const mockObserver = { onSessionEvent: vi.fn() };
+      adapter.subscribeToEvents(mockObserver);
+
+      adapter.simulateParticipantJoin(mockParticipant);
+
+      const updatedParticipant = { ...mockParticipant, isAudioOn: false };
+      adapter.simulateParticipantUpdate(updatedParticipant);
+
+      expect(adapter.getParticipants()[0]?.isAudioOn).toBe(false);
+      expect(mockObserver.onSessionEvent).toHaveBeenLastCalledWith(
+        expect.objectContaining({
+          type: 'PARTICIPANT_UPDATE',
+          participant: updatedParticipant,
+        })
+      );
+    });
+
+    it('存在しない参加者IDでは何も起こらないこと', () => {
+      const mockObserver = { onSessionEvent: vi.fn() };
+      adapter.subscribeToEvents(mockObserver);
+
+      adapter.simulateParticipantUpdate({ ...mockParticipant, id: 'non-existent' });
+
+      expect(mockObserver.onSessionEvent).not.toHaveBeenCalled();
+    });
+  });
+});

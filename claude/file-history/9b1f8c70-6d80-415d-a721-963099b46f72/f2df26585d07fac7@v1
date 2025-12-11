@@ -1,0 +1,60 @@
+import {useSaveAdminFlagsMutation} from '@/hooks/useBaseQueries/flag/useSaveAdminFlagsMutation';
+import {useSettingsToast} from '@/widgets/setting/hooks/useSettingsToast';
+import {useFlagSave} from '../useFlagSave';
+import {convertToAdminOrganizationSaveRequest} from './converters';
+import {flagsFormSchema} from './schema';
+import {useSettingForm} from '@/widgets/setting/hooks/useSettingForm';
+import type {FlagDefine, FlagStatus, FlagPolicy} from '@/apiResource/resourceOperations/flags/type';
+import {useAdminOrganizationFlags} from '../../data/useAdminOrganizationFlags';
+
+type UseAdminOrganizationFlagFormParams = {
+  organizationId: string;
+  enabled?: boolean;
+};
+
+/**
+ * Admin用組織フラグフォームのカスタムフック
+ */
+export const useAdminOrganizationFlagForm = ({organizationId, enabled = true}: UseAdminOrganizationFlagFormParams) => {
+  const {data: flagsData, isLoading: isFetching} = useAdminOrganizationFlags({organizationId, enabled});
+
+  const {mutateAsync, isLoading: isMutationFetching, isSuccess, isError} = useSaveAdminFlagsMutation();
+
+  useSettingsToast(isMutationFetching, isSuccess, isError);
+
+  const {handleSave} = useFlagSave({
+    schema: flagsFormSchema,
+    convertToRequest: (valueMap, policyMap) =>
+      convertToAdminOrganizationSaveRequest(valueMap, policyMap, organizationId),
+    mutateAsync,
+  });
+
+  const flagDefines: FlagDefine[] = flagsData?.flags.flagDefines ?? [];
+  const flagStatuses: FlagStatus[] = flagsData?.flags.flagStatuses ?? [];
+  const flagPolicies: FlagPolicy[] = flagsData?.flags.flagPolicies ?? [];
+
+  const {
+    settingSections,
+    hasChanges,
+    hasErrors,
+    isLoading,
+    handleSave: handleFormSave,
+  } = useSettingForm({
+    flagDefines,
+    flagStatuses,
+    flagPolicies,
+    onSave: handleSave,
+    isSaving: isMutationFetching,
+    settingType: 'organization',
+    userRole: 'admin',
+  });
+
+  return {
+    settingSections,
+    hasChanges,
+    hasErrors,
+    isLoading,
+    isFetching,
+    handleSave: handleFormSave,
+  };
+};

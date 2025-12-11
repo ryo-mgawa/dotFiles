@@ -7,10 +7,10 @@
 		"node8DeploysDisabledAfter": 1613390400000,
 		"node8RuntimeDisabledAfter": 1615809600000,
 		"node8WarnAfter": 1600128000000,
-		"fetched": 1751868552994
+		"fetched": 1765252697093
 	},
 	"activeProjects": {
-		"/Users/miyagawaryouta": "trackandfieldrecordportal",
+		"/Users/miyagawaryouta": "information-system-nexus",
 		"/Users/miyagawaryouta/Documents/GitHub/webStudy/TrackAndFieldRecordPortal": "trackandfieldrecordportal",
 		"/Users/miyagawaryouta/Documents/GitHub/webStudy/track-and-field-competitions": "track-and-field-live-results"
 	},
@@ -29,27 +29,28 @@
 	},
 	"additionalAccounts": [],
 	"activeAccounts": {},
-	"usage": true,
-	"analytics-uuid": "e204307e-1a0b-4594-90e0-86c087d4c96f",
+	"gemini": true,
+	"usage": false,
 	"user": {
 		"iss": "accounts.google.com",
 		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
 		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
-		"sub": "111035379199856913725",
-		"email": "i31640.ryota@gmail.com",
+		"sub": "104881349300067410185",
+		"hd": "finn.co.jp",
+		"email": "ryota-miyagawa@finn.co.jp",
 		"email_verified": true,
-		"at_hash": "1p051abK4j6ipZy2VO4IPQ",
-		"iat": 1751868562,
-		"exp": 1751872162
+		"at_hash": "94nfogoIheH2vUZ5C6QdaQ",
+		"iat": 1761845153,
+		"exp": 1761848753
 	},
 	"tokens": {
-		"expires_at": 1751890136533,
-		"refresh_token": "1//0e2YRLGsluKJzCgYIARAAGA4SNwF-L9IrQ4_dqQZmJQ15aGqpBqZseg-3Td9cwajaLIvfS8F4zw5ksmURpJAVqaU9Q7ciRSM_ggw",
-		"scopes": [],
-		"access_token": "ya29.a0AS3H6NyHMcVuLUVOm1pjmNp5V_mjCLzpCjALcownDn0RgMwF28Z6PqbqFyhiKqZNjwJIXcKn8I6lk8RBzR56r-F3BLvldDHa6zYMPV-vEhg2eLZVDc7Ego3dq7yNmemoii_0p5vglqibRLwKJyudhLEUgm3bbeGkIFsklzDukN31fT8aCgYKAXISARcSFQHGX2MiIAHQZtTfAuXuUhxKdhu-TA0182",
+		"expires_at": 1761848752470,
+		"access_token": "ya29.a0ATi6K2s1q1H_IQxWnNz1DdJSuNxpUpVLYvm_x0EFoetCqOHyYtvshopzo2XKjTAtmLkTpg2fmywnU59_LPpMjqBlZYx8hhG2hdzsc8IiqzlIEoUDR1ZB2Gj19X7ZrHtc9AGHqd9LC-NaSv7oYskZTHejmjB6NcfggZ6JKxwQcgHcbUUkbkyBuBFowhoq02oBCcIhnyN5_1hdaCgYKAXISARcSFQHGX2Mi3DULJNLOyCQlebl1FKWBgw0211",
 		"expires_in": 3599,
-		"scope": "openid https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/userinfo.email",
+		"refresh_token": "1//0eDRrl322m6xCCgYIARAAGA4SNwF-L9IrjxZ4yNP_o6D56AyVfI8EYUi4dpmLwTsxL0-CqExIl6HfMeIowEugqALL0HbL0UEkv2g",
+		"scope": "https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/firebase",
 		"token_type": "Bearer",
-		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjhlOGZjOGU1NTZmN2E3NmQwOGQzNTgyOWQ2ZjkwYWUyZTEyY2ZkMGQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTExMDM1Mzc5MTk5ODU2OTEzNzI1IiwiZW1haWwiOiJpMzE2NDAucnlvdGFAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJlOXdUOGRVUEFCWVl0SUVrZjF4UXR3IiwiaWF0IjoxNzUxODg2NTM3LCJleHAiOjE3NTE4OTAxMzd9.czmn2oZv8ysTvtx50Zo9SkchNgmA2QygQAuQBhWjvy8Y-yj_I124v7TMbSuhOLXasM0NngDBOPLRHb8JQU3xil8w_ifOs538Zll6trq6FLf3v7c-LYEdH6gYT25bEdvmrUlIcQqI018hap4Iks9M-yUe0aqWRGIZ3HK7aj89tgtmoAy4_sfJ7U9jLo9h0T6v7RcKs66ipe5vkSlgRhCjqv5kTAOV_ooV998HXMqHxwdNgKpjGq_iwnpg1hW0F8gaYVuVpfTlVd-jzJKel5Z2JLrq4GMYhSZj47zOUioAEGNX5amXNYKP6FNmN5a0vU8tqmdxYYe6LXPHQnVaVJoMEA"
-	}
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg4NDg5MjEyMmUyOTM5ZmQxZjMxMzc1YjJiMzYzZWM4MTU3MjNiYmIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTA0ODgxMzQ5MzAwMDY3NDEwMTg1IiwiaGQiOiJmaW5uLmNvLmpwIiwiZW1haWwiOiJyeW90YS1taXlhZ2F3YUBmaW5uLmNvLmpwIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiI5NG5mb2dvSWhlSDJ2VVo1QzZRZGFRIiwiaWF0IjoxNzYxODQ1MTUzLCJleHAiOjE3NjE4NDg3NTN9.EbZ4wGKVZbPpO2acLc4cH9AVT2q61XxSXIMJ-OUdR0LuhPQFqBvuVQUKGb5gk1gvPk5pKWyBgLmjePPghmzBVsBoNbFO5I1cLzC6D0s3jOIMCDpkTETeN4o7tNqTc0ODGVB687-zD-0CNHjG54OzUMZ6ZIlaqGYhDG0jTyZzk-TQahPtpKxCuTZVufv02e_zp8vee8tmLtzonMF3ChjzNw-y83Djo-GKnho0F7nS8TnFpr77wMUa9HSX_IhfhKWDKn3yvzfT2FyBeogBWQks3C5YWD5BwbzcpUmhQDXQJFlkl-WNQW3ciE-kssvm7qBQi4Af4tU1r7V-apu6h8yHcA"
+	},
+	"lastError": 1765252707077
 }

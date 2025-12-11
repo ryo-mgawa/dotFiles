@@ -1,0 +1,37 @@
+import { Member } from '../../shared/types';
+
+/**
+ * 部員リポジトリインターフェース
+ * Phase 4でPrismaリポジトリに切り替える際も、このインターフェースは変更しない
+ */
+export interface IMemberRepository {
+  /**
+   * 在籍中の全部員を取得
+   */
+  findAllActive(): Promise<Member[]>;
+
+  /**
+   * IDで部員を検索
+   */
+  findById(id: string): Promise<Member | null>;
+
+  /**
+   * 個人番号で部員を検索
+   */
+  findByStudentNumber(studentNumber: string): Promise<Member | null>;
+
+  /**
+   * 部員を作成
+   */
+  create(member: Omit<Member, 'id' | 'createdAt' | 'updatedAt'>): Promise<Member>;
+
+  /**
+   * 部員を更新
+   */
+  update(id: string, member: Partial<Member>): Promise<Member>;
+
+  /**
+   * 部員を削除（論理削除）
+   */
+  delete(id: string): Promise<void>;
+}

@@ -1,0 +1,1365 @@
+[DEBUG] Getting matching hook commands for SessionStart with query: clear
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+[DEBUG] FileHistory: Added snapshot for b08ac922-8281-4622-8377-ac0774115d00, tracking 0 files
+[DEBUG] Rendering user message with 1 content blocks
+[DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+[DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324591912
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815587 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324591912 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324591995
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815539 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324591995 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324594098
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815539 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324594098 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 620221fa-5345-4aa4-8ce4-a3fe1679aaa0
+[DEBUG] FileHistory: Added snapshot for 620221fa-5345-4aa4-8ce4-a3fe1679aaa0, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324636397
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815539 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324636397 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Streaming aborted by user: Request was aborted.
+[ERROR] Error in non-streaming fallback: Request was aborted.
+[ERROR] Error: Error: Request was aborted.
+    at uy.makeRequest (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:357:3850)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324636431
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815539 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324636431 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324636457
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815765 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324636457 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message ab6794ab-3b24-476e-93eb-0bf545b19ab7
+[DEBUG] FileHistory: Added snapshot for ab6794ab-3b24-476e-93eb-0bf545b19ab7, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[ERROR] MaxFileReadTokenExceededError: MaxFileReadTokenExceededError: File content (27332 tokens) exceeds maximum allowed tokens (25000). Please use offset and limit parameters to read specific portions of the file, or use the GrepTool to search for specific content.
+    at Gf2 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:3388:1682)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Object.call (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:3397:1001)
+    at async aj6 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2692:65802)
+    at async Mq2 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2692:62859)
+    at async file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2692:62028
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324755430
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324755430 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324755435
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324755435 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324755439
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324755439 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324755445
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324755445 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324755452
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324755452 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324755457
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324755457 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324755462
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324755462 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324755468
+[DEBUG] Temp file written successfully, size: 474 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324755468 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324764884
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324764884 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324764890
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324764890 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324764902
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324764902 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324764909
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324764909 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324764917
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324764917 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324764923
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324764923 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324764929
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324764929 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324764935
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 478 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324764935 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml.tmp.2040.1762324776744
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 521 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml.tmp.2040.1762324776744 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324787842
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324787842 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324787850
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324787850 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324787856
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324787856 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324787864
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324787864 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324787869
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324787869 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324787875
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324787875 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324787880
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324787880 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324787885
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 480 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324787885 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Write
+[DEBUG] Getting matching hook commands for PreToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/requests/shipment/CreateShipmentEventsInput.yml
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/requests/shipment/CreateShipmentEventsInput.yml.tmp.2040.1762324798594
+[DEBUG] Temp file written successfully, size: 194 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/requests/shipment/CreateShipmentEventsInput.yml.tmp.2040.1762324798594 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/requests/shipment/CreateShipmentEventsInput.yml
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/requests/shipment/CreateShipmentEventsInput.yml written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324808419
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324808419 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324808425
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324808425 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324808429
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324808429 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324808433
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324808433 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324808439
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324808439 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324808443
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324808443 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324808447
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324808447 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324808450
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 482 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324808450 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Write
+[DEBUG] Getting matching hook commands for PreToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/responses/shipment/CreateShipmentEventsResponse.yml
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/responses/shipment/CreateShipmentEventsResponse.yml.tmp.2040.1762324821935
+[DEBUG] Temp file written successfully, size: 172 bytes
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/responses/shipment/CreateShipmentEventsResponse.yml.tmp.2040.1762324821935 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/responses/shipment/CreateShipmentEventsResponse.yml
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/responses/shipment/CreateShipmentEventsResponse.yml written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml.tmp.2040.1762324834078
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 3354 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml.tmp.2040.1762324834078 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324847782
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324847782 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324847787
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324847787 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324847793
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324847793 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324847798
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324847798 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324847803
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324847803 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324847808
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324847808 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324847813
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324847813 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324847818
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 619 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324847818 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml.tmp.2040.1762324857600
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 3359 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml.tmp.2040.1762324857600 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324871822
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json.tmp.2040.1762324871822 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-7a282e5d-e36b-478c-a253-aa1f1155072e.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324871827
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json.tmp.2040.1762324871827 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-1f60145c-4ae3-473f-8cb8-c51453ca6aff.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324871831
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json.tmp.2040.1762324871831 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-299f5c3e-9ebb-4440-b31e-89588a26506f.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324871838
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json.tmp.2040.1762324871838 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-b1457fbe-62fd-4ac4-a509-ccafc1ebfa79.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324871842
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json.tmp.2040.1762324871842 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-a2769bd7-ac0e-45a6-9cee-3430b63fb47d.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324871847
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json.tmp.2040.1762324871847 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-0c1c3ac7-d252-40c4-a0fd-775d6e3bb600.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324871852
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json.tmp.2040.1762324871852 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-dd12c93e-b1fb-4ec4-b047-7e1a8a2f5291.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324871857
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json.tmp.2040.1762324871857 to /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json
+[DEBUG] File /Users/miyagawaryouta/.claude/todos/84e4d6e8-23bb-4255-93f5-f81f87728893-agent-84e4d6e8-23bb-4255-93f5-f81f87728893.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324889212
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815765 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324889212 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324889248
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815765 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324889248 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324889274
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 816020 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324889274 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Notification with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 92a06496-fd66-41ea-b87f-aaa27b99d593
+[DEBUG] FileHistory: Added snapshot for 92a06496-fd66-41ea-b87f-aaa27b99d593, tracking 4 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324944033
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 816020 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324944033 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324944082
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 816020 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324944082 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762324944107
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815973 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762324944107 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 6493fa55-5e7d-49e8-a9df-60d8a12447a4
+[DEBUG] FileHistory: Added snapshot for 6493fa55-5e7d-49e8-a9df-60d8a12447a4, tracking 4 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml.tmp.2040.1762325647103
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 536 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml.tmp.2040.1762325647103 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml.tmp.2040.1762325655238
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 517 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml.tmp.2040.1762325655238 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/components/schemas/shipment/ShipmentEvent.yml written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml.tmp.2040.1762325683118
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 3408 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml.tmp.2040.1762325683118 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml
+[DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/docs/api-specification/openapi/src/services/publicAPI/paths/shipment/shipmentEvents.yml written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762325728242
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815973 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762325728242 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762325728286
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 815973 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762325728286 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762325728316
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818488 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762325728316 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Notification with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 061b2d7d-92a9-4b5d-af79-e1f004b38031
+[DEBUG] FileHistory: Added snapshot for 061b2d7d-92a9-4b5d-af79-e1f004b38031, tracking 4 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool: /i, /i, /pr:create-pr, /pr:branch-status, /serena
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at YD (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1175:4413)
+    at file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1175:4141
+    at Array.map (<anonymous>)
+    at OF (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1175:4132)
+    at YTQ (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:1797:6306)
+    at Vw (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:73:19414)
+    at Qo (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:42806)
+    at T9 (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:38347)
+    at zc (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:38275)
+    at Lw (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:75:38129)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762326250063
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818488 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762326250063 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762326250099
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818488 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762326250099 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762326250123
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762326250123 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762326394905
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762326394905 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762328194038
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762328194038 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762329993660
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762329993660 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762331794148
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762331794148 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762338433926
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762338433926 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762340404029
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762340404029 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762342338592
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762342338592 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762344138976
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762344138976 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762346600318
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762346600318 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762348399365
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762348399365 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762350199291
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762350199291 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762351999592
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762351999592 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762353799376
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762353799376 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762355599466
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762355599466 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762357399440
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762357399440 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762359199277
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762359199277 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762360999223
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762360999223 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762362799312
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762362799312 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762364599515
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762364599515 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762366399384
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762366399384 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762368199540
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762368199540 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762369999492
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762369999492 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762371799243
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762371799243 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762373599232
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762373599232 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762375399306
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762375399306 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762377200437
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762377200437 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762378999922
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762378999922 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762380799437
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762380799437 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762382599256
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762382599256 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762384399275
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762384399275 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762386199493
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762386199493 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762388000396
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762388000396 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762389800143
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762389800143 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762391599637
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762391599637 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762397630577
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762397630577 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762399430279
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762399430279 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762401230339
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762401230339 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762403030227
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762403030227 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762404830568
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762404830568 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-global
+[DEBUG] AutoUpdater: Using global update method
+[DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.2040.1762406630252
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 818496 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.2040.1762406630252 to /Users/miyagawaryouta/.claude.json
+[DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-global, using native: false
+[DEBUG] Getting matching hook commands for SessionEnd with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)

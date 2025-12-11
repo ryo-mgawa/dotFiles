@@ -1,0 +1,1164 @@
+2025-11-22T01:51:09.415Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2025-11-22T01:51:09.416Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:51:09.416Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-11-22T01:51:09.430Z [DEBUG] FileHistory: Added snapshot for a76453c7-f899-482e-856a-26280c3b59b1, tracking 0 files
+2025-11-22T01:51:09.440Z [DEBUG] Rendering user message with 1 content blocks
+2025-11-22T01:51:09.440Z [DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+2025-11-22T01:51:09.441Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-11-22T01:51:09.441Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-11-22T01:51:09.464Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763776269464
+2025-11-22T01:51:09.464Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:51:09.470Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T01:51:09.470Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:51:09.470Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763776269464 to /Users/miyagawaryouta/.claude.json
+2025-11-22T01:51:09.472Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T01:51:09.826Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-22T01:51:10.384Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T01:51:10.384Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T01:51:11.183Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763776271183
+2025-11-22T01:51:11.183Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:51:11.192Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T01:51:11.192Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:51:11.192Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763776271183 to /Users/miyagawaryouta/.claude.json
+2025-11-22T01:51:11.192Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T01:51:14.334Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:14.424Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-22T01:51:14.544Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:14.879Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T01:51:14.879Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T01:51:15.453Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763776275453
+2025-11-22T01:51:15.453Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:51:15.463Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T01:51:15.463Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:51:15.463Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763776275453 to /Users/miyagawaryouta/.claude.json
+2025-11-22T01:51:15.463Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T01:51:16.675Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:19.275Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:21.178Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:22.862Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-22T01:51:23.268Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T01:51:23.268Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T01:51:23.608Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:23.832Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763776283832
+2025-11-22T01:51:23.832Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:51:23.842Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T01:51:23.842Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:51:23.842Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763776283832 to /Users/miyagawaryouta/.claude.json
+2025-11-22T01:51:23.843Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T01:51:23.929Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:24.590Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:25.328Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:26.217Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:30.563Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:35.139Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:35.287Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-22T01:51:35.348Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:35.742Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T01:51:35.742Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T01:51:36.356Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763776296356
+2025-11-22T01:51:36.356Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:51:36.369Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T01:51:36.369Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:51:36.369Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763776296356 to /Users/miyagawaryouta/.claude.json
+2025-11-22T01:51:36.370Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T01:51:51.578Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:52.536Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:52.928Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:53.204Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:53.832Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:58.708Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-22T01:51:59.207Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T01:51:59.207Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T01:51:59.619Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:59.829Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:51:59.902Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763776319902
+2025-11-22T01:51:59.902Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:52:00.143Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T01:52:00.144Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:52:00.144Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763776319902 to /Users/miyagawaryouta/.claude.json
+2025-11-22T01:52:00.144Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T01:52:00.558Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:52:06.471Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-22T01:52:06.896Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T01:52:06.896Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T01:52:07.223Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:52:07.435Z [DEBUG] [FileIndex] Using Fuse.js fallback for search
+2025-11-22T01:52:07.501Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763776327501
+2025-11-22T01:52:07.501Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:52:07.538Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T01:52:07.538Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:52:07.538Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763776327501 to /Users/miyagawaryouta/.claude.json
+2025-11-22T01:52:07.539Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T01:52:12.737Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-global
+2025-11-22T01:52:13.170Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T01:52:13.170Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T01:52:13.765Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763776333765
+2025-11-22T01:52:13.765Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:52:13.773Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T01:52:13.773Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:52:13.773Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763776333765 to /Users/miyagawaryouta/.claude.json
+2025-11-22T01:52:13.773Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T01:52:36.775Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-22T01:52:36.775Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-22T01:52:36.778Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-22T01:52:36.778Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-22T01:52:36.799Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-22T01:52:36.799Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:52:36.799Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-22T01:52:36.800Z [DEBUG] FileHistory: Making snapshot for message 79c2249a-5850-4670-a629-85275a3d9c43
+2025-11-22T01:52:36.800Z [DEBUG] FileHistory: Added snapshot for 79c2249a-5850-4670-a629-85275a3d9c43, tracking 0 files
+2025-11-22T01:52:36.887Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-22T01:52:36.887Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-22T01:52:37.602Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:52:38.408Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:52:39.883Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:52:45.680Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-22T01:52:45.684Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-22T01:52:45.684Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:52:45.684Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-22T01:52:45.720Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-22T01:52:45.720Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:52:45.720Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-22T01:52:45.734Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-22T01:52:45.734Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-22T01:52:45.738Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-22T01:52:45.738Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-22T01:52:45.750Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-22T01:52:45.750Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-22T01:52:47.910Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:52:51.086Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-22T01:52:51.088Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-22T01:52:51.091Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-22T01:52:51.091Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:52:51.091Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-22T01:52:51.091Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-22T01:52:51.091Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:52:51.091Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-22T01:52:51.311Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-22T01:52:51.312Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:52:51.312Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-22T01:52:51.332Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-22T01:52:51.332Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:52:51.332Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-22T01:52:51.344Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-22T01:52:51.344Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-22T01:52:51.346Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-22T01:52:51.346Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-22T01:52:51.359Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-22T01:52:51.359Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-22T01:52:53.606Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:52:55.328Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-22T01:52:55.330Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-22T01:52:55.331Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:52:55.331Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-22T01:52:55.427Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-22T01:52:55.427Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:52:55.428Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-22T01:52:55.440Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-22T01:52:55.440Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-22T01:52:55.442Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-22T01:52:55.442Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-22T01:52:55.459Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-22T01:52:55.459Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-22T01:52:57.715Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:53:03.009Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:03.011Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:03.013Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:03.015Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:03.018Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:03.020Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:03.022Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:03.022Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.022Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.022Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:03.022Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.022Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.022Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:03.022Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.022Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.022Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:03.022Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.022Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.022Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:03.022Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.022Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.022Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:03.022Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.022Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.089Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:03.089Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.089Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.089Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:03.089Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.089Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.089Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:03.089Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.089Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.089Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:03.089Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.089Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.089Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:03.089Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.089Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.089Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:03.089Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:03.089Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:03.150Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-22T01:53:03.151Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-22T01:53:03.154Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-22T01:53:03.154Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-22T01:53:03.169Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-22T01:53:03.169Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-22T01:53:05.932Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:53:20.088Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:20.090Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:20.092Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:20.094Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:20.096Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-22T01:53:20.099Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:20.099Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:20.099Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:20.099Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:20.099Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:20.099Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:20.099Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:20.099Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:20.099Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:20.099Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:20.099Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:20.099Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:20.099Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-22T01:53:20.099Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:20.099Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:20.152Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:20.152Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:20.152Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:20.152Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:20.152Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:20.152Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:20.152Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:20.152Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:20.153Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:20.153Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:20.153Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:20.153Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:20.153Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-22T01:53:20.153Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:20.153Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-22T01:53:20.201Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-22T01:53:20.201Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-22T01:53:20.205Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-22T01:53:20.205Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-22T01:53:20.223Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-22T01:53:20.223Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-22T01:53:22.571Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:53:54.301Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-22T01:53:54.305Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-22T01:53:54.305Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:54.305Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-22T01:53:54.321Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/consignor.test.ts
+2025-11-22T01:53:54.324Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/consignor.test.ts.tmp.51540.1763776434324
+2025-11-22T01:53:54.324Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:53:54.329Z [DEBUG] Temp file written successfully, size: 3014 bytes
+2025-11-22T01:53:54.329Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:53:54.329Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/consignor.test.ts.tmp.51540.1763776434324 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/consignor.test.ts
+2025-11-22T01:53:54.329Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/consignor.test.ts written atomically
+2025-11-22T01:53:54.337Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-22T01:53:54.337Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:54.337Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-22T01:53:54.487Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-22T01:53:54.507Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-22T01:53:54.507Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:54.507Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-22T01:53:54.575Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/consignee.test.ts
+2025-11-22T01:53:54.595Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/consignee.test.ts.tmp.51540.1763776434595
+2025-11-22T01:53:54.596Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:53:54.599Z [DEBUG] Temp file written successfully, size: 3019 bytes
+2025-11-22T01:53:54.599Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:53:54.599Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/consignee.test.ts.tmp.51540.1763776434595 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/consignee.test.ts
+2025-11-22T01:53:54.599Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/consignee.test.ts written atomically
+2025-11-22T01:53:54.641Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-22T01:53:54.641Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:54.641Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-22T01:53:54.834Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-22T01:53:54.872Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-22T01:53:54.873Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:54.873Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-22T01:53:54.975Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/spot.test.ts
+2025-11-22T01:53:55.006Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/spot.test.ts.tmp.51540.1763776435006
+2025-11-22T01:53:55.006Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:53:55.010Z [DEBUG] Temp file written successfully, size: 2890 bytes
+2025-11-22T01:53:55.010Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:53:55.010Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/spot.test.ts.tmp.51540.1763776435006 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/spot.test.ts
+2025-11-22T01:53:55.011Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/spot.test.ts written atomically
+2025-11-22T01:53:55.074Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-22T01:53:55.074Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:53:55.074Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-22T01:53:55.215Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-22T01:53:55.215Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-22T01:53:55.219Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-22T01:53:55.219Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-22T01:53:55.241Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-22T01:53:55.241Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-22T01:53:58.072Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:54:54.573Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-22T01:54:54.576Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-22T01:54:54.576Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:54:54.576Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-22T01:54:54.590Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/addShipmentItem.test.ts
+2025-11-22T01:54:54.592Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/addShipmentItem.test.ts.tmp.51540.1763776494592
+2025-11-22T01:54:54.593Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:54:54.597Z [DEBUG] Temp file written successfully, size: 13603 bytes
+2025-11-22T01:54:54.597Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:54:54.597Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/addShipmentItem.test.ts.tmp.51540.1763776494592 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/addShipmentItem.test.ts
+2025-11-22T01:54:54.598Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/addShipmentItem.test.ts written atomically
+2025-11-22T01:54:54.617Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-22T01:54:54.617Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:54:54.617Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-22T01:54:55.131Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-22T01:54:55.202Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-22T01:54:55.202Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:54:55.202Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-22T01:54:55.444Z [DEBUG] FileHistory: Tracked file modification for /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/input.test.ts
+2025-11-22T01:54:55.522Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/input.test.ts.tmp.51540.1763776495522
+2025-11-22T01:54:55.522Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:54:55.527Z [DEBUG] Temp file written successfully, size: 4940 bytes
+2025-11-22T01:54:55.527Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:54:55.527Z [DEBUG] Renaming /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/input.test.ts.tmp.51540.1763776495522 to /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/input.test.ts
+2025-11-22T01:54:55.527Z [DEBUG] File /Users/miyagawaryouta/Documents/GitHub/loogia-operation-web/server/apps/shipment/src/presentation/dto/addShipments/__tests__/input.test.ts written atomically
+2025-11-22T01:54:55.683Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-22T01:54:55.683Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:54:55.683Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-22T01:54:55.973Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-22T01:54:55.973Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-22T01:54:55.975Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-22T01:54:55.975Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-22T01:54:55.997Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-22T01:54:55.997Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-22T01:54:58.589Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:55:00.994Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-22T01:55:00.998Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-22T01:55:00.998Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:55:00.998Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-22T01:55:01.740Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:55:01.876Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:55:04.121Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-22T01:55:04.121Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:55:04.121Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-22T01:55:04.139Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-22T01:55:04.139Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-22T01:55:04.142Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-22T01:55:04.142Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-22T01:55:04.157Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-22T01:55:04.157Z [DEBUG] Slash commands included in SlashCommand tool: /i, /serena, /pr:create-pr, /pr:branch-status
+2025-11-22T01:55:04.675Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:55:06.355Z [DEBUG] Stream started - received first chunk
+2025-11-22T01:55:11.873Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-22T01:55:11.873Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T01:55:11.873Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-22T01:55:11.886Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763776511886
+2025-11-22T01:55:11.886Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:55:11.893Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T01:55:11.893Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:55:11.893Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763776511886 to /Users/miyagawaryouta/.claude.json
+2025-11-22T01:55:11.895Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T01:55:11.898Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763776511898
+2025-11-22T01:55:11.898Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T01:55:11.903Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T01:55:11.903Z [DEBUG] Applied original permissions to temp file
+2025-11-22T01:55:11.903Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763776511898 to /Users/miyagawaryouta/.claude.json
+2025-11-22T01:55:11.906Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T02:22:13.770Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T02:22:13.771Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T02:22:14.619Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763778134619
+2025-11-22T02:22:14.619Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T02:22:14.629Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T02:22:14.629Z [DEBUG] Applied original permissions to temp file
+2025-11-22T02:22:14.629Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763778134619 to /Users/miyagawaryouta/.claude.json
+2025-11-22T02:22:14.629Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T02:52:13.687Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T02:52:13.687Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T02:52:14.475Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763779934475
+2025-11-22T02:52:14.475Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T02:52:14.483Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T02:52:14.483Z [DEBUG] Applied original permissions to temp file
+2025-11-22T02:52:14.483Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763779934475 to /Users/miyagawaryouta/.claude.json
+2025-11-22T02:52:14.483Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T03:22:13.720Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T03:22:13.720Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T03:22:14.614Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763781734614
+2025-11-22T03:22:14.615Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T03:22:14.622Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T03:22:14.622Z [DEBUG] Applied original permissions to temp file
+2025-11-22T03:22:14.622Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763781734614 to /Users/miyagawaryouta/.claude.json
+2025-11-22T03:22:14.623Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T04:06:58.773Z [DEBUG] npm view failed with code 1
+2025-11-22T04:06:58.775Z [DEBUG] npm stderr: (empty)
+2025-11-22T04:40:51.757Z [DEBUG] npm view failed with code 1
+2025-11-22T04:40:51.758Z [DEBUG] npm stderr: (empty)
+2025-11-22T05:14:04.755Z [DEBUG] npm view failed with code 1
+2025-11-22T05:14:04.756Z [DEBUG] npm stderr: (empty)
+2025-11-22T05:47:06.328Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T05:47:06.329Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T05:47:07.275Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763790427275
+2025-11-22T05:47:07.275Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T05:47:07.287Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T05:47:07.287Z [DEBUG] Applied original permissions to temp file
+2025-11-22T05:47:07.287Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763790427275 to /Users/miyagawaryouta/.claude.json
+2025-11-22T05:47:07.288Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T06:22:56.389Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T06:22:56.390Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T06:22:57.271Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763792577271
+2025-11-22T06:22:57.271Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T06:22:57.279Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T06:22:57.279Z [DEBUG] Applied original permissions to temp file
+2025-11-22T06:22:57.279Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763792577271 to /Users/miyagawaryouta/.claude.json
+2025-11-22T06:22:57.279Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T07:08:15.179Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T07:08:15.179Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T07:08:16.068Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763795296068
+2025-11-22T07:08:16.068Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T07:08:16.075Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T07:08:16.076Z [DEBUG] Applied original permissions to temp file
+2025-11-22T07:08:16.076Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763795296068 to /Users/miyagawaryouta/.claude.json
+2025-11-22T07:08:16.076Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T07:40:37.414Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T07:40:37.414Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T07:40:38.418Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763797238418
+2025-11-22T07:40:38.418Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T07:40:38.426Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T07:40:38.426Z [DEBUG] Applied original permissions to temp file
+2025-11-22T07:40:38.426Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763797238418 to /Users/miyagawaryouta/.claude.json
+2025-11-22T07:40:38.428Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T08:12:54.831Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T08:12:54.831Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T08:12:55.703Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763799175703
+2025-11-22T08:12:55.703Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T08:12:55.711Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T08:12:55.711Z [DEBUG] Applied original permissions to temp file
+2025-11-22T08:12:55.711Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763799175703 to /Users/miyagawaryouta/.claude.json
+2025-11-22T08:12:55.712Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T08:45:18.196Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T08:45:18.197Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T08:45:19.332Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763801119332
+2025-11-22T08:45:19.332Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T08:45:19.341Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T08:45:19.342Z [DEBUG] Applied original permissions to temp file
+2025-11-22T08:45:19.342Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763801119332 to /Users/miyagawaryouta/.claude.json
+2025-11-22T08:45:19.342Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T09:26:12.811Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T09:26:12.812Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T09:26:13.677Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763803573677
+2025-11-22T09:26:13.677Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T09:26:13.686Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T09:26:13.686Z [DEBUG] Applied original permissions to temp file
+2025-11-22T09:26:13.686Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763803573677 to /Users/miyagawaryouta/.claude.json
+2025-11-22T09:26:13.686Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T10:10:57.873Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T10:10:57.873Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T10:10:58.800Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763806258800
+2025-11-22T10:10:58.800Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T10:10:58.806Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T10:10:58.806Z [DEBUG] Applied original permissions to temp file
+2025-11-22T10:10:58.806Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763806258800 to /Users/miyagawaryouta/.claude.json
+2025-11-22T10:10:58.809Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T10:43:22.444Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T10:43:22.444Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T10:43:23.329Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763808203329
+2025-11-22T10:43:23.329Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T10:43:23.338Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T10:43:23.338Z [DEBUG] Applied original permissions to temp file
+2025-11-22T10:43:23.338Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763808203329 to /Users/miyagawaryouta/.claude.json
+2025-11-22T10:43:23.341Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T11:27:47.892Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T11:27:47.892Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T11:27:48.823Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763810868823
+2025-11-22T11:27:48.823Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T11:27:48.833Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T11:27:48.833Z [DEBUG] Applied original permissions to temp file
+2025-11-22T11:27:48.833Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763810868823 to /Users/miyagawaryouta/.claude.json
+2025-11-22T11:27:48.834Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T12:04:18.457Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T12:04:18.459Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T12:04:19.568Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763813059568
+2025-11-22T12:04:19.568Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T12:04:19.577Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T12:04:19.577Z [DEBUG] Applied original permissions to temp file
+2025-11-22T12:04:19.577Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763813059568 to /Users/miyagawaryouta/.claude.json
+2025-11-22T12:04:19.578Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T12:36:47.227Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T12:36:47.228Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T12:36:48.164Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763815008163
+2025-11-22T12:36:48.164Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T12:36:48.171Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T12:36:48.171Z [DEBUG] Applied original permissions to temp file
+2025-11-22T12:36:48.171Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763815008163 to /Users/miyagawaryouta/.claude.json
+2025-11-22T12:36:48.171Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T13:13:03.527Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T13:13:03.528Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T13:13:04.443Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763817184443
+2025-11-22T13:13:04.443Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T13:13:04.453Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T13:13:04.454Z [DEBUG] Applied original permissions to temp file
+2025-11-22T13:13:04.454Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763817184443 to /Users/miyagawaryouta/.claude.json
+2025-11-22T13:13:04.454Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T13:45:27.511Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T13:45:27.512Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T13:45:28.401Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763819128401
+2025-11-22T13:45:28.401Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T13:45:28.408Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T13:45:28.408Z [DEBUG] Applied original permissions to temp file
+2025-11-22T13:45:28.408Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763819128401 to /Users/miyagawaryouta/.claude.json
+2025-11-22T13:45:28.408Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T14:15:27.840Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T14:15:27.840Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T14:15:29.673Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763820929673
+2025-11-22T14:15:29.673Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T14:15:29.684Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T14:15:29.684Z [DEBUG] Applied original permissions to temp file
+2025-11-22T14:15:29.684Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763820929673 to /Users/miyagawaryouta/.claude.json
+2025-11-22T14:15:29.685Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T14:47:24.610Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T14:47:24.611Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T14:47:25.540Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763822845540
+2025-11-22T14:47:25.540Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T14:47:25.553Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T14:47:25.553Z [DEBUG] Applied original permissions to temp file
+2025-11-22T14:47:25.553Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763822845540 to /Users/miyagawaryouta/.claude.json
+2025-11-22T14:47:25.553Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T15:32:11.812Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T15:32:11.813Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T15:32:16.930Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763825536930
+2025-11-22T15:32:16.930Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T15:32:16.953Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T15:32:16.953Z [DEBUG] Applied original permissions to temp file
+2025-11-22T15:32:16.953Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763825536930 to /Users/miyagawaryouta/.claude.json
+2025-11-22T15:32:16.953Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T16:16:57.610Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T16:16:57.611Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T16:16:58.466Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763828218466
+2025-11-22T16:16:58.466Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T16:16:58.475Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T16:16:58.475Z [DEBUG] Applied original permissions to temp file
+2025-11-22T16:16:58.475Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763828218466 to /Users/miyagawaryouta/.claude.json
+2025-11-22T16:16:58.476Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T16:49:01.725Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T16:49:01.725Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T16:49:02.614Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763830142614
+2025-11-22T16:49:02.614Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T16:49:02.622Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T16:49:02.622Z [DEBUG] Applied original permissions to temp file
+2025-11-22T16:49:02.622Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763830142614 to /Users/miyagawaryouta/.claude.json
+2025-11-22T16:49:02.623Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T17:32:21.441Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T17:32:21.441Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T17:32:22.312Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763832742312
+2025-11-22T17:32:22.312Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T17:32:22.319Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T17:32:22.319Z [DEBUG] Applied original permissions to temp file
+2025-11-22T17:32:22.319Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763832742312 to /Users/miyagawaryouta/.claude.json
+2025-11-22T17:32:22.319Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T18:04:48.723Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T18:04:48.724Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T18:04:49.827Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763834689827
+2025-11-22T18:04:49.827Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T18:04:49.837Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T18:04:49.837Z [DEBUG] Applied original permissions to temp file
+2025-11-22T18:04:49.837Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763834689827 to /Users/miyagawaryouta/.claude.json
+2025-11-22T18:04:49.838Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T18:37:13.702Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T18:37:13.703Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T18:37:14.678Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763836634678
+2025-11-22T18:37:14.678Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T18:37:14.698Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T18:37:14.698Z [DEBUG] Applied original permissions to temp file
+2025-11-22T18:37:14.698Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763836634678 to /Users/miyagawaryouta/.claude.json
+2025-11-22T18:37:14.698Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T19:09:42.971Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T19:09:42.972Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T19:09:43.847Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763838583847
+2025-11-22T19:09:43.847Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T19:09:43.855Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T19:09:43.855Z [DEBUG] Applied original permissions to temp file
+2025-11-22T19:09:43.855Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763838583847 to /Users/miyagawaryouta/.claude.json
+2025-11-22T19:09:43.856Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T19:42:07.121Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T19:42:07.121Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T19:42:07.962Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763840527962
+2025-11-22T19:42:07.962Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T19:42:07.971Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T19:42:07.972Z [DEBUG] Applied original permissions to temp file
+2025-11-22T19:42:07.972Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763840527962 to /Users/miyagawaryouta/.claude.json
+2025-11-22T19:42:07.972Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T20:17:18.377Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T20:17:18.377Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T20:17:19.304Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763842639304
+2025-11-22T20:17:19.304Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T20:17:19.310Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T20:17:19.310Z [DEBUG] Applied original permissions to temp file
+2025-11-22T20:17:19.310Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763842639304 to /Users/miyagawaryouta/.claude.json
+2025-11-22T20:17:19.310Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T20:49:42.538Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T20:49:42.538Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T20:49:43.463Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763844583463
+2025-11-22T20:49:43.463Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T20:49:43.472Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T20:49:43.472Z [DEBUG] Applied original permissions to temp file
+2025-11-22T20:49:43.472Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763844583463 to /Users/miyagawaryouta/.claude.json
+2025-11-22T20:49:43.472Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T21:22:10.965Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T21:22:10.965Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T21:22:11.838Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763846531838
+2025-11-22T21:22:11.838Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T21:22:11.850Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T21:22:11.850Z [DEBUG] Applied original permissions to temp file
+2025-11-22T21:22:11.850Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763846531838 to /Users/miyagawaryouta/.claude.json
+2025-11-22T21:22:11.851Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T21:54:36.519Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T21:54:36.519Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T21:54:37.333Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763848477333
+2025-11-22T21:54:37.333Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T21:54:37.345Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T21:54:37.345Z [DEBUG] Applied original permissions to temp file
+2025-11-22T21:54:37.345Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763848477333 to /Users/miyagawaryouta/.claude.json
+2025-11-22T21:54:37.345Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T22:26:59.008Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T22:26:59.008Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T22:26:59.830Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763850419830
+2025-11-22T22:26:59.830Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T22:26:59.840Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T22:26:59.840Z [DEBUG] Applied original permissions to temp file
+2025-11-22T22:26:59.840Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763850419830 to /Users/miyagawaryouta/.claude.json
+2025-11-22T22:26:59.841Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T23:12:10.681Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T23:12:10.681Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T23:12:11.785Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763853131785
+2025-11-22T23:12:11.785Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T23:12:11.802Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T23:12:11.802Z [DEBUG] Applied original permissions to temp file
+2025-11-22T23:12:11.802Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763853131785 to /Users/miyagawaryouta/.claude.json
+2025-11-22T23:12:11.802Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-22T23:48:47.586Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-22T23:48:47.586Z [DEBUG] AutoUpdater: Using global update method
+2025-11-22T23:48:48.378Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763855328378
+2025-11-22T23:48:48.378Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T23:48:48.389Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-22T23:48:48.389Z [DEBUG] Applied original permissions to temp file
+2025-11-22T23:48:48.389Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763855328378 to /Users/miyagawaryouta/.claude.json
+2025-11-22T23:48:48.390Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T00:29:26.973Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T00:29:26.973Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T00:29:27.837Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763857767837
+2025-11-23T00:29:27.837Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T00:29:27.848Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T00:29:27.848Z [DEBUG] Applied original permissions to temp file
+2025-11-23T00:29:27.848Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763857767837 to /Users/miyagawaryouta/.claude.json
+2025-11-23T00:29:27.849Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T01:14:11.178Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T01:14:11.179Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T01:14:12.117Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763860452117
+2025-11-23T01:14:12.117Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T01:14:12.166Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T01:14:12.166Z [DEBUG] Applied original permissions to temp file
+2025-11-23T01:14:12.166Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763860452117 to /Users/miyagawaryouta/.claude.json
+2025-11-23T01:14:12.166Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T01:46:11.757Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T01:46:11.757Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T01:46:12.908Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763862372908
+2025-11-23T01:46:12.908Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T01:46:12.924Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T01:46:12.924Z [DEBUG] Applied original permissions to temp file
+2025-11-23T01:46:12.924Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763862372908 to /Users/miyagawaryouta/.claude.json
+2025-11-23T01:46:12.924Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T02:31:24.909Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T02:31:24.909Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T02:31:25.714Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763865085714
+2025-11-23T02:31:25.714Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T02:31:25.727Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T02:31:25.727Z [DEBUG] Applied original permissions to temp file
+2025-11-23T02:31:25.727Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763865085714 to /Users/miyagawaryouta/.claude.json
+2025-11-23T02:31:25.727Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T03:03:42.642Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T03:03:42.642Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T03:03:43.494Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763867023494
+2025-11-23T03:03:43.494Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T03:03:43.507Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T03:03:43.507Z [DEBUG] Applied original permissions to temp file
+2025-11-23T03:03:43.507Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763867023494 to /Users/miyagawaryouta/.claude.json
+2025-11-23T03:03:43.507Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T03:36:06.608Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T03:36:06.608Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T03:36:07.428Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763868967428
+2025-11-23T03:36:07.428Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T03:36:07.438Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T03:36:07.438Z [DEBUG] Applied original permissions to temp file
+2025-11-23T03:36:07.438Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763868967428 to /Users/miyagawaryouta/.claude.json
+2025-11-23T03:36:07.439Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T04:06:06.623Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T04:06:06.623Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T04:06:07.471Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763870767471
+2025-11-23T04:06:07.471Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T04:06:07.479Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T04:06:07.479Z [DEBUG] Applied original permissions to temp file
+2025-11-23T04:06:07.479Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763870767471 to /Users/miyagawaryouta/.claude.json
+2025-11-23T04:06:07.479Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T04:46:30.771Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T04:46:30.772Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T04:46:32.428Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763873192428
+2025-11-23T04:46:32.428Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T04:46:32.437Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T04:46:32.438Z [DEBUG] Applied original permissions to temp file
+2025-11-23T04:46:32.438Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763873192428 to /Users/miyagawaryouta/.claude.json
+2025-11-23T04:46:32.440Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T05:18:55.144Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T05:18:55.144Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T05:18:56.002Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763875136002
+2025-11-23T05:18:56.002Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T05:18:56.011Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T05:18:56.011Z [DEBUG] Applied original permissions to temp file
+2025-11-23T05:18:56.011Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763875136002 to /Users/miyagawaryouta/.claude.json
+2025-11-23T05:18:56.011Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T05:51:24.099Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T05:51:24.099Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T05:51:24.100Z [ERROR] Y61: Y61: Another process is currently installing an update
+    at fOA (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2502:1858)
+    at Object.current (file:///Users/miyagawaryouta/.nodenv/versions/20.18.1/lib/node_modules/@anthropic-ai/claude-code/cli.js:2514:9673)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+2025-11-23T06:25:47.582Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T06:25:47.583Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T06:25:48.511Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763879148511
+2025-11-23T06:25:48.511Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T06:25:48.525Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T06:25:48.526Z [DEBUG] Applied original permissions to temp file
+2025-11-23T06:25:48.526Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763879148511 to /Users/miyagawaryouta/.claude.json
+2025-11-23T06:25:48.526Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T06:58:07.561Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T06:58:07.561Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T06:58:08.443Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763881088443
+2025-11-23T06:58:08.443Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T06:58:08.452Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T06:58:08.452Z [DEBUG] Applied original permissions to temp file
+2025-11-23T06:58:08.452Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763881088443 to /Users/miyagawaryouta/.claude.json
+2025-11-23T06:58:08.452Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T07:40:48.858Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T07:40:48.858Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T07:40:49.671Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763883649671
+2025-11-23T07:40:49.671Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T07:40:49.680Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T07:40:49.680Z [DEBUG] Applied original permissions to temp file
+2025-11-23T07:40:49.680Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763883649671 to /Users/miyagawaryouta/.claude.json
+2025-11-23T07:40:49.681Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T08:25:38.596Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T08:25:38.597Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T08:25:39.493Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763886339493
+2025-11-23T08:25:39.493Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T08:25:39.498Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T08:25:39.498Z [DEBUG] Applied original permissions to temp file
+2025-11-23T08:25:39.498Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763886339493 to /Users/miyagawaryouta/.claude.json
+2025-11-23T08:25:39.499Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T08:58:00.787Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T08:58:00.787Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T08:58:01.802Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763888281802
+2025-11-23T08:58:01.802Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T08:58:01.807Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T08:58:01.807Z [DEBUG] Applied original permissions to temp file
+2025-11-23T08:58:01.807Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763888281802 to /Users/miyagawaryouta/.claude.json
+2025-11-23T08:58:01.807Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T09:42:49.713Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T09:42:49.713Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T09:42:50.869Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763890970869
+2025-11-23T09:42:50.869Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T09:42:50.877Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T09:42:50.877Z [DEBUG] Applied original permissions to temp file
+2025-11-23T09:42:50.877Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763890970869 to /Users/miyagawaryouta/.claude.json
+2025-11-23T09:42:50.878Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T10:17:18.902Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T10:17:18.902Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T10:17:19.820Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763893039820
+2025-11-23T10:17:19.821Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T10:17:19.840Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T10:17:19.840Z [DEBUG] Applied original permissions to temp file
+2025-11-23T10:17:19.840Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763893039820 to /Users/miyagawaryouta/.claude.json
+2025-11-23T10:17:19.841Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T10:49:46.647Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T10:49:46.648Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T10:49:47.675Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763894987675
+2025-11-23T10:49:47.675Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T10:49:47.689Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T10:49:47.689Z [DEBUG] Applied original permissions to temp file
+2025-11-23T10:49:47.689Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763894987675 to /Users/miyagawaryouta/.claude.json
+2025-11-23T10:49:47.689Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T11:22:17.772Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T11:22:17.772Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T11:22:18.571Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763896938571
+2025-11-23T11:22:18.571Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T11:22:18.579Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T11:22:18.579Z [DEBUG] Applied original permissions to temp file
+2025-11-23T11:22:18.579Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763896938571 to /Users/miyagawaryouta/.claude.json
+2025-11-23T11:22:18.579Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T11:54:41.690Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T11:54:41.690Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T11:54:42.577Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763898882577
+2025-11-23T11:54:42.577Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T11:54:42.588Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T11:54:42.588Z [DEBUG] Applied original permissions to temp file
+2025-11-23T11:54:42.588Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763898882577 to /Users/miyagawaryouta/.claude.json
+2025-11-23T11:54:42.588Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T12:34:53.099Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T12:34:53.099Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T12:35:00.990Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763901300990
+2025-11-23T12:35:00.991Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T12:35:00.998Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T12:35:00.998Z [DEBUG] Applied original permissions to temp file
+2025-11-23T12:35:00.999Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763901300990 to /Users/miyagawaryouta/.claude.json
+2025-11-23T12:35:00.999Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T13:19:21.061Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T13:19:21.061Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T13:19:22.086Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763903962086
+2025-11-23T13:19:22.086Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T13:19:22.098Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T13:19:22.098Z [DEBUG] Applied original permissions to temp file
+2025-11-23T13:19:22.098Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763903962086 to /Users/miyagawaryouta/.claude.json
+2025-11-23T13:19:22.099Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T13:51:44.854Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T13:51:44.854Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T13:51:45.703Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763905905703
+2025-11-23T13:51:45.703Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T13:51:45.713Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T13:51:45.713Z [DEBUG] Applied original permissions to temp file
+2025-11-23T13:51:45.713Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763905905703 to /Users/miyagawaryouta/.claude.json
+2025-11-23T13:51:45.714Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T14:21:44.667Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T14:21:44.668Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T14:21:45.560Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763907705560
+2025-11-23T14:21:45.560Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T14:21:45.569Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T14:21:45.569Z [DEBUG] Applied original permissions to temp file
+2025-11-23T14:21:45.569Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763907705560 to /Users/miyagawaryouta/.claude.json
+2025-11-23T14:21:45.569Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T14:53:29.314Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T14:53:29.314Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T14:53:30.499Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763909610499
+2025-11-23T14:53:30.499Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T14:53:30.508Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T14:53:30.508Z [DEBUG] Applied original permissions to temp file
+2025-11-23T14:53:30.508Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763909610499 to /Users/miyagawaryouta/.claude.json
+2025-11-23T14:53:30.509Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T15:38:02.889Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T15:38:02.889Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T15:38:03.741Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763912283741
+2025-11-23T15:38:03.741Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T15:38:03.751Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T15:38:03.751Z [DEBUG] Applied original permissions to temp file
+2025-11-23T15:38:03.751Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763912283741 to /Users/miyagawaryouta/.claude.json
+2025-11-23T15:38:03.751Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T16:23:03.902Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T16:23:03.902Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T16:23:04.887Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763914984887
+2025-11-23T16:23:04.888Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T16:23:04.894Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T16:23:04.894Z [DEBUG] Applied original permissions to temp file
+2025-11-23T16:23:04.894Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763914984887 to /Users/miyagawaryouta/.claude.json
+2025-11-23T16:23:04.895Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T16:55:28.172Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T16:55:28.172Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T16:55:29.071Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763916929071
+2025-11-23T16:55:29.071Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T16:55:29.079Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T16:55:29.079Z [DEBUG] Applied original permissions to temp file
+2025-11-23T16:55:29.079Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763916929071 to /Users/miyagawaryouta/.claude.json
+2025-11-23T16:55:29.080Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T17:31:18.179Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T17:31:18.179Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T17:31:19.168Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763919079168
+2025-11-23T17:31:19.168Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T17:31:19.180Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T17:31:19.180Z [DEBUG] Applied original permissions to temp file
+2025-11-23T17:31:19.180Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763919079168 to /Users/miyagawaryouta/.claude.json
+2025-11-23T17:31:19.180Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T18:03:47.586Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T18:03:47.586Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T18:03:48.387Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763921028387
+2025-11-23T18:03:48.387Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T18:03:48.400Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T18:03:48.400Z [DEBUG] Applied original permissions to temp file
+2025-11-23T18:03:48.400Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763921028387 to /Users/miyagawaryouta/.claude.json
+2025-11-23T18:03:48.401Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T18:36:11.092Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T18:36:11.093Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T18:36:11.979Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763922971979
+2025-11-23T18:36:11.979Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T18:36:11.990Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T18:36:11.990Z [DEBUG] Applied original permissions to temp file
+2025-11-23T18:36:11.991Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763922971979 to /Users/miyagawaryouta/.claude.json
+2025-11-23T18:36:11.991Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T19:08:17.936Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T19:08:17.936Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T19:08:19.162Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763924899162
+2025-11-23T19:08:19.162Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T19:08:19.170Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T19:08:19.171Z [DEBUG] Applied original permissions to temp file
+2025-11-23T19:08:19.171Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763924899162 to /Users/miyagawaryouta/.claude.json
+2025-11-23T19:08:19.171Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T19:40:25.307Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T19:40:25.307Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T19:40:26.213Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763926826213
+2025-11-23T19:40:26.213Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T19:40:26.225Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T19:40:26.225Z [DEBUG] Applied original permissions to temp file
+2025-11-23T19:40:26.225Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763926826213 to /Users/miyagawaryouta/.claude.json
+2025-11-23T19:40:26.225Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T20:15:11.768Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T20:15:11.768Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T20:15:13.089Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763928913089
+2025-11-23T20:15:13.089Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T20:15:13.132Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T20:15:13.132Z [DEBUG] Applied original permissions to temp file
+2025-11-23T20:15:13.133Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763928913089 to /Users/miyagawaryouta/.claude.json
+2025-11-23T20:15:13.133Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T20:47:36.626Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T20:47:36.626Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T20:47:37.464Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763930857464
+2025-11-23T20:47:37.464Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T20:47:37.473Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T20:47:37.473Z [DEBUG] Applied original permissions to temp file
+2025-11-23T20:47:37.473Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763930857464 to /Users/miyagawaryouta/.claude.json
+2025-11-23T20:47:37.473Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T21:28:24.282Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T21:28:24.282Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T21:28:25.098Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763933305098
+2025-11-23T21:28:25.098Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T21:28:25.107Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T21:28:25.107Z [DEBUG] Applied original permissions to temp file
+2025-11-23T21:28:25.107Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763933305098 to /Users/miyagawaryouta/.claude.json
+2025-11-23T21:28:25.107Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T22:00:47.553Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T22:00:47.553Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T22:00:48.386Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763935248386
+2025-11-23T22:00:48.386Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T22:00:48.393Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T22:00:48.393Z [DEBUG] Applied original permissions to temp file
+2025-11-23T22:00:48.393Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763935248386 to /Users/miyagawaryouta/.claude.json
+2025-11-23T22:00:48.393Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T22:33:11.767Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T22:33:11.768Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T22:33:12.641Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763937192641
+2025-11-23T22:33:12.641Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T22:33:12.651Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T22:33:12.651Z [DEBUG] Applied original permissions to temp file
+2025-11-23T22:33:12.651Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763937192641 to /Users/miyagawaryouta/.claude.json
+2025-11-23T22:33:12.651Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T23:17:56.957Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T23:17:56.957Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T23:17:57.903Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763939877903
+2025-11-23T23:17:57.903Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T23:17:57.911Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T23:17:57.911Z [DEBUG] Applied original permissions to temp file
+2025-11-23T23:17:57.911Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763939877903 to /Users/miyagawaryouta/.claude.json
+2025-11-23T23:17:57.911Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-23T23:49:58.034Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-23T23:49:58.034Z [DEBUG] AutoUpdater: Using global update method
+2025-11-23T23:49:58.830Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763941798830
+2025-11-23T23:49:58.830Z [DEBUG] Preserving file permissions: 100644
+2025-11-23T23:49:58.842Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-23T23:49:58.842Z [DEBUG] Applied original permissions to temp file
+2025-11-23T23:49:58.842Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763941798830 to /Users/miyagawaryouta/.claude.json
+2025-11-23T23:49:58.843Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T00:34:40.776Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T00:34:40.776Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T00:34:41.596Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763944481596
+2025-11-24T00:34:41.596Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T00:34:41.605Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T00:34:41.606Z [DEBUG] Applied original permissions to temp file
+2025-11-24T00:34:41.606Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763944481596 to /Users/miyagawaryouta/.claude.json
+2025-11-24T00:34:41.606Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T01:19:23.158Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T01:19:23.159Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T01:19:24.171Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763947164171
+2025-11-24T01:19:24.171Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T01:19:24.178Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T01:19:24.178Z [DEBUG] Applied original permissions to temp file
+2025-11-24T01:19:24.178Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763947164171 to /Users/miyagawaryouta/.claude.json
+2025-11-24T01:19:24.178Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T01:49:23.457Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T01:49:23.457Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T01:49:24.576Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763948964576
+2025-11-24T01:49:24.576Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T01:49:24.582Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T01:49:24.582Z [DEBUG] Applied original permissions to temp file
+2025-11-24T01:49:24.582Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763948964576 to /Users/miyagawaryouta/.claude.json
+2025-11-24T01:49:24.582Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T02:27:34.014Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T02:27:34.014Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T02:27:34.983Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763951254983
+2025-11-24T02:27:34.984Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T02:27:34.994Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T02:27:34.994Z [DEBUG] Applied original permissions to temp file
+2025-11-24T02:27:34.994Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763951254983 to /Users/miyagawaryouta/.claude.json
+2025-11-24T02:27:34.995Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T02:59:52.553Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T02:59:52.553Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T02:59:53.374Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763953193374
+2025-11-24T02:59:53.374Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T02:59:53.387Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T02:59:53.387Z [DEBUG] Applied original permissions to temp file
+2025-11-24T02:59:53.387Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763953193374 to /Users/miyagawaryouta/.claude.json
+2025-11-24T02:59:53.388Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T03:32:23.743Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T03:32:23.744Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T03:32:24.650Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763955144650
+2025-11-24T03:32:24.650Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T03:32:24.661Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T03:32:24.661Z [DEBUG] Applied original permissions to temp file
+2025-11-24T03:32:24.661Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763955144650 to /Users/miyagawaryouta/.claude.json
+2025-11-24T03:32:24.661Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T04:12:37.947Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T04:12:37.948Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T04:12:38.879Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763957558879
+2025-11-24T04:12:38.879Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T04:12:38.888Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T04:12:38.888Z [DEBUG] Applied original permissions to temp file
+2025-11-24T04:12:38.888Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763957558879 to /Users/miyagawaryouta/.claude.json
+2025-11-24T04:12:38.888Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T04:45:11.919Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T04:45:11.919Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T04:45:12.880Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763959512880
+2025-11-24T04:45:12.880Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T04:45:12.889Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T04:45:12.889Z [DEBUG] Applied original permissions to temp file
+2025-11-24T04:45:12.889Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763959512880 to /Users/miyagawaryouta/.claude.json
+2025-11-24T04:45:12.889Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T05:25:28.639Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T05:25:28.640Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T05:25:29.514Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763961929514
+2025-11-24T05:25:29.514Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T05:25:29.522Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T05:25:29.523Z [DEBUG] Applied original permissions to temp file
+2025-11-24T05:25:29.523Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763961929514 to /Users/miyagawaryouta/.claude.json
+2025-11-24T05:25:29.523Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T05:57:46.629Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T05:57:46.629Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T05:57:47.638Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763963867638
+2025-11-24T05:57:47.638Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T05:57:47.646Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T05:57:47.646Z [DEBUG] Applied original permissions to temp file
+2025-11-24T05:57:47.647Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763963867638 to /Users/miyagawaryouta/.claude.json
+2025-11-24T05:57:47.647Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T06:30:28.952Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T06:30:28.952Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T06:30:29.797Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763965829797
+2025-11-24T06:30:29.797Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T06:30:29.806Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T06:30:29.806Z [DEBUG] Applied original permissions to temp file
+2025-11-24T06:30:29.806Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763965829797 to /Users/miyagawaryouta/.claude.json
+2025-11-24T06:30:29.806Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T07:14:41.256Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T07:14:41.257Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T07:14:42.606Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763968482606
+2025-11-24T07:14:42.606Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T07:14:42.614Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T07:14:42.614Z [DEBUG] Applied original permissions to temp file
+2025-11-24T07:14:42.614Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763968482606 to /Users/miyagawaryouta/.claude.json
+2025-11-24T07:14:42.615Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T07:46:55.613Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T07:46:55.613Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T07:46:56.532Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763970416532
+2025-11-24T07:46:56.532Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T07:46:56.578Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T07:46:56.578Z [DEBUG] Applied original permissions to temp file
+2025-11-24T07:46:56.578Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763970416532 to /Users/miyagawaryouta/.claude.json
+2025-11-24T07:46:56.579Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T08:32:15.596Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T08:32:15.596Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T08:32:16.462Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763973136462
+2025-11-24T08:32:16.462Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T08:32:16.471Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T08:32:16.471Z [DEBUG] Applied original permissions to temp file
+2025-11-24T08:32:16.471Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763973136462 to /Users/miyagawaryouta/.claude.json
+2025-11-24T08:32:16.471Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T09:05:34.956Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T09:05:34.956Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T09:05:36.278Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763975136278
+2025-11-24T09:05:36.278Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T09:05:36.287Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T09:05:36.287Z [DEBUG] Applied original permissions to temp file
+2025-11-24T09:05:36.287Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763975136278 to /Users/miyagawaryouta/.claude.json
+2025-11-24T09:05:36.288Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T09:37:52.715Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T09:37:52.715Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T09:37:53.547Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763977073547
+2025-11-24T09:37:53.547Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T09:37:53.554Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T09:37:53.554Z [DEBUG] Applied original permissions to temp file
+2025-11-24T09:37:53.554Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763977073547 to /Users/miyagawaryouta/.claude.json
+2025-11-24T09:37:53.554Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T10:22:29.629Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T10:22:29.629Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T10:22:30.595Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763979750595
+2025-11-24T10:22:30.595Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T10:22:30.604Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T10:22:30.604Z [DEBUG] Applied original permissions to temp file
+2025-11-24T10:22:30.604Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763979750595 to /Users/miyagawaryouta/.claude.json
+2025-11-24T10:22:30.604Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T11:00:01.746Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T11:00:01.746Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T11:00:03.041Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763982003041
+2025-11-24T11:00:03.041Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T11:00:03.054Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T11:00:03.054Z [DEBUG] Applied original permissions to temp file
+2025-11-24T11:00:03.054Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763982003041 to /Users/miyagawaryouta/.claude.json
+2025-11-24T11:00:03.055Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T11:32:27.679Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T11:32:27.680Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T11:32:28.691Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763983948691
+2025-11-24T11:32:28.692Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T11:32:28.703Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T11:32:28.703Z [DEBUG] Applied original permissions to temp file
+2025-11-24T11:32:28.703Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763983948691 to /Users/miyagawaryouta/.claude.json
+2025-11-24T11:32:28.703Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T12:06:44.972Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T12:06:44.973Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T12:06:45.893Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763986005893
+2025-11-24T12:06:45.893Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T12:06:45.901Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T12:06:45.901Z [DEBUG] Applied original permissions to temp file
+2025-11-24T12:06:45.901Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763986005893 to /Users/miyagawaryouta/.claude.json
+2025-11-24T12:06:45.901Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T12:52:07.096Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T12:52:07.096Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T12:52:08.062Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763988728062
+2025-11-24T12:52:08.063Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T12:52:08.072Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T12:52:08.072Z [DEBUG] Applied original permissions to temp file
+2025-11-24T12:52:08.072Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763988728062 to /Users/miyagawaryouta/.claude.json
+2025-11-24T12:52:08.073Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T13:22:19.613Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T13:22:19.621Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T13:22:21.094Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763990541094
+2025-11-24T13:22:21.094Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T13:22:21.111Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T13:22:21.111Z [DEBUG] Applied original permissions to temp file
+2025-11-24T13:22:21.111Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763990541094 to /Users/miyagawaryouta/.claude.json
+2025-11-24T13:22:21.111Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T13:53:12.436Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T13:53:12.437Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T13:53:13.360Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763992393360
+2025-11-24T13:53:13.360Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T13:53:13.369Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T13:53:13.369Z [DEBUG] Applied original permissions to temp file
+2025-11-24T13:53:13.369Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763992393360 to /Users/miyagawaryouta/.claude.json
+2025-11-24T13:53:13.369Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T14:25:36.550Z [DEBUG] AutoUpdater: Detected installation type: npm-global
+2025-11-24T14:25:36.550Z [DEBUG] AutoUpdater: Using global update method
+2025-11-24T14:25:37.541Z [DEBUG] Writing to temp file: /Users/miyagawaryouta/.claude.json.tmp.51540.1763994337541
+2025-11-24T14:25:37.541Z [DEBUG] Preserving file permissions: 100644
+2025-11-24T14:25:37.547Z [DEBUG] Temp file written successfully, size: 67368 bytes
+2025-11-24T14:25:37.547Z [DEBUG] Applied original permissions to temp file
+2025-11-24T14:25:37.547Z [DEBUG] Renaming /Users/miyagawaryouta/.claude.json.tmp.51540.1763994337541 to /Users/miyagawaryouta/.claude.json
+2025-11-24T14:25:37.547Z [DEBUG] File /Users/miyagawaryouta/.claude.json written atomically
+2025-11-24T14:45:45.099Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2025-11-24T14:45:45.100Z [DEBUG] Found 0 hook matchers in settings
+2025-11-24T14:45:45.100Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-11-24T14:45:45.104Z [DEBUG] Cleared all session hooks for session 19a06a7b-e3e8-494c-a9a2-9aafa4805048

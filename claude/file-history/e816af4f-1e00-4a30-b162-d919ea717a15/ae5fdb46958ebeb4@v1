@@ -1,0 +1,173 @@
+import { resolve } from 'path';
+import { ProviderIdentity, RDBModule } from '@app/rdb';
+import { INestApplication } from '@nestjs/common';
+import { Test } from '@nestjs/testing';
+import { Knex } from 'knex';
+import { v7 as uuidv7 } from 'uuid';
+import { ShipmentDAO } from '../shipmentDAO';
+import { ShipmentConflictException } from '../../../exception/shipmentConflictException';
+import { ShipmentSaveException } from '../../../exception/shipmentSaveException';
+
+jest.mock('@app/requestContext/requestContext', () => {
+  return {
+    RequestContext: class DummyRequestContext {
+      public static get() {
+        return {
+          user: {
+            organizationId: 'test-org-1',
+            userId: 'test-user-1',
+            role: 'manager',
+          },
+        };
+      }
+      public static start(_, next) {
+        next();
+      }
+    },
+  };
+});
+
+describe('ShipmentDAO', () => {
+  let shipmentDAO: ShipmentDAO;
+  let app: INestApplication;
+  let rdb: Knex;
+
+  beforeEach(async () => {
+    const moduleRef = await Test.createTestingModule({
+      imports: [RDBModule],
+      providers: [ShipmentDAO],
+    }).compile();
+
+    rdb = await moduleRef.get<Knex>(ProviderIdentity);
+    app = moduleRef.createNestApplication();
+
+    await Promise.all([
+      app.init(),
+      rdb.transaction(async (trx) => {
+        await trx.raw('SET CONSTRAINTS ALL DEFERRED');
+        await trx.seed.run({
+          directory: resolve(__dirname, './fixtures/seeds'),
+          specific: 'shipment.ts',
+        });
+        await trx.raw('SET CONSTRAINTS ALL IMMEDIATE');
+      }),
+    ]);
+
+    shipmentDAO = await moduleRef.get<ShipmentDAO>(ShipmentDAO);
+  });
+
+  describe('save', () => {
+    it('複数のshipmentを一括保存できる', async () => {
+      const shipmentId1 = uuidv7();
+      const shipmentId2 = uuidv7();
+
+      const shipments = [
+        {
+          id: shipmentId1,
+          organizationId: 'test-org-1',
+          slipId: 'slip-001',
+          consignor: { id: 'consignor-1', name: '発荷主A' },
+          consignee: { id: 'consignee-1', name: '着荷主A' },
+          originSpotId: 'spot-origin-1',
+          destinationSpotId: 'spot-dest-1',
+          meta: { note: 'テストメタデータ' },
+        },
+        {
+          id: shipmentId2,
+          organizationId: 'test-org-1',
+          slipId: 'slip-002',
+          consignor: { id: 'consignor-2', name: '発荷主B' },
+          consignee: { id: 'consignee-2', name: '着荷主B' },
+          originSpotId: 'spot-origin-2',
+          destinationSpotId: 'spot-dest-2',
+        },
+      ];
+
+      await shipmentDAO.save(shipments);
+
+      const results = await rdb
+        .from('shipment')
+        .whereIn('id', [shipmentId1, shipmentId2])
+        .orderBy('slip_id', 'asc');
+
+      expect(results).toHaveLength(2);
+      expect(results[0]).toMatchObject({
+        id: shipmentId1,
+        organization_id: 'test-org-1',
+        slip_id: 'slip-001',
+        origin_spot_id: 'spot-origin-1',
+        destination_spot_id: 'spot-dest-1',
+      });
+      expect(results[0].consignor).toEqual({
+        id: 'consignor-1',
+        name: '発荷主A',
+      });
+      expect(results[0].consignee).toEqual({
+        id: 'consignee-1',
+        name: '着荷主A',
+      });
+      expect(results[0].meta).toEqual({ note: 'テストメタデータ' });
+      expect(results[1].meta).toBeNull();
+    });
+
+    it('空配列の場合は何もしない', async () => {
+      await shipmentDAO.save([]);
+
+      const results = await rdb.from('shipment');
+      expect(results).toHaveLength(0);
+    });
+
+    it('例外が正常にスローされる', async () => {
+      await expect(
+        async () =>
+          await shipmentDAO.save([
+            {
+              id: uuidv7(),
+              organizationId: 'non-existent-org',
+              slipId: 'slip-999',
+              consignor: { id: 'c1', name: 'C1' },
+              consignee: { id: 'c2', name: 'C2' },
+              originSpotId: 'spot-1',
+              destinationSpotId: 'spot-2',
+            },
+          ])
+      ).rejects.toThrow(ShipmentSaveException);
+    });
+
+    it('IDがコンフリクトした場合はShipmentConflictExceptionをスローする', async () => {
+      const shipmentId = uuidv7();
+
+      // 最初の保存
+      await shipmentDAO.save([
+        {
+          id: shipmentId,
+          organizationId: 'test-org-1',
+          slipId: 'slip-001',
+          consignor: { id: 'consignor-1', name: '発荷主A' },
+          consignee: { id: 'consignee-1', name: '着荷主A' },
+          originSpotId: 'spot-origin-1',
+          destinationSpotId: 'spot-dest-1',
+        },
+      ]);
+
+      // 同じIDで再度保存しようとする
+      await expect(
+        shipmentDAO.save([
+          {
+            id: shipmentId,
+            organizationId: 'test-org-1',
+            slipId: 'slip-002',
+            consignor: { id: 'consignor-2', name: '発荷主B' },
+            consignee: { id: 'consignee-2', name: '着荷主B' },
+            originSpotId: 'spot-origin-2',
+            destinationSpotId: 'spot-dest-2',
+          },
+        ])
+      ).rejects.toThrow(ShipmentConflictException);
+    });
+  });
+
+  afterEach(() => {
+    rdb.destroy();
+  });
+});

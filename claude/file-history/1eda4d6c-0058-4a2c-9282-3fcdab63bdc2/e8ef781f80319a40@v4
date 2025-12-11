@@ -1,0 +1,412 @@
+import {
+  createContext,
+  useContext,
+  useReducer,
+  useCallback,
+  useEffect,
+  useMemo,
+  type ReactNode,
+} from 'react';
+import type {
+  VideoState,
+  VideoAction,
+  SiteOnlineStatus,
+  OperatingHoursInfo,
+} from '../types';
+import { VOLUME_LEVELS } from '../types';
+import type { IVideoService } from '../services';
+import { ZoomVideoAdapter } from '../services';
+import { sessionApi } from '../api';
+
+/**
+ * 初期状態
+ */
+const initialState: VideoState = {
+  sessionStatus: 'idle',
+  participants: [],
+  mainSiteId: null,
+  localMedia: {
+    isMicOn: false,
+    isCameraOn: false,
+  },
+  volumeSettings: {},
+  error: null,
+};
+
+/**
+ * Reducer
+ */
+const videoReducer = (state: VideoState, action: VideoAction): VideoState => {
+  switch (action.type) {
+    case 'CONNECT_START':
+      return {
+        ...state,
+        sessionStatus: 'connecting',
+        error: null,
+      };
+
+    case 'CONNECT_SUCCESS':
+      return {
+        ...state,
+        sessionStatus: 'connected',
+        participants: action.payload,
+        localMedia: {
+          isMicOn: true,
+          isCameraOn: true,
+        },
+      };
+
+    case 'CONNECT_FAILURE':
+      return {
+        ...state,
+        sessionStatus: 'error',
+        error: action.payload,
+      };
+
+    case 'PARTICIPANT_JOIN':
+      return {
+        ...state,
+        participants: [...state.participants, action.payload],
+      };
+
+    case 'PARTICIPANT_LEAVE':
+      return {
+        ...state,
+        participants: state.participants.filter(p => p.id !== action.payload),
+      };
+
+    case 'PARTICIPANT_UPDATE': {
+      const updatedParticipants = state.participants.map(p =>
+        p.id === action.payload.id ? action.payload : p
+      );
+      return {
+        ...state,
+        participants: updatedParticipants,
+      };
+    }
+
+    case 'SWITCH_MAIN_SITE':
+      return {
+        ...state,
+        mainSiteId: action.payload,
+      };
+
+    case 'TOGGLE_MIC':
+      return {
+        ...state,
+        localMedia: {
+          ...state.localMedia,
+          isMicOn: !state.localMedia.isMicOn,
+        },
+      };
+
+    case 'TOGGLE_CAMERA':
+      return {
+        ...state,
+        localMedia: {
+          ...state.localMedia,
+          isCameraOn: !state.localMedia.isCameraOn,
+        },
+      };
+
+    case 'SET_VOLUME':
+      return {
+        ...state,
+        volumeSettings: {
+          ...state.volumeSettings,
+          [action.payload.siteId]: action.payload.volume,
+        },
+      };
+
+    case 'DISCONNECT':
+      return {
+        ...state,
+        sessionStatus: 'disconnected',
+        participants: [],
+        localMedia: {
+          isMicOn: false,
+          isCameraOn: false,
+        },
+      };
+
+    case 'RESET':
+      return initialState;
+
+    default:
+      return state;
+  }
+};
+
+/**
+ * VideoRenderer型定義
+ */
+interface VideoRenderer {
+  attachVideo: (participantId: string, container: HTMLElement) => Promise<void>;
+  detachVideo: (participantId: string, container: HTMLElement) => Promise<void>;
+  attachSelfVideo: (container: HTMLElement) => Promise<void>;
+  detachSelfVideo: (container: HTMLElement) => Promise<void>;
+}
+
+/**
+ * セルフビデオコンテナの参照（カメラ開始時にアタッチするため）
+ */
+let selfVideoContainerRef: HTMLElement | null = null;
+
+/**
+ * セルフビデオコンテナを登録
+ */
+export const registerSelfVideoContainer = (container: HTMLElement | null) => {
+  selfVideoContainerRef = container;
+};
+
+/**
+ * Context型定義
+ */
+interface VideoContextValue {
+  state: VideoState;
+  joinSession: (siteId: string) => Promise<void>;
+  leaveSession: () => Promise<void>;
+  toggleMic: () => Promise<void>;
+  toggleCamera: () => Promise<void>;
+  switchMainSite: (siteId: string) => Promise<void>;
+  sites: SiteOnlineStatus[];
+  operatingHours: OperatingHoursInfo | null;
+  videoRenderer: VideoRenderer;
+}
+
+const VideoContext = createContext<VideoContextValue | null>(null);
+
+/**
+ * VideoProvider Props
+ */
+interface VideoProviderProps {
+  children: ReactNode;
+  videoService?: IVideoService;
+}
+
+/**
+ * VideoProvider
+ * ビデオ通話の状態管理を提供
+ */
+export const VideoProvider = ({
+  children,
+  videoService: externalVideoService,
+}: VideoProviderProps) => {
+  const [state, dispatch] = useReducer(videoReducer, initialState);
+
+  // VideoServiceのインスタンス（外部から注入可能、デフォルトはZoomVideoAdapter）
+  const videoService = useMemo<IVideoService>(
+    () => externalVideoService ?? new ZoomVideoAdapter(),
+    [externalVideoService]
+  );
+
+  // 拠点情報とオペレーティング時間（セッション参加後に設定）
+  const sitesRef = useMemo(() => ({ current: [] as SiteOnlineStatus[] }), []);
+  const operatingHoursRef = useMemo(
+    () => ({ current: null as OperatingHoursInfo | null }),
+    []
+  );
+
+  // イベント購読のセットアップ
+  useEffect(() => {
+    const unsubscribe = videoService.subscribeToEvents({
+      onSessionEvent: event => {
+        switch (event.type) {
+          case 'PARTICIPANT_JOIN':
+            dispatch({ type: 'PARTICIPANT_JOIN', payload: event.participant });
+            break;
+          case 'PARTICIPANT_LEAVE':
+            dispatch({ type: 'PARTICIPANT_LEAVE', payload: event.participant.id });
+            break;
+          case 'PARTICIPANT_UPDATE':
+            dispatch({ type: 'PARTICIPANT_UPDATE', payload: event.participant });
+            break;
+        }
+      },
+    });
+
+    return unsubscribe;
+  }, [videoService]);
+
+  /**
+   * セッションに参加
+   */
+  const joinSession = useCallback(
+    async (siteId: string) => {
+      dispatch({ type: 'CONNECT_START' });
+
+      try {
+        // APIでセッション情報を取得
+        const sessionInfo = await sessionApi.join({ siteId });
+
+        // 拠点情報と稼働時間を保存
+        sitesRef.current = sessionInfo.sites;
+        operatingHoursRef.current = sessionInfo.operatingHours;
+
+        // Zoom SDKに接続
+        await videoService.connect({
+          sessionTopic: sessionInfo.sessionTopic,
+          token: sessionInfo.zoomJwt,
+          userName: sessionInfo.userName,
+        });
+
+        // 参加者一覧を取得
+        const participants = videoService.getParticipants();
+        dispatch({ type: 'CONNECT_SUCCESS', payload: participants });
+
+        // デフォルトのメイン拠点を設定（最初のオンライン拠点）
+        const defaultMainSite = sessionInfo.sites.find(
+          s => s.isOnline && s.id !== siteId
+        );
+        if (defaultMainSite) {
+          dispatch({ type: 'SWITCH_MAIN_SITE', payload: defaultMainSite.id });
+        }
+      } catch (error) {
+        const message = error instanceof Error ? error.message : '接続に失敗しました';
+        dispatch({ type: 'CONNECT_FAILURE', payload: message });
+      }
+    },
+    [videoService, sitesRef, operatingHoursRef]
+  );
+
+  /**
+   * セッションから離脱
+   */
+  const leaveSession = useCallback(async () => {
+    try {
+      await videoService.disconnect();
+      dispatch({ type: 'DISCONNECT' });
+    } catch (error) {
+      console.error('Failed to leave session:', error);
+      dispatch({ type: 'DISCONNECT' });
+    }
+  }, [videoService]);
+
+  /**
+   * マイク切り替え
+   */
+  const toggleMic = useCallback(async () => {
+    try {
+      await videoService.toggleAudio();
+      dispatch({ type: 'TOGGLE_MIC' });
+    } catch (error) {
+      console.error('Failed to toggle mic:', error);
+    }
+  }, [videoService]);
+
+  /**
+   * カメラ切り替え
+   */
+  const toggleCamera = useCallback(async () => {
+    console.log('[VideoContext] toggleCamera called');
+    try {
+      const wasOn = state.localMedia.isCameraOn;
+      const result = await videoService.toggleVideo();
+      console.log('[VideoContext] toggleVideo result:', result);
+      dispatch({ type: 'TOGGLE_CAMERA' });
+      console.log('[VideoContext] TOGGLE_CAMERA dispatched');
+
+      // カメラがONになった場合、少し待ってからセルフビデオをアタッチ
+      if (!wasOn && result && selfVideoContainerRef) {
+        console.log('[VideoContext] Camera turned ON, attaching self video...');
+        // SDKがビデオ送信を開始するまで少し待つ
+        await new Promise(resolve => setTimeout(resolve, 500));
+        try {
+          await videoService.attachSelfVideo(selfVideoContainerRef);
+          console.log('[VideoContext] Self video attached successfully');
+        } catch (attachError) {
+          console.error('[VideoContext] Failed to attach self video:', attachError);
+        }
+      }
+    } catch (error) {
+      console.error('Failed to toggle camera:', error);
+    }
+  }, [videoService, state.localMedia.isCameraOn]);
+
+  /**
+   * メイン拠点切り替え
+   */
+  const switchMainSite = useCallback(
+    async (siteId: string) => {
+      const previousMainSiteId = state.mainSiteId;
+
+      // 前のメイン拠点を低音量に
+      if (previousMainSiteId) {
+        const previousParticipant = state.participants.find(
+          p => p.siteId === previousMainSiteId
+        );
+        if (previousParticipant) {
+          await videoService.setVolume(previousParticipant.id, {
+            value: VOLUME_LEVELS.SUB,
+          });
+          dispatch({
+            type: 'SET_VOLUME',
+            payload: { siteId: previousMainSiteId, volume: VOLUME_LEVELS.SUB },
+          });
+        }
+      }
+
+      // 新しいメイン拠点を高音量に
+      const newMainParticipant = state.participants.find(p => p.siteId === siteId);
+      if (newMainParticipant) {
+        await videoService.setVolume(newMainParticipant.id, {
+          value: VOLUME_LEVELS.MAIN,
+        });
+        dispatch({
+          type: 'SET_VOLUME',
+          payload: { siteId, volume: VOLUME_LEVELS.MAIN },
+        });
+      }
+
+      dispatch({ type: 'SWITCH_MAIN_SITE', payload: siteId });
+    },
+    [videoService, state.mainSiteId, state.participants]
+  );
+
+  /**
+   * VideoRenderer（コンポーネントに渡すビデオ描画機能）
+   */
+  const videoRenderer: VideoRenderer = useMemo(
+    () => ({
+      attachVideo: async (participantId: string, container: HTMLElement) => {
+        await videoService.attachVideo({ participantId, container });
+      },
+      detachVideo: async (participantId: string, container: HTMLElement) => {
+        await videoService.detachVideo(participantId, container);
+      },
+      attachSelfVideo: async (container: HTMLElement) => {
+        await videoService.attachSelfVideo(container);
+      },
+      detachSelfVideo: async (container: HTMLElement) => {
+        await videoService.detachSelfVideo(container);
+      },
+    }),
+    [videoService]
+  );
+
+  const value: VideoContextValue = {
+    state,
+    joinSession,
+    leaveSession,
+    toggleMic,
+    toggleCamera,
+    switchMainSite,
+    sites: sitesRef.current,
+    operatingHours: operatingHoursRef.current,
+    videoRenderer,
+  };
+
+  return <VideoContext.Provider value={value}>{children}</VideoContext.Provider>;
+};
+
+/**
+ * useVideo Hook
+ * VideoContextの値を取得
+ */
+export const useVideo = (): VideoContextValue => {
+  const context = useContext(VideoContext);
+  if (!context) {
+    throw new Error('useVideo must be used within a VideoProvider');
+  }
+  return context;
+};

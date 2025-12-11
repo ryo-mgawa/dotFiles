@@ -1,0 +1,78 @@
+import { v4 as uuidv4 } from 'uuid';
+import { IRecordRepository } from '../../domain/repositories/IRecordRepository';
+import { Record } from '../../shared/types';
+import { GenderCode } from '../../shared/constants/events';
+import { NotFoundError } from '../../shared/errors/AppError';
+import { mockRecords } from './data';
+
+/**
+ * 記録モックリポジトリ
+ */
+export class MockRecordRepository implements IRecordRepository {
+  private records: Record[] = [...mockRecords];
+
+  async findAll(): Promise<Record[]> {
+    return [...this.records];
+  }
+
+  async findByCompetitionId(competitionId: string): Promise<Record[]> {
+    return this.records.filter((r) => r.competitionId === competitionId);
+  }
+
+  async findByMemberId(memberId: string): Promise<Record[]> {
+    return this.records.filter((r) => r.memberId === memberId);
+  }
+
+  async findAllTimeRecords(
+    event: string,
+    gender: GenderCode,
+    limit: number = 10
+  ): Promise<Record[]> {
+    return this.records
+      .filter((r) => r.event === event && r.gender === gender)
+      .sort((a, b) => a.result - b.result) // 昇順（記録が小さいほど良い）
+      .slice(0, limit);
+  }
+
+  async findById(id: string): Promise<Record | null> {
+    const record = this.records.find((r) => r.id === id);
+    return record || null;
+  }
+
+  async create(data: Omit<Record, 'id' | 'createdAt' | 'updatedAt'>): Promise<Record> {
+    const now = new Date();
+    const newRecord: Record = {
+      ...data,
+      id: uuidv4(),
+      createdAt: now,
+      updatedAt: now,
+    };
+    this.records.push(newRecord);
+    return newRecord;
+  }
+
+  async update(id: string, data: Partial<Record>): Promise<Record> {
+    const index = this.records.findIndex((r) => r.id === id);
+    if (index === -1) {
+      throw new NotFoundError('Record');
+    }
+
+    const updatedRecord: Record = {
+      ...this.records[index],
+      ...data,
+      id: this.records[index].id,
+      updatedAt: new Date(),
+    };
+    this.records[index] = updatedRecord;
+    return updatedRecord;
+  }
+
+  async delete(id: string): Promise<void> {
+    const index = this.records.findIndex((r) => r.id === id);
+    if (index === -1) {
+      throw new NotFoundError('Record');
+    }
+
+    this.records.splice(index, 1);
+  }
+}

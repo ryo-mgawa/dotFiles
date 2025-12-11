@@ -1,0 +1,10 @@
+description: シップメント追加成功レスポンス
+type: object
+required:
+  - status
+properties:
+  status:
+    type: string
+    description: 処理ステータス
+    enum: [success]
+    example: success

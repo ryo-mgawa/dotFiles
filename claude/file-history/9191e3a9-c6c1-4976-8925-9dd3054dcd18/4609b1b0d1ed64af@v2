@@ -1,0 +1,91 @@
+import threading
+import time
+
+import keyboard
+import requests
+from PIL import Image, ImageDraw
+from pystray import Icon, Menu, MenuItem
+
+# ===== 設定 =====
+TRIGGER_KEY = "ctrl+cmd+alt+c"  # 複合キー：誤爆防止
+HOLD_DURATION = 5
+WEBHOOK_URL = "https://hooks.slack.com/triggers/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"
+
+# ===== グローバル変数 =====
+key_press_time = None
+webhook_sent = False
+running = True
+tray_icon = None
+checking = False
+
+
+def send_webhook():
+    global webhook_sent
+    try:
+        response = requests.post(
+            WEBHOOK_URL, json={"message": "Key held for 5 seconds"}
+        )
+        print(f"Webhook sent! Status: {response.status_code}")
+        webhook_sent = True
+    except Exception as e:
+        print(f"Error: {e}")
+
+
+def check_hold_duration():
+    global key_press_time, webhook_sent, running, checking
+    while running:
+        # 複合キーが押されているかチェック
+        if keyboard.is_pressed(TRIGGER_KEY):
+            if key_press_time is None:
+                key_press_time = time.time()
+                webhook_sent = False
+            elif not webhook_sent:
+                if time.time() - key_press_time >= HOLD_DURATION:
+                    send_webhook()
+        else:
+            # キーが離された
+            key_press_time = None
+        time.sleep(0.1)
+
+
+# 複合キーの場合、check_hold_duration内で判定するため不要
+
+
+# ===== タスクトレイ関連 =====
+def create_icon_image():
+    """シンプルなアイコンを生成"""
+    size = 64
+    image = Image.new("RGB", (size, size), color="#1a73e8")
+    draw = ImageDraw.Draw(image)
+    draw.ellipse([16, 16, 48, 48], fill="white")
+    return image
+
+
+def on_quit(icon, item):
+    global running
+    running = False
+    icon.stop()
+
+
+def setup_tray():
+    global tray_icon
+    menu = Menu(
+        MenuItem(f"Key: {TRIGGER_KEY} ({HOLD_DURATION}s)", lambda: None, enabled=False),
+        MenuItem("Quit", on_quit),
+    )
+    tray_icon = Icon("webhook_trigger", create_icon_image(), "Webhook Trigger", menu)
+    return tray_icon
+
+
+# ===== メイン =====
+if __name__ == "__main__":
+    print(f"Starting... (Key: {TRIGGER_KEY}, Hold: {HOLD_DURATION}s)")
+    print("Running in system tray")
+
+    # 監視スレッド
+    monitor_thread = threading.Thread(target=check_hold_duration, daemon=True)
+    monitor_thread.start()
+
+    # タスクトレイで実行（メインスレッドをブロック）
+    tray = setup_tray()
+    tray.run()

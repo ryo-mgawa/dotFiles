@@ -1,0 +1,138 @@
+# Issue #3027: Jointアプリケーション用Firestore構築
+
+## 概要
+顧客ごとにJointアプリケーションの表示を制御するためのFirestore環境を構築する。
+
+親Issue: #3024 - Jointのapplication情報を取得する機能
+
+## 背景・目的
+- 動態管理を使用する顧客ごとに利用可能な機能が異なる
+- Jointで作成されたアプリケーションも顧客ごとに表示制御が必要
+- 例: 顧客Aはアプリ1,2が使える / 顧客Bはアプリ1,3が使える
+
+## 技術的要件
+
+### 1. Firestoreデータベース構築 (Terraform)
+
+#### インフラ構成
+- **場所**: `infra/`配下のTerraformコード
+- **参照**: `infra/README.md`
+- **実装時**: 白幡さんと一緒に進めることを推奨
+
+#### Firestoreリソース定義
+
+```hcl
+resource "google_firestore_database" "default" {
+  project     = var.project_id
+  name        = "(default)"  # デフォルトDB名（可能であればdefault以外を推奨）
+  location_id = var.region   # 例: "asia-northeast1"
+
+  # Native モード
+  type = "FIRESTORE_NATIVE"
+
+  # 並行制御とApp Engine統合設定
+  concurrency_mode            = "OPTIMISTIC"
+  app_engine_integration_mode = "DISABLED"
+
+  # オプション: PITR や削除保護（必要に応じて）
+  # point_in_time_recovery_enablement = "POINT_IN_TIME_RECOVERY_ENABLED"
+  # delete_protection_state           = "DELETE_PROTECTION_ENABLED"
+
+  depends_on = [
+    google_project_service.firestore,
+  ]
+}
+```
+
+#### Cloud RunからのFirestore読み取り権限付与
+
+```hcl
+resource "google_project_iam_member" "cloud_run_firestore_viewer" {
+  project = var.project_id
+  role    = "roles/datastore.viewer"  # 読み取り専用
+  member  = "serviceAccount:${google_service_account.cloud_run_sa.email}"
+}
+```
+
+### 2. Firestoreデータ構造
+
+```javascript
+{
+  applications: {  // ドキュメント
+    ${applicationId1}: {  // コレクション
+      name: '',  // タブに表示される名前
+    },
+    ${applicationId2}: {
+      name: '',  // タブに表示される名前
+    }
+  },
+  organizations: {  // ドキュメント
+    ${organizationId1}: {  // コレクション
+      applications: [
+        '${applicationId1}',
+        '${applicationId2}',
+        '${applicationId3}',  // 存在しない場合はAPIレスポンスに含めない
+      ]
+    },
+    ${organizationId2}: {
+      applications: [
+        '${applicationId1}',
+      ]
+    }
+  }
+}
+```
+
+### 3. セキュリティルール
+- **要件**: adminユーザーのみがデータ取得可能
+- **実装場所**: Firestoreセキュリティルール設定
+- **CloudRunアクセス**: サービスアカウント経由でRead権限を付与（Realtime Databaseと同様の方式）
+
+### 4. 権限管理
+- **Ishizuさん（非エンジニア）**: DB Write権限を付与
+  - 非エンジニアでも管理可能なFirestoreを採用
+  - Realtime Database不採用の理由:
+    - アクセス頻度が少ない
+    - 既存リソースとの干渉を防ぐ
+    - Firestoreの方がクエリ機能が豊富
+
+## 完了条件
+- [x] dev環境にFirestoreが構築される
+- [x] Terraformコードが実装される
+- [x] Cloud Runサービスアカウントに読み取り権限が付与される
+- [x] セキュリティルールが設定される
+- [x] Ishizuさんに管理用Write権限が付与される
+
+## 受け入れ条件（親Issue #3024より）
+- [ ] APIをcallして組織が操作できるJointのApplication情報を取得できる
+- [ ] API Documentがある
+- [ ] IshizuさんがDBにWriteできる権限がある
+
+## スコープ外
+- applicationsからアプリが削除された際の、組織の存在しないapplicationIdの自動削除
+- 組織が削除された際のFirestore上の組織の自動削除
+- APIリクエスト時のapplicationのページネーション実装
+
+## 次のステップ
+Issue #3027完了後は、親Issue #3024のAPI実装に進む:
+- **API Path**: `GET: private/joint/applications`
+- **実装場所**: `server/libs/firebase`にFirestore用モジュール追加
+- **レスポンス形式**:
+```javascript
+{
+  status: 'success',
+  applications: [{
+    id: string,
+    name: string,
+  }]
+}
+```
+
+## 参考情報
+- Firestore Admin SDK使用
+- `where` / `whereIn` を使用したクエリ実装
+- `whereIn` は最大10要素まで（それ以上はバッチ処理が必要）
+
+## 関連ファイル
+- `infra/README.md` - インフラ構築手順
+- `server/libs/firebase` - Firebase/Firestoreモジュール

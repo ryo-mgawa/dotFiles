@@ -1,0 +1,49 @@
+import { Request, Response, NextFunction } from 'express';
+import { AppError } from '../../shared/errors/AppError';
+
+/**
+ * エラーハンドリングミドルウェア
+ * design.md 4.3節を参照
+ */
+export const errorHandler = (
+  error: Error,
+  _req: Request,
+  res: Response,
+  _next: NextFunction
+): void => {
+  // AppErrorの場合
+  if (error instanceof AppError) {
+    res.status(error.statusCode).json({
+      success: false,
+      error: {
+        code: error.code,
+        message: error.message,
+        ...(error instanceof Error && 'details' in error && { details: error.details }),
+      },
+    });
+    return;
+  }
+
+  // 予期しないエラー
+  console.error('Unexpected error:', error);
+  res.status(500).json({
+    success: false,
+    error: {
+      code: 'INTERNAL_ERROR',
+      message: 'An unexpected error occurred',
+    },
+  });
+};
+
+/**
+ * 404エラーハンドラー
+ */
+export const notFoundHandler = (req: Request, res: Response): void => {
+  res.status(404).json({
+    success: false,
+    error: {
+      code: 'NOT_FOUND',
+      message: `Route ${req.method} ${req.path} not found`,
+    },
+  });
+};

@@ -1,0 +1,18 @@
+export type Input = {
+  sinceId?: string;
+  count?: number;
+};
+
+export type GetShipmentItem = {
+  id: string;
+  slipId: string;
+  consignor: { id: string; name?: string | null; };
+  consignee: { id: string; name?: string | null; };
+  originSpotId: string;
+  destinationSpotId: string;
+  meta?: object | null;
+};
+
+export type Output = {
+  shipments: GetShipmentItem[];
+};

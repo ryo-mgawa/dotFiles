@@ -1,0 +1,1649 @@
+# Zoom Video SDK Web 日本語ドキュメント
+
+## 目次
+
+1. [概要](#概要)
+2. [セットアップ](#セットアップ)
+3. [基本アーキテクチャ](#基本アーキテクチャ)
+4. [認証とJWT生成](#認証とjwt生成)
+5. [VideoClient API](#videoclient-api)
+6. [MediaStream API](#mediastream-api)
+7. [ChatClient API](#chatclient-api)
+8. [CommandChannel API](#commandchannel-api)
+9. [SubsessionClient API](#subsessionclient-api)
+10. [RecordingClient API](#recordingclient-api)
+11. [LiveTranscriptionClient API](#livetranscriptionclient-api)
+12. [LiveStreamClient API](#livestreamclient-api)
+13. [イベント一覧](#イベント一覧)
+14. [ローカルプレビュー機能](#ローカルプレビュー機能)
+15. [バーチャル背景](#バーチャル背景)
+16. [音声・映像プロセッサ](#音声映像プロセッサ)
+17. [React統合パターン](#react統合パターン)
+18. [トラブルシューティング](#トラブルシューティング)
+
+---
+
+## 概要
+
+Zoom Video SDK for Webは、Zoomのコアビデオテクノロジーを使用して、カスタムビデオ体験をWebページ上に構築するためのSDKです。WebAssemblyモジュールを通じて最適化されたパフォーマンスを提供します。
+
+### 主な機能
+
+- **ビデオ会議**: 1対1またはグループビデオ通話
+- **画面共有**: デスクトップまたはアプリケーションウィンドウの共有
+- **チャット**: テキストメッセージとファイル転送
+- **コマンドチャンネル**: カスタムデータの送受信
+- **サブセッション**: ブレイクアウトルーム機能
+- **クラウド録画**: セッションの録画
+- **ライブ文字起こし**: リアルタイム字幕
+- **ライブストリーミング**: 外部プラットフォームへの配信
+
+### 対応ブラウザ
+
+- Chrome 58+
+- Firefox 52+
+- Safari 11+
+- Edge 18+
+
+---
+
+## セットアップ
+
+### 1. インストール
+
+```bash
+npm install @zoom/videosdk
+```
+
+### 2. 設定ファイル (src/config/dev.ts)
+
+```typescript
+export const devConfig = {
+  sdkKey: 'YOUR_SDK_KEY',        // 必須: Zoom Video SDK Key
+  sdkSecret: 'YOUR_SDK_SECRET',  // 必須: Zoom Video SDK Secret (本番環境ではバックエンドで管理)
+  webEndpoint: 'zoom.us',        // Zoomサーバーエンドポイント (ZFGの場合は 'www.zoomgov.com')
+  topic: 'session-name',         // 必須: セッション名
+  name: 'user-name',             // 必須: 参加者名
+  password: '',                  // オプション: セッションパスワード
+  signature: '',                 // JWT署名 (空の場合は自動生成)
+  sessionKey: '',                // セッションキー
+  userIdentity: '',              // ユーザー識別子
+  role: 1                        // 1: ホスト/共同ホスト, 0: 参加者
+};
+```
+
+### 3. アプリケーション起動
+
+```bash
+npm start
+```
+
+---
+
+## 基本アーキテクチャ
+
+### コンポーネント構成
+
+```
+ZoomVideo (静的クラス)
+├── VideoClient (zmClient)
+│   ├── MediaStream (メディア操作)
+│   ├── ChatClient (チャット)
+│   ├── CommandChannel (コマンド送受信)
+│   ├── SubsessionClient (サブセッション)
+│   ├── RecordingClient (録画)
+│   ├── LiveTranscriptionClient (文字起こし)
+│   └── LiveStreamClient (ライブ配信)
+└── LocalTracks (ローカルプレビュー用)
+    ├── LocalAudioTrack
+    └── LocalVideoTrack
+```
+
+### 基本的な使用フロー
+
+```typescript
+import ZoomVideo from '@zoom/videosdk';
+
+// 1. クライアントの作成
+const zmClient = ZoomVideo.createClient();
+
+// 2. 初期化
+await zmClient.init('ja-JP', `${window.location.origin}/lib`, {
+  webEndpoint: 'zoom.us',
+  stayAwake: true,
+  patchJsMedia: true,
+  leaveOnPageUnload: false
+});
+
+// 3. セッションに参加
+await zmClient.join(topic, signature, name, password);
+
+// 4. メディアストリームの取得
+const mediaStream = zmClient.getMediaStream();
+
+// 5. 音声・映像の開始
+await mediaStream.startAudio();
+await mediaStream.startVideo();
+
+// 6. セッションから離脱
+await zmClient.leave();
+
+// 7. クライアントの破棄
+ZoomVideo.destroyClient();
+```
+
+---
+
+## 認証とJWT生成
+
+### JWT (JSON Web Token) の構造
+
+Zoom Video SDKでは、セッション参加時にJWT署名が必要です。
+
+```typescript
+import { KJUR } from 'jsrsasign';
+
+function generateVideoToken(
+  sdkKey: string,
+  sdkSecret: string,
+  topic: string,
+  sessionKey = '',
+  userIdentity = '',
+  roleType = 1,
+  cloud_recording_option = '',
+  cloud_recording_election = '',
+  telemetry_tracking_id = ''
+) {
+  const iat = Math.round(new Date().getTime() / 1000) - 30;
+  const exp = iat + 60 * 60 * 2; // 2時間の有効期限
+
+  const oHeader = { alg: 'HS256', typ: 'JWT' };
+
+  const oPayload = {
+    app_key: sdkKey,
+    iat,
+    exp,
+    tpc: topic,
+    role_type: roleType,
+    cloud_recording_option: cloud_recording_option ? parseInt(cloud_recording_option, 10) : undefined,
+    cloud_recording_election: cloud_recording_election ? parseInt(cloud_recording_election, 10) : undefined,
+    session_key: sessionKey || undefined,
+    user_identity: userIdentity || undefined,
+    telemetry_tracking_id: telemetry_tracking_id || undefined
+  };
+
+  const sHeader = JSON.stringify(oHeader);
+  const sPayload = JSON.stringify(oPayload);
+
+  return KJUR.jws.JWS.sign('HS256', sHeader, sPayload, sdkSecret);
+}
+```
+
+### JWTペイロードのパラメータ
+
+| パラメータ | 型 | 説明 |
+|-----------|------|------|
+| `app_key` | string | SDK Key |
+| `iat` | number | トークン発行時刻 (Unix timestamp) |
+| `exp` | number | トークン有効期限 (Unix timestamp) |
+| `tpc` | string | セッション名 (トピック) |
+| `role_type` | number | 1: ホスト, 0: 参加者 |
+| `session_key` | string | セッションキー (オプション) |
+| `user_identity` | string | ユーザー識別子 (オプション) |
+| `cloud_recording_option` | number | クラウド録画オプション |
+| `cloud_recording_election` | number | クラウド録画選択 |
+
+**注意**: 本番環境では、sdkSecretをクライアントサイドに公開せず、バックエンドサーバーでJWTを生成してください。
+
+---
+
+## VideoClient API
+
+VideoClientはZoom Video SDKのメインエントリーポイントです。
+
+### クライアントの作成と初期化
+
+```typescript
+import ZoomVideo from '@zoom/videosdk';
+
+// クライアント作成
+const zmClient = ZoomVideo.createClient();
+
+// 初期化オプション
+await zmClient.init(language, dependentAssetsPath, options);
+```
+
+### init() パラメータ
+
+| パラメータ | 型 | 説明 |
+|-----------|------|------|
+| `language` | string | 言語コード ('en-US', 'ja-JP' など) |
+| `dependentAssetsPath` | string | 依存アセットのパス |
+| `options` | InitOptions | 初期化オプション |
+
+### InitOptions
+
+```typescript
+interface InitOptions {
+  webEndpoint?: string;              // Zoomサーバーエンドポイント
+  enforceMultipleVideos?: boolean;   // SharedArrayBuffer なしで複数ビデオを強制
+  enforceVirtualBackground?: boolean; // SharedArrayBuffer なしでバーチャル背景を強制
+  stayAwake?: boolean;               // 画面スリープ防止
+  patchJsMedia?: boolean;            // JSメディアパッチの有効化
+  leaveOnPageUnload?: boolean;       // ページアンロード時の自動離脱
+}
+```
+
+### セッション管理メソッド
+
+#### join() - セッションへの参加
+
+```typescript
+await zmClient.join(topic, signature, name, password);
+```
+
+| パラメータ | 型 | 説明 |
+|-----------|------|------|
+| `topic` | string | セッション名 |
+| `signature` | string | JWT署名 |
+| `name` | string | 参加者名 |
+| `password` | string | セッションパスワード (オプション) |
+
+#### leave() - セッションからの離脱
+
+```typescript
+// 通常の離脱
+await zmClient.leave();
+
+// ホストがセッションを終了
+await zmClient.leave(true);
+```
+
+### 情報取得メソッド
+
+#### getSessionInfo() - セッション情報の取得
+
+```typescript
+const sessionInfo = zmClient.getSessionInfo();
+// {
+//   isInMeeting: boolean,
+//   userId: number,
+//   sessionId: string,
+//   ...
+// }
+```
+
+#### getCurrentUserInfo() - 現在のユーザー情報
+
+```typescript
+const userInfo = zmClient.getCurrentUserInfo();
+// {
+//   userId: number,
+//   displayName: string,
+//   avatar: string,
+//   isHost: boolean,
+//   bVideoOn: boolean,
+//   muted: boolean,
+//   audio: 'computer' | 'phone' | '',
+//   ...
+// }
+```
+
+#### getAllUser() - 全参加者の取得
+
+```typescript
+const users = zmClient.getAllUser();
+// Participant[]
+```
+
+### 権限確認メソッド
+
+```typescript
+const isHost = zmClient.isHost();       // ホストかどうか
+const isManager = zmClient.isManager(); // マネージャーかどうか
+```
+
+### クライアント取得メソッド
+
+```typescript
+const mediaStream = zmClient.getMediaStream();
+const chatClient = zmClient.getChatClient();
+const commandClient = zmClient.getCommandClient();
+const subsessionClient = zmClient.getSubsessionClient();
+const recordingClient = zmClient.getRecordingClient();
+const liveTranscriptionClient = zmClient.getLiveTranscriptionClient();
+const liveStreamClient = zmClient.getLiveStreamClient();
+const broadcastStreamClient = zmClient.getBroadcastStreamingClient();
+const rtmsClient = zmClient.getRealTimeMediaStreamsClient();
+```
+
+### クライアント破棄
+
+```typescript
+ZoomVideo.destroyClient();
+```
+
+---
+
+## MediaStream API
+
+MediaStreamはオーディオ、ビデオ、画面共有を制御するためのAPIです。
+
+### オーディオ操作
+
+#### startAudio() - オーディオの開始
+
+```typescript
+// 通常のオーディオ開始
+await mediaStream.startAudio();
+
+// 高ビットレートオーディオ
+await mediaStream.startAudio({ highBitrate: true });
+
+// メディアファイルを使用
+await mediaStream.startAudio({
+  mediaFile: { url: 'audio-file.mp3', loop: true }
+});
+```
+
+#### stopAudio() - オーディオの停止
+
+```typescript
+await mediaStream.stopAudio();
+```
+
+#### muteAudio() / unmuteAudio() - ミュート/ミュート解除
+
+```typescript
+await mediaStream.muteAudio();
+await mediaStream.unmuteAudio();
+```
+
+#### 音量調整
+
+```typescript
+// スピーカー音量 (0-100)
+mediaStream.adjustSpeakerVolume(volume);
+
+// マイク音量取得
+const volume = mediaStream.getCurrentMicLevel();
+```
+
+### ビデオ操作
+
+#### startVideo() - ビデオの開始
+
+```typescript
+// 基本的なビデオ開始
+await mediaStream.startVideo();
+
+// HD/Full HDビデオ
+await mediaStream.startVideo({
+  hd: true,
+  fullHd: true,
+  originalRatio: true,
+  ptz: mediaStream.isBrowserSupportPTZ() // PTZカメラサポート
+});
+
+// バーチャル背景付き
+await mediaStream.startVideo({
+  virtualBackground: { imageUrl: 'blur' } // または画像URL
+});
+```
+
+#### stopVideo() - ビデオの停止
+
+```typescript
+await mediaStream.stopVideo();
+```
+
+#### ビデオミラーリング
+
+```typescript
+await mediaStream.mirrorVideo(true);  // ミラーリング有効
+await mediaStream.mirrorVideo(false); // ミラーリング無効
+const isMirrored = mediaStream.isVideoMirrored();
+```
+
+### 画面共有
+
+#### startShareScreen() - 画面共有の開始
+
+```typescript
+await mediaStream.startShareScreen(canvas, {
+  requestReadReceipt: true,
+  simultaneousShareView: false
+});
+```
+
+#### stopShareScreen() - 画面共有の停止
+
+```typescript
+await mediaStream.stopShareScreen();
+```
+
+#### getShareStatus() - 共有状態の取得
+
+```typescript
+const status = mediaStream.getShareStatus();
+// ShareStatus.End, ShareStatus.Sharing など
+```
+
+#### setSharePrivilege() - 共有権限の設定
+
+```typescript
+import { SharePrivilege } from '@zoom/videosdk';
+
+await mediaStream.setSharePrivilege(SharePrivilege.Unlocked);
+// SharePrivilege.Unlocked - 誰でも共有可能
+// SharePrivilege.Locked - ホストのみ共有可能
+```
+
+### デバイス管理
+
+#### デバイス一覧の取得
+
+```typescript
+const micList = mediaStream.getMicList();
+const speakerList = mediaStream.getSpeakerList();
+const cameraList = mediaStream.getCameraList();
+
+// 各デバイス: { label: string, deviceId: string }
+```
+
+#### アクティブデバイスの取得
+
+```typescript
+const activeMic = mediaStream.getActiveMicrophone();
+const activeSpeaker = mediaStream.getActiveSpeaker();
+const activeCamera = mediaStream.getActiveCamera();
+```
+
+#### デバイスの切り替え
+
+```typescript
+await mediaStream.switchMicrophone(deviceId);
+await mediaStream.switchSpeaker(deviceId);
+await mediaStream.switchCamera(deviceId);
+
+// モバイルでのカメラ切り替え
+import { MobileVideoFacingMode } from '@zoom/videosdk';
+await mediaStream.switchCamera(MobileVideoFacingMode.User);        // フロントカメラ
+await mediaStream.switchCamera(MobileVideoFacingMode.Environment); // リアカメラ
+```
+
+### ビデオレンダリング
+
+#### Canvas方式 (従来)
+
+```typescript
+// ビデオキャンバスにレンダリング
+await mediaStream.renderVideo(
+  canvasElement,
+  userId,
+  width,
+  height,
+  x,
+  y,
+  quality  // VideoQuality enum
+);
+
+// 停止
+await mediaStream.stopRenderVideo(canvasElement, userId);
+```
+
+#### video-player方式 (推奨)
+
+```typescript
+// <video-player>要素にアタッチ
+const videoPlayer = await mediaStream.attachVideo(userId, quality);
+videoContainer.appendChild(videoPlayer);
+
+// デタッチ
+await mediaStream.detachVideo(userId);
+```
+
+### 機能サポート確認
+
+```typescript
+const supportMultipleVideos = mediaStream.isSupportMultipleVideos();
+const supportVirtualBackground = mediaStream.isSupportVirtualBackground();
+const supportPhoneFeature = mediaStream.isSupportPhoneFeature();
+const supportVideoProcessor = mediaStream.isSupportVideoProcessor();
+const supportAudioProcessor = mediaStream.isSupportAudioProcessor();
+const supportMicAndShareAudio = mediaStream.isSupportMicrophoneAndShareAudioSimultaneously();
+```
+
+### 電話発信 (PSTN)
+
+```typescript
+// 電話で招待
+await mediaStream.inviteByPhone(countryCode, phoneNumber, displayName, {
+  callMe: false // true: 自分に電話をかける
+});
+
+// 電話招待のキャンセル
+await mediaStream.cancelInviteByPhone(countryCode, phoneNumber, { callMe: false });
+
+// 電話を切る
+await mediaStream.hangup();
+
+// サポート国情報の取得
+const countries = mediaStream.getSupportCountryInfo();
+```
+
+### 統計情報
+
+```typescript
+// 統計データの購読
+mediaStream.subscribeAudioStatisticData();
+mediaStream.subscribeVideoStatisticData();
+mediaStream.subscribeShareStatisticData();
+
+// 購読解除
+mediaStream.unsubscribeAudioStatisticData();
+mediaStream.unsubscribeVideoStatisticData();
+mediaStream.unsubscribeShareStatisticData();
+```
+
+---
+
+## ChatClient API
+
+チャットメッセージとファイル転送を管理します。
+
+### チャットクライアントの取得
+
+```typescript
+const chatClient = zmClient.getChatClient();
+```
+
+### メッセージ送信
+
+```typescript
+// 特定ユーザーに送信
+chatClient.send(message, receiverUserId);
+
+// 全員に送信
+chatClient.send(message, 0);
+```
+
+### ファイル送信
+
+```typescript
+// ファイルを送信
+const cancelFunc = await chatClient.sendFile(file, receiverUserId);
+
+// 送信をキャンセル
+cancelFunc();
+
+// リトライトークンで再送信
+await chatClient.sendFile(retryToken, receiverUserId);
+```
+
+### ファイルダウンロード
+
+```typescript
+const cancelFunc = await chatClient.downloadFile(messageId, fileUrl, returnBlob);
+```
+
+### 受信者リストの取得
+
+```typescript
+const receivers = chatClient.getReceivers();
+// ChatReceiver[] = { userId, displayName, isHost, isCoHost }[]
+```
+
+### チャット権限
+
+```typescript
+import { ChatPrivilege } from '@zoom/videosdk';
+
+const privilege = chatClient.getPrivilege();
+// ChatPrivilege.All - 全員とチャット可能
+// ChatPrivilege.NoOne - チャット無効
+// ChatPrivilege.HostOnly - ホストのみ
+```
+
+### チャット関連イベント
+
+```typescript
+zmClient.on('chat-on-message', (payload: ChatRecord) => {
+  const { message, sender, receiver, timestamp, file } = payload;
+  // メッセージの処理
+});
+
+zmClient.on('chat-privilege-change', (payload) => {
+  const { chatPrivilege } = payload;
+  // 権限変更の処理
+});
+
+zmClient.on('chat-file-upload-progress', (payload) => {
+  const { fileName, fileSize, receiverId, progress, status, retryToken } = payload;
+  // アップロード進捗の処理
+});
+
+zmClient.on('chat-file-download-progress', (payload) => {
+  const { id, fileName, fileSize, fileUrl, fileBlob, senderId, progress, status } = payload;
+  // ダウンロード進捗の処理
+});
+```
+
+### ChatRecord 型
+
+```typescript
+interface ChatRecord {
+  message?: string | string[];
+  id?: string;
+  file?: {
+    name: string;
+    size: number;
+    type: string;
+    fileUrl?: string;
+    uuid?: string;
+    originalFileObjectUrl?: string;
+    upload?: {
+      cancelFunc: () => void;
+      status: number;
+      progress: number;
+      retryToken?: string;
+    };
+    download?: {
+      cancelFunc: () => void;
+      status: number;
+      progress: number;
+    };
+  };
+  sender: {
+    name: string;
+    userId: number;
+    avatar?: string;
+  };
+  receiver: {
+    name: string;
+    userId: number;
+  };
+  timestamp: number;
+}
+```
+
+---
+
+## CommandChannel API
+
+コマンドチャンネルは、アプリケーション間でカスタムデータを送受信するための低レベルAPIです。
+
+### コマンドクライアントの取得
+
+```typescript
+const cmdClient = zmClient.getCommandClient();
+```
+
+### コマンド送信
+
+```typescript
+// 特定ユーザーに送信
+cmdClient.send(text, receiverUserId);
+
+// 全員に送信
+cmdClient.send(text);
+```
+
+### コマンド受信イベント
+
+```typescript
+zmClient.on('command-channel-message', (payload: CommandChannelMsg) => {
+  const { senderId, receiverId, text, timestamp, senderName } = payload;
+  // コマンドの処理
+});
+```
+
+### CommandChannelMsg 型
+
+```typescript
+interface CommandChannelMsg {
+  senderId: number;
+  receiverId?: number;  // 全員への送信時は undefined
+  text: string;
+  timestamp: number;
+  senderName?: string;
+}
+```
+
+### 使用例
+
+```typescript
+// 投票システムの例
+cmdClient.send(JSON.stringify({
+  type: 'vote',
+  option: 'A'
+}));
+
+zmClient.on('command-channel-message', (payload) => {
+  const data = JSON.parse(payload.text);
+  if (data.type === 'vote') {
+    handleVote(payload.senderId, data.option);
+  }
+});
+```
+
+---
+
+## SubsessionClient API
+
+サブセッション（ブレイクアウトルーム）を管理します。
+
+### サブセッションクライアントの取得
+
+```typescript
+const subsessionClient = zmClient.getSubsessionClient();
+```
+
+### サブセッションの作成
+
+```typescript
+import { SubsessionAllocationPattern } from '@zoom/videosdk';
+
+// サブセッションを作成
+const subsessions = await subsessionClient.createSubsessions(
+  numberOfRooms,
+  pattern
+);
+
+// AllocationPattern:
+// SubsessionAllocationPattern.Manually - 手動割り当て
+// SubsessionAllocationPattern.Automatically - 自動割り当て
+```
+
+### サブセッションの開始
+
+```typescript
+const options = {
+  isAutoJoinSubsession: true,           // 自動参加
+  isBackToMainSessionEnabled: true,     // メインセッションへの戻りを許可
+  isTimerEnabled: false,                // タイマー有効
+  timerDuration: 30,                    // タイマー時間（分）
+  isTimerAutoEnabled: false,            // タイマー自動開始
+  waitSeconds: 60,                      // 終了までの待機秒数
+  isAutoMoveBackToMainSession: false,   // 自動的にメインセッションへ戻る
+  isSubsessionSelectionEnabled: false   // 参加者がサブセッションを選択可能
+};
+
+await subsessionClient.openSubsessions(subsessions, options);
+```
+
+### ユーザー管理
+
+```typescript
+// ユーザーをサブセッションに割り当て
+await subsessionClient.assignUserToSubsession(userId, subsessionId);
+
+// ユーザーを別のサブセッションに移動
+await subsessionClient.moveUserToSubsession(userId, targetSubsessionId);
+
+// ユーザーをメインセッションに戻す
+await subsessionClient.moveBackToMainSession(userId);
+```
+
+### 参加・離脱
+
+```typescript
+// サブセッションに参加
+await subsessionClient.joinSubsession(subsessionId);
+
+// サブセッションから離脱
+await subsessionClient.leaveSubsession();
+```
+
+### ヘルプ要求
+
+```typescript
+// ホストにヘルプを要求（参加者用）
+await subsessionClient.askForHelp();
+```
+
+### 状態取得
+
+```typescript
+const status = subsessionClient.getSubsessionStatus();
+// SubsessionStatus.NotStarted
+// SubsessionStatus.InProgress
+// SubsessionStatus.Closing
+// SubsessionStatus.Closed
+
+const userStatus = subsessionClient.getUserStatus();
+// SubsessionUserStatus.Initial
+// SubsessionUserStatus.InSubsession
+// SubsessionUserStatus.Invited
+// SubsessionUserStatus.BackToMainSession
+
+const currentSubsession = subsessionClient.getCurrentSubsession();
+const subsessionList = subsessionClient.getSubsessionList();
+const unassignedUsers = subsessionClient.getUnassignedUserList();
+const options = subsessionClient.getSubsessionOptions();
+```
+
+### サブセッション関連イベント
+
+```typescript
+zmClient.on('subsession-state-change', ({ status }) => {
+  // サブセッション状態の変更
+});
+
+zmClient.on('main-session-user-updated', () => {
+  // メインセッションユーザーの更新
+});
+
+zmClient.on('subsession-user-update', (payload) => {
+  const { userId, subsessionId, audio, muted, bVideoOn, sharerOn, bShareAudioOn, isTalking } = payload;
+  // サブセッションユーザーの更新
+});
+```
+
+### Subsession 型
+
+```typescript
+interface Subsession {
+  subsessionName: string;
+  subsessionId: string;
+  userList: SubsessionParticipant[];
+}
+
+interface SubsessionParticipant {
+  isInSubsession?: boolean;
+  userId: number;
+  displayName: string;
+  avatar?: string;
+  userGuid?: string;
+}
+
+interface SubsessionOptions {
+  isAutoJoinSubsession: boolean;
+  isBackToMainSessionEnabled: boolean;
+  isTimerEnabled: boolean;
+  timerDuration: number;
+  isTimerAutoEnabled: boolean;
+  waitSeconds: number;
+  isAutoMoveBackToMainSession: boolean;
+  isSubsessionSelectionEnabled: boolean;
+}
+```
+
+---
+
+## RecordingClient API
+
+クラウド録画を管理します。
+
+### 録画クライアントの取得
+
+```typescript
+const recordingClient = zmClient.getRecordingClient();
+```
+
+### クラウド録画の操作
+
+```typescript
+// 録画開始
+await recordingClient.startCloudRecording();
+
+// 録画一時停止
+await recordingClient.pauseCloudRecording();
+
+// 録画再開
+await recordingClient.resumeCloudRecording();
+
+// 録画停止
+await recordingClient.stopCloudRecording();
+```
+
+### 録画状態の取得
+
+```typescript
+import { RecordingStatus } from '@zoom/videosdk';
+
+const status = recordingClient.getCloudRecordingStatus();
+// RecordingStatus.Recording
+// RecordingStatus.Pause
+// RecordingStatus.Stopped
+```
+
+### 個別録画 (ISO Recording)
+
+```typescript
+// 個別録画の承認
+await recordingClient.acceptIndividualRecording();
+
+// 個別録画の拒否
+await recordingClient.declineIndividualRecording();
+```
+
+### 録画関連イベント
+
+```typescript
+zmClient.on('recording-change', () => {
+  const status = recordingClient.getCloudRecordingStatus();
+  // 録画状態の変更
+});
+
+zmClient.on('individual-recording-change', (payload) => {
+  const { userId, status } = payload;
+  // 個別録画状態の変更
+});
+```
+
+---
+
+## LiveTranscriptionClient API
+
+ライブ文字起こし（リアルタイム字幕）を管理します。
+
+### 文字起こしクライアントの取得
+
+```typescript
+const ltClient = zmClient.getLiveTranscriptionClient();
+```
+
+### 文字起こしの操作
+
+```typescript
+// 文字起こしの開始
+await ltClient.startLiveTranscription();
+
+// 文字起こしの停止
+await ltClient.stopLiveTranscription();
+```
+
+### 状態確認
+
+```typescript
+const status = ltClient.getLiveTranscriptionStatus();
+// {
+//   isLiveTranscriptionEnabled: boolean,
+//   ...
+// }
+```
+
+### 字幕イベント
+
+```typescript
+zmClient.on('caption-message', (payload) => {
+  const { text, done, displayName } = payload;
+  // text: 字幕テキスト
+  // done: 発話完了フラグ
+  // displayName: 発話者名
+});
+```
+
+---
+
+## LiveStreamClient API
+
+外部プラットフォームへのライブストリーミングを管理します。
+
+### ライブストリームクライアントの取得
+
+```typescript
+const liveStreamClient = zmClient.getLiveStreamClient();
+```
+
+### ライブストリームの操作
+
+```typescript
+// ストリーミング開始
+await liveStreamClient.startLiveStream(streamUrl, streamKey, broadcastUrl);
+
+// ストリーミング停止
+await liveStreamClient.stopLiveStream();
+```
+
+### 機能確認
+
+```typescript
+const isEnabled = liveStreamClient.isLiveStreamEnabled();
+```
+
+### 状態取得
+
+```typescript
+import { LiveStreamStatus } from '@zoom/videosdk';
+
+const status = liveStreamClient.getLiveStreamStatus();
+// LiveStreamStatus.Ended
+// LiveStreamStatus.InProgress
+// LiveStreamStatus.Timeout
+```
+
+### ブロードキャストストリーミング
+
+```typescript
+const broadcastClient = zmClient.getBroadcastStreamingClient();
+
+// ストリーミング開始
+await broadcastClient.startBroadcast();
+
+// ストリーミング停止
+await broadcastClient.stopBroadcast();
+
+// 機能確認
+const isEnabled = broadcastClient.isBroadcastStreamingEnable();
+
+// 状態取得
+const status = broadcastClient.getBroadcastStreamingStatus();
+```
+
+### ライブストリーム関連イベント
+
+```typescript
+zmClient.on('live-stream-status', (status: LiveStreamStatus) => {
+  // ストリーム状態の変更
+});
+
+zmClient.on('broadcast-streaming-status', (payload) => {
+  const { status } = payload;
+  // ブロードキャスト状態の変更
+});
+```
+
+---
+
+## イベント一覧
+
+### 接続イベント
+
+```typescript
+zmClient.on('connection-change', (payload) => {
+  const { state, reason, subsessionName } = payload;
+  // ConnectionState: Connecting, Connected, Reconnecting, Closed, Fail
+  // ReconnectReason: Failover, JoinSubsession, MoveToSubsession, BackToMainSession
+});
+```
+
+### メディアイベント
+
+```typescript
+zmClient.on('media-sdk-change', (payload) => {
+  const { action, type, result } = payload;
+  // type: 'audio' | 'video' | 'share'
+  // action: 'encode' | 'decode'
+  // result: 'success' | 'fail'
+});
+
+zmClient.on('current-audio-change', (payload) => {
+  const { action, source, type } = payload;
+  // AudioChangeAction: Join, Leave, Muted, Unmuted
+  // MutedSource: PassiveByMuteOne, etc.
+});
+
+zmClient.on('device-change', () => {
+  // デバイスリストの変更
+});
+
+zmClient.on('passively-stop-share', ({ reason }) => {
+  // 画面共有が強制停止された
+});
+
+zmClient.on('share-audio-change', ({ state }) => {
+  // 共有オーディオの状態変更
+});
+```
+
+### ユーザーイベント
+
+```typescript
+zmClient.on('user-added', (users: Participant[]) => {
+  // 新しいユーザーが参加
+});
+
+zmClient.on('user-removed', (users: Participant[]) => {
+  // ユーザーが離脱
+});
+
+zmClient.on('user-updated', (users: Participant[]) => {
+  // ユーザー情報の更新
+});
+```
+
+### アクションイベント
+
+```typescript
+zmClient.on('host-ask-unmute-audio', ({ reason }) => {
+  // ホストがミュート解除を要求
+});
+
+zmClient.on('share-can-see-screen', () => {
+  // 他のユーザーが画面共有を見られるようになった
+});
+
+zmClient.on('video-screenshot-taken', ({ displayName, userId }) => {
+  // ビデオのスクリーンショットが撮られた
+});
+
+zmClient.on('share-content-screenshot-taken', ({ displayName, userId }) => {
+  // 共有画面のスクリーンショットが撮られた
+});
+```
+
+### イベントの登録と解除
+
+```typescript
+// イベント登録
+zmClient.on('event-name', handler);
+
+// イベント解除
+zmClient.off('event-name', handler);
+```
+
+---
+
+## ローカルプレビュー機能
+
+セッションに参加する前に、ローカルでオーディオ・ビデオをプレビューできます。
+
+### ローカルトラックの作成
+
+```typescript
+import ZoomVideo from '@zoom/videosdk';
+
+// ローカルオーディオトラック
+let localAudio = ZoomVideo.createLocalAudioTrack();
+
+// 特定のマイクを指定
+localAudio = ZoomVideo.createLocalAudioTrack(microphoneDeviceId);
+
+// ローカルビデオトラック
+let localVideo = ZoomVideo.createLocalVideoTrack();
+```
+
+### デバイス一覧の取得
+
+```typescript
+const allDevices = await ZoomVideo.getDevices();
+
+const mics = allDevices.filter(d => d.kind === 'audioinput');
+const speakers = allDevices.filter(d => d.kind === 'audiooutput');
+const cameras = allDevices.filter(d => d.kind === 'videoinput');
+```
+
+### オーディオプレビュー
+
+```typescript
+// オーディオ開始
+await localAudio.start();
+
+// ミュート/ミュート解除
+await localAudio.mute();
+await localAudio.unmute();
+
+// 現在の音量取得
+const volume = localAudio.getCurrentVolume();
+
+// オーディオ停止
+await localAudio.stop();
+```
+
+### スピーカーテスト
+
+```typescript
+const speakerTester = localAudio.testSpeaker({
+  speakerId: speakerDeviceId,
+  onAnalyseFrequency: (value) => {
+    // 出力レベル (0-100)
+    console.log('Output level:', value);
+  }
+});
+
+// テスト停止
+speakerTester.stop();
+speakerTester.destroy();
+```
+
+### マイクテスト
+
+```typescript
+const micTester = localAudio.testMicrophone({
+  microphoneId: microphoneDeviceId,
+  speakerId: speakerDeviceId,
+  recordAndPlay: true,
+  onAnalyseFrequency: (value) => {
+    console.log('Input level:', value);
+  },
+  onStartRecording: () => {
+    console.log('Recording started');
+  },
+  onStartPlayRecording: () => {
+    console.log('Playing recording');
+  },
+  onStopPlayRecording: () => {
+    console.log('Playback finished');
+  }
+});
+
+// 録音停止
+micTester.stopRecording();
+
+// テスト停止
+micTester.stop();
+micTester.destroy();
+```
+
+### ビデオプレビュー
+
+```typescript
+// video要素にプレビュー開始
+await localVideo.start(videoElement);
+
+// canvas要素にプレビュー開始 (バーチャル背景使用時)
+await localVideo.start(canvasElement, { imageUrl: 'blur' });
+
+// video-player要素にプレビュー開始
+await localVideo.start(videoPlayerElement);
+
+// カメラ切り替え
+await localVideo.switchCamera(deviceId);
+
+// バーチャル背景の更新
+await localVideo.updateVirtualBackground('blur');
+await localVideo.updateVirtualBackground(imageUrl);
+await localVideo.updateVirtualBackground(undefined); // 無効化
+
+// ビデオ停止
+await localVideo.stop();
+```
+
+---
+
+## バーチャル背景
+
+### サポート確認
+
+```typescript
+const isSupported = mediaStream.isSupportVirtualBackground();
+```
+
+### バーチャル背景の設定
+
+```typescript
+// ぼかし背景でビデオ開始
+await mediaStream.startVideo({
+  virtualBackground: { imageUrl: 'blur' }
+});
+
+// カスタム画像で開始
+await mediaStream.startVideo({
+  virtualBackground: { imageUrl: 'https://example.com/bg.jpg' }
+});
+```
+
+### バーチャル背景の更新
+
+```typescript
+// ぼかしに変更
+await mediaStream.updateVirtualBackgroundImage('blur');
+
+// 画像に変更
+await mediaStream.updateVirtualBackgroundImage('https://example.com/bg.jpg');
+
+// 無効化
+await mediaStream.updateVirtualBackgroundImage(undefined);
+```
+
+### 現在の状態取得
+
+```typescript
+const vbStatus = mediaStream.getVirtualbackgroundStatus();
+// { imageSrc: string | undefined }
+```
+
+---
+
+## 音声・映像プロセッサ
+
+カスタムの音声・映像処理を追加できます。
+
+### サポート確認
+
+```typescript
+const supportVideoProcessor = mediaStream.isSupportVideoProcessor();
+const supportAudioProcessor = mediaStream.isSupportAudioProcessor();
+```
+
+### プロセッサの作成
+
+```typescript
+// プロセッサ定義
+const processorParams = {
+  url: '/path/to/processor.js',
+  type: 'video', // or 'audio'
+  name: 'my-processor',
+  options: {}
+};
+
+// プロセッサ作成
+const processor = await mediaStream.createProcessor(processorParams);
+```
+
+### プロセッサの適用
+
+```typescript
+// プロセッサを追加
+await mediaStream.addProcessor(processor);
+
+// プロセッサを削除
+await mediaStream.removeProcessor(processor);
+```
+
+### プロセッサとの通信
+
+```typescript
+// プロセッサにメッセージを送信
+processor.port.postMessage({
+  cmd: 'update',
+  data: someData
+});
+
+// プロセッサからのメッセージを受信
+processor.port.onmessage = ({ data }) => {
+  console.log('Received from processor:', data);
+};
+```
+
+### 組み込みプロセッサ例
+
+```javascript
+// bypass-audio-processor.js - 音声をそのまま通過
+class BypassProcessor extends AudioWorkletProcessor {
+  process(inputs, outputs) {
+    const input = inputs[0];
+    const output = outputs[0];
+    for (let channel = 0; channel < input.length; channel++) {
+      output[channel].set(input[channel]);
+    }
+    return true;
+  }
+}
+registerProcessor('bypass-audio-processor', BypassProcessor);
+```
+
+---
+
+## React統合パターン
+
+### Context設定
+
+```typescript
+// context/zoom-context.ts
+import React from 'react';
+import type { ZoomClient } from '../index-types';
+export default React.createContext<ZoomClient>(null as any);
+
+// context/media-context.ts
+import React from 'react';
+import type { MediaStream } from '../index-types';
+
+interface MediaContext {
+  audio: { encode: boolean; decode: boolean };
+  video: { encode: boolean; decode: boolean };
+  share: { encode: boolean; decode: boolean };
+  mediaStream: MediaStream | null;
+}
+export default React.createContext<MediaContext>(null as any);
+```
+
+### アプリケーションセットアップ
+
+```typescript
+// index.tsx
+import ZoomVideo from '@zoom/videosdk';
+import ZoomContext from './context/zoom-context';
+
+const zmClient = ZoomVideo.createClient();
+
+root.render(
+  <ZoomContext.Provider value={zmClient}>
+    <App meetingArgs={meetingArgs} />
+  </ZoomContext.Provider>
+);
+```
+
+### コンポーネントでの使用
+
+```typescript
+import { useContext, useEffect, useState } from 'react';
+import ZoomContext from './context/zoom-context';
+import ZoomMediaContext from './context/media-context';
+
+const VideoComponent = () => {
+  const zmClient = useContext(ZoomContext);
+  const { mediaStream } = useContext(ZoomMediaContext);
+
+  useEffect(() => {
+    // セッション参加時の処理
+  }, [zmClient]);
+
+  const handleStartVideo = async () => {
+    await mediaStream?.startVideo();
+  };
+
+  return (
+    <button onClick={handleStartVideo}>
+      Start Video
+    </button>
+  );
+};
+```
+
+### カスタムフック例
+
+```typescript
+// hooks/useParticipantsChange.ts
+import { useEffect, useRef } from 'react';
+import type { Participant, ZoomClient } from '../index-types';
+
+export function useParticipantsChange(
+  zmClient: ZoomClient,
+  callback: (participants: Participant[]) => void
+) {
+  const callbackRef = useRef(callback);
+  callbackRef.current = callback;
+
+  useEffect(() => {
+    const onUserAdded = () => {
+      callbackRef.current(zmClient.getAllUser());
+    };
+    const onUserRemoved = () => {
+      callbackRef.current(zmClient.getAllUser());
+    };
+    const onUserUpdated = () => {
+      callbackRef.current(zmClient.getAllUser());
+    };
+
+    zmClient.on('user-added', onUserAdded);
+    zmClient.on('user-removed', onUserRemoved);
+    zmClient.on('user-updated', onUserUpdated);
+
+    return () => {
+      zmClient.off('user-added', onUserAdded);
+      zmClient.off('user-removed', onUserRemoved);
+      zmClient.off('user-updated', onUserUpdated);
+    };
+  }, [zmClient]);
+}
+```
+
+---
+
+## トラブルシューティング
+
+### 一般的な問題
+
+#### 1. SharedArrayBuffer エラー
+
+**問題**: ブラウザがSharedArrayBufferをサポートしていない、またはCross-Origin Isolation が設定されていない。
+
+**解決策**:
+```typescript
+// Cross-Origin Isolationヘッダーの設定
+// サーバー側で以下のヘッダーを設定
+'Cross-Origin-Opener-Policy': 'same-origin'
+'Cross-Origin-Embedder-Policy': 'require-corp'
+
+// または、enforceMultipleVideosオプションを使用
+await zmClient.init('en-US', '/lib', {
+  enforceMultipleVideos: true
+});
+```
+
+#### 2. デバイスアクセス拒否
+
+**問題**: カメラ/マイクのアクセス許可がない。
+
+**解決策**:
+```typescript
+try {
+  await mediaStream.startAudio();
+} catch (e) {
+  if (e.type === 'INSUFFICIENT_PRIVILEGES' && e.reason === 'USER_FORBIDDEN_MICROPHONE') {
+    // ユーザーに許可を求めるUIを表示
+    alert('マイクへのアクセスを許可してください');
+  }
+}
+```
+
+#### 3. セッション参加失敗
+
+**問題**: JWT署名が無効、または期限切れ。
+
+**解決策**:
+- JWT の有効期限を確認 (通常2時間)
+- sdkKey と sdkSecret が正しいか確認
+- topic が一致しているか確認
+
+#### 4. ビデオが表示されない
+
+**問題**: ビデオ要素が正しく設定されていない。
+
+**解決策**:
+```typescript
+// video-player方式の場合
+const videoPlayer = await mediaStream.attachVideo(userId, quality);
+container.appendChild(videoPlayer);
+
+// Canvas方式の場合
+await mediaStream.renderVideo(canvas, userId, width, height, x, y, quality);
+```
+
+### デバッグ方法
+
+```typescript
+// グローバル変数でデバッグ
+window.zmClient = zmClient;
+window.mediaStream = zmClient.getMediaStream();
+
+// セッション情報の確認
+console.log('Session Info:', zmClient.getSessionInfo());
+
+// 現在のユーザー情報
+console.log('Current User:', zmClient.getCurrentUserInfo());
+
+// 全参加者
+console.log('All Users:', zmClient.getAllUser());
+```
+
+### ログ出力
+
+```typescript
+// 接続状態の監視
+zmClient.on('connection-change', (payload) => {
+  console.log('Connection state:', payload.state, 'Reason:', payload.reason);
+});
+
+// メディア状態の監視
+zmClient.on('media-sdk-change', (payload) => {
+  console.log('Media change:', payload);
+});
+```
+
+---
+
+## 付録: 型定義
+
+### Participant
+
+```typescript
+interface Participant {
+  audio: string;
+  avatar: string;
+  bVideoOn: boolean;
+  displayName: string;
+  isHost: boolean;
+  isManager: boolean;
+  muted: boolean;
+  sharerOn?: boolean;
+  sharerPause?: boolean;
+  userId: number;
+  subsessionId?: string;
+}
+```
+
+### MediaDevice
+
+```typescript
+interface MediaDevice {
+  label: string;
+  deviceId: string;
+}
+```
+
+### Dimension & Position
+
+```typescript
+interface Dimension {
+  width: number;
+  height: number;
+}
+
+interface Position {
+  x: number;
+  y: number;
+}
+```
+
+### Pagination
+
+```typescript
+interface Pagination {
+  page: number;
+  pageSize: number;
+  totalPage: number;
+  totalSize: number;
+}
+```
+
+### CellLayout
+
+```typescript
+interface CellLayout {
+  width: number;
+  height: number;
+  x: number;
+  y: number;
+  quality: number;
+}
+```
+
+---
+
+## 参考リンク
+
+- [Zoom Video SDK 公式ドキュメント](https://developers.zoom.us/docs/video-sdk/web/)
+- [API リファレンス](https://marketplace.zoom.us/docs/sdk/video/web/reference)
+- [GitHub サンプル](https://github.com/zoom/videosdk-web-sample)
+- [開発者サポート](https://devsupport.zoom.us)
+- [開発者フォーラム](https://devforum.zoom.us)
+
+---
+
+このドキュメントは Zoom Video SDK Web v2.3.5 に基づいています。
+
+最終更新: 2025年12月

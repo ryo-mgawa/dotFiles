@@ -1,0 +1,30 @@
+import { Request, Response, NextFunction } from 'express';
+import { GetMemberListUseCase } from '../../application/usecases/members/GetMemberListUseCase';
+
+/**
+ * 部員コントローラー
+ * design.md 4.1.1節、4.2.1節を参照
+ */
+export class MembersController {
+  constructor(private readonly getMemberListUseCase: GetMemberListUseCase) {}
+
+  /**
+   * GET /api/members
+   * 在籍中の部員一覧を取得
+   */
+  async getMembers(_req: Request, res: Response, next: NextFunction): Promise<void> {
+    try {
+      const members = await this.getMemberListUseCase.execute();
+
+      res.status(200).json({
+        success: true,
+        data: members,
+      });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  // Phase 2では他のメソッドは実装しない
+  // Phase 3以降で必要に応じて追加
+}

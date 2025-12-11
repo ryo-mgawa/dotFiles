@@ -1,0 +1,89 @@
+import { useRef, useEffect } from 'react';
+import './SelfVideoDisplay.scss';
+
+/**
+ * セルフビデオレンダラーの型
+ */
+interface SelfVideoRenderer {
+  renderSelfVideo: (
+    canvas: HTMLCanvasElement,
+    width: number,
+    height: number
+  ) => Promise<void>;
+  stopRenderSelfVideo: () => Promise<void>;
+}
+
+/**
+ * SelfVideoDisplay Props
+ */
+interface SelfVideoDisplayProps {
+  isVideoOn: boolean;
+  siteName?: string;
+  videoRenderer?: SelfVideoRenderer;
+}
+
+/**
+ * セルフビデオのサイズ定数
+ */
+const SELF_VIDEO_DIMENSIONS = {
+  WIDTH: 320,
+  HEIGHT: 180,
+} as const;
+
+/**
+ * SelfVideoDisplay
+ * セルフビューコンポーネント（右下配置、画面幅15%）
+ */
+export const SelfVideoDisplay = ({
+  isVideoOn,
+  siteName,
+  videoRenderer,
+}: SelfVideoDisplayProps) => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  // ビデオレンダリング
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas || !videoRenderer) return;
+
+    const renderSelfVideo = async () => {
+      try {
+        await videoRenderer.renderSelfVideo(
+          canvas,
+          SELF_VIDEO_DIMENSIONS.WIDTH,
+          SELF_VIDEO_DIMENSIONS.HEIGHT
+        );
+      } catch (error) {
+        console.error('Failed to render self video:', error);
+      }
+    };
+
+    if (isVideoOn) {
+      renderSelfVideo();
+    }
+
+    return () => {
+      videoRenderer.stopRenderSelfVideo().catch(console.error);
+    };
+  }, [isVideoOn, videoRenderer]);
+
+  if (!isVideoOn) {
+    return null;
+  }
+
+  return (
+    <div className="self-video-display">
+      <canvas
+        ref={canvasRef}
+        className="self-video-display__canvas"
+        width={SELF_VIDEO_DIMENSIONS.WIDTH}
+        height={SELF_VIDEO_DIMENSIONS.HEIGHT}
+      />
+      {siteName && (
+        <div className="self-video-display__label">
+          <span>{siteName}</span>
+        </div>
+      )}
+    </div>
+  );
+};

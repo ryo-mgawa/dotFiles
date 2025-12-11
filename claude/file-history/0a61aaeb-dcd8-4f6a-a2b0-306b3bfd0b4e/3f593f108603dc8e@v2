@@ -1,0 +1,76 @@
+import { Knex } from "knex";
+
+export async function up(knex: Knex): Promise<void> {
+  // shipment_status_enum に Ready を追加
+  await knex.raw(`
+    ALTER TYPE shipment_status_enum ADD VALUE IF NOT EXISTS 'Ready' AFTER 'Requested';
+  `);
+
+  // shipment_event_type_enum を更新
+  // PostgreSQLではenum値の削除や変更ができないため、新しいenumを作成して置き換える
+
+  // 1. 新しいenum型を作成
+  await knex.raw(`
+    CREATE TYPE shipment_event_type_enum_new AS ENUM (
+      'ToReady',
+      'store',
+      'InTransit',
+      'Complete',
+      'Cancel'
+    );
+  `);
+
+  // 2. shipment_eventテーブルのtype列を一時的に変更
+  await knex.raw(`
+    ALTER TABLE shipment_event
+    ALTER COLUMN type TYPE text;
+  `);
+
+  // 3. 古いenum型を削除
+  await knex.raw(`
+    DROP TYPE shipment_event_type_enum;
+  `);
+
+  // 4. 新しいenum型の名前を変更
+  await knex.raw(`
+    ALTER TYPE shipment_event_type_enum_new RENAME TO shipment_event_type_enum;
+  `);
+
+  // 5. type列を新しいenum型に変更
+  await knex.raw(`
+    ALTER TABLE shipment_event
+    ALTER COLUMN type TYPE shipment_event_type_enum USING type::shipment_event_type_enum;
+  `);
+}
+
+export async function down(knex: Knex): Promise<void> {
+  // 1. type列を一時的にtextに変更
+  await knex.raw(`
+    ALTER TABLE shipment_event
+    ALTER COLUMN type TYPE text;
+  `);
+
+  // 2. 古いenum型を再作成
+  await knex.raw(`
+    DROP TYPE IF EXISTS shipment_event_type_enum;
+  `);
+
+  await knex.raw(`
+    CREATE TYPE shipment_event_type_enum AS ENUM (
+      'Store',
+      'Transfer',
+      'Deliver',
+      'Complete',
+      'Cancel'
+    );
+  `);
+
+  // 3. type列を元のenum型に戻す
+  await knex.raw(`
+    ALTER TABLE shipment_event
+    ALTER COLUMN type TYPE shipment_event_type_enum USING type::shipment_event_type_enum;
+  `);
+
+  // Note: shipment_status_enumからReadyを削除する処理は省略
+  // （既存データがある場合、削除できないため）
+}

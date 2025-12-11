@@ -1,0 +1,67 @@
+import { AutomationFirestoreProviderIdentity } from '@app/firebase';
+import { Inject, Injectable } from '@nestjs/common';
+import { FieldPath, Firestore } from 'firebase-admin/firestore';
+import { Application } from '../../interface/presenter/applicationsPresenter';
+
+const ORGANIZATIONS_COLLECTION = 'organizations';
+const APPLICATIONS_COLLECTION = 'applications';
+const MAX_WHERE_IN_SIZE = 10;
+
+@Injectable()
+export class GetApplicationsService {
+  constructor(
+    @Inject(AutomationFirestoreProviderIdentity)
+    private readonly firestore: Firestore,
+  ) {}
+
+  public async execute(organizationId: string): Promise<Application[]> {
+    const applicationIds = await this.getApplicationIds(organizationId);
+
+    if (applicationIds.length === 0) {
+      return [];
+    }
+
+    return this.getApplicationDetails(applicationIds);
+  }
+
+  private async getApplicationIds(organizationId: string): Promise<string[]> {
+    const orgDoc = await this.firestore
+      .collection(ORGANIZATIONS_COLLECTION)
+      .doc(organizationId)
+      .get();
+
+    if (!orgDoc.exists) {
+      return [];
+    }
+
+    return orgDoc.data()?.applications || [];
+  }
+
+  private async getApplicationDetails(applicationIds: string[]): Promise<Application[]> {
+    const chunks = this.chunkArray(applicationIds, MAX_WHERE_IN_SIZE);
+
+    const results = await Promise.all(
+      chunks.map(chunk =>
+        this.firestore
+          .collection(APPLICATIONS_COLLECTION)
+          .where(FieldPath.documentId(), 'in', chunk)
+          .get()
+      )
+    );
+
+    return results
+      .flatMap(snapshot => snapshot.docs)
+      .map(doc => ({
+        id: doc.id,
+        name: doc.data().name,
+      }));
+  }
+
+  private chunkArray<T>(array: T[], size: number): T[][] {
+    const chunks: T[][] = [];
+    for (let i = 0; i < array.length; i += size) {
+      chunks.push(array.slice(i, i + size));
+    }
+    return chunks;
+  }
+}

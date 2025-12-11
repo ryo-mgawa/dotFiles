@@ -1,0 +1,60 @@
+/**
+ * Slack共通ユーティリティ
+ * 複数のSlackアプリで共有される機能
+ */
+
+// 共通のSlack認証情報を取得
+export function getCommonSlackCredentials() {
+  const SLACK_BOT_TOKEN = Deno.env.get("SLACK_BOT_TOKEN");
+  const SLACK_SIGNING_SECRET = Deno.env.get("SLACK_SIGNING_SECRET");
+
+  if (!SLACK_BOT_TOKEN || !SLACK_SIGNING_SECRET) {
+    throw new Error("共通のSlack認証情報が設定されていません (SLACK_BOT_TOKEN, SLACK_SIGNING_SECRET)");
+  }
+
+  return {
+    SLACK_BOT_TOKEN,
+    SLACK_SIGNING_SECRET,
+  };
+}
+
+/**
+ * Slackからのリクエストの署名を検証
+ */
+export async function verifySlackSignature(
+  body: string,
+  timestamp: string,
+  signature: string,
+  signingSecret: string
+): Promise<boolean> {
+  // タイムスタンプチェック（リプレイアタック防止）
+  const currentTime = Math.floor(Date.now() / 1000);
+  if (Math.abs(currentTime - parseInt(timestamp)) > 60 * 5) {
+    return false;
+  }
+
+  // 署名の検証
+  const sigBasestring = `v0:${timestamp}:${body}`;
+  const encoder = new TextEncoder();
+  const key = await crypto.subtle.importKey(
+    "raw",
+    encoder.encode(signingSecret),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"]
+  );
+
+  const signatureBuffer = await crypto.subtle.sign(
+    "HMAC",
+    key,
+    encoder.encode(sigBasestring)
+  );
+
+  const signatureArray = Array.from(new Uint8Array(signatureBuffer));
+  const signatureHex = signatureArray
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join("");
+  const mySignature = `v0=${signatureHex}`;
+
+  return mySignature === signature;
+}
