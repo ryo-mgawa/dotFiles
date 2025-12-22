@@ -1,6 +1,0 @@
-export type {
-  OperatingSchedule,
-  OperatingScheduleException,
-  ExceptionType,
-  TimeRange,
-} from './OperatingSchedule.js';

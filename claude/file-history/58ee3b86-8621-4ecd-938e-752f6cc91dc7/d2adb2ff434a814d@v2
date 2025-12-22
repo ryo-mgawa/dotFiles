@@ -1,9 +1,0 @@
-export { authRoutes } from './routes/authRoutes.js';
-export { LoginUseCase } from './usecases/LoginUseCase.js';
-export { GetCurrentUserUseCase } from './usecases/GetCurrentUserUseCase.js';
-export type {
-  LoginRequestDto,
-  LoginResponseDto,
-  AuthUserDto,
-  GetCurrentUserResponseDto,
-} from './dto/AuthDto.js';

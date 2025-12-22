@@ -1,1 +1,0 @@
-export { useFullScreen } from './useFullScreen';

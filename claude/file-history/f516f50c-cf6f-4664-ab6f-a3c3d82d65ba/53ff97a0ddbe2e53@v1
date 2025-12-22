@@ -1,9 +1,0 @@
-export const SHIPMENT_EVENT_TYPE = {
-  TO_READY: 'ToReady',
-  STORE: 'store',
-  IN_TRANSIT: 'InTransit',
-  COMPLETE: 'Complete',
-  CANCEL: 'Cancel',
-} as const;
-
-export type Type = typeof SHIPMENT_EVENT_TYPE[keyof typeof SHIPMENT_EVENT_TYPE];

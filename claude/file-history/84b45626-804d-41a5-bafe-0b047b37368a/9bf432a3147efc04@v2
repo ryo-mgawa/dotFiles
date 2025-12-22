@@ -1,9 +1,0 @@
-import { RDBModule } from '@app/rdb';
-import { Module } from '@nestjs/common';
-import { PublicShipmentModule } from './presentation/public/module';
-
-@Module({
-  imports: [RDBModule, PublicShipmentModule],
-  exports: [PublicShipmentModule],
-})
-export class ShipmentModule { }

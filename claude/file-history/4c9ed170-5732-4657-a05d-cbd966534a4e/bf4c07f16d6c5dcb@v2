@@ -1,8 +1,0 @@
-export interface SiteDevice {
-  id: string;
-  siteId: string;
-  deviceId: string;
-  deviceName: string | null;
-  registeredAt: Date;
-  lastAccessedAt: Date;
-}

@@ -1,8 +1,0 @@
-/**
- * 顧問DTO
- */
-export interface AdvisorDto {
-  id: string;
-  name: string;
-  isActive: boolean;
-}

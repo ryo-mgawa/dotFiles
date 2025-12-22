@@ -1,2 +1,0 @@
-export * from './shipmentRepository';
-export * from './types/shipment';

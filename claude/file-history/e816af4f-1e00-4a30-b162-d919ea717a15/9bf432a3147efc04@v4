@@ -1,7 +1,0 @@
-import { Module } from '@nestjs/common';
-import { PublicShipmentModule } from './presentation/public/module';
-
-@Module({
-  imports: [PublicShipmentModule],
-})
-export class ShipmentModule { }

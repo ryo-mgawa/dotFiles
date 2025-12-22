@@ -1,5 +1,0 @@
-description: successful operation
-content:
-  application/json:
-    schema:
-      $ref: ../../schemas/automation/GetAutomationApplicationsResponse.yml

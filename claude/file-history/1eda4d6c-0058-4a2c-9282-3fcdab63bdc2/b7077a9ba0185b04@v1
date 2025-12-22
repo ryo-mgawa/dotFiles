@@ -1,3 +1,0 @@
-export type { IVideoService, VideoRenderOptions } from './IVideoService';
-export { ZoomVideoAdapter } from './ZoomVideoAdapter';
-export { MockVideoAdapter } from './MockVideoAdapter';

@@ -1,6 +1,0 @@
-export interface Site {
-  id: string;
-  name: string;
-  displayOrder: number;
-  isOnline?: boolean;
-}

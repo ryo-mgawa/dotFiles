@@ -1,5 +1,0 @@
-export * from './consignor.dto';
-export * from './consignee.dto';
-export * from './originSpot.dto';
-export * from './destinationSpot.dto';
-export * from './metaSizeValidator';

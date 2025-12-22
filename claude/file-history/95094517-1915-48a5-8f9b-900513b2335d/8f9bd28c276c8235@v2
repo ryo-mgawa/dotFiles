@@ -1,7 +1,0 @@
-import { Status } from '@app/rdb/db/models/shipmentStatus/status';
-
-export type SaveShipmentStatus = {
-  shipmentId: string;
-  status: Status;
-  executedAt: Date;
-};

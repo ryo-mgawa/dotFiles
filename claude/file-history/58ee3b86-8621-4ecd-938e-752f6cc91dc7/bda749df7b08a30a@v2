@@ -1,7 +1,0 @@
-export type VolumeLevel = typeof import('../constants').VOLUME_LEVELS[keyof typeof import('../constants').VOLUME_LEVELS];
-
-export interface ApiError {
-  code: string;
-  message: string;
-  details?: Record<string, unknown>;
-}

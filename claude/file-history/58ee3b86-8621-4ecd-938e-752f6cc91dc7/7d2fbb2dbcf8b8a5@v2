@@ -1,7 +1,0 @@
-export interface Participant {
-  id: string;
-  name: string;
-  siteId: string;
-  isVideoOn: boolean;
-  isAudioOn: boolean;
-}

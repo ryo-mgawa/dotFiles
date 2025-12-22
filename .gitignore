@@ -1,6 +1,13 @@
 claude/projects/
 claude/statsig/
 claude/todos/
+claude/debug/
+claude/file-history/
+claude/history.jsonl
+claude/shell-snapshots/
+claude/stats-cache.json
+
+.config/karabiner/automatic_backups/
 
 .config/raycast/extensions/node_modules/
 .config/raycast/extensions/*/*.js
