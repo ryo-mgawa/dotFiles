@@ -6,6 +6,7 @@ claude/file-history/
 claude/history.jsonl
 claude/shell-snapshots/
 claude/stats-cache.json
+claude/plugins/marketplaces/
 
 .config/karabiner/automatic_backups/
 
