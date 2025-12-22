@@ -7,8 +7,12 @@ claude/history.jsonl
 claude/shell-snapshots/
 claude/stats-cache.json
 claude/plugins/marketplaces/
+claude/test-settings.json
+*.local.json
 
 .config/karabiner/automatic_backups/
+.config/configstore/
+.config/github-copilot/
 
 .config/raycast/extensions/node_modules/
 .config/raycast/extensions/*/*.js
