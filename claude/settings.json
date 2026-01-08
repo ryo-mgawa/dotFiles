@@ -1,14 +1,6 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "env": {},
-  "mcpServers": {
-    "sequential-thinking": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ]
-    }
-  },
   "permissions": {
     "allow": [
       "Bash(npm run lint)",
@@ -58,6 +50,7 @@
       "Bash(git remote remove:*)"
     ]
   },
+  "model": "opus",
   "hooks": {
     "Notification": [
       {
@@ -71,16 +64,28 @@
       }
     ]
   },
-  "feedbackSurveyState": {
-    "lastShownTime": 1754018660214
-  },
   "statusLine": {
     "type": "command",
     "command": "/Users/miyagawaryouta/dotFiles/claude/config/statusline.sh"
   },
-  "$schema": "https://json.schemastore.org/claude-code-settings.json",
-  "model": "opus",
+  "enabledPlugins": {
+    "typescript-lsp@claude-plugins-official": true,
+    "pyright-lsp@claude-plugins-official": true,
+    "lua-lsp@claude-plugins-official": true
+  },
   "alwaysThinkingEnabled": true,
+  "mcpServers": {
+    "sequential-thinking": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
+    }
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1754018660214
+  },
   "lsp": {
     "enabled": true
   }
