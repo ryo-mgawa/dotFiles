@@ -7,6 +7,12 @@ claude/history.jsonl
 claude/shell-snapshots/
 claude/stats-cache.json
 claude/plugins/marketplaces/
+claude/cache/
+claude/plugins/cache/
+claude/plugins/installed_plugins.json
+claude/plugins/known_marketplaces.json
+
+.config/raycast/extensions/
 claude/test-settings.json
 *.local.json
 
