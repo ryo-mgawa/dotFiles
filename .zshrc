@@ -29,6 +29,7 @@ alias aider='aider --no-auto-commits'
 # alias tcu='tmux send-keys -t 1 C-c && sleep 0.5 && tmux send-keys -t 1 "claude" C-m && tmux send-keys -t 2 C-c && sleep 0.5 && tmux send-keys -t 2 "claude" C-m && tmux send-keys -t 3 C-c && sleep 0.5 && tmux send-keys -t 3 "claude" C-m && claude'
 # alias tcd='tmux send-keys -t 3 C-c && sleep 0.3 && tmux send-keys -t 3 C-c && sleep 0.5 && tmux send-keys -t 3 "exit" C-m && tmux send-keys -t 2 C-c && sleep 0.3 && tmux send-keys -t 2 C-c && sleep 0.5 && tmux send-keys -t 2 "exit" C-m && tmux send-keys -t 1 C-c && sleep 0.3 && tmux send-keys -t 1 C-c && sleep 0.5 && tmux send-keys -t 1 "exit" C-m'
 alias ccusage='npx ccusage@latest'
+alias greset='git reset --soft HEAD^'
 totalUsage() {
     local cost=$(npx ccusage@latest --json | jq -r '(.totals.totalCost * 100 | round) / 100 | tostring')
     npx oh-my-logo "\$${cost}" fire --filled
