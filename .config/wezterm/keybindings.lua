@@ -113,6 +113,43 @@ function M.apply(config)
 			mods = "CMD",
 			action = wezterm.action.ActivateTabRelative(-1),
 		},
+		-- cmd + shift + l で Loogia 開発レイアウトを作成
+		{
+			key = "l",
+			mods = "CMD|SHIFT",
+			action = wezterm.action_callback(function(window, pane)
+				-- 1. 現在のペイン（左上）で cb loogia を実行
+				pane:send_text("cb loogia\n")
+
+				-- 2. 右に2回分割して3列作成
+				local middle_pane = pane:split({ direction = "Right" })
+				local right_pane = middle_pane:split({ direction = "Right" })
+
+				-- 3. 一番左のペインで下に分割
+				local left_middle_pane = pane:split({ direction = "Bottom" })
+
+				-- 4. 左中のペインで cb loogia 実行
+				left_middle_pane:send_text("cb loogia\n")
+
+				-- 5. 左中のペインでさらに下に分割
+				local left_bottom_pane = left_middle_pane:split({ direction = "Bottom" })
+
+				-- 6. 左下のペインで cb loogia 実行
+				left_bottom_pane:send_text("cb loogia\n")
+
+				-- 7. 真ん中のペインで cb loogia && nvim 実行
+				middle_pane:send_text("cb loogia && nvim\n")
+
+				-- 8. 一番右のペインで下に分割
+				local right_bottom_pane = right_pane:split({ direction = "Bottom" })
+
+				-- 9. 右上のペインで cb loogia && lg 実行
+				right_pane:send_text("cb loogia && lg\n")
+
+				-- 10. 右下のペインで cb loogia && lsql 実行
+				right_bottom_pane:send_text("cb loogia && lsql\n")
+			end),
+		},
 	}
 end
 
