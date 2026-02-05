@@ -12,6 +12,9 @@ claude/plugins/cache/
 claude/plugins/installed_plugins.json
 claude/plugins/known_marketplaces.json
 claude/paste-cache/
+claude/plans/
+claude/tasks/
+claude/telemetry/
 
 .config/raycast/extensions/
 claude/test-settings.json
