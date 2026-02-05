@@ -45,6 +45,8 @@ tmux() {
     fi
 }
 alias cb='cd-bookmark'
+alias reinstall='rm -rf node_modules && npm i'
+alias lsql='lazysql'
 
 eval "$(nodenv init -)"
 export PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:$PATH"
