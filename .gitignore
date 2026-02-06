@@ -11,6 +11,8 @@ claude/cache/
 claude/plugins/cache/
 claude/plugins/installed_plugins.json
 claude/plugins/known_marketplaces.json
+claude/plugins/install-counts-cache.json
+claude/usage-data/
 claude/paste-cache/
 claude/plans/
 claude/tasks/
