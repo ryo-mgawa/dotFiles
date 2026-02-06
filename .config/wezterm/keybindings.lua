@@ -113,7 +113,7 @@ function M.apply(config)
 			mods = "CMD",
 			action = wezterm.action.ActivateTabRelative(-1),
 		},
-		-- cmd + shift + l で Loogia 開発レイアウトを作成
+		-- cmd + shift + l で 開発レイアウトを作成
 		{
 			key = "l",
 			mods = "CMD|SHIFT",
